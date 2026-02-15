@@ -1,287 +1,336 @@
-## 🔍 Project Analysis Complete
-
-**Project Type:** Multi-Agent Orchestration Framework (AI-OS)  
-**Tech Stack:** Markdown (Rules), JSON (Protocol), FastAPI/SQLAlchemy (Demo)  
-**Architecture Pattern:** Hierarchical Governance (Tiered Agents)  
-**Diagrams to generate:** Agent Hierarchy, Workflow Logic, Directory Map, Feature Mindmap, Demo Schema, Deployment Flow
-
----
-
 # 🏢 Agent-Kit — AI Software Company in Your IDE
 
-<div align="center">
-  <p><strong>Turn your AI-powered IDE into a 53-agent software company.</strong></p>
-  <p>One solo developer. The output of a 30–50 person team.</p>
+> **Turn your AI-powered IDE into a 53-agent software company. One solo developer. The output of a 30–50 person team.**
 
-  ![Tech](https://img.shields.io/badge/Stack-Multi--Agent-orange)
+<div align="center">
+  ![Stack](https://img.shields.io/badge/Stack-Multi--Agent-orange)
   ![License](https://img.shields.io/badge/License-MIT-blue)
-  ![Status](https://img.shields.io/badge/Status-Optimized-brightgreen)
+  ![Status](https://img.shields.io/badge/Status-Ultimate--Hub-brightgreen)
+  ![Engine](https://img.shields.io/badge/Engine-Iron--Well--v2.0-blue)
 </div>
 
 ---
 
-## 📌 Table of Contents
+## 📖 Table of Contents
 - [Overview](#overview)
 - [Architecture](#architecture)
-- [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
-- [Data Flow](#data-flow)
-- [Features](#features)
+- [How It Works](#how-it-works)
+- [Data Model (Demo)](#data-model-demo)
+- [API Reference](#api-reference)
 - [Getting Started](#getting-started)
-- [Documentation & Skills](#documentation--skills)
-- [Database Schema (Demo)](#database-schema-demo)
-- [Deployment](#deployment)
+- [Build & Deployment](#build--deployment)
+- [Tech Stack](#tech-stack)
+- [Key Design Decisions](#key-design-decisions)
 - [Contributing](#contributing)
+- [License](#license)
 
 ---
 
-## 🧭 Overview
-Recently enhanced with **Iron Well Patterns**, the **Socratic Gate**, and the world-class **RA-001 README Architect**, the system ensures 100% clarity from planning to documentation. It enforces a strict **2-Phase Orchestration** and features **Industrial-Pro Aesthetics** for mission-critical reliability.
+## 🎯 Overview
+Agent-Kit is a high-authority, multi-agent orchestration framework designed to transform solo development into a full-scale industrial-pro software operation. Built on the **Iron Well Patterns**, it features the **SFS-001 Senior Full Stack** orchestrator, a strict **2-Phase Orchestration** protocol, and the **RA-001 README Architect** for world-class documentation.
 
 ---
 
-## 🛡️ Core Engine Rules (P0)
-
-| Rule | Protocol |
-| :--- | :--- |
-| **The Socratic Gate** | Complexity > S requires 3 strategic clarifying questions. |
-| **2-Phase Orchestration** | Strict separation: Planning (docs/PLAN.md) → User Approval → Implementation. |
-| **Standardized Skills** | Dynamic loading from `.agent-os/skills/[NAME]/SKILL.md`. |
-| **Hierarchical Governance** | CTS-001 (Executive) must approve all cross-departmental changes. |
-| **Mandatory Verification** | Every task completion requires a `python scripts/checklist.py` run. |
-
----
-
-## 🏥 Framework Health & Stability
-
-The Agent-Kit has undergone a **360° Comprehensive Audit** to ensure industrial-pro reliability.
-
-- **Path Integrity**: ✅ 100% Harmonized (No legacy `.agent/` references).
-- **Agent Compliance**: ✅ 53 agents verified with unique IDs and standard context.
-- **Skill Architecture**: ✅ Migrated to directory-based `SKILL.md` (Version 2.0).
-- **Memory Integrity**: ✅ Global Hub (`architecture`, `conventions`, `decisions`) fully synced.
-
-> [!IMPORTANT]
-> To verify health at any time, run: `python scripts/checklist.py`
-
----
-
-## 🏗️ Architecture
+## 🏛️ Architecture
 
 Agent-Kit operates on a **Tiered Governance Model**, where authority flows from the Human Owner down through Executive, Departmental, and Meta-Management layers.
 
+### D1. System Architecture Diagram
+
 ```mermaid
-graph TB
-  subgraph Owner["👤 Human Owner"]
-    User[Developer Authority]
+%%{init: {'theme': 'base', 'themeVariables': {
+  'primaryColor': '#1e293b',
+  'primaryTextColor': '#FFFFFF',
+  'primaryBorderColor': '#334155',
+  'lineColor': '#6366F1',
+  'secondaryColor': '#0f172a',
+  'tertiaryColor': '#1e293b',
+  'fontSize': '14px'
+}}}%%
+
+graph TD
+  subgraph Owner ["👤 Developer Authority"]
+    Human((Human Owner))
   end
 
-  subgraph Executive["🎯 Tier 1: Executive"]
+  subgraph Executive ["🎯 Tier 1: Executive Council"]
     SFS[SFS-001 Senior Full Stack]
     CTS[CTS-001 Chief Supervisor]
     SP[SP-001 Strategy Planner]
     RC[RC-001 Risk & Compliance]
   end
 
-  subgraph Departments["⚙️ Tier 2: Production & Ops"]
-    FE[Engineering Division - 12 Agents]
-    QA[QA & Testing - 6 Agents]
-    DO[DevOps & Infra - 5 Agents]
-    SEC[Security & IAM - 5 Agents]
-    PROD[Product & Documentation - 6 Agents]
+  subgraph Departments ["⚙️ Tier 2: Specialized Divisions"]
+    ENG[Engineering - 12 Agents]
+    QA[QA & Verification - 6 Agents]
+    SEC[Security Hub - 5 Agents]
+    PROD[Product Hub - 6 Agents]
+    DX[DevOps Hub - 5 Agents]
     INTEL[AI Intelligence - 4 Agents]
-    GROWTH[Marketing & Growth - 6 Agents]
+    GROWTH[Marketing Hub - 6 Agents]
   end
 
-  subgraph Meta["🧠 Tier 3: Meta-Management"]
-    MM[Meta-Management - 5 Agents]
+  subgraph Meta ["🧠 Tier 3: Meta-Management"]
+    MM[Memory/Loop/Permission Gov]
   end
 
-  User --> SFS
-  SFS --> CTS
-  SFS --> SP
-  CTS --> RC
-  SP --> Departments
-  Departments --> QA
-  QA --> CTS
-  MM -.-> Departments
-  MM -.-> CTS
-```
-
-### 🗂️ Detailed Directory Map
-
-```text
-.agent-os/
-├── config/                 # System configuration (permissions, settings)
-├── agents/                 # Agent definitions (53 unique roles)
-│   ├── tier-1/             # Executive Council (4 Agents)
-│   ├── engineering/        # Production Specialists (12 Agents)
-│   ├── qa/                 # Validation Experts (6 Agents)
-│   ├── devops/             # Infra & Pipelines (5 Agents)
-│   ├── security/           # Cyber-Sec & Compliance (5 Agents)
-│   ├── product/            # Roadmaps & PRDs (6 Agents)
-│   ├── intelligence/       # AI & Prompt Engineering (4 Agents)
-│   ├── marketing-growth/   # Branding & SEO (6 Agents)
-│   └── meta/               # Framework Stability (5 Agents)
-├── memory/                 # Persistent Framework Knowledge
-│   ├── global/             # Core architecture and conventions
-│   └── [departments]/      # Domain-specific persistent context
-├── skills/                 # High-Authority knowledge modules
-├── workflows/              # Standard Operating Procedures (SOPs)
-└── templates/              # Standardized AI output formats
+  Human -->|Command| SFS
+  SFS -->|SOP| Executive
+  Executive -->|Delegation| Departments
+  Departments -->|Review| QA
+  QA -->|Approval| CTS
+  CTS -->|Verification| Human
+  MM -.->|Context Sync| Departments
 ```
 
 ---
 
-## 🔄 Data Flow (The Development Lifecycle)
+## 📂 Project Structure
 
-How a requirement becomes code via the **Phase-Optimized Workflow**.
+### D2. Module Map & Directory Tree
 
 ```mermaid
-sequenceDiagram
-  actor Dev as Human Owner
-  participant SFS as SFS-001 (Senior Full Stack)
-  participant PD as PD-001 (PRD Writer)
-  participant SP as SP-001 (Planner)
-  participant CTS as CTS-001 (Supervisor)
-  participant ENG as Department Agent
-  participant RA as RA-001 (README Architect)
-  participant MM as MM-001 (Memory)
+graph TD
+  Root[/"📁 Agent-Kit (Root)"/]
+  Root --> OS[/"📁 .agent-os"/]
+  Root --> SRC[/"📁 src"/]
+  Root --> SCRIPTS[/"📁 scripts"/]
+  Root --> MEM[/"📁 memory"/]
 
-  Dev->>SFS: "Add Auth System"
-  Note over SFS: SOCRATIC GATE: 3 Questions
-  SFS-->>Dev: Asks 3 strategic questions
-  Dev->>SFS: Provides answers
+  OS --> AGENTS["👤 agents/ (53 Roles)"]
+  OS --> SKILLS["📚 skills/ (v2.0 Directories)"]
+  OS --> WF["🔄 workflows/ (SOPs)"]
+  OS --> TEMP["📄 templates/"]
+
+  SRC --> BE["⚙️ backend/ (FastAPI)"]
+  BE --> AUTH["🔐 auth/"]
   
-  Note over SFS: PHASE 1: PLANNING
-  SFS->>PD: Commands PRD Creation
-  PD->>Dev: Drafts PRD (docs/prd/)
-  Dev->>SP: Approves PRD
-  SP->>SFS: Proposed Plan
-  SFS->>CTS: Strategic Plan (milestones.md)
-  
-  Note over Dev: GATE: User Approval
-  Dev->>SFS: "Approved / LGTM"
-
-  Note over SFS: PHASE 2: EXECUTION
-  alt Complexity is S (Small)
-    SFS-->>ENG: Fast-Track Execution
-  else Complexity is M/L/XL
-    CTS->>RC: Risk Assessment
-    RC-->>CTS: Security Clearance
-    SFS->>ENG: Detailed Task Prompt
-  end
-
-  ENG->>ENG: Writes Code (src/)
-  ENG->>RA: Finalizes Documentation (README.md)
-  ENG->>MM: Updates Memory
-  Note over ENG: VERIFICATION: checklist.py
-  ENG->>Dev: Implementation Complete
+  SCRIPTS --> CHK["✅ checklist.py"]
+  MEM --> GLOB["🌍 global/ (Architecture)"]
 ```
 
-### ⚡ Quick Workflow Guide
-1. **Plan a New Feature**: Load `.agent-os/workflows/plan.workflow.md`
-2. **Execute Implementation**: Load `.agent-os/workflows/create.workflow.md`
-3. **Debug Issues**: Load `.agent-os/workflows/debug.workflow.md`
-4. **Deploy to Production**: Load `.agent-os/workflows/deploy.workflow.md`
-
 ---
 
-## 🛠️ Phase 1 Active Agent Roster
+## 🔄 How It Works
 
-These agents are currently active and ready for orchestration:
-
-| ID | Agent | Department | Specialty |
-|----|-------|------------|-----------|
-| **CTS-001** | Chief Technical Supervisor | Executive | Governance & Approval |
-| **SP-001** | Strategy Planner | Executive | Milestones & Roadmaps |
-| **RA-001** | README Architect | Product | Post-Completion Documentation |
-| **FE-001** | UI Architect | Frontend | Industrial-Pro Design |
-| **BE-001** | API Architect | Backend | Schema & Route Logic |
-| **MM-001** | Memory Manager | Meta | Context Maintenance |
-
----
-
-## ⚡ Features
+### D3. Core Data Flow Diagram
 
 ```mermaid
 flowchart LR
-    Root((Agent-Kit))
-    
-    Governance[🛡️ Governance]
-    Workflows[🔄 Workflows]
-    Memory[🧠 Memory System]
-    DX[🛠️ DX Tools]
-    
-    Roles[53 Specialized Roles]
-    Gates[Tiered Approval Gates]
-    Boundaries[Permission Boundaries]
-    
-    Fast[Fast-Track S-Tasks]
-    Audit[Standard Full Audit]
-    Roll[Emergency Rollback]
-    
-    Layer[Layered Context]
-    Prune[Pruning & Anti-Bloat]
-    Sync[Auto-Sync Engine]
-    
-    Hints[Tooling Hints]
-    JSON[Standardized Protocol]
-    Hybrid[Hybrid Feedback]
+    REQ((User Requirement)) -->|Socratic Gate| PLAN[Phase 1: Planning]
+    PLAN -->|CTS Approval| EXEC[Phase 2: Execution]
+    EXEC -->|Code Generation| VER[Phase 3: Verification]
+    VER -->|checklist.py| RA[Phase 4: RA-001 Documentation]
+    RA --> OUT[Done: PR-Ready Code]
 
-    %% Connections
-    Root --- Governance
-    Root --- Workflows
-    Root --- Memory
-    Root --- DX
-    
-    Governance --- Roles
-    Governance --- Gates
-    Governance --- Boundaries
-    
-    Workflows --- Fast
-    Workflows --- Audit
-    Workflows --- Roll
-    
-    Memory --- Layer
-    Memory --- Prune
-    Memory --- Sync
-    
-    DX --- Hints
-    DX --- JSON
-    DX --- Hybrid
+    style REQ fill:#4F46E5,color:#fff
+    style OUT fill:#10B981,color:#fff
+```
 
-    %% Styling
-    classDef main fill:#2c3e50,stroke:#3498db,stroke-width:4px,color:#fff,font-weight:bold
-    classDef category fill:#34495e,stroke:#3498db,stroke-width:2px,color:#fff
-    classDef feature fill:#1a2b3c,stroke:#2980b9,stroke-width:1px,color:#eee
+### D4. Request Lifecycle (Sequence)
 
-    class Root main
-    class Governance,Workflows,Memory,DX category
-    class Roles,Gates,Boundaries,Fast,Audit,Roll,Layer,Prune,Sync,Hints,JSON,Hybrid feature
+```mermaid
+sequenceDiagram
+  actor User as Human Owner
+  participant SFS as SFS-001 (Senior Full Stack)
+  participant SP as SP-001 (Planner)
+  participant ENG as Engineering Agent
+  participant QA as QA Agent
+  participant CTS as CTS-001 (Supervisor)
+
+  User->>SFS: "Implement Feature X"
+  SFS->>User: 3 Strategic clarifying questions
+  User->>SFS: Answers
+  SFS->>SP: Command Milestone Creation
+  SP-->>SFS: Plan (milestones.md)
+  SFS->>User: Proposed Plan Review
+  User->>SFS: Approved (LGTM)
+  SFS->>ENG: Targeted Task Directive
+  ENG->>ENG: Implementation Phase
+  ENG->>QA: Submit for Review
+  QA-->>CTS: Passing Status
+  CTS->>User: Final Approval Gate
+```
+
+---
+
+## 🗄️ Data Model (Authentication Demo)
+
+Agent-Kit includes a production-ready FastAPI authentication demo.
+
+### D5. Entity Relationship Diagram
+
+```mermaid
+erDiagram
+    USER ||--o{ SESSION : "authorizes"
+    USER {
+        int id PK
+        string email UK
+        string hashed_password
+        datetime created_at
+    }
+    SESSION {
+        string access_token PK
+        int user_id FK
+        datetime expires_at
+    }
+```
+
+---
+
+## 🔐 Authentication & Authorization
+
+### D13. Secure Auth Flow
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant API as FastAPI Backend
+    participant DB as User Database
+
+    Client->>API: POST /auth/register
+    API->>DB: Store Hash(Pwd)
+    DB-->>API: Success
+    API-->>Client: 201 Created
+    
+    Client->>API: POST /auth/login
+    API->>DB: Query User
+    API->>API: Verify Bcrypt
+    API-->>Client: JWT access_token
+```
+
+---
+
+## 🔌 API Reference
+
+### D11. API Route Map
+
+```mermaid
+flowchart LR
+    subgraph Auth ["🔐 Authentication"]
+        R[POST /auth/register]
+        L[POST /auth/login]
+    end
+    
+    subgraph Root ["🏠 General"]
+        RT[GET /]
+    end
+```
+
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| POST | `/auth/register` | Create a new account | No |
+| POST | `/auth/login` | Authenticate and get JWT | No |
+| GET | `/` | API Root / Welcome | No |
+
+---
+
+## ⚡ State Management
+
+### D6. Agent Task Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> Planning: New User Message
+    Planning --> GatheringContext: Read Memory/Skills
+    GatheringContext --> Implementing: Plan Approved
+    Implementing --> Testing: Code Written
+    Testing --> FinalizingDoc: checklist.py PASS
+    FinalizingDoc --> Idle: notify_user
+    Testing --> Implementing: checklist.py FAIL
 ```
 
 ---
 
 ## 🚀 Getting Started
 
-### 📦 Quick Start (NPX)
-You can initialize Agent-Kit in any new project directory without cloning the full repository:
+### Prerequisites
+- **Python**: 3.10+
+- **Node.js**: 18+ (for frontend/npx)
+- **Git**: Installed and configured
 
+### Installation
 ```bash
-mkdir my-new-project
-cd my-new-project
-npx agent-kit-p1 init
+# Clone the Hub
+git clone https://github.com/Ab-aswini/Agent-kit-P1.git
+cd Agent-kit-P1
+
+# Initialize the OS Environment
+python .agent-os/scripts/hub-setup.py
+
+# Install Demo Dependencies
+pip install fastapi sqlalchemy uvicorn passlib[argon2] python-jose[cryptography]
+```
+
+### Configuration
+Update the following environment variables if necessary:
+- `SECRET_KEY`: Used for JWT signing.
+- `ALGORITHM`: (Default: HS256)
+- `ACCESS_TOKEN_EXPIRE_MINUTES`: (Default: 30)
+
+---
+
+## 🏗️ Build & Deployment
+
+### D7. CI/CD Pipeline Flow
+
+```mermaid
+flowchart LR
+    A[Git Push] --> B[Linting Check]
+    B --> C[Unit tests]
+    C --> D[Integration Tests]
+    D --> E[Checklist.py Audit]
+    E --> F{Success?}
+    F -- Yes --> G[Deploy to Vercel/EC2]
+    F -- No --> H[Fail & Notify]
 ```
 
 ---
 
-### 🛠️ Manual Installation
+## 📊 Tech Stack
 
-1. **Initialization**: Run `python .agent-os/scripts/hub-setup.py` to prepare the environment.
-2. **Strategy**: Tell your AI: *"Read .agent-os/agents/tier-1/senior-full-stack.agent.md and help me plan my new feature."*
-3. **Execution**: Follow the **Fast-Track** workflow for minor fixes by tagging your request with `[Complexity: S]`.
-4. **Health Check**: Run `python scripts/checklist.py` to verify system integrity.
+| Layer | Technology | Purpose |
+|-------|------------|---------|
+| **Orchestration** | Markdown / JSON | High-authority agent protocols |
+| **Logic (Demo)** | FastAPI | Async high-performance backend |
+| **Database** | Mock (Memory) / SQLite | User storage |
+| **Security Hub** | Bcrypt / JWT | Commercial-grade auth |
+| **Audit** | `checklist.py` | 360-degree framework validation |
+| **Diagrams** | Mermaid.js | Dynamic architecture visualization |
+
+---
+
+## 🧩 Key Design Decisions
+
+1. **Iron Well Patterns**: Enforced strict planning/execution phases to prevent goal drift.
+2. **Socratic Gate**: Mandatory 3-question filter for complex tasks to ensure 100% alignment.
+3. **Directory-Based Skills**: Standardized on `.agent-os/skills/[NAME]/SKILL.md` for better indexability and modularity.
+4. **Hierarchical Governance**: Adopted tiered agent authority (CTS-001) to prevent infinite loops and ensure quality.
+
+---
+
+## 🌳 Git Strategy
+
+### D9. Branching Strategy
+
+```mermaid
+gitGraph
+    commit id: "Initial"
+    branch develop
+    commit id: "Setup"
+    branch feat/auth
+    commit id: "Auth Logic"
+    checkout develop
+    merge feat/auth
+    branch feat/ra-001
+    commit id: "Master README"
+    checkout develop
+    merge feat/ra-001
+    checkout main
+    merge develop tag: "v1.0-Ultimate-Hub"
+```
 
 ---
 
@@ -292,4 +341,6 @@ This project is licensed under the **MIT License**.
 
 <div align="center">
   <strong>Built for solo developers who think like companies.</strong>
+  <br>
+  <em>Documentation orchestrated by RA-001 README Architect.</em>
 </div>
