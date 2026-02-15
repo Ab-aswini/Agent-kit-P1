@@ -10,8 +10,8 @@
 # 🏢 Agent-Kit — AI Software Company in Your IDE
 
 <div align="center">
-  <p><strong>Turn your AI-powered IDE into a 52-agent software company.</strong></p>
-  <p>One solo developer. The output of a 25–40 person team.</p>
+  <p><strong>Turn your AI-powered IDE into a 53-agent software company.</strong></p>
+  <p>One solo developer. The output of a 30–50 person team.</p>
 
   ![Tech](https://img.shields.io/badge/Stack-Multi--Agent-orange)
   ![License](https://img.shields.io/badge/License-MIT-blue)
@@ -36,7 +36,7 @@
 ---
 
 ## 🧭 Overview
-Recently enhanced with **Iron Well Patterns**, the **Socratic Gate**, and the **SFS-001 Senior Full Stack** orchestrator, the system ensures 100% clarity before implementation. It enforces a strict **2-Phase Orchestration** and features **Industrial-Pro Aesthetics** for mission-critical reliability.
+Recently enhanced with **Iron Well Patterns**, the **Socratic Gate**, and the world-class **RA-001 README Architect**, the system ensures 100% clarity from planning to documentation. It enforces a strict **2-Phase Orchestration** and features **Industrial-Pro Aesthetics** for mission-critical reliability.
 
 ---
 
@@ -57,7 +57,7 @@ Recently enhanced with **Iron Well Patterns**, the **Socratic Gate**, and the **
 The Agent-Kit has undergone a **360° Comprehensive Audit** to ensure industrial-pro reliability.
 
 - **Path Integrity**: ✅ 100% Harmonized (No legacy `.agent/` references).
-- **Agent Compliance**: ✅ 52 agents verified with unique IDs and standard context.
+- **Agent Compliance**: ✅ 53 agents verified with unique IDs and standard context.
 - **Skill Architecture**: ✅ Migrated to directory-based `SKILL.md` (Version 2.0).
 - **Memory Integrity**: ✅ Global Hub (`architecture`, `conventions`, `decisions`) fully synced.
 
@@ -88,7 +88,7 @@ graph TB
     QA[QA & Testing - 6 Agents]
     DO[DevOps & Infra - 5 Agents]
     SEC[Security & IAM - 5 Agents]
-    PROD[Product & UX - 5 Agents]
+    PROD[Product & Documentation - 6 Agents]
     INTEL[AI Intelligence - 4 Agents]
     GROWTH[Marketing & Growth - 6 Agents]
   end
@@ -113,13 +113,13 @@ graph TB
 ```text
 .agent-os/
 ├── config/                 # System configuration (permissions, settings)
-├── agents/                 # Agent definitions (52 unique roles)
+├── agents/                 # Agent definitions (53 unique roles)
 │   ├── tier-1/             # Executive Council (4 Agents)
 │   ├── engineering/        # Production Specialists (12 Agents)
 │   ├── qa/                 # Validation Experts (6 Agents)
 │   ├── devops/             # Infra & Pipelines (5 Agents)
 │   ├── security/           # Cyber-Sec & Compliance (5 Agents)
-│   ├── product/            # Roadmaps & PRDs (5 Agents)
+│   ├── product/            # Roadmaps & PRDs (6 Agents)
 │   ├── intelligence/       # AI & Prompt Engineering (4 Agents)
 │   ├── marketing-growth/   # Branding & SEO (6 Agents)
 │   └── meta/               # Framework Stability (5 Agents)
@@ -145,6 +145,7 @@ sequenceDiagram
   participant SP as SP-001 (Planner)
   participant CTS as CTS-001 (Supervisor)
   participant ENG as Department Agent
+  participant RA as RA-001 (README Architect)
   participant MM as MM-001 (Memory)
 
   Dev->>SFS: "Add Auth System"
@@ -172,6 +173,7 @@ sequenceDiagram
   end
 
   ENG->>ENG: Writes Code (src/)
+  ENG->>RA: Finalizes Documentation (README.md)
   ENG->>MM: Updates Memory
   Note over ENG: VERIFICATION: checklist.py
   ENG->>Dev: Implementation Complete
@@ -193,7 +195,7 @@ These agents are currently active and ready for orchestration:
 |----|-------|------------|-----------|
 | **CTS-001** | Chief Technical Supervisor | Executive | Governance & Approval |
 | **SP-001** | Strategy Planner | Executive | Milestones & Roadmaps |
-| **RC-001** | Risk & Compliance | Executive | Security & Standards |
+| **RA-001** | README Architect | Product | Post-Completion Documentation |
 | **FE-001** | UI Architect | Frontend | Industrial-Pro Design |
 | **BE-001** | API Architect | Backend | Schema & Route Logic |
 | **MM-001** | Memory Manager | Meta | Context Maintenance |
@@ -211,7 +213,7 @@ flowchart LR
     Memory[🧠 Memory System]
     DX[🛠️ DX Tools]
     
-    Roles[52 Specialized Roles]
+    Roles[53 Specialized Roles]
     Gates[Tiered Approval Gates]
     Boundaries[Permission Boundaries]
     
