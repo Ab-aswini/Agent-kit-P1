@@ -30,7 +30,7 @@ async function init() {
         console.log(pc.white('\nNext steps:'));
         console.log(pc.gray('  1. Open the project in your AI-powered IDE.'));
         console.log(pc.gray('  2. Instruct your AI to read .agent-os/agents/tier-1/chief-technical-supervisor.agent.md.'));
-        console.log(pc.gray('  3. Start building with your 43-agent fleet.\n'));
+        console.log(pc.gray('  3. Start building with your 53-agent fleet.\n'));
     } catch (err) {
         console.error(pc.red('\n❌ Error initializing Agent-Kit:'), err.message);
         process.exit(1);
