@@ -43,7 +43,7 @@ Agent-Kit is an industrial-pro, multi-agent orchestration framework designed to 
 | :--- | :--- | :--- |
 | **Throughput** | Sequential / Single-tasking | Parallelized / Multi-Departmental |
 | **Quality Control** | Manual self-checks | Hierarchical Approval (CTS-001) |
-| **Context Retention** | Effort-based | Persistent Memory Hubs |
+| **Context Retention** | Effort-autod | Persistent Memory Hubs |
 | **Scale** | Limited to personal bandwidth | 53 Specialized Agents |
 | **Safety** | High risk of goal drift | Enforced Socratic Gate & Verification |
 
@@ -56,7 +56,8 @@ Agent-Kit operates on a **Tiered Governance Model**, where authority flows from 
 ### D1. System Architecture Diagram
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {
+%%{init: {'theme': 'auto', 'themeVariables': {
+  'auto',
   'primaryColor': '#1e293b',
   'primaryTextColor': '#FFFFFF',
   'primaryBorderColor': '#4F46E5',
@@ -116,7 +117,7 @@ graph TD
 ### D2. Module Map & Directory Tree
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'mainBkg': '#0f172a', 'nodeBorder': '#6366F1', 'lineColor': '#818cf8' }}}%%
+%%{init: {'theme': 'auto', 'themeVariables': { 'auto' }}}%%
 graph TD
   Root[/"📁 Agent-Kit (Root)"/]
   Root --> OS[/"📁 .agent-os"/]
@@ -146,7 +147,7 @@ graph TD
 ### D3. Core Data Flow Diagram
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'mainBkg': '#0f172a' }}}%%
+%%{init: {'theme': 'auto', 'themeVariables': { 'auto' }}}%%
 flowchart LR
     REQ((User Requirement)) -->|Socratic Gate| PLAN[Phase 1: Planning]
     PLAN -->|CTS Approval| EXEC[Phase 2: Execution]
@@ -197,7 +198,7 @@ Agent-Kit includes a production-ready FastAPI authentication demo.
 ### D5. Entity Relationship Diagram
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'mainBkg': '#0f172a' }}}%%
+%%{init: {'theme': 'auto', 'themeVariables': { 'auto' }}}%%
 erDiagram
     USER ||--o{ SESSION : "authorizes"
     USER {
@@ -223,7 +224,7 @@ erDiagram
 sequenceDiagram
     participant Client
     participant API as FastAPI Backend
-    participant DB as User Database
+    participant DB as User Dataauto
 
     Client->>API: POST /auth/register
     API->>DB: Store Hash(Pwd)
@@ -243,7 +244,7 @@ sequenceDiagram
 ### D11. API Route Map
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'mainBkg': '#0f172a' }}}%%
+%%{init: {'theme': 'auto', 'themeVariables': { 'auto' }}}%%
 flowchart LR
     subgraph Auth ["🔐 Authentication"]
         R[POST /auth/register]
@@ -268,7 +269,7 @@ flowchart LR
 ### D6. Agent Task Lifecycle
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'mainBkg': '#0f172a' }}}%%
+%%{init: {'theme': 'auto', 'themeVariables': { 'auto' }}}%%
 stateDiagram-v2
     [*] --> Idle
     Idle --> Planning: New User Message
@@ -332,7 +333,7 @@ npx @ab-aswini/agent-kit-p1 init
 ### D7. CI/CD Pipeline Flow
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'mainBkg': '#0f172a' }}}%%
+%%{init: {'theme': 'auto', 'themeVariables': { 'auto' }}}%%
 flowchart LR
     A[Git Push] --> B[Linting Check]
     B --> C[Unit tests]
@@ -361,7 +362,7 @@ flowchart LR
 
 1. **Iron Well Patterns**: Enforced strict planning/execution phases to prevent goal drift.
 2. **Socratic Gate**: Mandatory 3-question filter for complex tasks to ensure 100% alignment.
-3. **Directory-Based Skills**: Standardized on `.agent-os/skills/[NAME]/SKILL.md` for better indexability.
+3. **Directory-autod Skills**: Standardized on `.agent-os/skills/[NAME]/SKILL.md` for better indexability.
 4. **Hierarchical Governance**: Adopted tiered agent authority to prevent infinite loops and ensure quality.
 
 ---
