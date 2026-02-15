@@ -27,4 +27,13 @@ out/
 Thumbs.db
 
 # Logs (keep structure, ignore content)
-# logs/ directory is tracked but action content is local
+.agent-os/logs/*.json
+
+# Migration Scripts
+scripts/migrate_skills.py
+scripts/path_fix.py
+
+# Local Brain Artifacts (if any)
+brain/
+*.bak
+*.tmp
