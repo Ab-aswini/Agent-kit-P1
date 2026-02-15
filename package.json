@@ -1,0 +1,34 @@
+{
+    "name": "agent-kit-p1",
+    "version": "1.0.0",
+    "description": "Multi-agent AI framework for local-first software development.",
+    "main": "index.js",
+    "bin": {
+        "agent-kit": "./bin/cli.js"
+    },
+    "files": [
+        ".agent-os",
+        "docs",
+        "memory",
+        "src",
+        "bin",
+        "README.md",
+        "LICENSE"
+    ],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "ai",
+        "agents",
+        "npx",
+        "orchestration",
+        "idm"
+    ],
+    "author": "Aswini Behera",
+    "license": "MIT",
+    "dependencies": {
+        "fs-extra": "^11.2.0",
+        "picocolors": "^1.0.0"
+    }
+}

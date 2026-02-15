@@ -281,15 +281,18 @@ erDiagram
 
 ## 🚀 Getting Started
 
-### 1. Installation
-```bash
-# Clone the repository
-git clone https://github.com/Ab-aswini/Agent-kit-.git
-cd Agent-kit-
+### 📦 Quick Start (NPX)
+You can initialize Agent-Kit in any new project directory without cloning the full repository:
 
-# Install Demo Dependencies (Optional)
-pip install fastapi sqlalchemy uvicorn passlib[argon2] python-jose[cryptography]
+```bash
+mkdir my-new-project
+cd my-new-project
+npx agent-kit-p1 init
 ```
+
+---
+
+### 🛠️ Manual Installation
 
 ### 2. Initialization
 Tell your AI: *"Read .agent-os/agents/tier-1/strategy-planner.agent.md and help me plan my new feature."*
