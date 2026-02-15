@@ -41,5 +41,5 @@ if (command === 'init' || !command) {
     init();
 } else {
     console.log(pc.yellow(`Unknown command: ${command}`));
-    console.log('Use "npx agent-kit init" to set up the project.');
+    console.log('Use "npx @ab-aswini/agent-kit-p1 init" to set up the project.');
 }

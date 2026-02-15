@@ -246,24 +246,55 @@ stateDiagram-v2
 
 ## 🚀 Getting Started
 
-### Prerequisites
-- **Python**: 3.10+
-- **Node.js**: 18+ (for frontend/npx)
-- **Git**: Installed and configured
+### 📦 Quick Start (NPX Scaffolding)
+The fastest way to use Agent-Kit in a new project is via `npx`. This command scaffolds the entire 53-agent framework into your current directory without requiring you to clone the whole repository.
 
-### Installation
 ```bash
-# Clone the Hub
-git clone https://github.com/Ab-aswini/Agent-kit-P1.git
-cd Agent-kit-P1
+# 1. Create and enter your new project folder
+mkdir my-ai-project && cd my-ai-project
 
-# Initialize the OS Environment
-python .agent-os/scripts/hub-setup.py
-
-# Install Demo Dependencies
-pip install fastapi sqlalchemy uvicorn passlib[argon2] python-jose[cryptography]
+# 2. Scaffold the Agent-Kit framework
+npx @ab-aswini/agent-kit-p1 init
 ```
+**What this does:**
+- Copies the `.agent-os` core (Agents, Workflows, Skills).
+- Sets up the `memory/` hub for persistent context.
+- Provides the `src/` demo backend for testing.
+- Initializes the `scripts/` directory for health checks.
 
+---
+
+### 🛠️ Manual Installation (For Project Contributors)
+If you want to contribute to the framework or explore its internal scripts, use the manual method:
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/Ab-aswini/Agent-kit-P1.git
+   cd Agent-kit-P1
+   ```
+
+2. **Initialize Environment:**
+   ```bash
+   # Prepare the hub logic
+   python .agent-os/scripts/hub-setup.py
+   ```
+
+3. **Install Demo Dependencies:**
+   ```bash
+   pip install fastapi sqlalchemy uvicorn passlib[argon2] python-jose[cryptography]
+   ```
+
+4. **Verify System Health:**
+   ```bash
+   python scripts/checklist.py
+   ```
+
+---
+
+### 🚦 Next Steps for New Users
+1. **Open in AI IDE**: Open the folder in VS Code (with Cursor or Copilot).
+2. **Contextualize**: Instruct your AI to: *"Read .agent-os/agents/tier-1/chief-technical-supervisor.agent.md to understand the system rules."*
+3. **Start Building**: Give your first task (e.g., "Plan a new feature using the Plan Workflow") and watch the 53-agent fleet orchestrate the result.
 ### Configuration
 Update the following environment variables if necessary:
 - `SECRET_KEY`: Used for JWT signing.

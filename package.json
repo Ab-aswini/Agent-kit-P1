@@ -1,5 +1,5 @@
 {
-    "name": "agent-kit-p1",
+    "name": "@ab-aswini/agent-kit-p1",
     "version": "1.0.0",
     "description": "Multi-agent AI framework for local-first software development.",
     "main": "index.js",
