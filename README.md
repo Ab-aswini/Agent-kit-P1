@@ -10,8 +10,8 @@
 # 🏢 Agent-Kit — AI Software Company in Your IDE
 
 <div align="center">
-  <p><strong>Turn your AI-powered IDE into a 43-agent software company.</strong></p>
-  <p>One solo developer. The output of a 15–30 person team.</p>
+  <p><strong>Turn your AI-powered IDE into a 52-agent software company.</strong></p>
+  <p>One solo developer. The output of a 25–40 person team.</p>
 
   ![Tech](https://img.shields.io/badge/Stack-Multi--Agent-orange)
   ![License](https://img.shields.io/badge/License-MIT-blue)
@@ -36,7 +36,7 @@
 ---
 
 ## 🧭 Overview
-Recently enhanced with **Iron Well Patterns**, the system now features the **Socratic Gate**, **2-Phase Orchestration**, and **Industrial-Pro Aesthetics**. These upgrades ensure 100% clarity before implementation and a strict boundary between planning and execution.
+Recently enhanced with **Iron Well Patterns**, the **Socratic Gate**, and the **SFS-001 Senior Full Stack** orchestrator, the system ensures 100% clarity before implementation. It enforces a strict **2-Phase Orchestration** and features **Industrial-Pro Aesthetics** for mission-critical reliability.
 
 ---
 
@@ -83,20 +83,18 @@ graph TB
     RC[RC-001 Risk & Compliance]
   end
 
-  subgraph Departments["⚙️ Tier 2: Departments"]
-    FE[Frontend Division - 8 Agents]
-    BE[Backend Division - 10 Agents]
-    DB[Database Division - 5 Agents]
+  subgraph Departments["⚙️ Tier 2: Production & Ops"]
+    FE[Engineering Division - 12 Agents]
     QA[QA & Testing - 6 Agents]
-    DO[DevOps & Infra - 6 Agents]
-    PD[Product & Doc - 4 Agents]
+    DO[DevOps & Infra - 5 Agents]
+    SEC[Security & IAM - 5 Agents]
+    PROD[Product & UX - 5 Agents]
+    INTEL[AI Intelligence - 4 Agents]
+    GROWTH[Marketing & Growth - 6 Agents]
   end
 
   subgraph Meta["🧠 Tier 3: Meta-Management"]
-    MM[MM-001 Memory Manager]
-    PG[MM-002 Permission Gov]
-    CC[MM-003 Cost Controller]
-    LD[MM-004 Loop Detection]
+    MM[Meta-Management - 5 Agents]
   end
 
   User --> SFS
@@ -107,7 +105,7 @@ graph TB
   Departments --> QA
   QA --> CTS
   MM -.-> Departments
-  LD -.-> CTS
+  MM -.-> CTS
 ```
 
 ### 🗂️ Detailed Directory Map
@@ -115,11 +113,16 @@ graph TB
 ```text
 .agent-os/
 ├── config/                 # System configuration (permissions, settings)
-├── agents/                 # Agent definitions (43 unique roles)
-│   ├── tier-1/             # Executive Council (CTS, SP, RC)
-│   ├── engineering/        # Production Specialists (FE, BE, Mobile, Game)
-│   ├── qa/                 # Validation Experts (Review, Test, Perf, Sec)
-│   └── meta/               # Framework Stability (Memory, loop, Permission)
+├── agents/                 # Agent definitions (52 unique roles)
+│   ├── tier-1/             # Executive Council (4 Agents)
+│   ├── engineering/        # Production Specialists (12 Agents)
+│   ├── qa/                 # Validation Experts (6 Agents)
+│   ├── devops/             # Infra & Pipelines (5 Agents)
+│   ├── security/           # Cyber-Sec & Compliance (5 Agents)
+│   ├── product/            # Roadmaps & PRDs (5 Agents)
+│   ├── intelligence/       # AI & Prompt Engineering (4 Agents)
+│   ├── marketing-growth/   # Branding & SEO (6 Agents)
+│   └── meta/               # Framework Stability (5 Agents)
 ├── memory/                 # Persistent Framework Knowledge
 │   ├── global/             # Core architecture and conventions
 │   └── [departments]/      # Domain-specific persistent context
@@ -200,26 +203,6 @@ These agents are currently active and ready for orchestration:
 ## ⚡ Features
 
 ```mermaid
-<<<<<<< HEAD
-mindmap
-  root((Agent-Kit))
-    Governance
-      43 Specialized Roles
-      Tiered Approval Gates
-      Permission Boundaries
-    Workflows
-      Fast-Track (Low Complexity)
-      Standard (Full Audit)
-      Emergency Rollback
-    Memory System
-      Layered Context
-      Pruning (Anti-Bloat)
-      Auto-Sync
-    DX Tools
-      Tooling Hints
-      Standardized JSON Protocol
-      Hybrid Markdown Feedback
-=======
 flowchart LR
     Root((Agent-Kit))
     
@@ -228,7 +211,7 @@ flowchart LR
     Memory[🧠 Memory System]
     DX[🛠️ DX Tools]
     
-    Roles[43 Specialized Roles]
+    Roles[52 Specialized Roles]
     Gates[Tiered Approval Gates]
     Boundaries[Permission Boundaries]
     
@@ -274,7 +257,6 @@ flowchart LR
     class Root main
     class Governance,Workflows,Memory,DX category
     class Roles,Gates,Boundaries,Fast,Audit,Roll,Layer,Prune,Sync,Hints,JSON,Hybrid feature
->>>>>>> b538c39 (Finalized Agent-Kit with SFS-001, optimized workflows, stylized high-fidelity diagrams, and resolved conflicts)
 ```
 
 ---
@@ -295,7 +277,7 @@ npx agent-kit-p1 init
 ### 🛠️ Manual Installation
 
 1. **Initialization**: Run `python .agent-os/scripts/hub-setup.py` to prepare the environment.
-2. **Strategy**: Tell your AI: *"Read .agent-os/agents/tier-1/strategy-planner.agent.md and help me plan my new feature."*
+2. **Strategy**: Tell your AI: *"Read .agent-os/agents/tier-1/senior-full-stack.agent.md and help me plan my new feature."*
 3. **Execution**: Follow the **Fast-Track** workflow for minor fixes by tagging your request with `[Complexity: S]`.
 4. **Health Check**: Run `python scripts/checklist.py` to verify system integrity.
 
@@ -309,10 +291,3 @@ This project is licensed under the **MIT License**.
 <div align="center">
   <strong>Built for solo developers who think like companies.</strong>
 </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> e8d2acb (Finalized Agent-Kit with SFS-001, Fast-Track workflows, and high-fidelity documentation)
->>>>>>> b538c39 (Finalized Agent-Kit with SFS-001, optimized workflows, stylized high-fidelity diagrams, and resolved conflicts)
-=======
->>>>>>> c255649 (feat: Finalize Ultimate Hub - Consolidated .agent-os, Standardized Skills, and Integrated 360 Health Check)
