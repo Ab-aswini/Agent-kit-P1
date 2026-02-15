@@ -76,14 +76,14 @@
     └── agent-actions.json  # All agent actions logged
 ```
 
-## Core Rules
+## 🛡️ Core Engine Rules (P0)
 
-1. Every agent has ONE responsibility
-2. No agent has global write permission
-3. CTS-001 approves all merges
-4. Memory is always updated after changes
-5. All outputs use structured JSON format
-6. All actions are logged
+1. **The Socratic Gate**: All tasks starting with `plan` or `create` workflows MUST begin with 3 strategic questions if Complexity > S.
+2. **2-Phase Orchestration**: Planning and Implementation are strictly separated by a user-approval gate.
+3. **Modular Skills**: Agents load `SKILL.md` dynamically based on request context.
+4. **Universal Rules**: All agents are bound by `rules/universal-rules.agent.md`.
+5. **Standardized Output**: All communication follows the Hybrid Output Protocol (JSON + Summary).
+6. **Mandatory Verification**: Every task completion requires a `scripts/checklist.py` run.
 
 ## Phase 1 Active Agents (15)
 

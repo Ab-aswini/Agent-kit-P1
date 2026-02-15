@@ -9,8 +9,15 @@
 
 ## Agent Sequence
 
+### Step 0: Socratic Gate (Discovery)
+**Agent:** SFS-001 (Senior Full Stack Developer)
+**Task:** Analyze the user request for complexity (S/M/L/XL).
+- If Complexity > S: SFS-001 MUST ask exactly 3 strategic questions to clarify the vision.
+- If Complexity = S: Proceed directly to Step 1.
+- Wait for user responses before proceeding.
+
 ### Step 1: Requirements Analysis
-**Agent:** SFS-001 (Senior Full Stack) -> PD-001 (PRD Writer)
+**Agent:** SFS-001 (Senior Full Stack Developer) -> PD-001 (PRD Writer)
 - SFS-001 commands PD-001 to gather and clarify requirements
 - PD-001 writes user stories with acceptance criteria
 - PD-001 defines scope boundaries

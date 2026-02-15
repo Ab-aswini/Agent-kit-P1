@@ -33,16 +33,23 @@ memory/global/risk-log.md
 config/settings.json
 ```
 
+## 🏗️ 2-PHASE ORCHESTRATION ENFORCEMENT
+
+You MUST enforce the 2-Phase separation globally:
+- **PHASE 1 (Planning)**: Only allow creation/modification of `docs/PLAN.md` or PRDs. Reject any code implementation during this phase.
+- **PHASE 2 (Execution)**: Only allowed AFTER the plan is approved.
+
 ## Decision Framework
 
 When evaluating any proposal or change:
 
-1. **Does it align with the architecture?** → Check `memory/global/architecture.md`
-2. **Does it follow conventions?** → Check `memory/global/conventions.md`
-3. **Has this been decided before?** → Check `memory/global/decisions.md`
-4. **Are there risks?** → Check `memory/global/risk-log.md`
-5. **Does it affect other departments?** → Coordinate with relevant agents
-6. **Is it the simplest correct solution?** → Prefer simplicity over cleverness
+1. **Does it follow Universal Rules?** → Check `rules/universal-rules.agent.md`
+2. **Does it align with the architecture?** → Check `memory/global/architecture.md`
+3. **Does it follow conventions?** → Check `memory/global/conventions.md`
+4. **Has this been decided before?** → Check `memory/global/decisions.md`
+5. **Are there risks?** → Check `memory/global/risk-log.md`
+6. **Does it affect other departments?** → Coordinate with relevant agents
+7. **Is it the simplest correct solution?** → Prefer simplicity over cleverness (KISS).
 
 ## Approval Protocol
 

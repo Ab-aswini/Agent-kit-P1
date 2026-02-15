@@ -8,6 +8,13 @@
 
 ## Agent Sequence
 
+### Step 0: Socratic Gate (Discovery)
+**Agent:** SFS-001 (Senior Full Stack Developer)
+**Task:** Analyze the task for complexity and cross-stack impact.
+- SFS-001 MUST ask 3 clarifying questions if there is any ambiguity.
+- Ensure the agent understands the "Mission Control" aesthetic requirements.
+- Wait for user responses before starting Step 1.
+
 ### Step 1: Task Assignment & Analysis
 **Agent:** SFS-001 (Senior Full Stack) -> Assigned department agent
 - SFS-001 gives the command and specific prompts for the task

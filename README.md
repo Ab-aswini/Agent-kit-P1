@@ -36,7 +36,19 @@
 ---
 
 ## 🧭 Overview
-Recently enhanced with **Fast-Track Workflows**, **Tooling Hints**, and the **Senior Full Stack (SFS-001) Orchestrator**, the system now intelligently handles low-complexity tasks with 40% less overhead while maintaining rigorous standards for architectural changes.
+Recently enhanced with **Iron Well Patterns**, the system now features the **Socratic Gate**, **2-Phase Orchestration**, and **Industrial-Pro Aesthetics**. These upgrades ensure 100% clarity before implementation and a strict boundary between planning and execution.
+
+---
+
+## 🛡️ Core Engine Rules (P0)
+
+| Rule | Protocol |
+| :--- | :--- |
+| **The Socratic Gate** | Complexity > S requires 3 strategic clarifying questions. |
+| **2-Phase Orchestration** | Strict separation: Planning (docs/PLAN.md) → User Approval → Implementation. |
+| **Modular Skills** | Active loading of `SKILL.md` based on real-time task context. |
+| **Industrial-Pro UI** | High-contrast, mission-critical documentation aesthetics. |
+| **Automatic Verification** | Mandatory `scripts/checklist.py` run before task completion. |
 
 ---
 
@@ -93,32 +105,41 @@ How a requirement becomes code via the **Phase-Optimized Workflow**.
 ```mermaid
 sequenceDiagram
   actor Dev as Human Owner
-  participant PD as PD-001 (PRD)
+  participant SFS as SFS-001 (Senior Full Stack)
+  participant PD as PD-001 (PRD Writer)
   participant SP as SP-001 (Planner)
   participant CTS as CTS-001 (Supervisor)
-  participant ENG as Backend/Frontend Agent
+  participant ENG as Department Agent
   participant MM as MM-001 (Memory)
 
   Dev->>SFS: "Add Auth System"
-  SFS->>PD: Prompts PD-001
+  Note over SFS: SOCRATIC GATE: 3 Questions
+  SFS-->>Dev: Asks 3 strategic questions
+  Dev->>SFS: Provides answers
+  
+  Note over SFS: PHASE 1: PLANNING
+  SFS->>PD: Commands PRD Creation
   PD->>Dev: Drafts PRD (docs/prd/)
   Dev->>SP: Approves PRD
   SP->>SFS: Proposed Plan
   SFS->>CTS: Strategic Plan (milestones.md)
   
+  Note over Dev: GATE: User Approval
+  Dev->>SFS: "Approved / LGTM"
+
+  Note over SFS: PHASE 2: EXECUTION
   alt Complexity is S (Small)
-    SFS-->>ENG: Fast-Track: Command Execution
+    SFS-->>ENG: Fast-Track Execution
   else Complexity is M/L/XL
     CTS->>RC: Risk Assessment
     RC-->>CTS: Security Clearance
-    CTS->>SFS: Clearance Confirmed
     SFS->>ENG: Detailed Task Prompt
   end
 
-  ENG->>MM: implementation Plan
   ENG->>ENG: Writes Code (src/)
   ENG->>MM: Updates Memory
-  MM-->>Dev: Final Sync
+  Note over ENG: VERIFICATION: checklist.py
+  ENG->>Dev: Implementation Complete
 ```
 
 ---
