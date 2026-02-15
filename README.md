@@ -147,6 +147,7 @@ graph LR
 ## ⚡ Features
 
 ```mermaid
+<<<<<<< HEAD
 mindmap
   root((Agent-Kit))
     Governance
@@ -165,6 +166,62 @@ mindmap
       Tooling Hints
       Standardized JSON Protocol
       Hybrid Markdown Feedback
+=======
+flowchart LR
+    Root((Agent-Kit))
+    
+    Governance[🛡️ Governance]
+    Workflows[🔄 Workflows]
+    Memory[🧠 Memory System]
+    DX[🛠️ DX Tools]
+    
+    Roles[43 Specialized Roles]
+    Gates[Tiered Approval Gates]
+    Boundaries[Permission Boundaries]
+    
+    Fast[Fast-Track S-Tasks]
+    Audit[Standard Full Audit]
+    Roll[Emergency Rollback]
+    
+    Layer[Layered Context]
+    Prune[Pruning & Anti-Bloat]
+    Sync[Auto-Sync Engine]
+    
+    Hints[Tooling Hints]
+    JSON[Standardized Protocol]
+    Hybrid[Hybrid Feedback]
+
+    %% Connections
+    Root --- Governance
+    Root --- Workflows
+    Root --- Memory
+    Root --- DX
+    
+    Governance --- Roles
+    Governance --- Gates
+    Governance --- Boundaries
+    
+    Workflows --- Fast
+    Workflows --- Audit
+    Workflows --- Roll
+    
+    Memory --- Layer
+    Memory --- Prune
+    Memory --- Sync
+    
+    DX --- Hints
+    DX --- JSON
+    DX --- Hybrid
+
+    %% Styling
+    classDef main fill:#2c3e50,stroke:#3498db,stroke-width:4px,color:#fff,font-weight:bold
+    classDef category fill:#34495e,stroke:#3498db,stroke-width:2px,color:#fff
+    classDef feature fill:#1a2b3c,stroke:#2980b9,stroke-width:1px,color:#eee
+
+    class Root main
+    class Governance,Workflows,Memory,DX category
+    class Roles,Gates,Boundaries,Fast,Audit,Roll,Layer,Prune,Sync,Hints,JSON,Hybrid feature
+>>>>>>> b538c39 (Finalized Agent-Kit with SFS-001, optimized workflows, stylized high-fidelity diagrams, and resolved conflicts)
 ```
 
 ---
@@ -250,3 +307,7 @@ This project is licensed under the **MIT License**.
 <div align="center">
   <strong>Built for solo developers who think like companies.</strong>
 </div>
+<<<<<<< HEAD
+=======
+>>>>>>> e8d2acb (Finalized Agent-Kit with SFS-001, Fast-Track workflows, and high-fidelity documentation)
+>>>>>>> b538c39 (Finalized Agent-Kit with SFS-001, optimized workflows, stylized high-fidelity diagrams, and resolved conflicts)
