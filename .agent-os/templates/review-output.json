@@ -1,0 +1,15 @@
+{
+  "agent": "QA-001",
+  "task_id": "<TASK_ID>",
+  "status": "approve | request_changes | reject",
+  "summary": "Brief overall assessment",
+  "findings": [
+    {
+      "severity": "critical | major | minor | suggestion",
+      "file": "path/to/file",
+      "line": 0,
+      "description": "What was found",
+      "suggestion": "How to fix it"
+    }
+  ]
+}

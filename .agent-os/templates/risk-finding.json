@@ -1,0 +1,18 @@
+{
+  "agent": "RC-001",
+  "task_id": "<TASK_ID>",
+  "review_type": "security | compliance | best_practice",
+  "status": "pass | warn | fail",
+  "findings": [
+    {
+      "severity": "critical | high | medium | low | info",
+      "category": "security | performance | reliability | compliance",
+      "description": "What was found",
+      "location": "file:line",
+      "recommendation": "How to fix",
+      "reference": "OWASP/CWE ref"
+    }
+  ],
+  "risk_score": "0-10",
+  "blocks_deployment": false
+}

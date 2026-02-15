@@ -1,0 +1,389 @@
+{
+  "version": "1.0.0",
+  "total_agents": 43,
+  "activation_phase": 1,
+  "tiers": {
+    "tier-0": {
+      "name": "Human Owner",
+      "description": "Final authority on all decisions",
+      "agents": []
+    },
+    "tier-1": {
+      "name": "Executive Agents",
+      "description": "Strategic oversight and approval authority",
+      "agents": [
+        {
+          "id": "CTS-001",
+          "name": "Chief Technical Supervisor",
+          "file": "agents/tier-1/chief-technical-supervisor.agent.md",
+          "phase": 1,
+          "active": true
+        },
+        {
+          "id": "SFS-001",
+          "name": "Senior Full Stack Developer",
+          "file": "agents/tier-1/senior-fullstack-developer.agent.md",
+          "phase": 1,
+          "active": true
+        },
+        {
+          "id": "SP-001",
+          "name": "Strategy Planner",
+          "file": "agents/tier-1/strategy-planner.agent.md",
+          "phase": 1,
+          "active": true
+        },
+        {
+          "id": "RC-001",
+          "name": "Risk & Compliance",
+          "file": "agents/tier-1/risk-compliance.agent.md",
+          "phase": 1,
+          "active": true
+        }
+      ]
+    },
+    "engineering-frontend": {
+      "name": "Frontend Division",
+      "description": "All frontend development agents",
+      "agents": [
+        {
+          "id": "FE-001",
+          "name": "UI Architect",
+          "file": "agents/engineering/frontend/ui-architect.agent.md",
+          "phase": 1,
+          "active": true
+        },
+        {
+          "id": "FE-002",
+          "name": "Layout Engineer",
+          "file": "agents/engineering/frontend/layout-engineer.agent.md",
+          "phase": 1,
+          "active": true
+        },
+        {
+          "id": "FE-003",
+          "name": "Component Builder",
+          "file": "agents/engineering/frontend/component-builder.agent.md",
+          "phase": 1,
+          "active": true
+        },
+        {
+          "id": "FE-004",
+          "name": "State Management",
+          "file": "agents/engineering/frontend/state-management.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "FE-005",
+          "name": "API Integration",
+          "file": "agents/engineering/frontend/api-integration.agent.md",
+          "phase": 1,
+          "active": true
+        },
+        {
+          "id": "FE-006",
+          "name": "Animation Specialist",
+          "file": "agents/engineering/frontend/animation-specialist.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "FE-007",
+          "name": "Accessibility Specialist",
+          "file": "agents/engineering/frontend/accessibility-specialist.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "FE-008",
+          "name": "Performance Optimization",
+          "file": "agents/engineering/frontend/performance-optimization.agent.md",
+          "phase": 2,
+          "active": false
+        }
+      ]
+    },
+    "engineering-backend": {
+      "name": "Backend Division",
+      "description": "All backend development agents",
+      "agents": [
+        {
+          "id": "BE-001",
+          "name": "API Architect",
+          "file": "agents/engineering/backend/api-architect.agent.md",
+          "phase": 1,
+          "active": true
+        },
+        {
+          "id": "BE-002",
+          "name": "Route Builder",
+          "file": "agents/engineering/backend/route-builder.agent.md",
+          "phase": 1,
+          "active": true
+        },
+        {
+          "id": "BE-003",
+          "name": "Controller Logic",
+          "file": "agents/engineering/backend/controller-logic.agent.md",
+          "phase": 1,
+          "active": true
+        },
+        {
+          "id": "BE-004",
+          "name": "Validation Specialist",
+          "file": "agents/engineering/backend/validation-specialist.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "BE-005",
+          "name": "Authentication Engineer",
+          "file": "agents/engineering/backend/authentication-engineer.agent.md",
+          "phase": 1,
+          "active": true
+        },
+        {
+          "id": "BE-006",
+          "name": "Authorization (RBAC)",
+          "file": "agents/engineering/backend/authorization-rbac.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "BE-007",
+          "name": "Middleware Specialist",
+          "file": "agents/engineering/backend/middleware-specialist.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "BE-008",
+          "name": "Payment Integration",
+          "file": "agents/engineering/backend/payment-integration.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "BE-009",
+          "name": "Notification System",
+          "file": "agents/engineering/backend/notification-system.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "BE-010",
+          "name": "Background Job / Queue",
+          "file": "agents/engineering/backend/background-job-queue.agent.md",
+          "phase": 2,
+          "active": false
+        }
+      ]
+    },
+    "engineering-database": {
+      "name": "Database Division",
+      "description": "All database development agents",
+      "agents": [
+        {
+          "id": "DB-001",
+          "name": "Schema Design",
+          "file": "agents/engineering/database/schema-design.agent.md",
+          "phase": 1,
+          "active": true
+        },
+        {
+          "id": "DB-002",
+          "name": "Migration Manager",
+          "file": "agents/engineering/database/migration-manager.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "DB-003",
+          "name": "Index Optimization",
+          "file": "agents/engineering/database/index-optimization.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "DB-004",
+          "name": "Query Performance",
+          "file": "agents/engineering/database/query-performance.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "DB-005",
+          "name": "Backup & Recovery",
+          "file": "agents/engineering/database/backup-recovery.agent.md",
+          "phase": 2,
+          "active": false
+        }
+      ]
+    },
+    "qa": {
+      "name": "QA & Testing",
+      "description": "Quality assurance agents — cannot write production code",
+      "agents": [
+        {
+          "id": "QA-001",
+          "name": "Code Review",
+          "file": "agents/qa/code-review.agent.md",
+          "phase": 1,
+          "active": true
+        },
+        {
+          "id": "QA-002",
+          "name": "Unit Test Generator",
+          "file": "agents/qa/unit-test-generator.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "QA-003",
+          "name": "Integration Test",
+          "file": "agents/qa/integration-test.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "QA-004",
+          "name": "End-to-End Test",
+          "file": "agents/qa/end-to-end-test.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "QA-005",
+          "name": "Performance Testing",
+          "file": "agents/qa/performance-testing.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "QA-006",
+          "name": "Security Testing",
+          "file": "agents/qa/security-testing.agent.md",
+          "phase": 2,
+          "active": false
+        }
+      ]
+    },
+    "devops": {
+      "name": "DevOps & Infrastructure",
+      "description": "Infrastructure and deployment agents",
+      "agents": [
+        {
+          "id": "DO-001",
+          "name": "Docker Engineer",
+          "file": "agents/devops/docker-engineer.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "DO-002",
+          "name": "CI/CD Pipeline",
+          "file": "agents/devops/cicd-pipeline.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "DO-003",
+          "name": "Deployment",
+          "file": "agents/devops/deployment.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "DO-004",
+          "name": "Server Configuration",
+          "file": "agents/devops/server-configuration.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "DO-005",
+          "name": "SSL & Domain",
+          "file": "agents/devops/ssl-domain.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "DO-006",
+          "name": "Monitoring & Logging",
+          "file": "agents/devops/monitoring-logging.agent.md",
+          "phase": 2,
+          "active": false
+        }
+      ]
+    },
+    "product": {
+      "name": "Product & Documentation",
+      "description": "Documentation and planning agents",
+      "agents": [
+        {
+          "id": "PD-001",
+          "name": "PRD Writer",
+          "file": "agents/product/prd-writer.agent.md",
+          "phase": 1,
+          "active": true
+        },
+        {
+          "id": "PD-002",
+          "name": "Documentation",
+          "file": "agents/product/documentation.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "PD-003",
+          "name": "Task Tracking",
+          "file": "agents/product/task-tracking.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "PD-004",
+          "name": "Timeline & Estimation",
+          "file": "agents/product/timeline-estimation.agent.md",
+          "phase": 2,
+          "active": false
+        }
+      ]
+    },
+    "meta": {
+      "name": "Meta-Management",
+      "description": "System stability and governance agents",
+      "agents": [
+        {
+          "id": "MM-001",
+          "name": "Memory Manager",
+          "file": "agents/meta/memory-manager.agent.md",
+          "phase": 1,
+          "active": true
+        },
+        {
+          "id": "MM-002",
+          "name": "Permission Governor",
+          "file": "agents/meta/permission-governor.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "MM-003",
+          "name": "Cost Controller",
+          "file": "agents/meta/cost-controller.agent.md",
+          "phase": 2,
+          "active": false
+        },
+        {
+          "id": "MM-004",
+          "name": "Loop Detection & Stability",
+          "file": "agents/meta/loop-detection-stability.agent.md",
+          "phase": 2,
+          "active": false
+        }
+      ]
+    }
+  }
+}

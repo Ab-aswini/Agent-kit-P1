@@ -1,0 +1,48 @@
+{
+  "version": "1.0.0",
+  "project_name": "",
+  "project_type": "",
+  "tech_stack": {
+    "frontend": "",
+    "backend": "",
+    "database": "",
+    "deployment": ""
+  },
+  "activation_phase": 1,
+  "phase_1_agents": [
+    "CTS-001", "SP-001", "RC-001",
+    "FE-001", "FE-002", "FE-003", "FE-005",
+    "BE-001", "BE-002", "BE-003", "BE-005",
+    "DB-001",
+    "QA-001",
+    "PD-001",
+    "MM-001"
+  ],
+  "communication": {
+    "format": "json",
+    "require_task_id": true,
+    "require_structured_output": true
+  },
+  "approval_gates": {
+    "deployment": ["CTS-001", "HUMAN"],
+    "db_migration": ["CTS-001"],
+    "architecture_change": ["CTS-001"],
+    "security_change": ["CTS-001", "RC-001"],
+    "production_data_access": ["HUMAN"]
+  },
+  "memory": {
+    "type": "markdown",
+    "auto_update": true,
+    "max_context_per_agent": "8000_tokens_estimated"
+  },
+  "logging": {
+    "enabled": true,
+    "log_file": "logs/agent-actions.json",
+    "log_level": "info"
+  },
+  "cost_control": {
+    "warn_threshold_tokens": 50000,
+    "hard_limit_tokens": 200000,
+    "track_per_task": true
+  }
+}

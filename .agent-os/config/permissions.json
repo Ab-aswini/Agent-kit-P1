@@ -1,0 +1,269 @@
+{
+  "version": "1.0.0",
+  "description": "File access, terminal access, and deployment authority per agent",
+  "rules": {
+    "default_deny": true,
+    "require_cts_approval": [
+      "deployment",
+      "db_migration",
+      "security_change",
+      "architecture_change"
+    ],
+    "require_human_approval": [
+      "production_deployment",
+      "data_deletion",
+      "cost_exceeding_threshold"
+    ]
+  },
+  "agents": {
+    "CTS-001": {
+      "name": "Chief Technical Supervisor",
+      "file_access": {
+        "read": [
+          "**/*"
+        ],
+        "write": [
+          "memory/global/**",
+          ".agent-os/config/**",
+          "logs/**"
+        ]
+      },
+      "terminal_access": true,
+      "deployment_access": true,
+      "db_migration_access": true,
+      "can_approve": true,
+      "can_merge": true
+    },
+    "SFS-001": {
+      "name": "Senior Full Stack Developer",
+      "file_access": {
+        "read": [
+          "**/*"
+        ],
+        "write": [
+          "memory/global/**",
+          "memory/product/**",
+          "docs/prd/**",
+          "logs/**"
+        ]
+      },
+      "terminal_access": true,
+      "deployment_access": false,
+      "db_migration_access": false,
+      "can_approve": true,
+      "can_merge": false
+    },
+    "SP-001": {
+      "name": "Strategy Planner",
+      "file_access": {
+        "read": [
+          "**/*"
+        ],
+        "write": [
+          "memory/global/project-overview.md",
+          "memory/global/decisions.md",
+          "memory/product/**"
+        ]
+      },
+      "terminal_access": false,
+      "deployment_access": false,
+      "db_migration_access": false,
+      "can_approve": false,
+      "can_merge": false
+    },
+    "RC-001": {
+      "name": "Risk & Compliance",
+      "file_access": {
+        "read": [
+          "**/*"
+        ],
+        "write": [
+          "memory/global/risk-log.md",
+          "logs/**"
+        ]
+      },
+      "terminal_access": false,
+      "deployment_access": false,
+      "db_migration_access": false,
+      "can_approve": false,
+      "can_merge": false
+    },
+    "FE-*": {
+      "name": "Frontend Division (all)",
+      "file_access": {
+        "read": [
+          "src/frontend/**",
+          "src/components/**",
+          "src/pages/**",
+          "src/styles/**",
+          "src/hooks/**",
+          "src/utils/**",
+          "src/store/**",
+          "src/assets/**",
+          "public/**",
+          "memory/global/**",
+          "memory/frontend/**",
+          ".agent-os/skills/**"
+        ],
+        "write": [
+          "src/frontend/**",
+          "src/components/**",
+          "src/pages/**",
+          "src/styles/**",
+          "src/hooks/**",
+          "src/utils/frontend/**",
+          "src/store/**",
+          "memory/frontend/**"
+        ]
+      },
+      "terminal_access": false,
+      "deployment_access": false,
+      "db_migration_access": false,
+      "can_approve": false,
+      "can_merge": false
+    },
+    "BE-*": {
+      "name": "Backend Division (all)",
+      "file_access": {
+        "read": [
+          "src/backend/**",
+          "src/api/**",
+          "src/routes/**",
+          "src/controllers/**",
+          "src/middleware/**",
+          "src/services/**",
+          "src/models/**",
+          "src/utils/**",
+          "memory/global/**",
+          "memory/backend/**",
+          ".agent-os/skills/**"
+        ],
+        "write": [
+          "src/backend/**",
+          "src/api/**",
+          "src/routes/**",
+          "src/controllers/**",
+          "src/middleware/**",
+          "src/services/**",
+          "src/models/**",
+          "src/utils/backend/**",
+          "memory/backend/**"
+        ]
+      },
+      "terminal_access": false,
+      "deployment_access": false,
+      "db_migration_access": false,
+      "can_approve": false,
+      "can_merge": false
+    },
+    "DB-*": {
+      "name": "Database Division (all)",
+      "file_access": {
+        "read": [
+          "src/models/**",
+          "src/database/**",
+          "migrations/**",
+          "seeds/**",
+          "memory/global/**",
+          "memory/database/**",
+          ".agent-os/skills/**"
+        ],
+        "write": [
+          "src/database/**",
+          "migrations/**",
+          "seeds/**",
+          "memory/database/**"
+        ]
+      },
+      "terminal_access": false,
+      "deployment_access": false,
+      "db_migration_access": true,
+      "requires_approval_from": "CTS-001",
+      "can_approve": false,
+      "can_merge": false
+    },
+    "QA-*": {
+      "name": "QA & Testing (all)",
+      "file_access": {
+        "read": [
+          "**/*"
+        ],
+        "write": [
+          "tests/**",
+          "memory/qa/**",
+          "logs/**"
+        ]
+      },
+      "terminal_access": true,
+      "deployment_access": false,
+      "db_migration_access": false,
+      "can_approve": false,
+      "can_merge": false,
+      "special_rules": {
+        "cannot_write_production_code": true,
+        "can_suggest_patches": true,
+        "patches_require_cts_approval": true
+      }
+    },
+    "DO-*": {
+      "name": "DevOps & Infrastructure (all)",
+      "file_access": {
+        "read": [
+          "**/*"
+        ],
+        "write": [
+          "Dockerfile",
+          "docker-compose.yml",
+          ".github/**",
+          ".gitlab-ci.yml",
+          "nginx/**",
+          "deploy/**",
+          "scripts/**",
+          "memory/devops/**"
+        ]
+      },
+      "terminal_access": true,
+      "deployment_access": true,
+      "requires_approval_from": "CTS-001",
+      "db_migration_access": false,
+      "can_approve": false,
+      "can_merge": false
+    },
+    "PD-*": {
+      "name": "Product & Documentation (all)",
+      "file_access": {
+        "read": [
+          "**/*"
+        ],
+        "write": [
+          "docs/**",
+          "memory/product/**",
+          "memory/global/project-overview.md"
+        ]
+      },
+      "terminal_access": false,
+      "deployment_access": false,
+      "db_migration_access": false,
+      "can_approve": false,
+      "can_merge": false
+    },
+    "MM-*": {
+      "name": "Meta-Management (all)",
+      "file_access": {
+        "read": [
+          "**/*"
+        ],
+        "write": [
+          "memory/**",
+          "logs/**",
+          ".agent-os/config/**"
+        ]
+      },
+      "terminal_access": false,
+      "deployment_access": false,
+      "db_migration_access": false,
+      "can_approve": false,
+      "can_merge": false
+    }
+  }
+}

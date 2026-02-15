@@ -1,0 +1,19 @@
+{
+  "agent": "<AGENT_ID>",
+  "task_id": "<TASK_ID>",
+  "timestamp": "<ISO_TIMESTAMP>",
+  "analysis": "What was analyzed and why",
+  "implementation_plan": "Step-by-step plan",
+  "files_to_modify": [],
+  "files_to_create": [],
+  "dependencies": [],
+  "risks": [],
+  "requires_supervisor_approval": false,
+  "memory_updates": [
+    {
+      "file": "memory/<dept>/<file>.md",
+      "action": "append | update",
+      "content": "What changed"
+    }
+  ]
+}

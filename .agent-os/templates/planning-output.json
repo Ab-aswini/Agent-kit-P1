@@ -1,0 +1,23 @@
+{
+  "agent": "SP-001",
+  "project_plan": {
+    "name": "Project name",
+    "milestones": [
+      {
+        "id": "M-001",
+        "name": "Milestone name",
+        "tasks": [
+          {
+            "id": "T-001",
+            "description": "Task description",
+            "assigned_agent": "<AGENT_ID>",
+            "complexity": "S | M | L | XL",
+            "dependencies": []
+          }
+        ],
+        "acceptance_criteria": [],
+        "depends_on": []
+      }
+    ]
+  }
+}

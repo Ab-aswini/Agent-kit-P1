@@ -1,0 +1,10 @@
+{
+  "agent": "CTS-001",
+  "task_id": "<TASK_ID>",
+  "action": "approve | reject | request_changes | delegate",
+  "decision": "Description of decision",
+  "reasoning": "Why this decision was made",
+  "memory_updates": [],
+  "delegations": [],
+  "approval_status": "approved | pending | rejected"
+}
