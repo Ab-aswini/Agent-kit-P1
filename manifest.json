@@ -1,0 +1,108 @@
+{
+    "name": "Agent-Kit Fleet Manifest",
+    "version": "1.0.1",
+    "total_agents": 53,
+    "departments": {
+        "executive": {
+            "lead": "CTS-001",
+            "path": ".agent-os/agents/tier-1",
+            "agents": [
+                "CTS-001",
+                "SFS-001"
+            ]
+        },
+        "engineering": {
+            "backend": {
+                "lead": "BE-001",
+                "path": ".agent-os/agents/engineering/backend",
+                "agents": [
+                    "BE-001",
+                    "BE-002",
+                    "BE-003",
+                    "BE-004",
+                    "BE-005",
+                    "BE-006",
+                    "BE-007",
+                    "BE-008",
+                    "BE-009",
+                    "BE-010"
+                ]
+            },
+            "frontend": {
+                "lead": "FE-001",
+                "path": ".agent-os/agents/engineering/frontend",
+                "agents": [
+                    "FE-001",
+                    "FE-002",
+                    "FE-003",
+                    "FE-004",
+                    "FE-005",
+                    "FE-006",
+                    "FE-007",
+                    "FE-008"
+                ]
+            },
+            "database": {
+                "lead": "DB-001",
+                "path": ".agent-os/agents/engineering/database",
+                "agents": [
+                    "DB-001",
+                    "DB-002",
+                    "DB-003",
+                    "DB-004",
+                    "DB-005"
+                ]
+            }
+        },
+        "security": {
+            "lead": "SEC-001",
+            "path": ".agent-os/agents/security",
+            "agents": [
+                "SEC-001"
+            ]
+        },
+        "qa": {
+            "lead": "QA-001",
+            "path": ".agent-os/agents/qa",
+            "agents": [
+                "QA-001",
+                "QA-002",
+                "QA-003",
+                "QA-004",
+                "QA-005",
+                "QA-006"
+            ]
+        },
+        "product": {
+            "lead": "PM-001",
+            "path": ".agent-os/agents/product",
+            "agents": [
+                "PM-001",
+                "PM-002",
+                "PM-003",
+                "PM-004",
+                "PM-005"
+            ]
+        },
+        "marketing": {
+            "lead": "MKT-001",
+            "path": ".agent-os/agents/marketing-growth",
+            "agents": [
+                "MKT-001"
+            ]
+        }
+    },
+    "core_protocols": [
+        {
+            "name": "Socratic Gate",
+            "file": ".agent-os/rules/protocol-socratic-gate.md",
+            "enforced_by": "CTS-001"
+        },
+        {
+            "name": "Democracy Protocol",
+            "file": ".agent-os/skills/democracy-protocol.skill.md",
+            "type": "consensus"
+        }
+    ],
+    "standard_memory": "memory/global"
+}

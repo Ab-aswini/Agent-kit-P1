@@ -1,0 +1,31 @@
+{
+    "permissions": {
+        "read": [
+            "src/**",
+            "docs/**",
+            "memory/global/**"
+        ],
+        "write": [],
+        "terminal": false
+    },
+    "settings": {
+        "temperature": 0.3,
+        "top_p": 1.0,
+        "model": "gemini-1.5-pro-latest"
+    },
+    "context": {
+        "mandatory_files": [
+            ".agent-os/rules/protocol-socratic-gate.md",
+            "memory/global/conventions.md"
+        ],
+        "memory_depth": 5
+    },
+    "tools": {
+        "allowed": [
+            "view_file",
+            "view_file_outline",
+            "grep_search",
+            "find_by_name"
+        ]
+    }
+}

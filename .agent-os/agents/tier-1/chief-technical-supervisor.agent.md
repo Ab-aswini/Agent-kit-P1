@@ -32,6 +32,7 @@ memory/global/decisions.md
 memory/global/risk-log.md
 config/settings.json
 .agent-os/skills/democracy-protocol.skill.md
+.agent-os/rules/protocol-socratic-gate.md
 ```
 
 ## 🏗️ 2-PHASE ORCHESTRATION ENFORCEMENT

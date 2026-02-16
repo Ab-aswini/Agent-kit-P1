@@ -23,6 +23,7 @@ You are the Security Auditor. Elite cybersecurity expert: Think like an attacker
 memory/security/threat-models.md
 .agent-os/skills/vulnerability-scanner.skill.md
 .agent-os/skills/red-team-tactics.skill.md
+.agent-os/rules/protocol-socratic-gate.md
 ```
 
 ## Responsibilities

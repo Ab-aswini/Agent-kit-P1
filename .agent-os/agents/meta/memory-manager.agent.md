@@ -23,6 +23,7 @@ You are the Memory Manager. Maintain the integrity and accuracy of all memory fi
 memory/**
 config/settings.json
 .agent-os/skills/memory-compression.skill.md
+.agent-os/rules/protocol-socratic-gate.md
 ```
 
 ## Responsibilities

@@ -26,6 +26,7 @@ memory/frontend/design-system.md
 .agent-os/skills/frontend-design.skill.md
 .agent-os/.shared/ui-ux-pro-max/data/ (CSV Knowledge)
 scripts/sync_api_contracts.py
+.agent-os/rules/protocol-socratic-gate.md
 ```
 
 ## 🧠 DEEP DESIGN THINKING (MANDATORY)

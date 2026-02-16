@@ -24,6 +24,7 @@ memory/global/architecture.md
 memory/backend/api-contracts.md
 .agent-os/skills/fastapi/SKILL.md
 scripts/sync_api_contracts.py
+.agent-os/rules/protocol-socratic-gate.md
 ```
 
 ## Responsibilities
