@@ -13,7 +13,7 @@ const targetDir = process.cwd();
 async function init() {
     console.log(pc.cyan('\n🚀 Initializing Agent-Kit...'));
 
-    const foldersToCopy = ['.agent-os', 'docs', 'memory', 'src'];
+    const foldersToCopy = ['.agent-os', 'docs', 'memory', 'src', 'scripts'];
 
     try {
         for (const folder of foldersToCopy) {

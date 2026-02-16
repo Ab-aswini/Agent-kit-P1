@@ -11,6 +11,7 @@
         "docs",
         "memory",
         "src",
+        "scripts",
         "bin",
         "README.md",
         "LICENSE"
