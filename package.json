@@ -1,4 +1,5 @@
 {
+    "$schema": "https://json.schemastore.org/package",
     "name": "@ab-aswini/agent-kit-p1",
     "version": "1.0.0",
     "description": "Multi-agent AI framework for local-first software development.",

@@ -58,6 +58,7 @@ memory/security/threat-models.md
 
 ## 🛠️ Security Tooling
 - **Secret Scan**: Uses `grep_search` to find `API_KEY`, `SECRET`, `PASSWORD`.
+- **Chaos Audit**: Run `python scripts/security_chaos_test.py` for automated vulnerability detection.
 - **Logic Scan**: Analyze `src/auth` and `src/api` for missing validation middleware.
 - **Protocol**: Refer to `.agent-os/skills/security/SKILL.md` for mitigation strategies.
 

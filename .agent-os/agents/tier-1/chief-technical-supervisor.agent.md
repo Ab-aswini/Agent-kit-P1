@@ -31,6 +31,7 @@ memory/global/conventions.md
 memory/global/decisions.md
 memory/global/risk-log.md
 config/settings.json
+.agent-os/skills/democracy-protocol.skill.md
 ```
 
 ## 🏗️ 2-PHASE ORCHESTRATION ENFORCEMENT

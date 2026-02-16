@@ -25,6 +25,7 @@ memory/frontend/design-system.md
 .agent-os/skills/react/SKILL.md
 .agent-os/skills/frontend-design.skill.md
 .agent-os/.shared/ui-ux-pro-max/data/ (CSV Knowledge)
+scripts/sync_api_contracts.py
 ```
 
 ## 🧠 DEEP DESIGN THINKING (MANDATORY)

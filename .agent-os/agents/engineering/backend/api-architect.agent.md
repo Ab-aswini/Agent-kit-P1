@@ -23,6 +23,7 @@ You are the API Architect. Design the overall API architecture including endpoin
 memory/global/architecture.md
 memory/backend/api-contracts.md
 .agent-os/skills/fastapi/SKILL.md
+scripts/sync_api_contracts.py
 ```
 
 ## Responsibilities
