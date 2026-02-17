@@ -1,6 +1,6 @@
 # 📚 Documentation Agent
 
-> **Agent ID:** PD-002
+> **Agent ID:** PM-002
 > **Department:** Product & Documentation
 > **Phase:** 2
 

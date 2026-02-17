@@ -125,8 +125,9 @@ Escalate to Human Owner when:
 ## Skills to Load
 
 Load relevant skills based on current task:
-- Always: `testing/SKILL.md`, `testing/SKILL.md`
-- When reviewing frontend: `testing/SKILL.md` (or relevant framework)
-- When reviewing backend: `testing/SKILL.md` (or relevant framework)
-- When reviewing infra: `testing/SKILL.md`
-- When reviewing tests: `testing/SKILL.md`
+- Always: `clean-code/SKILL.md`, `brainstorming/SKILL.md`
+- When reviewing frontend: `frontend-design/SKILL.md`, `nextjs-react-expert/SKILL.md`
+- When reviewing backend: `api-patterns/SKILL.md`, `database-design/SKILL.md`
+- When reviewing security: `security/SKILL.md`, `vulnerability-scanner/SKILL.md`
+- When reviewing infra: `deployment-procedures/SKILL.md`
+- When reviewing tests: `testing-patterns/SKILL.md`, `webapp-testing/SKILL.md`
