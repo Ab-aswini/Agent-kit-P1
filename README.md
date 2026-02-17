@@ -284,46 +284,80 @@ stateDiagram-v2
 
 ## 🚀 Getting Started
 
-### 📦 Quick Start (NPX Scaffolding)
-The fastest way to use Agent-Kit in a new project is via `npx`. This command scaffolds the entire 53-agent framework into your current directory.
+### ⚡ Quick Start
+
+The fastest way to install Agent-Kit is using `npx` in your project root:
 
 ```bash
-# 1. Create and enter your new project folder
-mkdir my-ai-project && cd my-ai-project
-
-# 2. Scaffold the Agent-Kit framework
 npx @ab-aswini/agent-kit-p1 init
 ```
 
-> [!TIP]
-> **Scaffolding Includes**: Full 53-agent roster, Version 2.0 Skill system, global memory hubs, and the verification engine.
+> [!NOTE]
+> This command will create a `.agent-os` folder in your current directory containing all 53 agents, skills, memory hubs, and the verification engine.
 
 ---
 
-### 🛠️ Manual Installation (For Project Contributors)
+### 🌍 Global Installation
 
-1. **Clone & Enter:**
-   ```bash
-   git clone https://github.com/Ab-aswini/Agent-kit-P1.git
-   cd Agent-kit-P1
-   ```
+Install the CLI globally to use `agent-kit` command anywhere:
 
-2. **Verify Installation:**
-   ```bash
-   python scripts/checklist.py
-   ```
+```bash
+npm install -g @ab-aswini/agent-kit-p1
+```
 
-3. **Install Core Deps:**
-   ```bash
-   npm install
-   ```
+```bash
+cd your-project && agent-kit init
+```
+
+---
+
+### 🏗️ Interactive Mode (NEW in v1.2)
+
+Choose a **Company Archetype** to deploy only the agents you need:
+
+```bash
+npx @ab-aswini/agent-kit-p1 init --interactive
+```
+
+| Archetype | Agents | Best For |
+| :--- | :--- | :--- |
+| **SaaS Startup** | 47 | B2B/B2C web platforms |
+| **Mobile App** | 27 | React Native / Flutter |
+| **E-commerce** | 48 | Online stores & marketplaces |
+| **Full Fleet** | 53 | Everything (default) |
+
+---
+
+### 🩺 Health Check
+
+Verify your installation is complete and healthy:
+
+```bash
+npx @ab-aswini/agent-kit-p1 doctor
+```
+
+---
+
+### 📋 CLI Commands
+
+| Command | Description |
+| :--- | :--- |
+| `agent-kit init` | Scaffold all 53 agents into current directory |
+| `agent-kit init -i` | Interactive setup with archetype selection |
+| `agent-kit doctor` | Verify system health & missing components |
+
+> [!TIP]
+> Read other commands and agent spawning in the [CLI documentation](https://github.com/Ab-aswini/Agent-kit-P1).
 
 ---
 
 ### 🚦 Next Steps
-1. **Open in AI IDE**: Open the folder in VS Code / Cursor.
-2. **Contextualize**: Instruct your AI to: *"Read .agent-os/agents/tier-1/chief-technical-supervisor.agent.md"*.
+
+1. **Open in AI IDE**: Open the folder in VS Code / Cursor / Windsurf.
+2. **Activate**: Instruct your AI to: *"Read `.agent-os/agents/tier-1/chief-technical-supervisor.agent.md`"*.
 3. **Verify**: Run `python scripts/checklist.py` to ensure 100% health.
+4. **Spawn Agent**: Run `python scripts/spawn_agent.py BE-001` to get a ready-to-paste system prompt.
+
 
 ---
 
