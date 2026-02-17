@@ -1,0 +1,47 @@
+{
+    "name": "Blog / CMS",
+    "description": "Content-driven blog or content management system with article management, categories, tags, SEO optimization, and RSS feeds. Ideal for content creators, news sites, and knowledge bases.",
+    "departments": [
+        "engineering_backend",
+        "engineering_frontend",
+        "engineering_database",
+        "product",
+        "marketing_growth",
+        "devops"
+    ],
+    "agents": [
+        "CTS-001",
+        "BE-001",
+        "BE-002",
+        "BE-003",
+        "BE-005",
+        "BE-009",
+        "FE-001",
+        "FE-002",
+        "FE-003",
+        "FE-004",
+        "FE-005",
+        "FE-006",
+        "FE-007",
+        "DB-001",
+        "DB-002",
+        "DB-003",
+        "PM-001",
+        "PM-003",
+        "MK-001",
+        "DO-001",
+        "DO-005"
+    ],
+    "requiredSkills": [
+        "frontend-design",
+        "seo-fundamentals",
+        "api-patterns",
+        "database-design",
+        "clean-code",
+        "deployment-procedures"
+    ],
+    "suggestedMemory": [
+        "global",
+        "frontend"
+    ]
+}

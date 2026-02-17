@@ -1,0 +1,60 @@
+{
+    "name": "AI / ChatBot App",
+    "description": "AI-powered application with chat interfaces, prompt engineering, LLM API integration, usage tracking, and API key management. Ideal for AI tools, chatbots, and LLM-based products.",
+    "departments": [
+        "engineering_backend",
+        "engineering_frontend",
+        "engineering_database",
+        "security",
+        "qa",
+        "product",
+        "intelligence",
+        "meta"
+    ],
+    "agents": [
+        "CTS-001",
+        "SFS-001",
+        "BE-001",
+        "BE-002",
+        "BE-003",
+        "BE-004",
+        "BE-005",
+        "BE-006",
+        "BE-009",
+        "BE-010",
+        "FE-001",
+        "FE-002",
+        "FE-003",
+        "FE-004",
+        "FE-005",
+        "FE-006",
+        "FE-007",
+        "DB-001",
+        "DB-002",
+        "DB-003",
+        "SEC-001",
+        "QA-001",
+        "QA-002",
+        "QA-003",
+        "PM-001",
+        "PM-002",
+        "MM-001",
+        "META-002",
+        "META-003",
+        "META-004"
+    ],
+    "requiredSkills": [
+        "frontend-design",
+        "api-patterns",
+        "auth",
+        "database-design",
+        "clean-code",
+        "security",
+        "testing-patterns"
+    ],
+    "suggestedMemory": [
+        "global",
+        "frontend",
+        "backend"
+    ]
+}

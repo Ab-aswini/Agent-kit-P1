@@ -1,0 +1,58 @@
+{
+    "name": "Dashboard / Admin Panel",
+    "description": "Data-driven dashboard or admin panel with charts, data tables, user management, and role-based access. Ideal for internal tools, analytics platforms, and SaaS admin UIs.",
+    "departments": [
+        "engineering_backend",
+        "engineering_frontend",
+        "engineering_database",
+        "security",
+        "qa",
+        "devops",
+        "meta"
+    ],
+    "agents": [
+        "CTS-001",
+        "SFS-001",
+        "BE-001",
+        "BE-002",
+        "BE-003",
+        "BE-004",
+        "BE-005",
+        "BE-006",
+        "FE-001",
+        "FE-002",
+        "FE-003",
+        "FE-004",
+        "FE-005",
+        "FE-006",
+        "FE-007",
+        "DB-001",
+        "DB-002",
+        "DB-003",
+        "DB-004",
+        "DB-005",
+        "SEC-001",
+        "QA-001",
+        "QA-002",
+        "QA-003",
+        "DO-001",
+        "DO-003",
+        "DO-005",
+        "META-002",
+        "META-003"
+    ],
+    "requiredSkills": [
+        "frontend-design",
+        "api-patterns",
+        "database-design",
+        "auth",
+        "clean-code",
+        "testing-patterns",
+        "security"
+    ],
+    "suggestedMemory": [
+        "global",
+        "frontend",
+        "backend"
+    ]
+}

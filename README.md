@@ -321,9 +321,18 @@ npx @ab_aswini/agent-kit-p1 init --interactive
 
 | Archetype | Agents | Best For |
 | :--- | :--- | :--- |
-| **SaaS Startup** | 47 | B2B/B2C web platforms |
-| **Mobile App** | 27 | React Native / Flutter |
-| **E-commerce** | 48 | Online stores & marketplaces |
+| **SaaS Startup** | 44 | B2B/B2C web platforms |
+| **Mobile App** | 26 | React Native / Flutter |
+| **E-commerce** | 45 | Online stores & product catalogs |
+| **Portfolio / Landing** | 14 | Freelancers, creatives, personal brands |
+| **Dashboard / Admin** | 29 | Internal tools, analytics panels |
+| **Blog / CMS** | 21 | Content creators, news, knowledge bases |
+| **EdTech / E-Learning** | 32 | Online courses, LMS, training |
+| **Healthcare / Booking** | 40 | Clinics, telemedicine, appointments |
+| **Marketplace** | 47 | Multi-vendor platforms (Uber/Airbnb model) |
+| **AI / ChatBot App** | 30 | AI tools, chatbots, LLM products |
+| **Gaming Platform** | 23 | Browser games, leaderboards |
+| **API-First / Headless** | 33 | Developer tools, microservices |
 | **Full Fleet** | 53 | Everything (default) |
 
 ---

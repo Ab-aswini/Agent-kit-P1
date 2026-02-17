@@ -1,0 +1,49 @@
+{
+    "name": "Gaming Platform",
+    "description": "Browser-based gaming platform with game canvas, leaderboards, player profiles, achievement systems, and real-time multiplayer support. Ideal for casual games, gaming communities, and gamification features.",
+    "departments": [
+        "engineering_frontend",
+        "engineering_backend",
+        "engineering_database",
+        "engineering_game",
+        "qa",
+        "devops"
+    ],
+    "agents": [
+        "CTS-001",
+        "GD-001",
+        "FE-001",
+        "FE-002",
+        "FE-003",
+        "FE-004",
+        "FE-005",
+        "FE-006",
+        "FE-007",
+        "BE-001",
+        "BE-002",
+        "BE-003",
+        "BE-005",
+        "BE-009",
+        "DB-001",
+        "DB-002",
+        "DB-003",
+        "QA-001",
+        "QA-002",
+        "QA-003",
+        "QA-004",
+        "DO-001",
+        "DO-005"
+    ],
+    "requiredSkills": [
+        "frontend-design",
+        "api-patterns",
+        "database-design",
+        "clean-code",
+        "testing-patterns",
+        "performance-profiling"
+    ],
+    "suggestedMemory": [
+        "global",
+        "frontend"
+    ]
+}

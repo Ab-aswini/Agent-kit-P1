@@ -121,6 +121,7 @@ async function copySelectedAgents(archetype) {
         'qa': 'qa',
         'product': 'product',
         'marketing': 'marketing-growth',
+        'marketing_growth': 'marketing-growth',
         'meta': 'meta',
         'intelligence': 'intelligence'
     };

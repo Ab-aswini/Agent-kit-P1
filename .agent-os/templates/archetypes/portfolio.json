@@ -1,0 +1,37 @@
+{
+    "name": "Portfolio / Landing Page",
+    "description": "Personal portfolio, agency showcase, or product landing page. Focused on stunning frontend design, SEO optimization, and fast deployment. Ideal for freelancers, creatives, and startups.",
+    "departments": [
+        "engineering_frontend",
+        "product",
+        "marketing_growth",
+        "devops"
+    ],
+    "agents": [
+        "CTS-001",
+        "FE-001",
+        "FE-002",
+        "FE-003",
+        "FE-004",
+        "FE-005",
+        "FE-006",
+        "FE-007",
+        "PM-001",
+        "PM-003",
+        "MK-001",
+        "DO-001",
+        "DO-005",
+        "DO-006"
+    ],
+    "requiredSkills": [
+        "frontend-design",
+        "seo-fundamentals",
+        "clean-code",
+        "performance-profiling",
+        "deployment-procedures"
+    ],
+    "suggestedMemory": [
+        "global",
+        "frontend"
+    ]
+}

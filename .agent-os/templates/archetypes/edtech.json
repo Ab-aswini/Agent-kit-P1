@@ -1,0 +1,62 @@
+{
+    "name": "EdTech / E-Learning",
+    "description": "Online course platform or learning management system with course catalogs, lesson viewers, progress tracking, quizzes, and student dashboards. Ideal for educational startups and training platforms.",
+    "departments": [
+        "engineering_backend",
+        "engineering_frontend",
+        "engineering_database",
+        "security",
+        "qa",
+        "product",
+        "devops",
+        "meta"
+    ],
+    "agents": [
+        "CTS-001",
+        "SFS-001",
+        "BE-001",
+        "BE-002",
+        "BE-003",
+        "BE-004",
+        "BE-005",
+        "BE-006",
+        "BE-007",
+        "BE-009",
+        "FE-001",
+        "FE-002",
+        "FE-003",
+        "FE-004",
+        "FE-005",
+        "FE-006",
+        "FE-007",
+        "DB-001",
+        "DB-002",
+        "DB-003",
+        "DB-004",
+        "DB-005",
+        "SEC-001",
+        "QA-001",
+        "QA-002",
+        "QA-003",
+        "PM-001",
+        "PM-002",
+        "PM-003",
+        "DO-001",
+        "DO-005",
+        "META-002"
+    ],
+    "requiredSkills": [
+        "frontend-design",
+        "api-patterns",
+        "auth",
+        "database-design",
+        "clean-code",
+        "testing-patterns",
+        "deployment-procedures"
+    ],
+    "suggestedMemory": [
+        "global",
+        "frontend",
+        "backend"
+    ]
+}
