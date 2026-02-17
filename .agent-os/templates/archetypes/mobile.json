@@ -1,0 +1,51 @@
+{
+    "name": "Mobile App",
+    "description": "Cross-platform mobile application with dedicated mobile agent, frontend UI, backend API, and QA. Optimized for React Native / Flutter projects.",
+    "departments": [
+        "engineering_mobile",
+        "engineering_frontend",
+        "engineering_backend",
+        "engineering_database",
+        "qa",
+        "meta"
+    ],
+    "agents": [
+        "CTS-001",
+        "SFS-001",
+        "MOB-001",
+        "FE-001",
+        "FE-002",
+        "FE-003",
+        "FE-004",
+        "FE-005",
+        "FE-006",
+        "FE-007",
+        "FE-008",
+        "BE-001",
+        "BE-002",
+        "BE-003",
+        "BE-004",
+        "BE-005",
+        "DB-001",
+        "DB-002",
+        "DB-003",
+        "QA-001",
+        "QA-002",
+        "QA-003",
+        "QA-004",
+        "QA-005",
+        "QA-006",
+        "MM-001"
+    ],
+    "requiredSkills": [
+        "mobile-design",
+        "react",
+        "api-patterns",
+        "database-design",
+        "clean-code",
+        "testing-patterns"
+    ],
+    "suggestedMemory": [
+        "global"
+    ]
+}
