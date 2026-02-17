@@ -16,6 +16,11 @@ import sys
 import json
 from pathlib import Path
 
+# Fix Windows terminal encoding for emoji/unicode
+if sys.platform == 'win32':
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+    sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+
 AGENTS_DIR = Path('.agent-os/agents')
 RULES_DIR = Path('.agent-os/rules')
 MANIFEST = Path('manifest.json')
@@ -110,7 +115,7 @@ def list_agents(dept_filter=None):
         if not agent_files:
             continue
 
-        print(f"{Colors.BOLD}{Colors.GREEN}📁 {dept_name.upper()}{Colors.ENDC}")
+        print(f"{Colors.BOLD}{Colors.GREEN}[DIR] {dept_name.upper()}{Colors.ENDC}")
         for af in sorted(agent_files):
             name = af.stem.replace('.agent', '')
             # Try to extract agent ID from file content
@@ -130,15 +135,15 @@ def list_agents(dept_filter=None):
 
 def spawn_agent(agent_id):
     """Build and output a complete system prompt for the given agent."""
-    print(f"\n{Colors.CYAN}🔧 Spawning agent: {agent_id}...{Colors.ENDC}")
+    print(f"\n{Colors.CYAN}[*] Spawning agent: {agent_id}...{Colors.ENDC}")
 
     filepath, content = find_agent_file(agent_id)
     if not filepath:
-        print(f"{Colors.RED}❌ Agent '{agent_id}' not found.{Colors.ENDC}")
-        print(f"{Colors.YELLOW}💡 Run: python scripts/spawn_agent.py --list{Colors.ENDC}")
+        print(f"{Colors.RED}[X] Agent '{agent_id}' not found.{Colors.ENDC}")
+        print(f"{Colors.YELLOW}[?] Run: python scripts/spawn_agent.py --list{Colors.ENDC}")
         sys.exit(1)
 
-    print(f"{Colors.GREEN}✅ Found: {filepath}{Colors.ENDC}")
+    print(f"{Colors.GREEN}[OK] Found: {filepath}{Colors.ENDC}")
 
     # Load universal rules
     universal = ""
