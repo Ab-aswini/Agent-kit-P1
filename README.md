@@ -83,13 +83,13 @@ graph TD
   end
 
   subgraph Departments ["⚙️ Tier 2: Specialized Divisions"]
-    ENG[Engineering - 12 Agents]
+    ENG[Engineering - 25 Agents]
     QA[QA & Verification - 6 Agents]
-    SEC[Security Hub - 5 Agents]
-    PROD[Product Hub - 6 Agents]
-    DX[DevOps Hub - 5 Agents]
-    INTEL[AI Intelligence - 4 Agents]
-    GROWTH[Marketing Hub - 6 Agents]
+    SEC[Security Hub - 1 Agent]
+    PROD[Product Hub - 5 Agents]
+    DX[DevOps Hub - 6 Agents]
+    INTEL[AI Intelligence - 1 Agent]
+    GROWTH[Marketing Hub - 1 Agent]
   end
 
   subgraph Meta ["🧠 Tier 3: Meta-Management"]
@@ -308,12 +308,15 @@ npx @ab-aswini/agent-kit-p1 init
    cd Agent-kit-P1
    ```
 
-2. **Initialize OS Hub:**
+2. **Verify Installation:**
    ```bash
-   python .agent-os/scripts/hub-setup.py
+   python scripts/checklist.py
    ```
 
 3. **Install Core Deps:**
+   ```bash
+   npm install
+   ```
 
 ---
 

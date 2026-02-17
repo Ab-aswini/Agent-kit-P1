@@ -1,6 +1,6 @@
 {
     "name": "Agent-Kit Fleet Manifest",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "total_agents": 53,
     "departments": {
         "executive": {
@@ -8,51 +8,77 @@
             "path": ".agent-os/agents/tier-1",
             "agents": [
                 "CTS-001",
-                "SFS-001"
+                "SFS-001",
+                "SP-001",
+                "RC-001"
             ]
         },
-        "engineering": {
-            "backend": {
-                "lead": "BE-001",
-                "path": ".agent-os/agents/engineering/backend",
-                "agents": [
-                    "BE-001",
-                    "BE-002",
-                    "BE-003",
-                    "BE-004",
-                    "BE-005",
-                    "BE-006",
-                    "BE-007",
-                    "BE-008",
-                    "BE-009",
-                    "BE-010"
-                ]
-            },
-            "frontend": {
-                "lead": "FE-001",
-                "path": ".agent-os/agents/engineering/frontend",
-                "agents": [
-                    "FE-001",
-                    "FE-002",
-                    "FE-003",
-                    "FE-004",
-                    "FE-005",
-                    "FE-006",
-                    "FE-007",
-                    "FE-008"
-                ]
-            },
-            "database": {
-                "lead": "DB-001",
-                "path": ".agent-os/agents/engineering/database",
-                "agents": [
-                    "DB-001",
-                    "DB-002",
-                    "DB-003",
-                    "DB-004",
-                    "DB-005"
-                ]
-            }
+        "engineering_backend": {
+            "lead": "BE-001",
+            "path": ".agent-os/agents/engineering/backend",
+            "agents": [
+                "BE-001",
+                "BE-002",
+                "BE-003",
+                "BE-004",
+                "BE-005",
+                "BE-006",
+                "BE-007",
+                "BE-008",
+                "BE-009",
+                "BE-010"
+            ]
+        },
+        "engineering_frontend": {
+            "lead": "FE-001",
+            "path": ".agent-os/agents/engineering/frontend",
+            "agents": [
+                "FE-001",
+                "FE-002",
+                "FE-003",
+                "FE-004",
+                "FE-005",
+                "FE-006",
+                "FE-007",
+                "FE-008"
+            ]
+        },
+        "engineering_database": {
+            "lead": "DB-001",
+            "path": ".agent-os/agents/engineering/database",
+            "agents": [
+                "DB-001",
+                "DB-002",
+                "DB-003",
+                "DB-004",
+                "DB-005"
+            ]
+        },
+        "engineering_game": {
+            "lead": "GAME-001",
+            "path": ".agent-os/agents/engineering/game",
+            "agents": [
+                "GAME-001"
+            ]
+        },
+        "engineering_mobile": {
+            "lead": "MOB-001",
+            "path": ".agent-os/agents/engineering/mobile",
+            "agents": [
+                "MOB-001"
+            ]
+        },
+        "devops": {
+            "lead": "DO-001",
+            "path": ".agent-os/agents/devops",
+            "agents": [
+                "DO-001",
+                "DO-002",
+                "DO-003",
+                "DO-004",
+                "DO-005",
+                "DO-006"
+            ]
         },
         "security": {
             "lead": "SEC-001",
@@ -90,6 +116,23 @@
             "agents": [
                 "MKT-001"
             ]
+        },
+        "meta": {
+            "lead": "MM-001",
+            "path": ".agent-os/agents/meta",
+            "agents": [
+                "MM-001",
+                "META-002",
+                "META-003",
+                "META-004"
+            ]
+        },
+        "intelligence": {
+            "lead": "INTEL-001",
+            "path": ".agent-os/agents/intelligence",
+            "agents": [
+                "INTEL-001"
+            ]
         }
     },
     "core_protocols": [
@@ -102,6 +145,11 @@
             "name": "Democracy Protocol",
             "file": ".agent-os/skills/democracy-protocol.skill.md",
             "type": "consensus"
+        },
+        {
+            "name": "Universal Rules",
+            "file": ".agent-os/rules/universal-rules.agent.md",
+            "type": "mandatory"
         }
     ],
     "standard_memory": "memory/global"

@@ -29,8 +29,7 @@ Thumbs.db
 # Logs (keep structure, ignore content)
 .agent-os/logs/*.json
 
-# Migration Scripts
-scripts/migrate_skills.py
+# Migration Scripts (one-time use only)
 scripts/path_fix.py
 
 # Local Brain Artifacts (if any)

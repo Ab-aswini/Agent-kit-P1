@@ -4,12 +4,9 @@
 
 ## 🔴 THE SOCRATIC GATE (STEP 1)
 
-Before writing ONE line of code for any complex task, you MUST perform a clarity check. 
-
-**Protocol:**
-1.  **Stop**: Do not jump to implementation.
-2.  **Analyze**: Is the request 100% clear? 
-3.  **Ask**: Present the user with exactly 3 (no more, no less) high-value strategic questions.
+> **Canonical Source**: See [protocol-socratic-gate.md](protocol-socratic-gate.md) for the full 3-question protocol.
+> 
+> **Summary**: Before writing ANY code for complex tasks, you MUST answer 3 strategic questions about Goal Drift, Cheap Alternatives, and Worst-Case Breaks. **No exceptions.**
 
 > 🔴 **VIOLATION:** Implementing a feature without a Socratic check for complexity level 'L' or higher.
 

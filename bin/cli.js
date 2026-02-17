@@ -76,7 +76,7 @@ async function init() {
         }
 
         // 3. Copy top-level metadata
-        const filesToCopy = ['manifest.json', 'METADATA.md', 'README.md', 'LICENSE'];
+        const filesToCopy = ['manifest.json', 'METADATA.md', 'PROJECT_STATUS.md'];
         for (const file of filesToCopy) {
             const src = path.join(sourceDir, file);
             const dest = path.join(targetDir, file);
