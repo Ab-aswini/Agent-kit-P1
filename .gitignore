@@ -1,5 +1,11 @@
 # Dependencies
 node_modules/
+
+# Secrets & Tokens (NEVER COMMIT)
+.npmrc
+.env
+.env.*
+.env.local
 venv/
 .venv/
 __pycache__/
