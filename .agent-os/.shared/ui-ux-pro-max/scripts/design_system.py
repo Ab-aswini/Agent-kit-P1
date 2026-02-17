@@ -116,7 +116,12 @@ class DesignSystemGenerator:
             "key_effects": rule.get("Key_Effects", ""),
             "anti_patterns": rule.get("Anti_Patterns", ""),
             "decision_rules": decision_rules,
-            "severity": rule.get("Severity", "MEDIUM")
+            "severity": rule.get("Severity", "MEDIUM"),
+            "dark_mode_strategy": rule.get("Dark_Mode_Strategy", "light-first+toggle"),
+            "ai_integration_level": rule.get("AI_Integration_Level", "basic-assist"),
+            "privacy_tier": rule.get("Privacy_Tier", "GDPR+CCPA"),
+            "agent_readiness": rule.get("Agent_Readiness", "3/5"),
+            "performance_budget": rule.get("Performance_Budget", "LCP<2.5s; CLS<0.1; INP<200ms")
         }
 
     def _select_best_match(self, results: list, priority_keywords: list) -> dict:
@@ -232,7 +237,18 @@ class DesignSystemGenerator:
             "key_effects": combined_effects,
             "anti_patterns": reasoning.get("anti_patterns", ""),
             "decision_rules": reasoning.get("decision_rules", {}),
-            "severity": reasoning.get("severity", "MEDIUM")
+            "severity": reasoning.get("severity", "MEDIUM"),
+            "dark_mode": {
+                "strategy": reasoning.get("dark_mode_strategy", "light-first+toggle")
+            },
+            "ai_integration": {
+                "level": reasoning.get("ai_integration_level", "basic-assist")
+            },
+            "privacy": {
+                "tier": reasoning.get("privacy_tier", "GDPR+CCPA")
+            },
+            "agent_readiness": reasoning.get("agent_readiness", "3/5"),
+            "performance_budget": reasoning.get("performance_budget", "LCP<2.5s; CLS<0.1; INP<200ms")
         }
 
 
@@ -344,6 +360,27 @@ def format_ascii_box(design_system: dict) -> str:
             lines.append(line.ljust(BOX_WIDTH) + "|")
         lines.append("|" + " " * BOX_WIDTH + "|")
 
+    # AI & Agent section
+    dark_mode = design_system.get("dark_mode", {})
+    ai_integration = design_system.get("ai_integration", {})
+    privacy = design_system.get("privacy", {})
+    agent_readiness = design_system.get("agent_readiness", "")
+    perf_budget = design_system.get("performance_budget", "")
+
+    if any([dark_mode.get("strategy"), ai_integration.get("level"), privacy.get("tier")]):
+        lines.append("|  2026 CAPABILITIES:".ljust(BOX_WIDTH) + "|")
+        if dark_mode.get("strategy"):
+            lines.append(f"|     Dark Mode: {dark_mode['strategy']}".ljust(BOX_WIDTH) + "|")
+        if ai_integration.get("level"):
+            lines.append(f"|     AI Integration: {ai_integration['level']}".ljust(BOX_WIDTH) + "|")
+        if privacy.get("tier"):
+            lines.append(f"|     Privacy Tier: {privacy['tier']}".ljust(BOX_WIDTH) + "|")
+        if agent_readiness:
+            lines.append(f"|     Agent Readiness: {agent_readiness}".ljust(BOX_WIDTH) + "|")
+        if perf_budget:
+            lines.append(f"|     Performance Budget: {perf_budget}".ljust(BOX_WIDTH) + "|")
+        lines.append("|" + " " * BOX_WIDTH + "|")
+
     # Pre-Delivery Checklist section
     lines.append("|  PRE-DELIVERY CHECKLIST:".ljust(BOX_WIDTH) + "|")
     checklist_items = [
@@ -353,7 +390,11 @@ def format_ascii_box(design_system: dict) -> str:
         "[ ] Light mode: text contrast 4.5:1 minimum",
         "[ ] Focus states visible for keyboard nav",
         "[ ] prefers-reduced-motion respected",
-        "[ ] Responsive: 375px, 768px, 1024px, 1440px"
+        "[ ] Responsive: 375px, 768px, 1024px, 1440px",
+        "[ ] Dark mode: prefers-color-scheme + manual toggle",
+        "[ ] AI responses: streaming + confidence indicators",
+        "[ ] Privacy: consent-before-track + GDPR delete flow",
+        "[ ] Performance: LCP<2.5s, CLS<0.1, INP<200ms"
     ]
     for item in checklist_items:
         lines.append(f"|     {item}".ljust(BOX_WIDTH) + "|")
@@ -445,6 +486,30 @@ def format_markdown(design_system: dict) -> str:
         lines.append("")
 
     # Pre-Delivery Checklist section
+    # 2026 Capabilities section
+    dark_mode = design_system.get("dark_mode", {})
+    ai_integration = design_system.get("ai_integration", {})
+    privacy = design_system.get("privacy", {})
+    agent_readiness = design_system.get("agent_readiness", "")
+    perf_budget = design_system.get("performance_budget", "")
+
+    if any([dark_mode.get("strategy"), ai_integration.get("level"), privacy.get("tier")]):
+        lines.append("### 2026 Capabilities")
+        lines.append("")
+        lines.append("| Dimension | Value |")
+        lines.append("|-----------|-------|")
+        if dark_mode.get("strategy"):
+            lines.append(f"| Dark Mode | {dark_mode['strategy']} |")
+        if ai_integration.get("level"):
+            lines.append(f"| AI Integration | {ai_integration['level']} |")
+        if privacy.get("tier"):
+            lines.append(f"| Privacy Tier | {privacy['tier']} |")
+        if agent_readiness:
+            lines.append(f"| Agent Readiness | {agent_readiness} |")
+        if perf_budget:
+            lines.append(f"| Performance Budget | {perf_budget} |")
+        lines.append("")
+
     lines.append("### Pre-Delivery Checklist")
     lines.append("- [ ] No emojis as icons (use SVG: Heroicons/Lucide)")
     lines.append("- [ ] cursor-pointer on all clickable elements")
@@ -453,6 +518,10 @@ def format_markdown(design_system: dict) -> str:
     lines.append("- [ ] Focus states visible for keyboard nav")
     lines.append("- [ ] prefers-reduced-motion respected")
     lines.append("- [ ] Responsive: 375px, 768px, 1024px, 1440px")
+    lines.append("- [ ] Dark mode: prefers-color-scheme + manual toggle")
+    lines.append("- [ ] AI responses: streaming + confidence indicators")
+    lines.append("- [ ] Privacy: consent-before-track + GDPR delete flow")
+    lines.append("- [ ] Performance: LCP<2.5s, CLS<0.1, INP<200ms")
     lines.append("")
 
     return "\n".join(lines)
@@ -780,6 +849,32 @@ def format_master_md(design_system: dict) -> str:
     lines.append("- ❌ **Invisible focus states** — Focus states must be visible for a11y")
     lines.append("")
     
+    # 2026 Capabilities
+    lines.append("---")
+    lines.append("")
+    lines.append("## 2026 Capabilities")
+    lines.append("")
+
+    dark_mode = design_system.get("dark_mode", {})
+    ai_integration = design_system.get("ai_integration", {})
+    privacy = design_system.get("privacy", {})
+    agent_readiness = design_system.get("agent_readiness", "")
+    perf_budget = design_system.get("performance_budget", "")
+
+    lines.append("| Dimension | Value |")
+    lines.append("|-----------|-------|")
+    if dark_mode.get("strategy"):
+        lines.append(f"| Dark Mode Strategy | {dark_mode['strategy']} |")
+    if ai_integration.get("level"):
+        lines.append(f"| AI Integration | {ai_integration['level']} |")
+    if privacy.get("tier"):
+        lines.append(f"| Privacy Tier | {privacy['tier']} |")
+    if agent_readiness:
+        lines.append(f"| Agent Readiness | {agent_readiness} |")
+    if perf_budget:
+        lines.append(f"| Performance Budget | {perf_budget} |")
+    lines.append("")
+
     # Pre-Delivery Checklist
     lines.append("---")
     lines.append("")
@@ -797,8 +892,12 @@ def format_master_md(design_system: dict) -> str:
     lines.append("- [ ] Responsive: 375px, 768px, 1024px, 1440px")
     lines.append("- [ ] No content hidden behind fixed navbars")
     lines.append("- [ ] No horizontal scroll on mobile")
+    lines.append("- [ ] Dark mode: `prefers-color-scheme` detection + manual toggle")
+    lines.append("- [ ] AI responses: progressive streaming + confidence indicators")
+    lines.append("- [ ] Privacy: consent-before-track + GDPR/CCPA delete flow")
+    lines.append("- [ ] Core Web Vitals: LCP<2.5s, CLS<0.1, INP<200ms")
     lines.append("")
-    
+
     return "\n".join(lines)
 
 

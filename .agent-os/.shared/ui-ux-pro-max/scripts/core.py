@@ -69,6 +69,11 @@ CSV_CONFIG = {
         "file": "web-interface.csv",
         "search_cols": ["Category", "Issue", "Keywords", "Description"],
         "output_cols": ["Category", "Issue", "Platform", "Description", "Do", "Don't", "Code Example Good", "Code Example Bad", "Severity"]
+    },
+    "reasoning": {
+        "file": "ui-reasoning.csv",
+        "search_cols": ["UI_Category", "Style_Priority", "Color_Mood", "Key_Effects", "Dark_Mode_Strategy", "AI_Integration_Level"],
+        "output_cols": ["UI_Category", "Recommended_Pattern", "Style_Priority", "Color_Mood", "Typography_Mood", "Key_Effects", "Decision_Rules", "Anti_Patterns", "Severity", "Dark_Mode_Strategy", "AI_Integration_Level", "Privacy_Tier", "Agent_Readiness", "Performance_Budget"]
     }
 }
 
@@ -201,12 +206,13 @@ def detect_domain(query):
         "landing": ["landing", "page", "cta", "conversion", "hero", "testimonial", "pricing", "section"],
         "product": ["saas", "ecommerce", "e-commerce", "fintech", "healthcare", "gaming", "portfolio", "crypto", "dashboard"],
         "prompt": ["prompt", "css", "implementation", "variable", "checklist", "tailwind"],
-        "style": ["style", "design", "ui", "minimalism", "glassmorphism", "neumorphism", "brutalism", "dark mode", "flat", "aurora"],
-        "ux": ["ux", "usability", "accessibility", "wcag", "touch", "scroll", "animation", "keyboard", "navigation", "mobile"],
+        "style": ["style", "design", "ui", "minimalism", "glassmorphism", "neumorphism", "brutalism", "flat", "aurora"],
+        "ux": ["ux", "usability", "accessibility", "wcag", "touch", "scroll", "animation", "keyboard", "navigation", "mobile", "cookie consent", "paywall", "skeleton", "optimistic", "a/b test"],
         "typography": ["font", "typography", "heading", "serif", "sans"],
         "icons": ["icon", "icons", "lucide", "heroicons", "symbol", "glyph", "pictogram", "svg icon"],
         "react": ["react", "next.js", "nextjs", "suspense", "memo", "usecallback", "useeffect", "rerender", "bundle", "waterfall", "barrel", "dynamic import", "rsc", "server component"],
-        "web": ["aria", "focus", "outline", "semantic", "virtualize", "autocomplete", "form", "input type", "preconnect"]
+        "web": ["aria", "focus", "outline", "semantic", "virtualize", "autocomplete", "form", "input type", "preconnect"],
+        "reasoning": ["reasoning", "dark mode strategy", "ai integration", "privacy tier", "agent readiness", "performance budget", "decision rules", "anti-pattern", "ui category", "agent platform", "voice-first", "digital twin", "climate tech", "telemedicine", "compliance", "regulatory"]
     }
 
     scores = {domain: sum(1 for kw in keywords if kw in query_lower) for domain, keywords in domain_keywords.items()}
