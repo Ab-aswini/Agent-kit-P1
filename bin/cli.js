@@ -255,12 +255,12 @@ async function init() {
         console.log(pc.green(`\n✅ Agent-Kit initialized successfully! (${agentCount} agents deployed)`));
         console.log(pc.white('\nNext steps:'));
         console.log(pc.gray('  1. Open the project in your AI-powered IDE.'));
-        console.log(pc.gray('  2. Run "npx @ab-aswini/agent-kit-p1 doctor" to verify.'));
+        console.log(pc.gray('  2. Run "npx @ab_aswini/agent-kit-p1 doctor" to verify.'));
         console.log(pc.gray('  3. Instruct your AI to read .agent-os/agents/tier-1/chief-technical-supervisor.agent.md.'));
 
         if (archetype) {
             console.log(pc.gray(`\n  💡 Archetype: ${archetype.name}`));
-            console.log(pc.gray(`  📦 To switch to full fleet later: npx @ab-aswini/agent-kit-p1 init`));
+            console.log(pc.gray(`  📦 To switch to full fleet later: npx @ab_aswini/agent-kit-p1 init`));
         }
     } catch (err) {
         console.error(pc.red('\n❌ Error during initialization:'), err.message);
@@ -276,6 +276,6 @@ if (command === 'doctor') {
 } else {
     console.log(pc.yellow(`Unknown command: ${command}`));
     console.log('Available commands: init, doctor');
-    console.log('Usage: npx @ab-aswini/agent-kit-p1 init');
-    console.log('       npx @ab-aswini/agent-kit-p1 init --interactive');
+    console.log('Usage: npx @ab_aswini/agent-kit-p1 init');
+    console.log('       npx @ab_aswini/agent-kit-p1 init --interactive');
 }

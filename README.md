@@ -289,7 +289,7 @@ stateDiagram-v2
 The fastest way to install Agent-Kit is using `npx` in your project root:
 
 ```bash
-npx @ab-aswini/agent-kit-p1 init
+npx @ab_aswini/agent-kit-p1 init
 ```
 
 > [!NOTE]
@@ -302,7 +302,7 @@ npx @ab-aswini/agent-kit-p1 init
 Install the CLI globally to use `agent-kit` command anywhere:
 
 ```bash
-npm install -g @ab-aswini/agent-kit-p1
+npm install -g @ab_aswini/agent-kit-p1
 ```
 
 ```bash
@@ -316,7 +316,7 @@ cd your-project && agent-kit init
 Choose a **Company Archetype** to deploy only the agents you need:
 
 ```bash
-npx @ab-aswini/agent-kit-p1 init --interactive
+npx @ab_aswini/agent-kit-p1 init --interactive
 ```
 
 | Archetype | Agents | Best For |
@@ -333,7 +333,7 @@ npx @ab-aswini/agent-kit-p1 init --interactive
 Verify your installation is complete and healthy:
 
 ```bash
-npx @ab-aswini/agent-kit-p1 doctor
+npx @ab_aswini/agent-kit-p1 doctor
 ```
 
 ---
