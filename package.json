@@ -1,7 +1,7 @@
 {
     "$schema": "https://json.schemastore.org/package",
     "name": "@ab_aswini/agent-kit-p1",
-    "version": "1.4.2",
+    "version": "1.4.3",
     "description": "Multi-agent AI framework for local-first software development.",
     "main": "index.js",
     "bin": {
