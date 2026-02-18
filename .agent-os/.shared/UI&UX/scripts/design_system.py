@@ -29,7 +29,9 @@ SEARCH_CONFIG = {
     "style": {"max_results": 3},
     "color": {"max_results": 2},
     "landing": {"max_results": 2},
-    "typography": {"max_results": 2}
+    "typography": {"max_results": 2},
+    "accessibility": {"max_results": 2},
+    "animations": {"max_results": 2}
 }
 
 

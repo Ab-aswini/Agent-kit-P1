@@ -74,6 +74,36 @@ CSV_CONFIG = {
         "file": "ui-reasoning.csv",
         "search_cols": ["UI_Category", "Style_Priority", "Color_Mood", "Key_Effects", "Dark_Mode_Strategy", "AI_Integration_Level"],
         "output_cols": ["UI_Category", "Recommended_Pattern", "Style_Priority", "Color_Mood", "Typography_Mood", "Key_Effects", "Decision_Rules", "Anti_Patterns", "Severity", "Dark_Mode_Strategy", "AI_Integration_Level", "Privacy_Tier", "Agent_Readiness", "Performance_Budget"]
+    },
+    "animations": {
+        "file": "animations.csv",
+        "search_cols": ["Category", "Pattern_Name", "Description", "Trigger", "Accessibility_Note"],
+        "output_cols": ["Category", "Pattern_Name", "Description", "Duration", "Easing", "CSS_Code", "JS_Code", "Trigger", "Do", "Don't", "Severity", "Performance_Impact", "Accessibility_Note"]
+    },
+    "accessibility": {
+        "file": "accessibility.csv",
+        "search_cols": ["Category", "Pattern_Name", "Description", "WCAG_Level", "ARIA_Role", "Screen_Reader_Note"],
+        "output_cols": ["Category", "Pattern_Name", "Description", "WCAG_Level", "Platform", "Do", "Don't", "Code_Good", "Code_Bad", "Severity", "ARIA_Role", "Screen_Reader_Note"]
+    },
+    "dark-mode": {
+        "file": "dark-mode.csv",
+        "search_cols": ["Category", "Pattern_Name", "Description", "CSS_Variable", "Token_Type"],
+        "output_cols": ["Category", "Pattern_Name", "Description", "Light_Value", "Dark_Value", "CSS_Variable", "Do", "Don't", "Code_Good", "Code_Bad", "Severity", "Token_Type"]
+    },
+    "ai-patterns": {
+        "file": "ai-patterns.csv",
+        "search_cols": ["Category", "Pattern_Name", "Description", "AI_Model_Type", "User_Trust_Level"],
+        "output_cols": ["Category", "Pattern_Name", "Description", "AI_Model_Type", "Do", "Don't", "Code_Good", "Code_Bad", "Severity", "User_Trust_Level", "Latency_Budget"]
+    },
+    "forms": {
+        "file": "forms.csv",
+        "search_cols": ["Category", "Pattern_Name", "Description", "Input_Type", "Validation_Strategy"],
+        "output_cols": ["Category", "Pattern_Name", "Description", "Input_Type", "Do", "Don't", "Code_Good", "Code_Bad", "Severity", "Validation_Strategy", "A11y_Note"]
+    },
+    "error-states": {
+        "file": "error-states.csv",
+        "search_cols": ["Category", "Pattern_Name", "Description", "Error_Type", "Recovery_Action", "User_Emotion"],
+        "output_cols": ["Category", "Pattern_Name", "Description", "Error_Type", "Do", "Don't", "Code_Good", "Code_Bad", "Severity", "Recovery_Action", "User_Emotion"]
     }
 }
 
@@ -89,13 +119,17 @@ STACK_CONFIG = {
     "react-native": {"file": "stacks/react-native.csv"},
     "flutter": {"file": "stacks/flutter.csv"},
     "shadcn": {"file": "stacks/shadcn.csv"},
-    "jetpack-compose": {"file": "stacks/jetpack-compose.csv"}
+    "jetpack-compose": {"file": "stacks/jetpack-compose.csv"},
+    "angular": {"file": "stacks/angular.csv"},
+    "astro": {"file": "stacks/astro.csv"},
+    "remix": {"file": "stacks/remix.csv"},
+    "tauri": {"file": "stacks/tauri.csv"}
 }
 
 # Common columns for all stacks
 _STACK_COLS = {
-    "search_cols": ["Category", "Guideline", "Description", "Do", "Don't"],
-    "output_cols": ["Category", "Guideline", "Description", "Do", "Don't", "Code Good", "Code Bad", "Severity", "Docs URL"]
+    "search_cols": ["Category", "Guideline", "Description", "Do", "Don't", "Dark_Mode_Strategy", "AI_Integration_Level", "Privacy_Tier", "Agent_Readiness"],
+    "output_cols": ["Category", "Guideline", "Description", "Do", "Don't", "Code Good", "Code Bad", "Severity", "Docs URL", "Dark_Mode_Strategy", "AI_Integration_Level", "Privacy_Tier", "Agent_Readiness", "Performance_Budget"]
 }
 
 AVAILABLE_STACKS = list(STACK_CONFIG.keys())
@@ -207,12 +241,18 @@ def detect_domain(query):
         "product": ["saas", "ecommerce", "e-commerce", "fintech", "healthcare", "gaming", "portfolio", "crypto", "dashboard"],
         "prompt": ["prompt", "css", "implementation", "variable", "checklist", "tailwind"],
         "style": ["style", "design", "ui", "minimalism", "glassmorphism", "neumorphism", "brutalism", "flat", "aurora"],
-        "ux": ["ux", "usability", "accessibility", "wcag", "touch", "scroll", "animation", "keyboard", "navigation", "mobile", "cookie consent", "paywall", "skeleton", "optimistic", "a/b test"],
+        "ux": ["ux", "usability", "touch", "scroll", "navigation", "mobile", "cookie consent", "paywall", "skeleton", "optimistic", "a/b test"],
         "typography": ["font", "typography", "heading", "serif", "sans"],
         "icons": ["icon", "icons", "lucide", "heroicons", "symbol", "glyph", "pictogram", "svg icon"],
         "react": ["react", "next.js", "nextjs", "suspense", "memo", "usecallback", "useeffect", "rerender", "bundle", "waterfall", "barrel", "dynamic import", "rsc", "server component"],
-        "web": ["aria", "focus", "outline", "semantic", "virtualize", "autocomplete", "form", "input type", "preconnect"],
-        "reasoning": ["reasoning", "dark mode strategy", "ai integration", "privacy tier", "agent readiness", "performance budget", "decision rules", "anti-pattern", "ui category", "agent platform", "voice-first", "digital twin", "climate tech", "telemedicine", "compliance", "regulatory"]
+        "web": ["aria", "focus", "outline", "semantic", "virtualize", "preconnect"],
+        "reasoning": ["reasoning", "dark mode strategy", "ai integration", "privacy tier", "agent readiness", "performance budget", "decision rules", "anti-pattern", "ui category", "agent platform", "voice-first", "digital twin", "climate tech", "telemedicine", "compliance", "regulatory"],
+        "animations": ["animation", "motion", "easing", "micro-interaction", "transition", "parallax", "stagger", "fade", "slide", "bounce", "spring", "gesture", "swipe", "drag"],
+        "accessibility": ["accessibility", "a11y", "wcag", "screen reader", "keyboard", "focus", "aria", "alt text", "contrast", "caption", "reduced motion", "assistive"],
+        "dark-mode": ["dark mode", "dark theme", "light mode", "theme toggle", "prefers-color-scheme", "color-scheme", "theme switch"],
+        "ai-patterns": ["ai chat", "chatbot", "streaming", "llm", "prompt", "ai response", "hallucination", "confidence", "token", "human-in-loop", "ai safety"],
+        "forms": ["form", "input", "validation", "text field", "select", "checkbox", "radio", "multi-step", "file upload", "autofill", "autocomplete", "submit"],
+        "error-states": ["error", "404", "500", "empty state", "offline", "loading", "skeleton", "retry", "toast", "notification", "permission", "timeout"]
     }
 
     scores = {domain: sum(1 for kw in keywords if kw in query_lower) for domain, keywords in domain_keywords.items()}
