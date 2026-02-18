@@ -42,3 +42,6 @@ scripts/path_fix.py
 brain/
 *.bak
 *.tmp
+
+# Agent-Kit pointer (machine-specific absolute paths)
+.agentkit
