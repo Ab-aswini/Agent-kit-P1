@@ -1,317 +1,422 @@
-# 🏢 Agent-Kit — AI Software Company in Your IDE
-
-> **Turn your AI-powered IDE into a 53-agent software company. One solo developer. The output of a 30–50 person team.**
-
 <div align="center">
-  <img src="https://img.shields.io/badge/Stack-Multi--Agent-orange?style=for-the-badge" alt="Stack" />
-  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License" />
-  <img src="https://img.shields.io/badge/Status-Ultimate--Hub-brightgreen?style=for-the-badge" alt="Status" />
-  <img src="https://img.shields.io/badge/Engine-Iron--Well--v2.0-blue?style=for-the-badge" alt="Engine" />
+
+# Agent-Kit
+
+### The AI Software Company That Lives in Your IDE
+
+**One developer. 53 autonomous agents. The output of a 30-person engineering team.**
+
+[![Version](https://img.shields.io/badge/v1.4.0-stable-4F46E5?style=for-the-badge&logo=semver&logoColor=white)](https://www.npmjs.com/package/@ab_aswini/agent-kit-p1)
+[![Agents](https://img.shields.io/badge/53_Agents-9_Departments-10B981?style=for-the-badge&logo=robot&logoColor=white)](#core-agents--departments)
+[![NPM](https://img.shields.io/badge/NPM-Published-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/@ab_aswini/agent-kit-p1)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
+[![Engine](https://img.shields.io/badge/Iron_Well-v2.0-6366F1?style=for-the-badge&logo=shield&logoColor=white)](#security--privacy-design)
+[![UI/UX Engine](https://img.shields.io/badge/UI%2FUX_Pro_Max-18_Domains-F97316?style=for-the-badge&logo=figma&logoColor=white)](#uiux-intelligence-engine)
+
 </div>
 
 ---
 
-## 📖 Table of Contents
-- [🎯 Overview](#-overview)
-- [🧠 Why Agent-Kit?](#-why-agent-kit)
-- [🏛️ Architecture](#️-architecture)
-- [📂 Project Structure](#-project-structure)
-- [🔄 How It Works](#-how-it-works)
-- [🗄️ Data Model (Demo)](#️-data-model-demo)
-- [🔌 API Reference](#-api-reference)
-- [🚀 Getting Started](#-getting-started)
-- [🏗️ Build & Deployment](#️-build--deployment)
-- [📊 Tech Stack](#-tech-stack)
-- [🧩 Key Design Decisions](#-key-design-decisions)
-- [🌳 Git Strategy](#-git-strategy)
-- [📄 License](#-license)
+## Table of Contents
+
+- [Vision & Problem Statement](#vision--problem-statement)
+- [System Overview](#system-overview)
+- [High-Level Architecture](#high-level-architecture)
+- [Detailed Architecture Breakdown](#detailed-architecture-breakdown)
+- [Core Agents & Departments](#core-agents--departments)
+- [UI/UX Intelligence Engine](#uiux-intelligence-engine)
+- [Data Flow](#data-flow)
+- [Request Lifecycle](#request-lifecycle)
+- [Tech Stack](#tech-stack)
+- [Security & Privacy Design](#security--privacy-design)
+- [Scalability Strategy](#scalability-strategy)
+- [Deployment Architecture](#deployment-architecture)
+- [Getting Started](#getting-started)
+- [Future Roadmap](#future-roadmap)
+- [Contribution Guide](#contribution-guide)
+- [License](#license)
 
 ---
 
-## 🎯 Overview
+## Vision & Problem Statement
 
-Agent-Kit is an industrial-pro, multi-agent orchestration framework designed to transform solo development into a full-scale AI-powered software operation. Built on the **Iron Well Patterns**, it features the **SFS-001 Senior Full Stack** orchestrator, a strict **2-Phase Orchestration** protocol, and a high-authority governance model.
+Modern software demands the coordinated output of dozens of specialists — architects, frontend engineers, backend developers, QA analysts, security auditors, UX designers, and DevOps operators. Solo developers and small teams cannot sustain this breadth without burning out or shipping gaps.
 
-> [!IMPORTANT]
-> **The Socratic Gate Protocol**: Every complex task (Complexity > S) must pass through a 3-question strategic filter to ensure 100% alignment before any code is written.
+**Agent-Kit eliminates this constraint.** It deploys a fleet of 53 purpose-built AI agents — organized into 9 departments with tiered governance — directly into your IDE. Every agent follows the **Iron Well v2.0** protocol: strict 2-phase orchestration, Socratic Gate planning, and hierarchical approval chains. The result is production-grade output without production-sized teams.
 
----
-
-## 🧠 Why Agent-Kit?
-
-| Feature | Solo Developer | Agent-Kit Organization |
-| :--- | :--- | :--- |
-| **Throughput** | Sequential / Single-tasking | Parallelized / Multi-Departmental |
-| **Quality Control** | Manual self-checks | Hierarchical Approval (CTS-001) |
-| **Context Retention** | Effort-based | Persistent Memory Hubs |
-| **Scale** | Limited to personal bandwidth | 53 Specialized Agents |
-| **Safety** | High risk of goal drift | Enforced Socratic Gate & Verification |
+> **Built for 2026:** AI-native orchestration, automation-first workflows, privacy-aware data pipelines (GDPR/CCPA columns baked into every dataset), and agent-readiness scoring on every design decision.
 
 ---
 
-## 🏛️ Architecture
+## System Overview
 
-Agent-Kit operates on a **Tiered Governance Model**, where authority flows from the Human Owner down through Executive, Departmental, and Meta-Management layers.
+Agent-Kit is a **local-first, multi-agent orchestration framework** distributed as an NPM package. It scaffolds a complete `.agent-os` directory into any project, providing:
 
-### D1. System Architecture Diagram
+- **53 specialized agents** across Engineering, QA, Security, Product, DevOps, Marketing, Intelligence, and Meta-Management
+- **42+ reusable skills** (clean code, security, TDD, architecture, debugging, deployment)
+- **19 pre-built workflows** (create, debug, deploy, test, orchestrate, plan, enhance)
+- **UI/UX Pro Max Engine** — a BM25-powered search engine over 18 design domains and 16 framework-specific stack guides, plus an automated design system generator
+- **Iron Well v2.0 governance** — Socratic Gate, 2-phase execution, hierarchical authority
+
+---
+
+## High-Level Architecture
+
+Agent-Kit operates on a **Tiered Governance Model** where authority flows from the Human Owner through Executive, Departmental, and Meta-Management layers.
 
 ```mermaid
-%%{init: {'theme': 'auto', 'themeVariables': {
-  'primaryColor': '#1e293b',
-  'primaryTextColor': '#FFFFFF',
-  'primaryBorderColor': '#4F46E5',
-  'lineColor': '#6366F1',
-  'secondaryColor': '#0f172a',
-  'tertiaryColor': '#1e293b',
-  'fontSize': '14px',
-  'mainBkg': '#0f172a',
-  'nodeBorder': '#4F46E5',
-  'clusterBkg': '#1e293b',
-  'clusterBorder': '#334155'
-}}}%%
+%%{init: {'theme': 'default'}}%%
 
 graph TD
-  subgraph Owner ["👤 Developer Authority"]
-    Human((Human Owner))
+  subgraph OWNER["HUMAN AUTHORITY"]
+    H((Developer))
   end
 
-  subgraph Executive ["🎯 Tier 1: Executive Council"]
-    SFS[SFS-001 Senior Full Stack]
-    CTS[CTS-001 Chief Supervisor]
-    SP[SP-001 Strategy Planner]
-    RC[RC-001 Risk & Compliance]
+  subgraph T1["TIER 1 — EXECUTIVE COUNCIL"]
+    SFS["SFS-001<br/>Senior Full Stack"]
+    CTS["CTS-001<br/>Chief Supervisor"]
+    SP["SP-001<br/>Strategy Planner"]
+    RC["RC-001<br/>Risk & Compliance"]
   end
 
-  subgraph Departments ["⚙️ Tier 2: Specialized Divisions"]
-    ENG[Engineering - 25 Agents]
-    QA[QA & Verification - 6 Agents]
-    SEC[Security Hub - 1 Agent]
-    PROD[Product Hub - 5 Agents]
-    DX[DevOps Hub - 6 Agents]
-    INTEL[AI Intelligence - 1 Agent]
-    GROWTH[Marketing Hub - 1 Agent]
+  subgraph T2["TIER 2 — SPECIALIZED DIVISIONS"]
+    direction LR
+    ENG["Engineering<br/>25 Agents"]
+    QA["QA & Verification<br/>6 Agents"]
+    SEC["Security Hub<br/>1 Agent"]
+    PROD["Product Hub<br/>5 Agents"]
+    DX["DevOps Hub<br/>6 Agents"]
+    INTEL["Intelligence<br/>1 Agent"]
+    MKT["Marketing<br/>1 Agent"]
   end
 
-  subgraph Meta ["🧠 Tier 3: Meta-Management"]
-    MM[Memory/Loop/Permission Gov]
+  subgraph T3["TIER 3 — META-MANAGEMENT"]
+    MM["Memory / Loop /<br/>Permission Governance<br/>4 Agents"]
   end
 
-  Human -->|Command| SFS
-  SFS -->|SOP| Executive
-  Executive -->|Delegation| Departments
-  Departments -->|Review| QA
+  subgraph ENGINE["SHARED INTELLIGENCE"]
+    UX["UI/UX Pro Max<br/>18 Domains · 16 Stacks"]
+  end
+
+  H -->|Command| SFS
+  SFS -->|SOP| T1
+  T1 -->|Delegation| T2
+  T2 -->|Review| QA
   QA -->|Approval| CTS
-  CTS -->|Verification| Human
-  MM -.->|Context Sync| Departments
+  CTS -->|Verification| H
+  MM -.->|Context Sync| T2
+  ENGINE -.->|Design Data| T2
 
-  style SFS fill:#4F46E5,stroke:#fff,stroke-width:2px
-  style CTS fill:#4F46E5,stroke:#fff,stroke-width:2px
-  style Human fill:#10B981,stroke:#fff,stroke-width:2px
+  style H fill:#10B981,stroke:#fff,stroke-width:2px,color:#fff
+  style SFS fill:#4F46E5,stroke:#fff,stroke-width:2px,color:#fff
+  style CTS fill:#4F46E5,stroke:#fff,stroke-width:2px,color:#fff
+  style UX fill:#F97316,stroke:#fff,stroke-width:2px,color:#fff
 ```
 
 ---
 
-## 📂 Project Structure
+## Detailed Architecture Breakdown
 
-### D2. Module Map & Directory Tree
+The system is composed of four distinct layers. Each layer is independently scalable and communicates through well-defined interfaces.
 
 ```mermaid
-%%{init: {'theme': 'auto', 'themeVariables': { 'mainBkg': '#0f172a' }}}%%
+%%{init: {'theme': 'default'}}%%
+
 graph TD
-  Root[/"📁 Agent-Kit (Root)"/]
-  Root --> OS[/"📁 .agent-os"/]
-  Root --> SRC[/"📁 src"/]
-  Root --> SCRIPTS[/"📁 scripts"/]
-  Root --> MEM[/"📁 memory"/]
+  subgraph L4["LAYER 4 — INTERFACE"]
+    CLI["CLI<br/>init · doctor · interactive"]
+    IDE["IDE Integration<br/>Cursor · VS Code · Windsurf"]
+    NPX["NPX Distribution<br/>npm publish"]
+  end
 
-  OS --> AGENTS["👤 agents/ (53 Roles)"]
-  OS --> SKILLS["📚 skills/ (v2.0 SKILL.md)"]
-  OS --> WF["🔄 workflows/ (SOPs)"]
-  OS --> TEMP["📄 templates/"]
+  subgraph L3["LAYER 3 — ORCHESTRATION"]
+    GATE["Socratic Gate<br/>3-Question Filter"]
+    PHASE["2-Phase Engine<br/>Plan → Execute"]
+    GOV["Tiered Governance<br/>Owner → Exec → Dept → Meta"]
+    WF["Workflow Engine<br/>19 Pre-built SOPs"]
+  end
 
-  SRC --> BE["⚙️ backend/ (FastAPI)"]
-  BE --> AUTH["🔐 auth/"]
-  
-  SCRIPTS --> CHK["✅ checklist.py"]
-  MEM --> GLOB["🌍 global/ (Architecture)"]
+  subgraph L2["LAYER 2 — INTELLIGENCE"]
+    BM25["BM25 Search Engine<br/>core.py"]
+    DSG["Design System Generator<br/>design_system.py"]
+    REASON["Reasoning Engine<br/>ui-reasoning.csv"]
+    SPAWN["Agent Spawner<br/>spawn_agent.py"]
+  end
 
-  style Root fill:#334155,color:#fff
-  style OS fill:#1e293b,color:#fff
+  subgraph L1["LAYER 1 — DATA"]
+    AGENTS["53 Agent Definitions<br/>.md protocols"]
+    SKILLS["42+ Skill Modules<br/>SKILL.md format"]
+    CSV["34 CSV Datasets<br/>18 domains · 16 stacks"]
+    MEM["Memory Hubs<br/>global · backend · frontend"]
+  end
+
+  L4 --> L3
+  L3 --> L2
+  L2 --> L1
+
+  style L4 fill:#1e293b,stroke:#6366F1,color:#f8fafc
+  style L3 fill:#1e293b,stroke:#6366F1,color:#f8fafc
+  style L2 fill:#1e293b,stroke:#F97316,color:#f8fafc
+  style L1 fill:#1e293b,stroke:#10B981,color:#f8fafc
 ```
 
 ---
 
-## 🔄 How It Works
+## Core Agents & Departments
 
-### D3. Core Data Flow Diagram
+| Department | Lead | Agents | Focus Area |
+|:-----------|:-----|:------:|:-----------|
+| **Executive Council** | CTS-001, SFS-001 | 4 | Strategic planning, supervision, risk assessment |
+| **Engineering — Backend** | BE-001 | 10 | API design, database, auth, services |
+| **Engineering — Frontend** | FE-001 | 8 | Components, state, routing, styling |
+| **Engineering — Database** | DB-001 | 5 | Schema design, migrations, optimization |
+| **Engineering — Mobile** | MOB-001 | 1 | React Native, Flutter, platform-native |
+| **Engineering — Game** | GAME-001 | 1 | Mechanics, physics, cross-platform engines |
+| **QA & Verification** | QA-001 | 6 | Testing, coverage, regression, audit |
+| **Security** | SEC-001 | 1 | Threat modeling, pen testing, shift-left |
+| **Product & Docs** | PM-001 | 5 | PRDs, UX research, README architecture |
+| **DevOps** | DO-001 | 6 | CI/CD, Docker, deployment, monitoring |
+| **Intelligence** | INTEL-001 | 1 | Legacy archaeology, deep research |
+| **Marketing** | MKT-001 | 1 | SEO/GEO, brand authority |
+| **Meta-Management** | MM-001 | 4 | Memory, loops, permissions, context |
+| | | **53** | |
+
+---
+
+## UI/UX Intelligence Engine
+
+The **UI/UX Pro Max** module is a Python-based intelligence layer that gives every agent instant access to structured design knowledge. It powers automated design system generation, framework-specific guidance, and domain-aware search.
 
 ```mermaid
-%%{init: {'theme': 'auto', 'themeVariables': { 'mainBkg': '#0f172a' }}}%%
-flowchart LR
-    REQ((User Requirement)) -->|Socratic Gate| PLAN[Phase 1: Planning]
-    PLAN -->|CTS Approval| EXEC[Phase 2: Execution]
-    EXEC -->|Code Generation| VER[Phase 3: Verification]
-    VER -->|checklist.py| RA[Phase 4: RA-001 Documentation]
-    RA --> OUT[Done: PR-Ready Code]
+%%{init: {'theme': 'default'}}%%
 
-    style REQ fill:#4F46E5,color:#fff
-    style OUT fill:#10B981,color:#fff
-    style PLAN fill:#334155,color:#fff
-    style EXEC fill:#334155,color:#fff
-    style VER fill:#334155,color:#fff
-    style RA fill:#334155,color:#fff
+flowchart TD
+  Q["Agent Query<br/>e.g. SaaS dashboard dark mode"] --> DD["Domain Detector<br/>detect_domain()"]
+
+  DD --> BM["BM25 Search Engine<br/>core.py"]
+
+  BM --> D1["18 Domain CSVs"]
+  BM --> D2["16 Stack CSVs"]
+
+  D1 --> DSG["Design System Generator<br/>design_system.py"]
+  D2 --> DSG
+
+  DSG --> R["Reasoning Engine<br/>ui-reasoning.csv"]
+  R --> OUT["Complete Design System<br/>Colors · Typography · Patterns<br/>Dark Mode · AI · Privacy · Perf"]
+
+  subgraph DOMAINS["18 SEARCH DOMAINS"]
+    direction LR
+    d_style["Styles"]
+    d_color["Colors"]
+    d_typo["Typography"]
+    d_land["Landing"]
+    d_prod["Products"]
+    d_chart["Charts"]
+    d_icon["Icons"]
+    d_ux["UX"]
+    d_web["Web"]
+    d_react["React Perf"]
+    d_prompt["Prompts"]
+    d_reason["Reasoning"]
+    d_anim["Animations"]
+    d_a11y["Accessibility"]
+    d_dark["Dark Mode"]
+    d_ai["AI Patterns"]
+    d_form["Forms"]
+    d_err["Error States"]
+  end
+
+  subgraph STACKS["16 FRAMEWORK STACKS"]
+    direction LR
+    s1["React"]
+    s2["Next.js"]
+    s3["Vue"]
+    s4["Nuxt"]
+    s5["Svelte"]
+    s6["Angular"]
+    s7["Astro"]
+    s8["Remix"]
+    s9["Tauri"]
+    s10["Flutter"]
+    s11["SwiftUI"]
+    s12["React Native"]
+    s13["Compose"]
+    s14["shadcn"]
+    s15["Tailwind"]
+    s16["Nuxt UI"]
+  end
+
+  D1 -.-> DOMAINS
+  D2 -.-> STACKS
+
+  style Q fill:#4F46E5,stroke:#fff,color:#fff
+  style OUT fill:#10B981,stroke:#fff,color:#fff
+  style DSG fill:#F97316,stroke:#fff,color:#fff
 ```
 
-### D4. Request Lifecycle (Sequence)
+### Engine Capabilities
+
+| Capability | Details |
+|:-----------|:--------|
+| **Search Domains** | 18 specialized CSV datasets (styles, colors, typography, landing pages, products, charts, icons, UX, web, React perf, prompts, reasoning, animations, accessibility, dark mode, AI patterns, forms, error states) |
+| **Framework Stacks** | 16 framework-specific guideline CSVs with 15-column schema including `Dark_Mode_Strategy`, `AI_Integration_Level`, `Privacy_Tier`, `Agent_Readiness`, `Performance_Budget` |
+| **Search Algorithm** | BM25 ranking with tokenization, IDF weighting, and configurable k1/b parameters |
+| **Auto-Detection** | `detect_domain()` maps natural language queries to the optimal domain via keyword scoring |
+| **Design System Gen** | Multi-domain aggregation + reasoning rules → complete design system with colors, typography, patterns, effects, and 2026 capability metadata |
+| **Output Formats** | ASCII box (CLI), Markdown, persistent `MASTER.md` + page override files |
+
+---
+
+## Data Flow
+
+```mermaid
+%%{init: {'theme': 'default'}}%%
+
+flowchart LR
+  REQ((User<br/>Requirement)) -->|Input| GATE["Socratic Gate<br/>3 Strategic Questions"]
+  GATE -->|Aligned| PLAN["Phase 1<br/>PLANNING"]
+  PLAN -->|CTS Approval| EXEC["Phase 2<br/>EXECUTION"]
+  EXEC -->|Code + Tests| VER["VERIFICATION<br/>checklist.py"]
+  VER -->|Pass| DOC["RA-001<br/>Documentation"]
+  DOC --> SHIP((PR-Ready<br/>Output))
+
+  VER -->|Fail| EXEC
+
+  style REQ fill:#4F46E5,color:#fff,stroke:#fff
+  style SHIP fill:#10B981,color:#fff,stroke:#fff
+  style GATE fill:#EF4444,color:#fff,stroke:#fff
+  style PLAN fill:#334155,color:#fff
+  style EXEC fill:#334155,color:#fff
+  style VER fill:#334155,color:#fff
+  style DOC fill:#334155,color:#fff
+```
+
+> **Key principle:** No code is written until the Socratic Gate confirms 100% alignment. No code ships until `checklist.py` passes verification.
+
+---
+
+## Request Lifecycle
 
 ```mermaid
 sequenceDiagram
   autonumber
-  actor User as Human Owner
-  participant SFS as SFS-001 (Senior Full Stack)
-  participant SP as SP-001 (Planner)
+  actor User as Developer
+  participant SFS as SFS-001 Orchestrator
+  participant SP as SP-001 Planner
   participant ENG as Engineering Agent
+  participant UX as UI/UX Pro Max
   participant QA as QA Agent
-  participant CTS as CTS-001 (Supervisor)
+  participant CTS as CTS-001 Supervisor
 
-  User->>SFS: "Implement Feature X"
-  SFS->>User: 3 Strategic clarifying questions
+  User->>SFS: "Build feature X"
+  SFS->>User: Socratic Gate (3 questions)
   User->>SFS: Answers
-  SFS->>SP: Command Milestone Creation
-  SP-->>SFS: Plan (milestones.md)
-  SFS->>User: Proposed Plan Review
-  User->>SFS: Approved (LGTM)
-  SFS->>ENG: Targeted Task Directive
-  ENG->>ENG: Implementation Phase
-  ENG->>QA: Submit for Review
-  QA-->>CTS: Passing Status
-  CTS->>User: Final Approval Gate
+  SFS->>SP: Create milestone plan
+  SP-->>SFS: milestones.md
+  SFS->>User: Plan for review
+  User->>SFS: Approved
+  SFS->>ENG: Execute task directive
+  ENG->>UX: Query design data
+  UX-->>ENG: Design system + stack guidelines
+  ENG->>ENG: Implementation
+  ENG->>QA: Submit for review
+  QA->>QA: checklist.py audit
+  QA-->>CTS: Pass / Fail
+  CTS->>User: Final delivery
 ```
 
 ---
 
-## 🗄️ Data Model (Authentication Demo)
+## Tech Stack
 
-Agent-Kit includes a production-ready FastAPI authentication demo.
-
-### D5. Entity Relationship Diagram
-
-```mermaid
-%%{init: {'theme': 'auto', 'themeVariables': { 'mainBkg': '#0f172a' }}}%%
-erDiagram
-    USER ||--o{ SESSION : "authorizes"
-    USER {
-        int id PK
-        string email UK
-        string hashed_password
-        datetime created_at
-    }
-    SESSION {
-        string access_token PK
-        int user_id FK
-        datetime expires_at
-    }
-```
+| Layer | Technology | Purpose |
+|:------|:-----------|:--------|
+| **Distribution** | NPM / NPX | One-command installation and updates |
+| **CLI** | Node.js, fs-extra, picocolors | Init, doctor, interactive archetype selection |
+| **Orchestration** | Markdown protocols, JSON manifests | Agent definitions, governance rules, skill specs |
+| **Search Engine** | Python, BM25 (custom) | Full-text search over 34 CSV datasets |
+| **Design System** | Python, CSV, JSON | Automated multi-domain design system generation |
+| **Auth Demo** | FastAPI, Bcrypt, JWT | Production-ready authentication reference |
+| **Audit Engine** | `checklist.py` | 360-degree framework health validation |
+| **Visualization** | Mermaid.js | Architecture and flow diagrams |
+| **Memory** | Structured Markdown | Persistent context across sessions |
 
 ---
 
-## 🔐 Authentication & Authorization
+## Security & Privacy Design
 
-### D13. Secure Auth Flow
+Agent-Kit enforces security at every layer:
 
-```mermaid
-sequenceDiagram
-    participant Client
-    participant API as FastAPI Backend
-    participant DB as User Database
-
-    Client->>API: POST /auth/register
-    API->>DB: Store Hash(Pwd)
-    DB-->>API: Success
-    API-->>Client: 201 Created
-    
-    Client->>API: POST /auth/login
-    API->>DB: Query User
-    API->>API: Verify Bcrypt
-    API-->>Client: JWT access_token
-```
+| Mechanism | Implementation |
+|:----------|:---------------|
+| **Socratic Gate** | Mandatory 3-question strategic filter before any complex task execution — prevents goal drift and unintended mutations |
+| **Tiered Authority** | RBAC-inspired governance: Owner → Executive → Department → Meta. No agent can exceed its tier. |
+| **Iron Well Protocol** | Strict 2-phase execution (Plan → Execute) with mandatory CTS-001 approval gates |
+| **Privacy Columns** | Every CSV dataset includes `Privacy_Tier` (GDPR, CCPA, HIPAA), consent-before-track patterns, and data minimization rules |
+| **Security Agent** | SEC-001 performs threat modeling, penetration testing simulation, and shift-left audit |
+| **Chaos Testing** | `security_chaos_test.py` simulates active threats against the codebase |
+| **API Contracts** | `sync_api_contracts.py` enforces backend-frontend contract alignment |
 
 ---
 
-## 🔌 API Reference
+## Scalability Strategy
 
-### D11. API Route Map
+Agent-Kit scales from a 14-agent portfolio site to a full 53-agent fleet:
+
+| Archetype | Agents | Target Use Case |
+|:----------|:------:|:----------------|
+| SaaS Startup | 44 | B2B/B2C web platforms |
+| Mobile App | 26 | React Native / Flutter |
+| E-commerce | 45 | Online stores & catalogs |
+| Portfolio / Landing | 14 | Freelancers, creatives |
+| Dashboard / Admin | 29 | Internal tools, analytics |
+| Blog / CMS | 21 | Content creators, knowledge bases |
+| EdTech / E-Learning | 32 | Online courses, LMS |
+| Healthcare / Booking | 40 | Clinics, telemedicine |
+| Marketplace | 47 | Multi-vendor platforms |
+| AI / ChatBot App | 30 | AI tools, LLM products |
+| Gaming Platform | 23 | Browser games, leaderboards |
+| API-First / Headless | 33 | Developer tools, microservices |
+| **Full Fleet** | **53** | **Everything** |
+
+**Selective loading:** The CLI copies only the agents, skills, and departments relevant to the chosen archetype — no bloat, no unused protocols.
+
+---
+
+## Deployment Architecture
 
 ```mermaid
-%%{init: {'theme': 'auto', 'themeVariables': { 'mainBkg': '#0f172a' }}}%%
+%%{init: {'theme': 'default'}}%%
+
 flowchart LR
-    subgraph Auth ["🔐 Authentication"]
-        R[POST /auth/register]
-        L[POST /auth/login]
-    end
-    
-    subgraph Root ["🏠 General"]
-        RT[GET /]
-    end
-```
+  DEV["Developer<br/>Local IDE"] -->|git push| GH["GitHub<br/>Repository"]
+  GH -->|CI Trigger| LINT["Lint &<br/>Type Check"]
+  LINT --> TEST["Unit &<br/>Integration Tests"]
+  TEST --> AUDIT["checklist.py<br/>Audit"]
+  AUDIT -->|Pass| PUB["npm publish<br/>@ab_aswini/agent-kit-p1"]
+  PUB --> NPX["npx init<br/>End User"]
 
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| POST | `/auth/register` | Create a new account | No |
-| POST | `/auth/login` | Authenticate and get JWT | No |
-| GET | `/` | API Root / Welcome | No |
+  AUDIT -->|Fail| DEV
 
----
-
-## ⚡ State Management
-
-### D6. Agent Task Lifecycle
-
-```mermaid
-%%{init: {'theme': 'auto', 'themeVariables': { 'mainBkg': '#0f172a' }}}%%
-stateDiagram-v2
-    [*] --> Idle
-    Idle --> Planning: New User Message
-    Planning --> GatheringContext: Read Memory/Skills
-    GatheringContext --> Implementing: Plan Approved
-    Implementing --> Testing: Code Written
-    Testing --> FinalizingDoc: checklist.py PASS
-    FinalizingDoc --> Idle: notify_user
-    Testing --> Implementing: checklist.py FAIL
+  style DEV fill:#334155,color:#fff
+  style PUB fill:#10B981,color:#fff,stroke:#fff
+  style NPX fill:#4F46E5,color:#fff,stroke:#fff
+  style AUDIT fill:#F97316,color:#fff,stroke:#fff
 ```
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
-### ⚡ Quick Start
-
-The fastest way to install Agent-Kit is using `npx` in your project root:
+### Quick Start
 
 ```bash
 npx @ab_aswini/agent-kit-p1 init
 ```
 
-> [!NOTE]
-> This command will create a `.agent-os` folder in your current directory containing all 53 agents, skills, memory hubs, and the verification engine.
+> This scaffolds the complete `.agent-os` directory (53 agents, 42+ skills, 19 workflows, UI/UX engine) into your current project.
 
----
-
-### 🌍 Global Installation
-
-Install the CLI globally to use `agent-kit` command anywhere:
-
-```bash
-npm install -g @ab_aswini/agent-kit-p1
-```
-
-```bash
-cd your-project && agent-kit init
-```
-
----
-
-### 🏗️ Interactive Mode (NEW in v1.2)
+### Interactive Mode
 
 Choose a **Company Archetype** to deploy only the agents you need:
 
@@ -319,126 +424,93 @@ Choose a **Company Archetype** to deploy only the agents you need:
 npx @ab_aswini/agent-kit-p1 init --interactive
 ```
 
-| Archetype | Agents | Best For |
-| :--- | :--- | :--- |
-| **SaaS Startup** | 44 | B2B/B2C web platforms |
-| **Mobile App** | 26 | React Native / Flutter |
-| **E-commerce** | 45 | Online stores & product catalogs |
-| **Portfolio / Landing** | 14 | Freelancers, creatives, personal brands |
-| **Dashboard / Admin** | 29 | Internal tools, analytics panels |
-| **Blog / CMS** | 21 | Content creators, news, knowledge bases |
-| **EdTech / E-Learning** | 32 | Online courses, LMS, training |
-| **Healthcare / Booking** | 40 | Clinics, telemedicine, appointments |
-| **Marketplace** | 47 | Multi-vendor platforms (Uber/Airbnb model) |
-| **AI / ChatBot App** | 30 | AI tools, chatbots, LLM products |
-| **Gaming Platform** | 23 | Browser games, leaderboards |
-| **API-First / Headless** | 33 | Developer tools, microservices |
-| **Full Fleet** | 53 | Everything (default) |
+### Global Installation
 
----
+```bash
+npm install -g @ab_aswini/agent-kit-p1
+cd your-project && agent-kit init
+```
 
-### 🩺 Health Check
-
-Verify your installation is complete and healthy:
+### Health Check
 
 ```bash
 npx @ab_aswini/agent-kit-p1 doctor
 ```
 
----
-
-### 📋 CLI Commands
+### CLI Reference
 
 | Command | Description |
-| :--- | :--- |
+|:--------|:------------|
 | `agent-kit init` | Scaffold all 53 agents into current directory |
 | `agent-kit init -i` | Interactive setup with archetype selection |
 | `agent-kit doctor` | Verify system health & missing components |
 
-> [!TIP]
-> Read other commands and agent spawning in the [CLI documentation](https://github.com/Ab-aswini/Agent-kit-P1).
+### Post-Installation
+
+1. **Open in AI IDE** — VS Code, Cursor, or Windsurf
+2. **Activate** — Instruct your AI: *"Read `.agent-os/agents/tier-1/chief-technical-supervisor.agent.md`"*
+3. **Verify** — Run `python scripts/checklist.py` for full health validation
+4. **Spawn** — Run `python scripts/spawn_agent.py BE-001` for a ready-to-paste system prompt
 
 ---
 
-### 🚦 Next Steps
+## Future Roadmap
 
-1. **Open in AI IDE**: Open the folder in VS Code / Cursor / Windsurf.
-2. **Activate**: Instruct your AI to: *"Read `.agent-os/agents/tier-1/chief-technical-supervisor.agent.md`"*.
-3. **Verify**: Run `python scripts/checklist.py` to ensure 100% health.
-4. **Spawn Agent**: Run `python scripts/spawn_agent.py BE-001` to get a ready-to-paste system prompt.
-
+| Initiative | Status | Description |
+|:-----------|:------:|:------------|
+| Agent Marketplace | 🔜 Planned | Community-contributed agent templates and skills |
+| Multi-LLM Router | 🔜 Planned | Per-agent model selection (GPT / Claude / Gemini) |
+| Live Dashboard | 🔜 Planned | Web-based fleet status monitoring and analytics |
+| MCP Server Integration | 🔜 Planned | Native Model Context Protocol server for tool-calling agents |
+| Voice-First Agents | 🧪 Research | Voice-driven agent interaction for accessibility |
+| Agent-to-Agent Protocol | 🧪 Research | Direct inter-agent communication without orchestrator relay |
 
 ---
 
-## 🏗️ Build & Deployment
+## Contribution Guide
 
-### D7. CI/CD Pipeline Flow
+We welcome contributions. Agent-Kit is modular by design — every agent, skill, and dataset is an independent unit.
 
-```mermaid
-%%{init: {'theme': 'auto', 'themeVariables': { 'mainBkg': '#0f172a' }}}%%
-flowchart LR
-    A[Git Push] --> B[Linting Check]
-    B --> C[Unit tests]
-    C --> D[Integration Tests]
-    D --> E[Checklist.py Audit]
-    E --> F{Success?}
-    F -- Yes --> G[Deploy to Vercel/EC2]
-    F -- No --> H[Fail & Notify]
+### Adding a New Agent
+
+1. Create `your-agent.agent.md` in the appropriate department folder under `.agent-os/agents/`
+2. Follow the existing agent template (Identity, Protocol, Boundaries, Anti-Patterns)
+3. Register the agent in `manifest.json`
+4. Submit a PR with a description of the agent's purpose and capabilities
+
+### Adding a New Skill
+
+1. Create a new directory under `.agent-os/skills/your-skill/`
+2. Add a `SKILL.md` with YAML frontmatter (`name`, `description`) and detailed instructions
+3. Include any helper scripts in `scripts/` and examples in `examples/`
+
+### Adding a New CSV Dataset
+
+1. Add your CSV to `.agent-os/.shared/ui-ux-pro-max/data/` (domain) or `data/stacks/` (framework)
+2. Register it in `scripts/core.py` → `CSV_CONFIG` or `STACK_CONFIG`
+3. Add keywords to `detect_domain()` for auto-routing
+4. Run the test suite to validate
+
+### Workflow
+
+```
+Fork → Branch → Implement → Test → PR → Review → Merge
 ```
 
 ---
 
-## 📊 Tech Stack
+## License
 
-| Layer | Technology | Purpose |
-| :--- | :--- | :--- |
-| **Orchestration** | Markdown / JSON | High-authority agent protocols |
-| **Logic (Demo)** | FastAPI | Async high-performance backend |
-| **Security Hub** | Bcrypt / JWT | Commercial-grade auth |
-| **Audit Engine** | `checklist.py` | 360-degree framework validation |
-| **Graphics** | Mermaid.js | Dynamic architecture visualization |
-
----
-
-## 🧩 Key Design Decisions
-
-1. **Iron Well Patterns**: Enforced strict planning/execution phases to prevent goal drift.
-2. **Socratic Gate**: Mandatory 3-question filter for complex tasks to ensure 100% alignment.
-3. **Directory-Based Skills**: Standardized on `.agent-os/skills/[NAME]/SKILL.md` for better indexability.
-4. **Hierarchical Governance**: Adopted tiered agent authority to prevent infinite loops and ensure quality.
-
----
-
-## 🌳 Git Strategy
-
-### D9. Branching Strategy
-
-```mermaid
-gitGraph
-    commit id: "Initial"
-    branch develop
-    commit id: "Setup"
-    branch feat/auth
-    commit id: "Auth Logic"
-    checkout develop
-    merge feat/auth
-    branch feat/ra-001
-    commit id: "Premium README"
-    checkout develop
-    merge feat/ra-001
-    checkout main
-    merge develop tag: "v1.1-Premium-Hub"
-```
-
----
-
-## 📄 License
-This project is licensed under the **MIT License**.
+This project is licensed under the **MIT License** — see [LICENSE](LICENSE) for details.
 
 ---
 
 <div align="center">
   <strong>Built for solo developers who think like companies.</strong>
-  <br>
-  <em>Polished and documented by RA-001 README Architect.</em>
+  <br/>
+  <sub>53 agents · 18 design domains · 16 framework stacks · Iron Well v2.0 governance</sub>
+  <br/><br/>
+  <a href="https://www.npmjs.com/package/@ab_aswini/agent-kit-p1">NPM</a> ·
+  <a href="https://github.com/Ab-aswini/Agent-kit-P1">GitHub</a> ·
+  <a href="https://github.com/Ab-aswini/Agent-kit-P1/issues">Issues</a>
 </div>
