@@ -35,7 +35,13 @@
         "developer-tools",
         "local-first-ai",
         "software-company",
-        "idm"
+        "mcp",
+        "model-context-protocol",
+        "autonomous-agents",
+        "semantic-memory",
+        "cursor-mcp",
+        "claude-desktop",
+        "ai-ide"
     ],
     "author": "Aswini Behera",
     "license": "MIT",
