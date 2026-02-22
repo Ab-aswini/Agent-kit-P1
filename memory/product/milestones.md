@@ -1,20 +1,18 @@
-# Milestones: FastAPI Auth System
+# Milestones: Agent-Kit V3 Evolution
 
-## M-001: Project Setup & User Model
-- **T-001**: Initialize FastAPI project structure (BE-001) [S]
-- **T-002**: Define User model with SQLAlchemy (DB-001) [S]
-- **T-003**: Setup migrations (DB-002) [S]
+## M-001: Model Context Protocol Integration [COMPLETE]
+- [x] Scaffold native MCP Server in `bin/mcp.js`.
+- [x] Register basic tools: `list_agents`, `get_agent_prompt`, `query_ui_ux_engine`.
 
-## M-002: Authentication Logic
-- **T-004**: Implement password hashing utility (BE-005) [S]
-- **T-005**: Create JWT token generation/validation service (BE-005) [M]
-- **T-006**: Create registration endpoint (BE-002/BE-003) [M]
-- **T-007**: Create login endpoint (BE-002/BE-003) [M]
+## M-002: Semantic Project Memory [COMPLETE]
+- [x] Implement AST-aware parser `scripts/memory_sync.py`.
+- [x] Establish CLI commands `sync` and `sync --watch`.
 
-## M-003: Middleware & Protection
-- **T-008**: Implement Auth middleware for protected routes (BE-007) [M]
-- **T-009**: Create protected dummy endpoint for testing (BE-002) [S]
+## M-003: The Hybrid Arsenal Pivot [COMPLETE]
+- [x] Deprecate autonomous execution loop (no LLM keys required).
+- [x] Register validation scripts (`checklist.py`, `security_chaos_test.py`) as active MCP tools.
+- [x] Inject Antigravity Cognitive Baseline into 53 agents.
 
-## M-004: Quality & Testing
-- **T-010**: Unit tests for hashing & JWT (QA-002) [M]
-- **T-011**: Integration tests for Auth endpoints (QA-003) [M]
+## M-004: Next Generation Tooling [IN PROGRESS]
+- [ ] Implement C-Suite Visual Dashboard (Pillar 4).
+- [ ] Expand UX/UI Engine with 2026 physics-based web animations data.
