@@ -6,6 +6,8 @@ const crypto = require('crypto');
 const os = require('os');
 const pc = require('picocolors');
 const readline = require('readline');
+const { spawn } = require('child_process');
+const { SlashDispatcher } = require('./commands');
 
 const args = process.argv.slice(2);
 const command = args[0];
@@ -191,20 +193,15 @@ async function doctor() {
     console.log(pc.cyan('\n🩺 Running Agent-Kit Health Check (v2.0)...\n'));
 
     // Step 1: Check for .agentkit pointer
-    const pointer = await readPointer(targetDir);
-
-    if (!pointer) {
-        const legacyMarker = path.join(targetDir, '.agent-os');
-        if (await fs.pathExists(legacyMarker)) {
-            console.log(pc.yellow('  ⚠️  Legacy install detected (files in project root).'));
-            console.log(pc.yellow('     Run: npx @ab_aswini/agent-kit-p1 clean'));
-            console.log(pc.yellow('     Then: npx @ab_aswini/agent-kit-p1 init'));
-        } else {
-            console.log(pc.red('  ❌ No .agentkit pointer found.'));
-            console.log(pc.gray('     Run: npx @ab_aswini/agent-kit-p1 init'));
-        }
+    let pointer = await readPointer(targetDir);
+    const pointerPath = getPointerFilePath(targetDir);
+    if (!fs.existsSync(pointerPath)) {
+        console.log(pc.red(`  ❌ ${POINTER_FILENAME} pointer file not found.`));
+        console.log(`  Run: ${pc.yellow('npx @ab_aswini/agent-kit-p1 init')}\n`);
         return;
     }
+
+    pointer = await readPointer(targetDir); // Read pointer after checking existence
 
     console.log(pc.green(`  ✅ Pointer: .agentkit (v${pointer.version})`));
     console.log(pc.gray(`     Store: ${pointer.store}`));
@@ -401,18 +398,108 @@ async function init() {
     }
 }
 
+// ─── Interactive Chat Interceptor (REPL) ─────────────────────
+async function startChatRepl() {
+    console.log(pc.cyan('\n💬 Agent-Kit Interactive REPL'));
+    console.log(pc.gray('   Type /help to see all commands. Type "exit" to quit.\n'));
+
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+        prompt: pc.green('❯ ')
+    });
+
+    const dispatcher = new SlashDispatcher();
+
+    // Custom prompt styling logic
+    const updatePrompt = () => {
+        const badge = dispatcher.getBadge();
+        const icon = dispatcher.activeCommand ? '' : pc.green('❯ ');
+        rl.setPrompt(`${badge} ${icon}`);
+        rl.prompt();
+    };
+
+    updatePrompt();
+
+    for await (const line of rl) {
+        const input = line.trim();
+
+        if (input.toLowerCase() === 'exit' || input.toLowerCase() === 'quit') {
+            console.log(pc.cyan('Goodbye! 👋'));
+            rl.close();
+            process.exit(0);
+        }
+
+        if (input === '') {
+            updatePrompt();
+            continue;
+        }
+
+        // Parse input via dispatcher
+        const parsedContext = dispatcher.parse(input);
+
+        // Dispatch logic
+        const routeInfo = dispatcher.dispatch(parsedContext);
+
+        if (routeInfo) {
+            // Processing animation / Loading State
+            console.log(pc.dim('  ⚡ Routing to ' + pc.yellow(routeInfo.agentId) + '...'));
+
+            // In a headless setup, we'll invoke the spawn_agent.py to get the resolved system prompt.
+            // It will print the wrapped system prompt, giving the feel of the LLM receiving the payload.
+
+            try {
+                // Find python path via pointer resolution (spawn_agent handles this internally now)
+                const spawnScriptPath = path.join(sourceDir, 'scripts', 'spawn_agent.py');
+
+                // Construct shell execution
+                const pythonProcess = spawn('python', [spawnScriptPath, routeInfo.agentId], {
+                    stdio: ['ignore', 'pipe', 'pipe']
+                });
+
+                let buffer = '';
+                pythonProcess.stdout.on('data', (data) => buffer += data.toString());
+                pythonProcess.stderr.on('data', (data) => console.log(pc.red(data.toString())));
+
+                await new Promise((resolve) => pythonProcess.on('close', resolve));
+
+                // Print the injected result block
+                console.log(`\n${routeInfo.badgeColor('┌── System Prompt Injected ────────────────────')}`);
+                console.log(pc.gray(routeInfo.injectedPrompt.substring(0, 150) + '...'));
+                console.log(routeInfo.badgeColor('└─────────────────────────────────────────────\n'));
+
+                console.log(pc.green('✅ Payload ready. (To use with an LLM, pipe this via API.)\n'));
+
+            } catch (err) {
+                console.log(pc.red('❌ Error invoking agent spawn logic:\n' + err));
+            }
+
+            // Reset after one-shot command execution
+            dispatcher.reset();
+        }
+
+        updatePrompt();
+    }
+}
+
 // ─── Command Router ──────────────────────────────────────────
 if (command === 'doctor') {
     doctor();
 } else if (command === 'clean') {
     clean();
+} else if (command === 'chat') {
+    startChatRepl();
+} else if (command === 'mcp') {
+    require('./mcp.js');
 } else if (command === 'init' || !command) {
     init();
 } else {
     console.log(pc.yellow(`Unknown command: ${command}`));
-    console.log('Available commands: init, doctor, clean');
+    console.log('Available commands: init, doctor, clean, chat, mcp');
     console.log('Usage: npx @ab_aswini/agent-kit-p1 init');
     console.log('       npx @ab_aswini/agent-kit-p1 init --interactive');
     console.log('       npx @ab_aswini/agent-kit-p1 doctor');
     console.log('       npx @ab_aswini/agent-kit-p1 clean');
+    console.log('       npx @ab_aswini/agent-kit-p1 chat');
+    console.log('       npx @ab_aswini/agent-kit-p1 mcp');
 }

@@ -124,6 +124,9 @@ your-project/
 
 **Every `.md` file is an agent definition** — a detailed protocol document that tells your AI IDE (Cursor, VS Code, Windsurf, or any AI editor) exactly how to behave for a specific role. When you tell your AI assistant to "read the backend specialist agent," it loads that agent's rules, boundaries, skills, and decision frameworks.
 
+**🚀 V3 Feature: Native MCP Server**
+Agent-Kit now runs as a Model Context Protocol (MCP) server. You can connect it directly to Claude Desktop or Cursor to dynamically `list_agents`, generate `get_agent_prompt`s, and `query_ui_ux_engine` entirely in the background without copy-pasting code!
+
 > [!IMPORTANT]
 > Agent-Kit does **not** run its own AI models. It augments **your existing AI IDE** by giving it structured roles, governance protocols, and domain-specific intelligence. Think of it as the operating system, and your AI (GPT, Claude, Gemini) as the hardware.
 
@@ -585,6 +588,28 @@ Then add a setup script:
 }
 ```
 
+### 🔌 Method 5: Native MCP Server (Cursor / Claude Desktop)
+
+Agent-Kit can run as a **Model Context Protocol (MCP)** server, securely attaching all 53 agents directly to your IDE.
+
+**For Cursor:** Add this to `Cursor Settings > MCP`:
+- Name: `Agent-Kit`
+- Type: `command`
+- Command: `npx @ab_aswini/agent-kit-p1 mcp`
+
+**For Claude Desktop:** Add to your `claude_desktop_config.json`:
+```json
+{
+  "mcpServers": {
+    "agent-kit": {
+      "command": "npx",
+      "args": ["@ab_aswini/agent-kit-p1", "mcp"]
+    }
+  }
+}
+```
+*Tools exposed natively to your AI:* `list_agents`, `get_agent_prompt`, `query_ui_ux_engine`.
+
 ### 🩺 Health Check
 
 After installation, verify everything is in place:
@@ -612,6 +637,22 @@ This validates: agent files exist, directory structure is correct, manifest is c
 | `agent-kit init` | Deploy all 53 agents, skills, workflows, and UI&UX engine |
 | `agent-kit init -i` / `agent-kit init --interactive` | Interactive archetype selection (choose your team size) |
 | `agent-kit doctor` | Validate system health and flag missing components |
+| `agent-kit clean` | Remove legacy zero-footprint migration artifacts |
+| `agent-kit chat` | Launch the interactive Command-Trigger REPL |
+| `agent-kit mcp` | Start the local Model Context Protocol (MCP) server via stdio |
+
+### 💬 Command-Trigger REPL (Slash Commands)
+
+Run `npx @ab_aswini/agent-kit-p1 chat` to open an interactive session. You can type natural language or use slash commands to instantly route context to specialized agents:
+
+| Command | Agent Triggered | Core Responsibility |
+|:--------|:----------------|:--------------------|
+| `/help` | *System* | List available commands |
+| `/fix`  | QA-001 | Analyzes errors/code for logical flaws and proposes precise fixes |
+| `/test` | QA-001 | Writes comprehensive, edge-case resilient unit/integration tests |
+| `/refactor`| BE-001 | Optimizes code for efficiency, readability, and SOLID principles |
+| `/plan` | SP-001 | Decomposes a request into a granular, step-by-step milestone plan |
+| *(default)*| SFS-001 | Standard orchestrator routing for general inquiries |
 
 > [!IMPORTANT]
 > **Requirements:** Node.js 16+ and npm 7+. Python 3.8+ is needed for the UI&UX engine and audit scripts.
