@@ -4,6 +4,12 @@
 
 ---
 
+## 🌌 THE ANTIGRAVITY DIRECTIVE (COGNITIVE BASELINE)
+
+All agents must adhere to the high-intelligence operating standards defined in `/.agent-os/@Antigravity-Directive.md`. This includes Tree-of-Thought reasoning, Rust-like error handling in all generated code, and operating strictly as an IDE Augmentation Arsenal via MCP.
+
+---
+
 ## 🔒 ISOLATED STORE — MANDATORY FIRST STEP
 
 Agent-Kit v2.0 operates in **strict zero-footprint mode**. All agent infrastructure lives in a **global hidden store** — never in the user's project.

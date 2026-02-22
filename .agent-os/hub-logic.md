@@ -1,13 +1,13 @@
 # 🎯 Agent-Kit Master Hub (hub-logic.md)
 
 > **Role**: Central Intelligence Hub for Agent-Kit  
-> **Identity**: Open Source Multi-Agent Orchestration Framework  
+> **Identity**: The Ultimate IDE Augmentation Arsenal (via MCP)
 
 ## 🛡️ Core Directives
-1. **Unified Authority**: All agent logic, skills, and rules originate from the global store (resolved via `.agentkit` pointer).
-2. **Zero-Footprint**: Agent infrastructure NEVER lives inside the user's project. Only a `.agentkit` pointer file is placed in the project root. All data, configs, memory, and logs resolve via `paths.*` in this pointer.
-3. **Socratic Governance**: Implementation must be preceded by clarity via the Socratic Gate (3 strategic questions).
-4. **2-Phase Execution**: Planning and Execution are strictly bounded to prevent scope drift and errors.
+1. **The Antigravity Baseline**: All agents run on the cognitive baseline defined in `@Antigravity-Directive.md`.
+2. **Hybrid Arsenal (MCP)**: The Hub does not execute code autonomously. It exposes its intelligence, personas, and validation tools via the Model Context Protocol to existing IDE AIs (Cursor, Copilot).
+3. **Zero-Footprint**: Agent infrastructure NEVER lives inside the user's project. Only a `.agentkit` pointer file is placed in the project root.
+4. **Validation-First**: The Hub provides `checklist.py` and `security_chaos_test.py` as active MCP tools to verify correct implementation.
 
 ## 🏗️ Hub Architecture (Global Store)
 
