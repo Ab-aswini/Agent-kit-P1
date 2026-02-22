@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- SEO METADATA FOR GITHUB ARCHITECTURE SEARCH -->
-<!-- keywords: model context protocol, mcp server, cursor agent, claude desktop, windsurf, copilot, autonomous agents, multi-agent framework, semantic memory, tree-of-thought, ai ide augmentation, developer tools, local-first ai -->
+<!-- keywords: google antigravity, model context protocol, mcp server, cursor agent, claude desktop, windsurf, copilot, autonomous agents, multi-agent framework, semantic memory, tree-of-thought, ai ide augmentation, developer tools, local-first ai -->
 
 <br/>
 
@@ -9,7 +9,7 @@
 
 <br/>
 
-### The Ultimate MCP Server that supercharges Cursor, Claude Desktop, and Windsurf.
+### The Ultimate MCP Server that supercharges Google Antigravity, Cursor, Claude Desktop, and Windsurf.
 
 <br/>
 
@@ -26,14 +26,14 @@
 
 <br/>
 
-```
-┌─────────────────────────────────────────────────────┐
-│                                                     │
-│    npx @ab_aswini/agent-kit-p1 init                 │
-│                                                     │
-│    ↳ That's it. Your AI company is now deployed.    │
-│                                                     │
-└─────────────────────────────────────────────────────┘
+```text
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│    ⚡ npx @ab_aswini/agent-kit-p1 init                      │
+│                                                             │
+│    ↳ That's it. Your 53-agent AI company is now deployed.   │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
 ```
 
 <br/>
@@ -125,13 +125,13 @@ your-project/
 └── bin/cli.js                    ← CLI entry point
 ```
 
-**Every `.md` file is an agent definition** — a detailed protocol document that tells your AI IDE (whether you use **Cursor**, **VS Code + GitHub Copilot**, **Windsurf**, or **Claude Desktop**) exactly how to behave for a specific role. When you tell your AI assistant to "read the backend specialist agent", it loads that agent's rules, boundaries, skills, and decision frameworks.
+**Every `.md` file is an agent definition** — a detailed protocol document that tells your AI IDE (whether you use **Google Antigravity**, **Cursor**, **VS Code + GitHub Copilot**, **Windsurf**, or **Claude Desktop**) exactly how to behave for a specific role. When you tell your AI assistant to "read the backend specialist agent", it loads that agent's rules, boundaries, skills, and decision frameworks.
 
 **🚀 V3.1 Feature: Native MCP Server (IDE Augmentation)**
-Agent-Kit now runs natively as a **Model Context Protocol (MCP)** server. You can connect it directly to **Claude Desktop** or **Cursor** to dynamically `list_agents`, generate `get_agent_prompt`s, trigger AST codebase parsing (`sync_semantic_memory`), and `query_ui_ux_engine` entirely in the background without copy-pasting code!
+Agent-Kit now runs natively as a **Model Context Protocol (MCP)** server. You can connect it directly to **Google Antigravity**, **Claude Desktop** or **Cursor** to dynamically `list_agents`, generate `get_agent_prompt`s, trigger AST codebase parsing (`sync_semantic_memory`), and `query_ui_ux_engine` entirely in the background without copy-pasting code!
 
 > [!IMPORTANT]
-> Agent-Kit does **not** run its own AI models. It is an **IDE Augmentation Framework** that supercharges your existing AI IDE by giving it structured roles, governance protocols, and domain-specific intelligence. Think of it as the operating system, and your AI (GPT-4, Claude 3.5 Sonnet, Gemini Pro) as the hardware engine.
+> Agent-Kit does **not** run its own AI models. It is an **IDE Augmentation Framework** that supercharges your existing AI IDE by giving it structured roles, governance protocols, and domain-specific intelligence. Think of it as the operating system, and your AI (Google Gemini, Claude 3.5 Sonnet, GPT-4) as the hardware engine.
 
 <br/>
 
@@ -294,7 +294,7 @@ Every component in Agent-Kit lives in one of four layers:
 graph TD
   subgraph L4["🖥️ LAYER 4 — INTERFACE  (How You Interact)"]
     CLI["⌨️ CLI Commands<br/>init · doctor · interactive"]
-    IDE["💻 AI IDE<br/>Cursor · VS Code · Windsurf"]
+    IDE["💻 AI IDE<br/>Google Antigravity · Cursor · Windsurf"]
     NPX["📦 NPX/NPM<br/>One-command install"]
   end
 
@@ -424,6 +424,11 @@ flowchart TD
 
 Every design question maps to one or more of these knowledge bases:
 
+<details>
+<summary><b>Click to expand: The 18 Search Domains</b></summary>
+
+<br/>
+
 | # | Domain | Rows | What It Contains |
 |:-:|:-------|:----:|:-----------------|
 | 1 | 🎭 **Styles** | 1,000+ | CSS patterns, layout systems, spacing scales, shadows, borders |
@@ -445,13 +450,24 @@ Every design question maps to one or more of these knowledge bases:
 | 17 | 📝 **Forms** | 500+ | Form validation UX, multi-step wizards, input patterns |
 | 18 | ⚠️ **Error States** | 400+ | Error messages, empty states, fallback UI, retry patterns |
 
+</details>
+
+<br/>
+
 ### The 16 Framework Stacks
 
 Framework-specific guidance with 15-column schema including **2026-ready columns:**
 
+<details>
+<summary><b>Click to expand: Framework Stacks & Data Schema</b></summary>
+
+<br/>
+
 | Stack | Columns Include |
 |:------|:----------------|
 | ⚛️ React, ▲ Next.js, 💚 Vue, 💚 Nuxt, 🔥 Svelte, 🅰️ Angular, 🚀 Astro, 💿 Remix, 🦀 Tauri, 💙 Flutter, 🍎 SwiftUI, 📱 React Native, 🤖 Jetpack Compose, 🧩 shadcn, 🌊 Tailwind, 💚 Nuxt UI | `Component_Name`, `Category`, `Use_Case`, `Code_Example`, `Accessibility_Score`, `Dark_Mode_Strategy`, `AI_Integration_Level`, `Privacy_Tier`, `Agent_Readiness`, `Performance_Budget` |
+
+</details>
 
 > [!NOTE]
 > **2026 Columns Explained:**
@@ -597,11 +613,11 @@ Then add a setup script:
 }
 ```
 
-### 🔌 Method 5: Native MCP Server (Cursor / Claude Desktop)
+### 🔌 Method 5: Native MCP Server (Google Antigravity / Cursor / Claude)
 
 Agent-Kit can run as a **Model Context Protocol (MCP)** server, securely attaching all 53 agents directly to your IDE.
 
-**For Cursor:** Add this to `Cursor Settings > MCP`:
+**For Google Antigravity & Cursor:** Add this to your MCP Settings:
 - Name: `Agent-Kit`
 - Type: `command`
 - Command: `npx @ab_aswini/agent-kit-p1 mcp`
@@ -633,7 +649,7 @@ This validates: agent files exist, directory structure is correct, manifest is c
 
 | Step | Command / Action | What Happens |
 |:----:|:-----------------|:-------------|
-| 1 | Open project in **Cursor / VS Code / Windsurf** | Your AI IDE is ready |
+| 1 | Open project in **Google Antigravity / Cursor / Windsurf** | Your AI IDE is ready |
 | 2 | Tell your AI: *"Read `.agent-os/agents/tier-1/chief-technical-supervisor.agent.md`"* | CTS-001 activates as your technical authority |
 | 3 | Run `python scripts/checklist.py` | Validates full project health |
 | 4 | Run `python scripts/spawn_agent.py BE-001` | Generates a ready-to-paste system prompt for Backend Agent 001 |
@@ -712,6 +728,11 @@ flowchart TD
 
 ### What Each Archetype Includes
 
+<details>
+<summary><b>Click to expand: The 12 Pre-Configured Archetypes</b></summary>
+
+<br/>
+
 | Archetype | Agents | Departments Included | Required Skills |
 |:----------|:------:|:---------------------|:----------------|
 | 🚀 **SaaS Startup** | 44 | Engineering (full), Security, QA, Product, DevOps, Meta | api-patterns, auth, database-design, clean-code, testing, deployment, frontend, nextjs-react, security |
@@ -726,6 +747,8 @@ flowchart TD
 | 🤖 **AI / ChatBot** | 30 | Engineering (backend + frontend), Intelligence, QA, Meta | api-patterns, frontend-design |
 | 🎮 **Gaming** | 23 | Engineering (game + frontend), QA, Meta | game-development, frontend-design |
 | ⚙️ **API-First** | 33 | Engineering (backend + DB), Security, QA, DevOps, Meta | api-patterns, database-design, security, deployment |
+
+</details>
 
 > [!TIP]
 > **Start small, scale up.** You can always run `agent-kit init` later to upgrade to the full 53-agent fleet. The CLI is additive — it won't overwrite existing agents.
@@ -830,12 +853,23 @@ flowchart LR
 |:-----------|:------:|:------------|
 | 🏪 **Agent Marketplace** | 🔜 Planned | Community-contributed agent templates, skills, and CSV datasets |
 | 🔀 **Multi-LLM Router** | 🔜 Planned | Assign different AI models to different agents (GPT for planning, Claude for code, Gemini for design) |
-| 📊 **Live Dashboard** | 🔜 Planned | Web-based fleet monitoring## 🧠 The Agent-Kit Architecture (V3.1+)
+| 📊 **Live Dashboard** | 🔜 Planned | Web-based fleet monitoring through the orchestrator |
 
-Agent-Kit V3 introduces three distinct intelligence pillars designed to **augment** your existing IDE AI (like Cursor, Copilot, or Antigravity):
-1. **Pillar 1: Native MCP Provider** - Agent-Kit integrates directly into cursor/claude as an active tool server.
-2. **Pillar 2: The Hybrid Arsenal** - Provides active validation, security chaos testing, and UI generation scripts that Cursor can trigger autonomously.
-3. **Pillar 3: Semantic Project Memory** - Live AST-aware codebase scanning that updates agent ground-truth over time.ng through the orchestrator |
+<br/>
+
+---
+
+<br/>
+
+## 🧠 The Agent-Kit Architecture (V3.1+)
+
+> [!IMPORTANT]
+> **The Hybrid Arsenal Pivot**
+> Agent-Kit V3.1 introduces three distinct intelligence pillars designed to **augment** your existing IDE AI (like **Google Antigravity**, Cursor, Copilot, or Windsurf), rather than compete with them.
+
+1. **Pillar 1: Native MCP Server** - Agent-Kit integrates directly into your AI IDE as an active tool server.
+2. **Pillar 2: The Hybrid Arsenal** - Provides active validation (`checklist.py`), security chaos testing, and UI generation scripts that your IDE AI can trigger autonomously.
+3. **Pillar 3: Semantic Project Memory** - Live AST-aware codebase scanning that updates agent ground-truth over time (`architecture.md`, `api-contracts.md`, etc.).
 
 <br/>
 
