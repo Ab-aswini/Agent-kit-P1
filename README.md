@@ -544,21 +544,27 @@ The fastest way — one command, zero configuration:
 npx @ab_aswini/agent-kit-p1 init
 ```
 
-This scaffolds the complete `.agent-os` directory into your current project with all 53 agents, 42+ skills, 19 workflows, and the UI&UX engine.
+This scaffolds the complete `.agent-os` directory into your current project with all 53 agents, 42+ skills, 19 workflows, and the UI&UXThis is the core of the V3.1 **Hybrid Arsenal** philosophy. Agent-Kit does not try to be an LLM IDE; instead, it is the ultimate super-weapon *for* your IDE.
 
-### Method 2: Global Installation
+By running the MCP server, you give Cursor/Claude access to Agent-Kit's powerful internal Python tools:
+- `run_project_audit` - Cursor can natively trigger `checklist.py` to ensure your project complies with Iron Well architecture standards.
+- `run_security_chaos` - Cursor can trigger the Security Chaos Monkey to scan for exposed secrets and risky `eval()` logic.
+- `query_ui_ux_engine` - Cursor can query the internal BM25 search engine to pull complete, enterprise-grade Design Systems.
 
-Install once, use everywhere:
+**The Workflow:**
+You tell Cursor: *"Audit my project using Agent-Kit."*
+Cursor hits our MCP server -> Agent-Kit runs the Python audit on your local files -> Cursor reads the terminal output and fixes the code for you.all --save-dev @ab_aswini/agent-kit-p1
+```
 
-```bash
-# Install globally
-npm install -g @ab_aswini/agent-kit-p1
+Then add a setup script:
 
-# Navigate to any project
-cd your-project
-
-# Deploy Agent-Kit
-agent-kit init
+```json
+{
+  "scripts": {
+    "setup:agents": "agent-kit init",
+    "health": "agent-kit doctor"
+  }
+}
 ```
 
 ### Method 3: Interactive Mode (Choose Your Team)
@@ -639,7 +645,6 @@ This validates: agent files exist, directory structure is correct, manifest is c
 | `agent-kit doctor` | Validate system health and flag missing components |
 | `agent-kit clean` | Remove legacy zero-footprint migration artifacts |
 | `agent-kit chat` | Launch the interactive Command-Trigger REPL |
-| `agent-kit run "prompt"` | **[V3]** Autonomous Execution Engine — delegates task to AI agents that write files & run commands |
 | `agent-kit sync` | **[V3]** Run a one-shot Semantic Memory Sync — updates `architecture.md`, `api-contracts.md`, `dependencies.md` |
 | `agent-kit sync --watch` | **[V3]** Watch mode — auto-re-syncs agent memory every 5s when project files change |
 | `agent-kit mcp` | **[V3]** Start the Model Context Protocol (MCP) server for native Cursor / Claude Desktop integration |
@@ -822,10 +827,12 @@ flowchart LR
 |:-----------|:------:|:------------|
 | 🏪 **Agent Marketplace** | 🔜 Planned | Community-contributed agent templates, skills, and CSV datasets |
 | 🔀 **Multi-LLM Router** | 🔜 Planned | Assign different AI models to different agents (GPT for planning, Claude for code, Gemini for design) |
-| 📊 **Live Dashboard** | 🔜 Planned | Web-based fleet monitoring — see which agents are active, task queues, and performance |
-| 🔌 **MCP Server** | 🔜 Planned | Native Model Context Protocol server for direct AI tool-calling integration |
-| 🎙️ **Voice-First Agents** | 🧪 Research | Voice-driven agent interaction for hands-free development |
-| 🤝 **Agent-to-Agent Comms** | 🧪 Research | Direct inter-agent messaging without routing through the orchestrator |
+| 📊 **Live Dashboard** | 🔜 Planned | Web-based fleet monitoring## 🧠 The Agent-Kit Architecture (V3.1+)
+
+Agent-Kit V3 introduces three distinct intelligence pillars designed to **augment** your existing IDE AI (like Cursor, Copilot, or Antigravity):
+1. **Pillar 1: Native MCP Provider** - Agent-Kit integrates directly into cursor/claude as an active tool server.
+2. **Pillar 2: The Hybrid Arsenal** - Provides active validation, security chaos testing, and UI generation scripts that Cursor can trigger autonomously.
+3. **Pillar 3: Semantic Project Memory** - Live AST-aware codebase scanning that updates agent ground-truth over time.ng through the orchestrator |
 
 <br/>
 

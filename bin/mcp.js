@@ -65,6 +65,22 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
                     },
                     required: ["query"]
                 }
+            },
+            {
+                name: "run_project_audit",
+                description: "Runs the complete Agent-Kit system health check and architecture audit (checklist.py). Use this to verify project integrity, missing components, or zero-footprint compliance.",
+                inputSchema: {
+                    type: "object",
+                    properties: {} // No arguments required
+                }
+            },
+            {
+                name: "run_security_chaos",
+                description: "Runs the Security Chaos Monkey (security_chaos_test.py) to scan for exposed credentials, risky eval() statements, and dangerous shell executions.",
+                inputSchema: {
+                    type: "object",
+                    properties: {} // No arguments required
+                }
             }
         ],
     };
@@ -131,6 +147,35 @@ async function runUIDesignScript(args) {
     });
 }
 
+// Helper to run any arbitrary python script in the scripts/ directory
+async function runPythonScript(scriptName) {
+    return new Promise((resolve, reject) => {
+        const sourceDir = path.join(__dirname, '..');
+        const scriptPath = path.join(sourceDir, 'scripts', scriptName);
+
+        // Ensure Python runs in the EXACT directory the user launched from (where their project is)
+        const userProjectDir = process.cwd();
+        const processRef = spawn('python', [scriptPath], { cwd: userProjectDir });
+
+        let stdout = '';
+        let stderr = '';
+
+        processRef.stdout.on('data', (data) => stdout += data.toString());
+        processRef.stderr.on('data', (data) => stderr += data.toString());
+
+        processRef.on('close', (code) => {
+            // Some scripts might exit with code 1 if they find errors (e.g. security flaws). 
+            // We want to return the output regardless so the LLM can see the errors.
+            const cleanOut = (stdout + '\n' + stderr).replace(/\x1b\[[0-9;]*m/g, '').trim();
+            resolve(cleanOut);
+        });
+
+        process.on('error', (err) => {
+            reject(err);
+        });
+    });
+}
+
 // Handle tool execution
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
     switch (request.params.name) {
@@ -185,6 +230,32 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             } catch (error) {
                 return {
                     content: [{ type: "text", text: `Error querying UI/UX Engine: ${error.message}` }],
+                    isError: true,
+                };
+            }
+        }
+        case "run_project_audit": {
+            try {
+                const output = await runPythonScript('checklist.py');
+                return {
+                    content: [{ type: "text", text: output }]
+                };
+            } catch (error) {
+                return {
+                    content: [{ type: "text", text: `Error running project audit: ${error.message}` }],
+                    isError: true,
+                };
+            }
+        }
+        case "run_security_chaos": {
+            try {
+                const output = await runPythonScript('security_chaos_test.py');
+                return {
+                    content: [{ type: "text", text: output }]
+                };
+            } catch (error) {
+                return {
+                    content: [{ type: "text", text: `Error running security chaos: ${error.message}` }],
                     isError: true,
                 };
             }
