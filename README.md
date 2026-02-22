@@ -1,17 +1,20 @@
 <div align="center">
 
+<!-- SEO METADATA FOR GITHUB ARCHITECTURE SEARCH -->
+<!-- keywords: model context protocol, mcp server, cursor agent, claude desktop, windsurf, copilot, autonomous agents, multi-agent framework, semantic memory, tree-of-thought, ai ide augmentation, developer tools, local-first ai -->
+
 <br/>
 
-# 🏭 Agent-Kit
+# 🏭 Agent-Kit (V3.1) — The Hybrid AI Arsenal
 
 <br/>
 
-### The AI Software Company That Lives Inside Your IDE
+### The Ultimate MCP Server that supercharges Cursor, Claude Desktop, and Windsurf.
 
 <br/>
 
 > *You are not a solo developer anymore.*
-> *You are a CTO with 53 autonomous AI employees.*
+> *You are a CTO with 53 autonomous AI employees acting as a native extension to your IDE.*
 
 <br/>
 
@@ -122,13 +125,13 @@ your-project/
 └── bin/cli.js                    ← CLI entry point
 ```
 
-**Every `.md` file is an agent definition** — a detailed protocol document that tells your AI IDE (Cursor, VS Code, Windsurf, or any AI editor) exactly how to behave for a specific role. When you tell your AI assistant to "read the backend specialist agent," it loads that agent's rules, boundaries, skills, and decision frameworks.
+**Every `.md` file is an agent definition** — a detailed protocol document that tells your AI IDE (whether you use **Cursor**, **VS Code + GitHub Copilot**, **Windsurf**, or **Claude Desktop**) exactly how to behave for a specific role. When you tell your AI assistant to "read the backend specialist agent", it loads that agent's rules, boundaries, skills, and decision frameworks.
 
-**🚀 V3 Feature: Native MCP Server**
-Agent-Kit now runs as a Model Context Protocol (MCP) server. You can connect it directly to Claude Desktop or Cursor to dynamically `list_agents`, generate `get_agent_prompt`s, and `query_ui_ux_engine` entirely in the background without copy-pasting code!
+**🚀 V3.1 Feature: Native MCP Server (IDE Augmentation)**
+Agent-Kit now runs natively as a **Model Context Protocol (MCP)** server. You can connect it directly to **Claude Desktop** or **Cursor** to dynamically `list_agents`, generate `get_agent_prompt`s, trigger AST codebase parsing (`sync_semantic_memory`), and `query_ui_ux_engine` entirely in the background without copy-pasting code!
 
 > [!IMPORTANT]
-> Agent-Kit does **not** run its own AI models. It augments **your existing AI IDE** by giving it structured roles, governance protocols, and domain-specific intelligence. Think of it as the operating system, and your AI (GPT, Claude, Gemini) as the hardware.
+> Agent-Kit does **not** run its own AI models. It is an **IDE Augmentation Framework** that supercharges your existing AI IDE by giving it structured roles, governance protocols, and domain-specific intelligence. Think of it as the operating system, and your AI (GPT-4, Claude 3.5 Sonnet, Gemini Pro) as the hardware engine.
 
 <br/>
 

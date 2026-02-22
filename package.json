@@ -2,7 +2,7 @@
     "$schema": "https://json.schemastore.org/package",
     "name": "@ab_aswini/agent-kit-p1",
     "version": "3.1.0",
-    "description": "Multi-agent AI framework for local-first software development.",
+    "description": "The Ultimate Hybrid AI Arsenal for existing IDEs (Cursor, Windsurf, Copilot). Empowers developers with 53 specialized agents, Semantic AST Memory, and Model Context Protocol (MCP) native tools.",
     "main": "index.js",
     "bin": {
         "agent-kit": "./bin/cli.js"
@@ -25,17 +25,22 @@
     },
     "keywords": [
         "ai",
+        "mcp",
+        "model-context-protocol",
+        "cursor",
+        "claude-desktop",
+        "windsurf",
+        "copilot",
+        "ide-augmentation",
         "agents",
-        "npx",
-        "orchestration",
-        "multi-agent-systems",
+        "autonomous-agents",
+        "multi-agent-framework",
         "agentic-workflow",
-        "iron-well",
-        "automation",
+        "semantic-memory",
+        "ast-parser",
         "developer-tools",
         "local-first-ai",
-        "software-company",
-        "idm"
+        "software-engineering"
     ],
     "author": "Aswini Behera",
     "license": "MIT",

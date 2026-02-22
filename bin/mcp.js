@@ -81,6 +81,14 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
                     type: "object",
                     properties: {} // No arguments required
                 }
+            },
+            {
+                name: "sync_semantic_memory",
+                description: "Triggers a real-time AST parse of the user's project to extract the active architecture, API routes, and dependencies into memory/global/. Use this to ensure you have the absolute ground-truth context before writing complex plans or starting work.",
+                inputSchema: {
+                    type: "object",
+                    properties: {}
+                }
             }
         ],
     };
@@ -256,6 +264,19 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             } catch (error) {
                 return {
                     content: [{ type: "text", text: `Error running security chaos: ${error.message}` }],
+                    isError: true,
+                };
+            }
+        }
+        case "sync_semantic_memory": {
+            try {
+                const output = await runPythonScript('memory_sync.py');
+                return {
+                    content: [{ type: "text", text: output }]
+                };
+            } catch (error) {
+                return {
+                    content: [{ type: "text", text: `Error syncing semantic memory: ${error.message}` }],
                     isError: true,
                 };
             }
