@@ -489,17 +489,36 @@ if (command === 'doctor') {
     clean();
 } else if (command === 'chat') {
     startChatRepl();
+} else if (command === 'run') {
+    const taskPrompt = args.slice(1).join(' ');
+    if (!taskPrompt) {
+        console.log(pc.red('Error: The "run" command requires a task prompt.'));
+        console.log(pc.yellow('Usage: npx @ab_aswini/agent-kit-p1 run "build a login page"'));
+        process.exit(1);
+    }
+    require('./engine.js')(taskPrompt);
+} else if (command === 'sync') {
+    const watchMode = args.includes('--watch') || args.includes('-w');
+    const scriptPath = path.join(sourceDir, 'scripts', 'memory_sync.py');
+    const syncArgs = ['--path', targetDir];
+    if (watchMode) syncArgs.push('--watch');
+    console.log(pc.cyan('\n🧠 Agent-Kit Semantic Memory Sync' + (watchMode ? ' (Watch Mode)' : '') + '\n'));
+    const { spawnSync } = require('child_process');
+    spawnSync('python', [scriptPath, ...syncArgs], { stdio: 'inherit', cwd: targetDir });
 } else if (command === 'mcp') {
     require('./mcp.js');
 } else if (command === 'init' || !command) {
     init();
 } else {
     console.log(pc.yellow(`Unknown command: ${command}`));
-    console.log('Available commands: init, doctor, clean, chat, mcp');
+    console.log('Available commands: init, doctor, clean, chat, run, sync, mcp');
     console.log('Usage: npx @ab_aswini/agent-kit-p1 init');
     console.log('       npx @ab_aswini/agent-kit-p1 init --interactive');
     console.log('       npx @ab_aswini/agent-kit-p1 doctor');
     console.log('       npx @ab_aswini/agent-kit-p1 clean');
     console.log('       npx @ab_aswini/agent-kit-p1 chat');
+    console.log('       npx @ab_aswini/agent-kit-p1 run "prompt"');
+    console.log('       npx @ab_aswini/agent-kit-p1 sync');
+    console.log('       npx @ab_aswini/agent-kit-p1 sync --watch');
     console.log('       npx @ab_aswini/agent-kit-p1 mcp');
 }

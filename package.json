@@ -1,7 +1,7 @@
 {
     "$schema": "https://json.schemastore.org/package",
     "name": "@ab_aswini/agent-kit-p1",
-    "version": "2.0.1",
+    "version": "3.0.0",
     "description": "Multi-agent AI framework for local-first software development.",
     "main": "index.js",
     "bin": {
@@ -40,7 +40,9 @@
     "author": "Aswini Behera",
     "license": "MIT",
     "dependencies": {
+        "@anthropic-ai/sdk": "^0.78.0",
         "@modelcontextprotocol/sdk": "^1.26.0",
+        "dotenv": "^17.3.1",
         "fs-extra": "^11.2.0",
         "picocolors": "^1.0.0"
     }

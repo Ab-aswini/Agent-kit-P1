@@ -639,7 +639,10 @@ This validates: agent files exist, directory structure is correct, manifest is c
 | `agent-kit doctor` | Validate system health and flag missing components |
 | `agent-kit clean` | Remove legacy zero-footprint migration artifacts |
 | `agent-kit chat` | Launch the interactive Command-Trigger REPL |
-| `agent-kit mcp` | Start the local Model Context Protocol (MCP) server via stdio |
+| `agent-kit run "prompt"` | **[V3]** Autonomous Execution Engine — delegates task to AI agents that write files & run commands |
+| `agent-kit sync` | **[V3]** Run a one-shot Semantic Memory Sync — updates `architecture.md`, `api-contracts.md`, `dependencies.md` |
+| `agent-kit sync --watch` | **[V3]** Watch mode — auto-re-syncs agent memory every 5s when project files change |
+| `agent-kit mcp` | **[V3]** Start the Model Context Protocol (MCP) server for native Cursor / Claude Desktop integration |
 
 ### 💬 Command-Trigger REPL (Slash Commands)
 
