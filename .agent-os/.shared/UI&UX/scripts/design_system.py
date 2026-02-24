@@ -407,126 +407,66 @@ def format_ascii_box(design_system: dict) -> str:
     return "\n".join(lines)
 
 
+from string import Template
+from pathlib import Path # Added for Path object
+
+# Assuming DATA_DIR is defined elsewhere, e.g., in core.py or config.py
+# For this snippet, we'll define a placeholder if it's not globally available
+try:
+    DATA_DIR # Check if DATA_DIR is already defined
+except NameError:
+    # Placeholder for DATA_DIR if not defined in the provided context
+    # In a real application, this would be imported or defined globally
+    DATA_DIR = Path(__file__).parent / "data"
+
+
+def _render_template(design_system: dict) -> str:
+    template_path = DATA_DIR.parent / "templates" / "design_system.md.tpl"
+    if not template_path.exists():
+        return "# Error: Template not found at " + str(template_path)
+        
+    with open(template_path, "r", encoding="utf-8") as f:
+        tpl_str = f.read()
+
+    mapping = {
+        "project": design_system.get("project_name", "PROJECT"),
+        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "color_mood": design_system.get("color_mood", ""),
+        "colors_primary": design_system.get("colors", {}).get("primary", ""),
+        "colors_secondary": design_system.get("colors", {}).get("secondary", ""),
+        "colors_cta": design_system.get("colors", {}).get("cta", ""),
+        "colors_background": design_system.get("colors", {}).get("background", ""),
+        "colors_text": design_system.get("colors", {}).get("text", ""),
+        "colors_border": design_system.get("colors", {}).get("border", ""),
+        "typography_mood": design_system.get("typography", {}).get("mood", ""), # Corrected to use 'mood' from typography
+        "typography_heading": design_system.get("typography", {}).get("heading", ""),
+        "typography_body": design_system.get("typography", {}).get("body", ""),
+        "typography_import": design_system.get("typography", {}).get("css_import", ""),
+        "style_name": design_system.get("style", {}).get("name", ""),
+        "style_keywords": design_system.get("style", {}).get("keywords", ""),
+        "style_best_for": design_system.get("style", {}).get("best_for", ""),
+        "key_effects": design_system.get("key_effects", ""),
+        "pattern_name": design_system.get("pattern", {}).get("name", ""),
+        "pattern_conversion": design_system.get("pattern", {}).get("conversion", ""),
+        "pattern_cta_placement": design_system.get("pattern", {}).get("cta_placement", ""),
+        "pattern_sections": design_system.get("pattern", {}).get("sections", ""),
+        "anti_patterns": "\n".join([f"- ❌ {a.strip()}" for a in design_system.get("anti_patterns", "").split("+") if a.strip()]),
+        "dark_mode_strategy": design_system.get("dark_mode", {}).get("strategy", ""),
+        "ai_integration": design_system.get("ai_integration", {}).get("level", ""),
+        "privacy_tier": design_system.get("privacy", {}).get("tier", ""),
+        "agent_readiness": design_system.get("agent_readiness", ""),
+        "performance_budget": design_system.get("performance_budget", "")
+    }
+    
+    return Template(tpl_str).safe_substitute(mapping)
+
+def format_json(design_system: dict) -> str:
+    """Format design system as a JSON string."""
+    return json.dumps(design_system, indent=2)
+
 def format_markdown(design_system: dict) -> str:
     """Format design system as markdown."""
-    project = design_system.get("project_name", "PROJECT")
-    pattern = design_system.get("pattern", {})
-    style = design_system.get("style", {})
-    colors = design_system.get("colors", {})
-    typography = design_system.get("typography", {})
-    effects = design_system.get("key_effects", "")
-    anti_patterns = design_system.get("anti_patterns", "")
-
-    lines = []
-    lines.append(f"## Design System: {project}")
-    lines.append("")
-
-    # Pattern section
-    lines.append("### Pattern")
-    lines.append(f"- **Name:** {pattern.get('name', '')}")
-    if pattern.get('conversion'):
-        lines.append(f"- **Conversion Focus:** {pattern.get('conversion', '')}")
-    if pattern.get('cta_placement'):
-        lines.append(f"- **CTA Placement:** {pattern.get('cta_placement', '')}")
-    if pattern.get('color_strategy'):
-        lines.append(f"- **Color Strategy:** {pattern.get('color_strategy', '')}")
-    lines.append(f"- **Sections:** {pattern.get('sections', '')}")
-    lines.append("")
-
-    # Style section
-    lines.append("### Style")
-    lines.append(f"- **Name:** {style.get('name', '')}")
-    if style.get('keywords'):
-        lines.append(f"- **Keywords:** {style.get('keywords', '')}")
-    if style.get('best_for'):
-        lines.append(f"- **Best For:** {style.get('best_for', '')}")
-    if style.get('performance') or style.get('accessibility'):
-        lines.append(f"- **Performance:** {style.get('performance', '')} | **Accessibility:** {style.get('accessibility', '')}")
-    lines.append("")
-
-    # Colors section
-    lines.append("### Colors")
-    lines.append(f"| Role | Hex |")
-    lines.append(f"|------|-----|")
-    lines.append(f"| Primary | {colors.get('primary', '')} |")
-    lines.append(f"| Secondary | {colors.get('secondary', '')} |")
-    lines.append(f"| CTA | {colors.get('cta', '')} |")
-    lines.append(f"| Background | {colors.get('background', '')} |")
-    lines.append(f"| Text | {colors.get('text', '')} |")
-    if colors.get("notes"):
-        lines.append(f"\n*Notes: {colors.get('notes', '')}*")
-    lines.append("")
-
-    # Typography section
-    lines.append("### Typography")
-    lines.append(f"- **Heading:** {typography.get('heading', '')}")
-    lines.append(f"- **Body:** {typography.get('body', '')}")
-    if typography.get("mood"):
-        lines.append(f"- **Mood:** {typography.get('mood', '')}")
-    if typography.get("best_for"):
-        lines.append(f"- **Best For:** {typography.get('best_for', '')}")
-    if typography.get("google_fonts_url"):
-        lines.append(f"- **Google Fonts:** {typography.get('google_fonts_url', '')}")
-    if typography.get("css_import"):
-        lines.append(f"- **CSS Import:**")
-        lines.append(f"```css")
-        lines.append(f"{typography.get('css_import', '')}")
-        lines.append(f"```")
-    lines.append("")
-
-    # Key Effects section
-    if effects:
-        lines.append("### Key Effects")
-        lines.append(f"{effects}")
-        lines.append("")
-
-    # Anti-patterns section
-    if anti_patterns:
-        lines.append("### Avoid (Anti-patterns)")
-        newline_bullet = '\n- '
-        lines.append(f"- {anti_patterns.replace(' + ', newline_bullet)}")
-        lines.append("")
-
-    # Pre-Delivery Checklist section
-    # 2026 Capabilities section
-    dark_mode = design_system.get("dark_mode", {})
-    ai_integration = design_system.get("ai_integration", {})
-    privacy = design_system.get("privacy", {})
-    agent_readiness = design_system.get("agent_readiness", "")
-    perf_budget = design_system.get("performance_budget", "")
-
-    if any([dark_mode.get("strategy"), ai_integration.get("level"), privacy.get("tier")]):
-        lines.append("### 2026 Capabilities")
-        lines.append("")
-        lines.append("| Dimension | Value |")
-        lines.append("|-----------|-------|")
-        if dark_mode.get("strategy"):
-            lines.append(f"| Dark Mode | {dark_mode['strategy']} |")
-        if ai_integration.get("level"):
-            lines.append(f"| AI Integration | {ai_integration['level']} |")
-        if privacy.get("tier"):
-            lines.append(f"| Privacy Tier | {privacy['tier']} |")
-        if agent_readiness:
-            lines.append(f"| Agent Readiness | {agent_readiness} |")
-        if perf_budget:
-            lines.append(f"| Performance Budget | {perf_budget} |")
-        lines.append("")
-
-    lines.append("### Pre-Delivery Checklist")
-    lines.append("- [ ] No emojis as icons (use SVG: Heroicons/Lucide)")
-    lines.append("- [ ] cursor-pointer on all clickable elements")
-    lines.append("- [ ] Hover states with smooth transitions (150-300ms)")
-    lines.append("- [ ] Light mode: text contrast 4.5:1 minimum")
-    lines.append("- [ ] Focus states visible for keyboard nav")
-    lines.append("- [ ] prefers-reduced-motion respected")
-    lines.append("- [ ] Responsive: 375px, 768px, 1024px, 1440px")
-    lines.append("- [ ] Dark mode: prefers-color-scheme + manual toggle")
-    lines.append("- [ ] AI responses: streaming + confidence indicators")
-    lines.append("- [ ] Privacy: consent-before-track + GDPR delete flow")
-    lines.append("- [ ] Performance: LCP<2.5s, CLS<0.1, INP<200ms")
-    lines.append("")
-
-    return "\n".join(lines)
+    return _render_template(design_system)
 
 
 # ============ MAIN ENTRY POINT ============
@@ -538,7 +478,7 @@ def generate_design_system(query: str, project_name: str = None, output_format: 
     Args:
         query: Search query (e.g., "SaaS dashboard", "e-commerce luxury")
         project_name: Optional project name for output header
-        output_format: "ascii" (default) or "markdown"
+        output_format: "ascii", "markdown", or "json"
         persist: If True, save design system to design-system/ folder
         page: Optional page name for page-specific override file
         output_dir: Optional output directory (defaults to current working directory)
@@ -553,7 +493,9 @@ def generate_design_system(query: str, project_name: str = None, output_format: 
     if persist:
         persist_design_system(design_system, page, output_dir, query)
 
-    if output_format == "markdown":
+    if output_format == "json":
+        return format_json(design_system)
+    elif output_format == "markdown":
         return format_markdown(design_system)
     return format_ascii_box(design_system)
 
@@ -612,295 +554,7 @@ def persist_design_system(design_system: dict, page: str = None, output_dir: str
 
 def format_master_md(design_system: dict) -> str:
     """Format design system as MASTER.md with hierarchical override logic."""
-    project = design_system.get("project_name", "PROJECT")
-    pattern = design_system.get("pattern", {})
-    style = design_system.get("style", {})
-    colors = design_system.get("colors", {})
-    typography = design_system.get("typography", {})
-    effects = design_system.get("key_effects", "")
-    anti_patterns = design_system.get("anti_patterns", "")
-    
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    
-    lines = []
-    
-    # Logic header
-    lines.append("# Design System Master File")
-    lines.append("")
-    lines.append("> **LOGIC:** When building a specific page, first check `design-system/pages/[page-name].md`.")
-    lines.append("> If that file exists, its rules **override** this Master file.")
-    lines.append("> If not, strictly follow the rules below.")
-    lines.append("")
-    lines.append("---")
-    lines.append("")
-    lines.append(f"**Project:** {project}")
-    lines.append(f"**Generated:** {timestamp}")
-    lines.append(f"**Category:** {design_system.get('category', 'General')}")
-    lines.append("")
-    lines.append("---")
-    lines.append("")
-    
-    # Global Rules section
-    lines.append("## Global Rules")
-    lines.append("")
-    
-    # Color Palette
-    lines.append("### Color Palette")
-    lines.append("")
-    lines.append("| Role | Hex | CSS Variable |")
-    lines.append("|------|-----|--------------|")
-    lines.append(f"| Primary | `{colors.get('primary', '#2563EB')}` | `--color-primary` |")
-    lines.append(f"| Secondary | `{colors.get('secondary', '#3B82F6')}` | `--color-secondary` |")
-    lines.append(f"| CTA/Accent | `{colors.get('cta', '#F97316')}` | `--color-cta` |")
-    lines.append(f"| Background | `{colors.get('background', '#F8FAFC')}` | `--color-background` |")
-    lines.append(f"| Text | `{colors.get('text', '#1E293B')}` | `--color-text` |")
-    lines.append("")
-    if colors.get("notes"):
-        lines.append(f"**Color Notes:** {colors.get('notes', '')}")
-        lines.append("")
-    
-    # Typography
-    lines.append("### Typography")
-    lines.append("")
-    lines.append(f"- **Heading Font:** {typography.get('heading', 'Inter')}")
-    lines.append(f"- **Body Font:** {typography.get('body', 'Inter')}")
-    if typography.get("mood"):
-        lines.append(f"- **Mood:** {typography.get('mood', '')}")
-    if typography.get("google_fonts_url"):
-        lines.append(f"- **Google Fonts:** [{typography.get('heading', '')} + {typography.get('body', '')}]({typography.get('google_fonts_url', '')})")
-    lines.append("")
-    if typography.get("css_import"):
-        lines.append("**CSS Import:**")
-        lines.append("```css")
-        lines.append(typography.get("css_import", ""))
-        lines.append("```")
-        lines.append("")
-    
-    # Spacing Variables
-    lines.append("### Spacing Variables")
-    lines.append("")
-    lines.append("| Token | Value | Usage |")
-    lines.append("|-------|-------|-------|")
-    lines.append("| `--space-xs` | `4px` / `0.25rem` | Tight gaps |")
-    lines.append("| `--space-sm` | `8px` / `0.5rem` | Icon gaps, inline spacing |")
-    lines.append("| `--space-md` | `16px` / `1rem` | Standard padding |")
-    lines.append("| `--space-lg` | `24px` / `1.5rem` | Section padding |")
-    lines.append("| `--space-xl` | `32px` / `2rem` | Large gaps |")
-    lines.append("| `--space-2xl` | `48px` / `3rem` | Section margins |")
-    lines.append("| `--space-3xl` | `64px` / `4rem` | Hero padding |")
-    lines.append("")
-    
-    # Shadow Depths
-    lines.append("### Shadow Depths")
-    lines.append("")
-    lines.append("| Level | Value | Usage |")
-    lines.append("|-------|-------|-------|")
-    lines.append("| `--shadow-sm` | `0 1px 2px rgba(0,0,0,0.05)` | Subtle lift |")
-    lines.append("| `--shadow-md` | `0 4px 6px rgba(0,0,0,0.1)` | Cards, buttons |")
-    lines.append("| `--shadow-lg` | `0 10px 15px rgba(0,0,0,0.1)` | Modals, dropdowns |")
-    lines.append("| `--shadow-xl` | `0 20px 25px rgba(0,0,0,0.15)` | Hero images, featured cards |")
-    lines.append("")
-    
-    # Component Specs section
-    lines.append("---")
-    lines.append("")
-    lines.append("## Component Specs")
-    lines.append("")
-    
-    # Buttons
-    lines.append("### Buttons")
-    lines.append("")
-    lines.append("```css")
-    lines.append("/* Primary Button */")
-    lines.append(".btn-primary {")
-    lines.append(f"  background: {colors.get('cta', '#F97316')};")
-    lines.append("  color: white;")
-    lines.append("  padding: 12px 24px;")
-    lines.append("  border-radius: 8px;")
-    lines.append("  font-weight: 600;")
-    lines.append("  transition: all 200ms ease;")
-    lines.append("  cursor: pointer;")
-    lines.append("}")
-    lines.append("")
-    lines.append(".btn-primary:hover {")
-    lines.append("  opacity: 0.9;")
-    lines.append("  transform: translateY(-1px);")
-    lines.append("}")
-    lines.append("")
-    lines.append("/* Secondary Button */")
-    lines.append(".btn-secondary {")
-    lines.append(f"  background: transparent;")
-    lines.append(f"  color: {colors.get('primary', '#2563EB')};")
-    lines.append(f"  border: 2px solid {colors.get('primary', '#2563EB')};")
-    lines.append("  padding: 12px 24px;")
-    lines.append("  border-radius: 8px;")
-    lines.append("  font-weight: 600;")
-    lines.append("  transition: all 200ms ease;")
-    lines.append("  cursor: pointer;")
-    lines.append("}")
-    lines.append("```")
-    lines.append("")
-    
-    # Cards
-    lines.append("### Cards")
-    lines.append("")
-    lines.append("```css")
-    lines.append(".card {")
-    lines.append(f"  background: {colors.get('background', '#FFFFFF')};")
-    lines.append("  border-radius: 12px;")
-    lines.append("  padding: 24px;")
-    lines.append("  box-shadow: var(--shadow-md);")
-    lines.append("  transition: all 200ms ease;")
-    lines.append("  cursor: pointer;")
-    lines.append("}")
-    lines.append("")
-    lines.append(".card:hover {")
-    lines.append("  box-shadow: var(--shadow-lg);")
-    lines.append("  transform: translateY(-2px);")
-    lines.append("}")
-    lines.append("```")
-    lines.append("")
-    
-    # Inputs
-    lines.append("### Inputs")
-    lines.append("")
-    lines.append("```css")
-    lines.append(".input {")
-    lines.append("  padding: 12px 16px;")
-    lines.append("  border: 1px solid #E2E8F0;")
-    lines.append("  border-radius: 8px;")
-    lines.append("  font-size: 16px;")
-    lines.append("  transition: border-color 200ms ease;")
-    lines.append("}")
-    lines.append("")
-    lines.append(".input:focus {")
-    lines.append(f"  border-color: {colors.get('primary', '#2563EB')};")
-    lines.append("  outline: none;")
-    lines.append(f"  box-shadow: 0 0 0 3px {colors.get('primary', '#2563EB')}20;")
-    lines.append("}")
-    lines.append("```")
-    lines.append("")
-    
-    # Modals
-    lines.append("### Modals")
-    lines.append("")
-    lines.append("```css")
-    lines.append(".modal-overlay {")
-    lines.append("  background: rgba(0, 0, 0, 0.5);")
-    lines.append("  backdrop-filter: blur(4px);")
-    lines.append("}")
-    lines.append("")
-    lines.append(".modal {")
-    lines.append("  background: white;")
-    lines.append("  border-radius: 16px;")
-    lines.append("  padding: 32px;")
-    lines.append("  box-shadow: var(--shadow-xl);")
-    lines.append("  max-width: 500px;")
-    lines.append("  width: 90%;")
-    lines.append("}")
-    lines.append("```")
-    lines.append("")
-    
-    # Style section
-    lines.append("---")
-    lines.append("")
-    lines.append("## Style Guidelines")
-    lines.append("")
-    lines.append(f"**Style:** {style.get('name', 'Minimalism')}")
-    lines.append("")
-    if style.get("keywords"):
-        lines.append(f"**Keywords:** {style.get('keywords', '')}")
-        lines.append("")
-    if style.get("best_for"):
-        lines.append(f"**Best For:** {style.get('best_for', '')}")
-        lines.append("")
-    if effects:
-        lines.append(f"**Key Effects:** {effects}")
-        lines.append("")
-    
-    # Layout Pattern
-    lines.append("### Page Pattern")
-    lines.append("")
-    lines.append(f"**Pattern Name:** {pattern.get('name', '')}")
-    lines.append("")
-    if pattern.get('conversion'):
-        lines.append(f"- **Conversion Strategy:** {pattern.get('conversion', '')}")
-    if pattern.get('cta_placement'):
-        lines.append(f"- **CTA Placement:** {pattern.get('cta_placement', '')}")
-    lines.append(f"- **Section Order:** {pattern.get('sections', '')}")
-    lines.append("")
-    
-    # Anti-Patterns section
-    lines.append("---")
-    lines.append("")
-    lines.append("## Anti-Patterns (Do NOT Use)")
-    lines.append("")
-    if anti_patterns:
-        anti_list = [a.strip() for a in anti_patterns.split("+")]
-        for anti in anti_list:
-            if anti:
-                lines.append(f"- ❌ {anti}")
-    lines.append("")
-    lines.append("### Additional Forbidden Patterns")
-    lines.append("")
-    lines.append("- ❌ **Emojis as icons** — Use SVG icons (Heroicons, Lucide, Simple Icons)")
-    lines.append("- ❌ **Missing cursor:pointer** — All clickable elements must have cursor:pointer")
-    lines.append("- ❌ **Layout-shifting hovers** — Avoid scale transforms that shift layout")
-    lines.append("- ❌ **Low contrast text** — Maintain 4.5:1 minimum contrast ratio")
-    lines.append("- ❌ **Instant state changes** — Always use transitions (150-300ms)")
-    lines.append("- ❌ **Invisible focus states** — Focus states must be visible for a11y")
-    lines.append("")
-    
-    # 2026 Capabilities
-    lines.append("---")
-    lines.append("")
-    lines.append("## 2026 Capabilities")
-    lines.append("")
-
-    dark_mode = design_system.get("dark_mode", {})
-    ai_integration = design_system.get("ai_integration", {})
-    privacy = design_system.get("privacy", {})
-    agent_readiness = design_system.get("agent_readiness", "")
-    perf_budget = design_system.get("performance_budget", "")
-
-    lines.append("| Dimension | Value |")
-    lines.append("|-----------|-------|")
-    if dark_mode.get("strategy"):
-        lines.append(f"| Dark Mode Strategy | {dark_mode['strategy']} |")
-    if ai_integration.get("level"):
-        lines.append(f"| AI Integration | {ai_integration['level']} |")
-    if privacy.get("tier"):
-        lines.append(f"| Privacy Tier | {privacy['tier']} |")
-    if agent_readiness:
-        lines.append(f"| Agent Readiness | {agent_readiness} |")
-    if perf_budget:
-        lines.append(f"| Performance Budget | {perf_budget} |")
-    lines.append("")
-
-    # Pre-Delivery Checklist
-    lines.append("---")
-    lines.append("")
-    lines.append("## Pre-Delivery Checklist")
-    lines.append("")
-    lines.append("Before delivering any UI code, verify:")
-    lines.append("")
-    lines.append("- [ ] No emojis used as icons (use SVG instead)")
-    lines.append("- [ ] All icons from consistent icon set (Heroicons/Lucide)")
-    lines.append("- [ ] `cursor-pointer` on all clickable elements")
-    lines.append("- [ ] Hover states with smooth transitions (150-300ms)")
-    lines.append("- [ ] Light mode: text contrast 4.5:1 minimum")
-    lines.append("- [ ] Focus states visible for keyboard navigation")
-    lines.append("- [ ] `prefers-reduced-motion` respected")
-    lines.append("- [ ] Responsive: 375px, 768px, 1024px, 1440px")
-    lines.append("- [ ] No content hidden behind fixed navbars")
-    lines.append("- [ ] No horizontal scroll on mobile")
-    lines.append("- [ ] Dark mode: `prefers-color-scheme` detection + manual toggle")
-    lines.append("- [ ] AI responses: progressive streaming + confidence indicators")
-    lines.append("- [ ] Privacy: consent-before-track + GDPR/CCPA delete flow")
-    lines.append("- [ ] Core Web Vitals: LCP<2.5s, CLS<0.1, INP<200ms")
-    lines.append("")
-
-    return "\n".join(lines)
+    return _render_template(design_system)
 
 
 def format_page_override_md(design_system: dict, page_name: str, page_query: str = None) -> str:
@@ -912,104 +566,36 @@ def format_page_override_md(design_system: dict, page_name: str, page_query: str
     # Detect page type and generate intelligent overrides
     page_overrides = _generate_intelligent_overrides(page_name, page_query, design_system)
     
-    lines = []
-    
-    lines.append(f"# {page_title} Page Overrides")
-    lines.append("")
-    lines.append(f"> **PROJECT:** {project}")
-    lines.append(f"> **Generated:** {timestamp}")
-    lines.append(f"> **Page Type:** {page_overrides.get('page_type', 'General')}")
-    lines.append("")
-    lines.append("> ⚠️ **IMPORTANT:** Rules in this file **override** the Master file (`design-system/MASTER.md`).")
-    lines.append("> Only deviations from the Master are documented here. For all other rules, refer to the Master.")
-    lines.append("")
-    lines.append("---")
-    lines.append("")
-    
-    # Page-specific rules with actual content
-    lines.append("## Page-Specific Rules")
-    lines.append("")
-    
-    # Layout Overrides
-    lines.append("### Layout Overrides")
-    lines.append("")
-    layout = page_overrides.get("layout", {})
-    if layout:
-        for key, value in layout.items():
-            lines.append(f"- **{key}:** {value}")
-    else:
-        lines.append("- No overrides — use Master layout")
-    lines.append("")
-    
-    # Spacing Overrides
-    lines.append("### Spacing Overrides")
-    lines.append("")
-    spacing = page_overrides.get("spacing", {})
-    if spacing:
-        for key, value in spacing.items():
-            lines.append(f"- **{key}:** {value}")
-    else:
-        lines.append("- No overrides — use Master spacing")
-    lines.append("")
-    
-    # Typography Overrides
-    lines.append("### Typography Overrides")
-    lines.append("")
-    typography = page_overrides.get("typography", {})
-    if typography:
-        for key, value in typography.items():
-            lines.append(f"- **{key}:** {value}")
-    else:
-        lines.append("- No overrides — use Master typography")
-    lines.append("")
-    
-    # Color Overrides
-    lines.append("### Color Overrides")
-    lines.append("")
-    colors = page_overrides.get("colors", {})
-    if colors:
-        for key, value in colors.items():
-            lines.append(f"- **{key}:** {value}")
-    else:
-        lines.append("- No overrides — use Master colors")
-    lines.append("")
-    
-    # Component Overrides
-    lines.append("### Component Overrides")
-    lines.append("")
-    components = page_overrides.get("components", [])
-    if components:
-        for comp in components:
-            lines.append(f"- {comp}")
-    else:
-        lines.append("- No overrides — use Master component specs")
-    lines.append("")
-    
-    # Page-Specific Components
-    lines.append("---")
-    lines.append("")
-    lines.append("## Page-Specific Components")
-    lines.append("")
-    unique_components = page_overrides.get("unique_components", [])
-    if unique_components:
-        for comp in unique_components:
-            lines.append(f"- {comp}")
-    else:
-        lines.append("- No unique components for this page")
-    lines.append("")
-    
-    # Recommendations
-    lines.append("---")
-    lines.append("")
-    lines.append("## Recommendations")
-    lines.append("")
-    recommendations = page_overrides.get("recommendations", [])
-    if recommendations:
-        for rec in recommendations:
-            lines.append(f"- {rec}")
-    lines.append("")
-    
-    return "\n".join(lines)
+    template_path = DATA_DIR.parent / "templates" / "page_override.md.tpl"
+    if not template_path.exists():
+        return "# Error: Template not found at " + str(template_path)
+        
+    with open(template_path, "r", encoding="utf-8") as f:
+        tpl_str = f.read()
+
+    def format_dict(d: dict, empty_msg: str) -> str:
+        if not d: return f"- {empty_msg}"
+        return "\n".join([f"- **{k}:** {v}" for k, v in d.items()])
+        
+    def format_list(l: list, empty_msg: str) -> str:
+        if not l: return f"- {empty_msg}"
+        return "\n".join([f"- {i}" for i in l])
+
+    mapping = {
+        "page_title": page_title,
+        "project": project,
+        "timestamp": timestamp,
+        "page_type": page_overrides.get('page_type', 'General'),
+        "layout_overrides": format_dict(page_overrides.get("layout", {}), "No overrides — use Master layout"),
+        "spacing_overrides": format_dict(page_overrides.get("spacing", {}), "No overrides — use Master spacing"),
+        "typography_overrides": format_dict(page_overrides.get("typography", {}), "No overrides — use Master typography"),
+        "color_overrides": format_dict(page_overrides.get("colors", {}), "No overrides — use Master colors"),
+        "component_overrides": format_list(page_overrides.get("components", []), "No overrides — use Master component specs"),
+        "unique_components": format_list(page_overrides.get("unique_components", []), "No unique components for this page"),
+        "recommendations": format_list(page_overrides.get("recommendations", []), "No specific recommendations")
+    }
+
+    return Template(tpl_str).safe_substitute(mapping)
 
 
 def _generate_intelligent_overrides(page_name: str, page_query: str, design_system: dict) -> dict:
@@ -1160,8 +746,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate Design System")
     parser.add_argument("query", help="Search query (e.g., 'SaaS dashboard')")
     parser.add_argument("--project-name", "-p", type=str, default=None, help="Project name")
-    parser.add_argument("--format", "-f", choices=["ascii", "markdown"], default="ascii", help="Output format")
-
+    parser.add_argument("--format", choices=["ascii", "markdown", "json"], default="ascii",
+                        help="Output format (ascii, markdown, or json)")
     args = parser.parse_args()
 
     result = generate_design_system(args.query, args.project_name, args.format)
