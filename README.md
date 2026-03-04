@@ -638,7 +638,7 @@ Agent-Kit can run as a **Model Context Protocol (MCP)** server, securely attachi
 }
 ```
 
-*Tools exposed natively to your AI:* `list_agents`, `get_agent_prompt`, `query_ui_ux_engine`.
+*Tools exposed natively to your AI:* `list_agents`, `get_agent_prompt`, `query_ui_ux_engine`, `run_memory_sync`, `run_checklist`, `run_security_chaos`.
 
 ### 🩺 Health Check
 
@@ -664,13 +664,15 @@ This validates: agent files exist, directory structure is correct, manifest is c
 
 | Command | Description |
 |:--------|:------------|
-| `agent-kit init` | Deploy all 53 agents, skills, workflows, and UI&UX engine |
+| `agent-kit init` | Deploy all 54 agents, skills, workflows, and UI&UX engine |
 | `agent-kit init -i` / `agent-kit init --interactive` | Interactive archetype selection (choose your team size) |
 | `agent-kit doctor` | Validate system health and flag missing components |
 | `agent-kit clean` | Remove legacy zero-footprint migration artifacts |
 | `agent-kit chat` | Launch the interactive Command-Trigger REPL |
+| `agent-kit run "prompt"` | **[V3.5]** Execute a task via the orchestration engine with action logging |
 | `agent-kit sync` | **[V3]** Run a one-shot Semantic Memory Sync — updates `architecture.md`, `api-contracts.md`, `dependencies.md` |
 | `agent-kit sync --watch` | **[V3]** Watch mode — auto-re-syncs agent memory every 5s when project files change |
+| `agent-kit self-test` | **[V3.5]** Run all 3 diagnostics (memory sync + security chaos + health check) with unified report |
 | `agent-kit mcp` | **[V3]** Start the Model Context Protocol (MCP) server for native Cursor / Claude Desktop integration |
 
 ### 💬 Command-Trigger REPL (Slash Commands)
@@ -684,6 +686,7 @@ Run `npx @ab_aswini/agent-kit-p1 chat` to open an interactive session. You can t
 | `/test` | QA-001 | Writes comprehensive, edge-case resilient unit/integration tests |
 | `/refactor`| BE-001 | Optimizes code for efficiency, readability, and SOLID principles |
 | `/plan` | SP-001 | Decomposes a request into a granular, step-by-step milestone plan |
+| `/seo`  | MKT-001 | **[V3.5]** Triggers SERAPH SEO+AEO agent for technical SEO, schema markup, and search optimization |
 | *(default)*| SFS-001 | Standard orchestrator routing for general inquiries |
 
 > [!IMPORTANT]
