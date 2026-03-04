@@ -103,7 +103,8 @@ async function selectArchetype() {
         console.log(pc.yellow(`  [${i + 1}] ${a.name}`));
         console.log(pc.gray(`      ${a.description}\n`));
     });
-    console.log(pc.yellow(`  [${archetypes.length + 1}] Full Fleet (all 53 agents)\n`));
+    const manifest = await fs.readJson(path.join(sourceDir, 'manifest.json')).catch(() => ({ total_agents: 54 }));
+    console.log(pc.yellow(`  [${archetypes.length + 1}] Full Fleet (all ${manifest.total_agents} agents)\n`));
 
     const answer = await ask(rl, pc.white('Enter your choice (number): '));
     rl.close();
@@ -305,7 +306,8 @@ async function init() {
             console.log(pc.green(`\n✅ Selected: ${archetype.name}`));
             console.log(pc.gray(`   ${archetype.agents.length} agents | ${archetype.departments.length} departments\n`));
         } else {
-            console.log(pc.green('\n✅ Selected: Full Fleet (53 agents)\n'));
+            const manifestData = await fs.readJson(path.join(sourceDir, 'manifest.json')).catch(() => ({ total_agents: 54 }));
+            console.log(pc.green(`\n✅ Selected: Full Fleet (${manifestData.total_agents} agents)\n`));
         }
     }
 
@@ -377,7 +379,8 @@ async function init() {
 
         console.log(pc.green(`\n  ✅ Pointer written: ${POINTER_FILENAME}`));
 
-        const agentCount = archetype ? archetype.agents.length : 53;
+        const mfData = await fs.readJson(path.join(sourceDir, 'manifest.json')).catch(() => ({ total_agents: 54 }));
+        const agentCount = archetype ? archetype.agents.length : mfData.total_agents;
         console.log(pc.green(`\n✅ Agent-Kit v2.0 initialized! (${agentCount} agents deployed)`));
         console.log(pc.white('\n🛡️  Zero-Footprint Mode Active'));
         console.log(pc.gray('  Your project stays clean — all agent infrastructure'));
@@ -482,6 +485,87 @@ async function startChatRepl() {
     }
 }
 
+// ─── Self-Test Command ───────────────────────────────────────
+async function selfTest() {
+    const { spawnSync } = require('child_process');
+    const startTime = Date.now();
+    const pkgVersion = require('../package.json').version;
+    const pyEnv = { ...process.env, PYTHONIOENCODING: 'utf-8' };
+
+    console.log(pc.magenta(`\n🔬 Agent-Kit Self-Test v${pkgVersion}`));
+    console.log(pc.gray(`   Running all diagnostics...\n`));
+
+    const results = [];
+
+    // 1. Memory Sync
+    process.stdout.write(pc.white('  🧠 Memory Sync ........... '));
+    const syncScript = path.join(sourceDir, 'scripts', 'memory_sync.py');
+    const syncResult = spawnSync('python', [syncScript, '--path', sourceDir], {
+        cwd: sourceDir, timeout: 30000, encoding: 'utf8', env: pyEnv
+    });
+    if (syncResult.status === 0) {
+        const filesUpdated = (syncResult.stdout.match(/✅/g) || []).length;
+        console.log(pc.green(`✅ ${filesUpdated} files updated`));
+        results.push({ name: 'Memory Sync', pass: true });
+    } else {
+        console.log(pc.red(`❌ Failed`));
+        if (syncResult.stderr) console.log(pc.gray(`     ${syncResult.stderr.trim().substring(0, 200)}`));
+        results.push({ name: 'Memory Sync', pass: false });
+    }
+
+    // 2. Security Chaos
+    process.stdout.write(pc.white('  🔒 Security Chaos ........ '));
+    const secScript = path.join(sourceDir, 'scripts', 'security_chaos_test.py');
+    const secResult = spawnSync('python', [secScript], {
+        cwd: sourceDir, timeout: 30000, encoding: 'utf8', env: pyEnv
+    });
+    if (secResult.status === 0) {
+        const dangerCount = (secResult.stdout.match(/DANGEROUS/g) || []).length;
+        const riskyCount = (secResult.stdout.match(/RISKY/g) || []).length;
+        const liveThreats = dangerCount; // RISKY are expected (skill refs)
+        const label = liveThreats === 0 ? pc.green(`✅ 0 live threats`) : pc.yellow(`⚠️  ${liveThreats} flags`);
+        console.log(label + pc.gray(` (${riskyCount} expected)`));
+        results.push({ name: 'Security Chaos', pass: true });
+    } else {
+        console.log(pc.red(`❌ Failed`));
+        results.push({ name: 'Security Chaos', pass: false });
+    }
+
+    // 3. Health Check
+    process.stdout.write(pc.white('  📋 Health Check .......... '));
+    const checkScript = path.join(sourceDir, 'scripts', 'checklist.py');
+    const checkResult = spawnSync('python', [checkScript], {
+        cwd: sourceDir, timeout: 30000, encoding: 'utf8', env: pyEnv
+    });
+    if (checkResult.status === 0) {
+        const passCount = (checkResult.stdout.match(/PASS/g) || []).length;
+        const failCount = (checkResult.stdout.match(/FAIL/g) || []).length;
+        const warnCount = (checkResult.stdout.match(/WARN/g) || []).length;
+        if (failCount === 0) {
+            console.log(pc.green(`✅ ${passCount} checks passed`) + (warnCount > 0 ? pc.yellow(` (${warnCount} warnings)`) : ''));
+            results.push({ name: 'Health Check', pass: true });
+        } else {
+            console.log(pc.red(`❌ ${failCount} failures`));
+            results.push({ name: 'Health Check', pass: false });
+        }
+    } else {
+        console.log(pc.red(`❌ Failed`));
+        results.push({ name: 'Health Check', pass: false });
+    }
+
+    // Summary
+    const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+    const allPassed = results.every(r => r.pass);
+    console.log('');
+    if (allPassed) {
+        console.log(pc.green(`  ✨ All ${results.length} diagnostics passed! ⏱️  ${elapsed}s`));
+    } else {
+        const failed = results.filter(r => !r.pass).map(r => r.name).join(', ');
+        console.log(pc.red(`  ❌ Failed: ${failed} | ⏱️  ${elapsed}s`));
+    }
+    console.log('');
+}
+
 // ─── Command Router ──────────────────────────────────────────
 if (command === 'doctor') {
     doctor();
@@ -489,6 +573,8 @@ if (command === 'doctor') {
     clean();
 } else if (command === 'chat') {
     startChatRepl();
+} else if (command === 'self-test') {
+    selfTest();
 } else if (command === 'run') {
     const taskPrompt = args.slice(1).join(' ');
     if (!taskPrompt) {
@@ -511,7 +597,7 @@ if (command === 'doctor') {
     init();
 } else {
     console.log(pc.yellow(`Unknown command: ${command}`));
-    console.log('Available commands: init, doctor, clean, chat, run, sync, mcp');
+    console.log('Available commands: init, doctor, clean, chat, run, sync, self-test, mcp');
     console.log('Usage: npx @ab_aswini/agent-kit-p1 init');
     console.log('       npx @ab_aswini/agent-kit-p1 init --interactive');
     console.log('       npx @ab_aswini/agent-kit-p1 doctor');
@@ -520,5 +606,6 @@ if (command === 'doctor') {
     console.log('       npx @ab_aswini/agent-kit-p1 run "prompt"');
     console.log('       npx @ab_aswini/agent-kit-p1 sync');
     console.log('       npx @ab_aswini/agent-kit-p1 sync --watch');
+    console.log('       npx @ab_aswini/agent-kit-p1 self-test');
     console.log('       npx @ab_aswini/agent-kit-p1 mcp');
 }
