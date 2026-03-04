@@ -5,21 +5,20 @@
 
 <br/>
 
-# 🏭 Agent-Kit (V3.1) — The Hybrid AI Arsenal
+# 🏭 Agent-Kit (V3.5) — The Hybrid AI Arsenal
 
 <br/>
 
-### The Ultimate MCP Server that supercharges Google Antigravity, Cursor, Claude Desktop, and Windsurf.
+### The Ultimate MCP Server that supercharges Google Antigravity, Cursor, Claude Desktop, and Windsurf
 
 <br/>
 
-> *You are not a solo developer anymore.*
-> *You are a CTO with 53 autonomous AI employees acting as a native extension to your IDE.*
+> *You are a CTO with 54 autonomous AI employees acting as a native extension to your IDE.*
 
 <br/>
 
-[![Version](https://img.shields.io/badge/v1.4.2-stable-7C3AED?style=for-the-badge&logo=semver&logoColor=white)](https://www.npmjs.com/package/@ab_aswini/agent-kit-p1)
-[![Agents](https://img.shields.io/badge/53_Agents-9_Departments-06B6D4?style=for-the-badge&logo=dependabot&logoColor=white)](https://github.com/Ab-aswini/Agent-kit-P1)
+[![Version](https://img.shields.io/badge/v3.5-stable-7C3AED?style=for-the-badge&logo=semver&logoColor=white)](https://www.npmjs.com/package/@ab_aswini/agent-kit-p1)
+[![Agents](https://img.shields.io/badge/54_Agents-9_Departments-06B6D4?style=for-the-badge&logo=dependabot&logoColor=white)](https://github.com/Ab-aswini/Agent-kit-P1)
 [![NPM](https://img.shields.io/badge/NPM-Install-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/@ab_aswini/agent-kit-p1)
 [![License](https://img.shields.io/badge/MIT-License-10B981?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/Ab-aswini/Agent-kit-P1?style=for-the-badge&color=F59E0B&logo=github)](https://github.com/Ab-aswini/Agent-kit-P1)
@@ -31,7 +30,7 @@
 │                                                             │
 │    ⚡ npx @ab_aswini/agent-kit-p1 init                      │
 │                                                             │
-│    ↳ That's it. Your 53-agent AI company is now deployed.   │
+│    ↳ That's it. Your 54-agent AI company is now deployed.   │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -51,11 +50,11 @@
 | 1 | [🧩 What Is Agent-Kit?](#-what-is-agent-kit) | The big picture — why this exists |
 | 2 | [💡 The Problem We Solve](#-the-problem-we-solve) | The pain point and how we fix it |
 | 3 | [🏗️ How It Works — Architecture](#️-how-it-works--architecture) | The governance model, layers, and control flow |
-| 4 | [👥 Meet Your Team — 53 Agents](#-meet-your-team--53-agents) | Every department, every agent, every role |
+| 4 | [👥 Meet Your Team — 54 Agents](#-meet-your-team--54-agents) | Every department, every agent, every role |
 | 5 | [🎨 UI&UX Intelligence Engine](#-uiux-intelligence-engine) | The built-in design brain with 18 domains & 16 stacks |
 | 6 | [🚦 The Iron Well Protocol](#-the-iron-well-protocol) | How governance actually works step-by-step |
 | 7 | [⚡ Install & Setup](#-install--setup) | Every way to install + first steps |
-| 8 | [🎯 Company Archetypes](#-company-archetypes) | Choose your team size from 14 to 53 agents |
+| 8 | [🎯 Company Archetypes](#-company-archetypes) | Choose your team size from 14 to 54 agents |
 | 9 | [⚙️ Tech Stack](#️-tech-stack) | What's under the hood |
 | 10 | [🛡️ Security & Privacy](#️-security--privacy) | How safety is enforced at every layer |
 | 11 | [🚢 Deployment Pipeline](#-deployment-pipeline) | From your IDE to NPM to the end user |
@@ -197,7 +196,7 @@ flowchart LR
 | Strategist | SP-001 | Creates milestone plans before any code is written |
 | Risk Officer | RC-001 | Flags compliance issues, evaluates trade-offs |
 | 10 Backend Devs | BE-001→010 | API design, auth, microservices, caching, queues |
-| 8 Frontend Devs | FE-001→008 | Components, state management, animations, a11y |
+| 9 Frontend Devs | FE-001→009 | Components, state management, animations, a11y, asset architecture |
 | 5 DB Engineers | DB-001→005 | Schema design, migrations, query optimization |
 | 6 QA Engineers | QA-001→006 | Unit tests, integration, E2E, regression |
 | Security Specialist | SEC-001 | OWASP compliance, vulnerability scanning |
@@ -205,7 +204,7 @@ flowchart LR
 | Product Manager | PM-001 | PRDs, user stories, acceptance criteria |
 | UX Researcher | PM-002 | Usability analysis, design patterns |
 | README Architect | RA-001 | Documentation generation (that's me!) |
-| SEO Specialist | MKT-001 | Search optimization, metadata strategy |
+| SEO+AEO Specialist | MKT-001 | SERAPH: Technical SEO, schema markup, AEO, search submission |
 | Intel Agent | INTEL-001 | Legacy code analysis, deep research |
 | 4 Meta Agents | MM-001→004 | Memory management, loop detection, permissions |
 
@@ -346,7 +345,7 @@ graph TD
 
 <br/>
 
-## 👥 Meet Your Team — 53 Agents
+## 👥 Meet Your Team — 54 Agents
 
 ### Executive Council (Tier 1)
 
@@ -471,6 +470,7 @@ Framework-specific guidance with 15-column schema including **2026-ready columns
 
 > [!NOTE]
 > **2026 Columns Explained:**
+>
 > - `Dark_Mode_Strategy` — How to implement dark mode for each component
 > - `AI_Integration_Level` — How AI-ready the component is (chat, voice, generative)
 > - `Privacy_Tier` — GDPR/CCPA/HIPAA compliance tier
@@ -566,6 +566,7 @@ npx @ab_aswini/agent-kit-p1 init
 This scaffolds the complete `.agent-os` directory into your current project with all 53 agents, 42+ skills, 19 workflows, and the UI&UXThis is the core of the V3.1 **Hybrid Arsenal** philosophy. Agent-Kit does not try to be an LLM IDE; instead, it is the ultimate super-weapon *for* your IDE.
 
 By running the MCP server, you give Cursor/Claude access to Agent-Kit's powerful internal Python tools:
+
 - `run_project_audit` - Cursor can natively trigger `checklist.py` to ensure your project complies with Iron Well architecture standards.
 - `run_security_chaos` - Cursor can trigger the Security Chaos Monkey to scan for exposed secrets and risky `eval()` logic.
 - `query_ui_ux_engine` - Cursor can query the internal BM25 search engine to pull complete, enterprise-grade Design Systems.
@@ -573,6 +574,7 @@ By running the MCP server, you give Cursor/Claude access to Agent-Kit's powerful
 **The Workflow:**
 You tell Cursor: *"Audit my project using Agent-Kit."*
 Cursor hits our MCP server -> Agent-Kit runs the Python audit on your local files -> Cursor reads the terminal output and fixes the code for you.all --save-dev @ab_aswini/agent-kit-p1
+
 ```
 
 Then add a setup script:
@@ -618,11 +620,13 @@ Then add a setup script:
 Agent-Kit can run as a **Model Context Protocol (MCP)** server, securely attaching all 53 agents directly to your IDE.
 
 **For Google Antigravity & Cursor:** Add this to your MCP Settings:
+
 - Name: `Agent-Kit`
 - Type: `command`
 - Command: `npx @ab_aswini/agent-kit-p1 mcp`
 
 **For Claude Desktop:** Add to your `claude_desktop_config.json`:
+
 ```json
 {
   "mcpServers": {
@@ -633,6 +637,7 @@ Agent-Kit can run as a **Model Context Protocol (MCP)** server, securely attachi
   }
 }
 ```
+
 *Tools exposed natively to your AI:* `list_agents`, `get_agent_prompt`, `query_ui_ux_engine`.
 
 ### 🩺 Health Check
@@ -932,7 +937,7 @@ This project is licensed under the **MIT License** — see [LICENSE](LICENSE) fo
 
 <br/>
 
-### 🏭 Built for solo developers who think like companies.
+### 🏭 Built for solo developers who think like companies
 
 <br/>
 
