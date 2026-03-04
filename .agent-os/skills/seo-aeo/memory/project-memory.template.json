@@ -1,0 +1,207 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "skill": "seo-aeo-agent",
+    "description": "Project memory for SERAPH — SEO + AEO Agent. Updated after every session.",
+    "last_updated": "",
+    "session_count": 0
+  },
+
+  "project": {
+    "name": "",
+    "url": "",
+    "industry": "",
+    "niche": "",
+    "target_geo": "",
+    "target_cities": [],
+    "language_primary": "en",
+    "languages_additional": [],
+    "goal": "",
+    "icp": {
+      "audience": "",
+      "pain_points": [],
+      "buying_intent": ""
+    },
+    "domain": {
+      "age_years": null,
+      "da_estimate": null,
+      "cms": "",
+      "hosting": "",
+      "https": true
+    }
+  },
+
+  "competitors": [
+    {
+      "url": "",
+      "schema_types": [],
+      "estimated_traffic": "",
+      "top_keywords": [],
+      "content_gaps": [],
+      "notes": ""
+    }
+  ],
+
+  "keywords": {
+    "primary": [
+      {
+        "keyword": "",
+        "intent": "",
+        "volume_estimate": "",
+        "difficulty": "",
+        "target_page": "",
+        "status": "pending"
+      }
+    ],
+    "secondary": [],
+    "lsi": [],
+    "long_tail": [],
+    "question_targets": [],
+    "aeo_targets": [
+      {
+        "question": "",
+        "ai_engine_likely": "",
+        "target_page": "",
+        "answer_deployed": false
+      }
+    ],
+    "entity_map": {
+      "people": [],
+      "places": [],
+      "organizations": [],
+      "products": [],
+      "topics": []
+    }
+  },
+
+  "pages": {
+    "homepage": {
+      "url": "/",
+      "title": "",
+      "h1": "",
+      "primary_keyword": "",
+      "meta_deployed": false,
+      "schema_types": [],
+      "canonical_set": true,
+      "og_deployed": false,
+      "core_web_vitals": {
+        "lcp": null,
+        "fid_inp": null,
+        "cls": null,
+        "ttfb": null,
+        "score_mobile": null,
+        "score_desktop": null
+      },
+      "indexed": null,
+      "last_updated": "",
+      "notes": ""
+    }
+  },
+
+  "schema_deployed": {
+    "Organization": false,
+    "WebSite": false,
+    "LocalBusiness": false,
+    "Article": false,
+    "FAQPage": false,
+    "BreadcrumbList": false,
+    "Product": false,
+    "Service": false,
+    "Person": false,
+    "Review": false,
+    "HowTo": false,
+    "VideoObject": false,
+    "Event": false
+  },
+
+  "technical": {
+    "robots_txt": {
+      "deployed": false,
+      "ai_crawlers_allowed": true,
+      "blocked_paths": [],
+      "sitemap_referenced": false
+    },
+    "sitemap": {
+      "index_deployed": false,
+      "sitemaps_included": [],
+      "submitted_gsc": false,
+      "submitted_bing": false,
+      "url": ""
+    },
+    "canonical": {
+      "implemented": false,
+      "self_referencing": false
+    },
+    "hreflang": {
+      "needed": false,
+      "implemented": false
+    },
+    "structured_data_errors": [],
+    "open_graph_deployed": false,
+    "twitter_card_deployed": false
+  },
+
+  "submissions": {
+    "gsc": {
+      "done": false,
+      "property_type": "",
+      "verification_method": "",
+      "sitemap_submitted": false,
+      "country_targeting_set": false,
+      "ga4_linked": false,
+      "date_submitted": ""
+    },
+    "bing": {
+      "done": false,
+      "imported_from_gsc": false,
+      "sitemap_submitted": false,
+      "indexnow_enabled": false,
+      "date_submitted": ""
+    },
+    "gbp": {
+      "done": false,
+      "verified": false,
+      "nap_consistent": false,
+      "photos_uploaded": false,
+      "reviews_count": 0,
+      "date_claimed": ""
+    },
+    "indexnow": {
+      "key_created": false,
+      "key_location": "",
+      "last_batch_submitted": "",
+      "urls_submitted": []
+    }
+  },
+
+  "content": {
+    "pages_optimized": 0,
+    "pages_with_faq_schema": 0,
+    "pages_with_answer_blocks": 0,
+    "avg_word_count": 0,
+    "eeat_signals": {
+      "author_bio_present": false,
+      "external_citations": false,
+      "trust_signals": false
+    }
+  },
+
+  "monitoring": {
+    "gsc_alerts_enabled": false,
+    "rank_tracker_setup": false,
+    "tracked_keywords": [],
+    "cwv_monitoring": false,
+    "backlink_monitor": false
+  },
+
+  "pending": [],
+
+  "session_log": [
+    {
+      "date": "",
+      "tasks_completed": [],
+      "issues_found": [],
+      "next_steps": []
+    }
+  ]
+}
