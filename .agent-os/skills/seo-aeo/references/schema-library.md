@@ -1,7 +1,7 @@
 # Schema Markup Library (JSON-LD)
 
 All schemas go inside `<script type="application/ld+json">` tags.
-Validate at: https://search.google.com/test/rich-results
+Validate at: <https://search.google.com/test/rich-results>
 
 ## Organization (Sitewide — every project)
 
@@ -61,7 +61,9 @@ Validate at: https://search.google.com/test/rich-results
 }
 ```
 
-## FAQPage (AEO Critical — use on every page)
+## FAQPage (AEO Critical — use on content-rich pages)
+
+> **⚠️ Use only with genuine FAQs (5-10 real Q&As per page). Do NOT add empty or fabricated FAQs just for schema — Google may apply manual action penalties for FAQ spam.**
 
 ```json
 {
@@ -102,13 +104,15 @@ Validate at: https://search.google.com/test/rich-results
     "postalCode": "[PIN]",
     "addressCountry": "IN"
   },
-  "geo": { "@type": "GeoCoordinates", "latitude": 0.0, "longitude": 0.0 },
+  "geo": { "@type": "GeoCoordinates", "latitude": "[ACTUAL_LAT]", "longitude": "[ACTUAL_LNG]" },
   "openingHoursSpecification": [
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" }
-  ],
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "0" }
+  ]
 }
 ```
+
+> **⚠️ geo coordinates:** Always use real lat/lng from Google Maps. Never leave as 0.0/0.0.
+> **⚠️ aggregateRating:** Only add `aggregateRating` when you have real reviews (`reviewCount` > 0). Google may flag pages with 0-review ratings as deceptive.
 
 ## BreadcrumbList (Every interior page)
 
@@ -143,9 +147,11 @@ Validate at: https://search.google.com/test/rich-results
     "availability": "https://schema.org/InStock",
     "itemCondition": "https://schema.org/NewCondition"
   },
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "reviewCount": "0" }
+  }
 }
 ```
+
+> **⚠️ aggregateRating:** Only include when `reviewCount` > 0. Remove entirely for new products with no reviews.
 
 ## Service
 

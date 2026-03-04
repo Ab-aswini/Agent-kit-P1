@@ -43,7 +43,7 @@ The Agent-Kit has successfully transitioned from a standard agent hub to a high-
 
 | Metric | Value |
 |:-------|:------|
-| Total Agents | 55 |
+| Total Agents | 54 |
 | Departments | 9 (13 sub-divisions) |
 | Skills | 44+ |
 | Workflows | 19 |

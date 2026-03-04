@@ -169,8 +169,18 @@ def main():
     if os.path.exists(agents_dir):
         for root_dir, _, files in os.walk(agents_dir):
             agent_count += sum(1 for f in files if f.endswith('.agent.md'))
-    count_status = f"{Colors.GREEN}PASS{Colors.ENDC}" if agent_count == 53 else f"{Colors.YELLOW}WARN{Colors.ENDC}"
-    print(f"[{count_status}] Agent Fleet Count: {agent_count}/53")
+    # Read expected count from manifest
+    expected_count = 55  # fallback
+    manifest_path = os.path.join(store_path, 'manifest.json') if store_path else 'manifest.json'
+    if os.path.exists(manifest_path):
+        try:
+            with open(manifest_path, 'r', encoding='utf-8') as mf:
+                manifest = json.loads(mf.read())
+                expected_count = manifest.get('total_agents', expected_count)
+        except Exception:
+            pass
+    count_status = f"{Colors.GREEN}PASS{Colors.ENDC}" if agent_count == expected_count else f"{Colors.YELLOW}WARN{Colors.ENDC}"
+    print(f"[{count_status}] Agent Fleet Count: {agent_count}/{expected_count}")
 
     # 6. Footprint Check
     project_root_leaks = ['.agent-os', 'memory', 'scripts', 'docs', 'manifest.json', 'METADATA.md', 'PROJECT_STATUS.md']

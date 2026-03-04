@@ -5,10 +5,13 @@ const { CallToolRequestSchema, ListToolsRequestSchema } = require("@modelcontext
 const { spawn } = require('child_process');
 const path = require('path');
 
+// Read version from package.json so it always stays in sync
+const PKG_VERSION = require('../package.json').version;
+
 const server = new Server(
     {
         name: "agent-kit",
-        version: "3.0.0",
+        version: PKG_VERSION,
     },
     {
         capabilities: {
@@ -17,13 +20,80 @@ const server = new Server(
     }
 );
 
-// Define tools available
+// ─── Unified Script Runner ──────────────────────────────────────────────────
+// Replaces the 3 near-identical helpers (runSpawnScript, runUIDesignScript, runPythonScript)
+const SCRIPT_TIMEOUT_MS = 30_000; // 30 seconds
+
+/**
+ * Runs a Python script and returns its stdout/stderr.
+ * @param {string} scriptPath - Absolute path to the Python script.
+ * @param {string[]} args - Arguments to pass to the script.
+ * @param {object} opts
+ * @param {string} [opts.cwd] - Working directory (defaults to sourceDir).
+ * @param {boolean} [opts.mergeStderr] - If true, merge stderr into output (for scripts like checklist.py that report errors as text).
+ * @returns {Promise<string>} Cleaned stdout output.
+ */
+function runScript(scriptPath, args = [], opts = {}) {
+    return new Promise((resolve, reject) => {
+        const cwd = opts.cwd || path.join(__dirname, '..');
+        const child = spawn('python', [scriptPath, ...args], { cwd });
+
+        let stdout = '';
+        let stderr = '';
+        let killed = false;
+
+        // Timeout guard — prevents hung scripts from blocking the MCP server forever
+        const timer = setTimeout(() => {
+            killed = true;
+            child.kill('SIGTERM');
+            reject(new Error(`Script timed out after ${SCRIPT_TIMEOUT_MS / 1000}s: ${path.basename(scriptPath)}`));
+        }, SCRIPT_TIMEOUT_MS);
+
+        child.stdout.on('data', (data) => stdout += data.toString());
+        child.stderr.on('data', (data) => stderr += data.toString());
+
+        child.on('close', (code) => {
+            clearTimeout(timer);
+            if (killed) return; // already rejected by timeout
+
+            // Strip ANSI color codes for clean IDE output
+            const strip = (s) => s.replace(/\x1b\[[0-9;]*m/g, '').trim();
+
+            if (opts.mergeStderr) {
+                // Scripts like checklist.py/security_chaos_test.py may exit non-zero
+                // but their output is still valuable for the LLM
+                resolve(strip(stdout + '\n' + stderr));
+            } else if (code === 0) {
+                resolve(strip(stdout));
+            } else {
+                reject(new Error(`Script error (exit ${code}): ${strip(stderr)}`));
+            }
+        });
+
+        child.on('error', (err) => {
+            clearTimeout(timer);
+            reject(err);
+        });
+    });
+}
+
+// ─── Resolved script paths ──────────────────────────────────────────────────
+const SOURCE_DIR = path.join(__dirname, '..');
+const SCRIPTS = {
+    spawn: path.join(SOURCE_DIR, 'scripts', 'spawn_agent.py'),
+    uiux: path.join(SOURCE_DIR, '.agent-os', '.shared', 'UI&UX', 'scripts', 'design_system.py'),
+    audit: path.join(SOURCE_DIR, 'scripts', 'checklist.py'),
+    security: path.join(SOURCE_DIR, 'scripts', 'security_chaos_test.py'),
+    memory: path.join(SOURCE_DIR, 'scripts', 'memory_sync.py'),
+};
+
+// ─── Tool Definitions ────────────────────────────────────────────────────────
 server.setRequestHandler(ListToolsRequestSchema, async () => {
     return {
         tools: [
             {
                 name: "list_agents",
-                description: "List all available 53 AI agents in the Agent-Kit system, returning their abbreviations and descriptions.",
+                description: "List all available AI agents in the Agent-Kit system, returning their IDs and descriptions.",
                 inputSchema: {
                     type: "object",
                     properties: {
@@ -50,7 +120,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
             },
             {
                 name: "query_ui_ux_engine",
-                description: "Generates a complete design system and architectural recommendations based on real-world SaaS templates using a custom BM25 vector search. Returns Markdown output with tokens, palettes, and rules.",
+                description: "Generates a complete design system and architectural recommendations based on real-world SaaS templates using FTS5 search. Returns Markdown output with tokens, palettes, and rules.",
                 inputSchema: {
                     type: "object",
                     properties: {
@@ -94,203 +164,61 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
     };
 });
 
-// Helper function to run the python orchestrator
-async function runSpawnScript(args) {
-    return new Promise((resolve, reject) => {
-        // Resolve script relative to this file
-        const sourceDir = path.join(__dirname, '..');
-        const scriptPath = path.join(sourceDir, 'scripts', 'spawn_agent.py');
-
-        const process = spawn('python', [scriptPath, ...args]);
-
-        let stdout = '';
-        let stderr = '';
-
-        process.stdout.on('data', (data) => stdout += data.toString());
-        process.stderr.on('data', (data) => stderr += data.toString());
-
-        process.on('close', (code) => {
-            if (code === 0) {
-                // Remove some of the terminal color codes if present so the IDE reads it cleanly
-                const cleanOut = stdout.replace(/\x1b\[[0-9;]*m/g, '').trim();
-                resolve(cleanOut);
-            } else {
-                reject(new Error(`Agent-Kit Script Error: ${stderr}`));
-            }
-        });
-
-        process.on('error', (err) => {
-            reject(err);
-        });
-    });
-}
-
-// Helper for UI/UX Python engine
-async function runUIDesignScript(args) {
-    return new Promise((resolve, reject) => {
-        const sourceDir = path.join(__dirname, '..');
-        const scriptPath = path.join(sourceDir, '.agent-os', '.shared', 'UI&UX', 'scripts', 'design_system.py');
-
-        const process = spawn('python', [scriptPath, ...args]);
-
-        let stdout = '';
-        let stderr = '';
-
-        process.stdout.on('data', (data) => stdout += data.toString());
-        process.stderr.on('data', (data) => stderr += data.toString());
-
-        process.on('close', (code) => {
-            if (code === 0) {
-                // Strip ansi colors
-                const cleanOut = stdout.replace(/\x1b\[[0-9;]*m/g, '').trim();
-                resolve(cleanOut);
-            } else {
-                reject(new Error(`UI/UX Engine Error: ${stderr}`));
-            }
-        });
-
-        process.on('error', (err) => {
-            reject(err);
-        });
-    });
-}
-
-// Helper to run any arbitrary python script in the scripts/ directory
-async function runPythonScript(scriptName) {
-    return new Promise((resolve, reject) => {
-        const sourceDir = path.join(__dirname, '..');
-        const scriptPath = path.join(sourceDir, 'scripts', scriptName);
-
-        // Ensure Python runs in the EXACT directory the user launched from (where their project is)
-        const userProjectDir = process.cwd();
-        const processRef = spawn('python', [scriptPath], { cwd: userProjectDir });
-
-        let stdout = '';
-        let stderr = '';
-
-        processRef.stdout.on('data', (data) => stdout += data.toString());
-        processRef.stderr.on('data', (data) => stderr += data.toString());
-
-        processRef.on('close', (code) => {
-            // Some scripts might exit with code 1 if they find errors (e.g. security flaws). 
-            // We want to return the output regardless so the LLM can see the errors.
-            const cleanOut = (stdout + '\n' + stderr).replace(/\x1b\[[0-9;]*m/g, '').trim();
-            resolve(cleanOut);
-        });
-
-        process.on('error', (err) => {
-            reject(err);
-        });
-    });
-}
-
-// Handle tool execution
+// ─── Tool Execution ──────────────────────────────────────────────────────────
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
-    switch (request.params.name) {
-        case "list_agents": {
-            const department = request.params.arguments?.department;
-            const args = department ? ['--list', '--dept', department] : ['--list'];
-            try {
-                const output = await runSpawnScript(args);
-                return {
-                    content: [{ type: "text", text: output }]
-                };
-            } catch (error) {
-                return {
-                    content: [{ type: "text", text: `Error listing agents: ${error.message}` }],
-                    isError: true,
-                };
+    const { name, arguments: args } = request.params;
+    const userCwd = process.cwd();
+
+    try {
+        switch (name) {
+            case "list_agents": {
+                const department = args?.department;
+                const scriptArgs = department ? ['--list', '--dept', department] : ['--list'];
+                const output = await runScript(SCRIPTS.spawn, scriptArgs);
+                return { content: [{ type: "text", text: output }] };
             }
+            case "get_agent_prompt": {
+                const agentId = args?.agentId;
+                if (!agentId) throw new Error("agentId is required");
+                const output = await runScript(SCRIPTS.spawn, [agentId]);
+                return { content: [{ type: "text", text: output }] };
+            }
+            case "query_ui_ux_engine": {
+                const query = args?.query;
+                if (!query) throw new Error("query is required");
+                const scriptArgs = [query, '--format', 'markdown'];
+                if (args?.projectName) scriptArgs.push('--project-name', args.projectName);
+                const output = await runScript(SCRIPTS.uiux, scriptArgs);
+                return { content: [{ type: "text", text: output }] };
+            }
+            case "run_project_audit": {
+                const output = await runScript(SCRIPTS.audit, [], { cwd: userCwd, mergeStderr: true });
+                return { content: [{ type: "text", text: output }] };
+            }
+            case "run_security_chaos": {
+                const output = await runScript(SCRIPTS.security, [], { cwd: userCwd, mergeStderr: true });
+                return { content: [{ type: "text", text: output }] };
+            }
+            case "sync_semantic_memory": {
+                const output = await runScript(SCRIPTS.memory, [], { cwd: userCwd, mergeStderr: true });
+                return { content: [{ type: "text", text: output }] };
+            }
+            default:
+                throw new Error(`Unknown tool: ${name}`);
         }
-        case "get_agent_prompt": {
-            const agentId = request.params.arguments?.agentId;
-            if (!agentId) {
-                throw new Error("agentId is required");
-            }
-            try {
-                // Pass the agentId directly to spawn_agent.py
-                const output = await runSpawnScript([agentId]);
-                return {
-                    content: [{ type: "text", text: output }]
-                };
-            } catch (error) {
-                return {
-                    content: [{ type: "text", text: `Error generating prompt for ${agentId}: ${error.message}` }],
-                    isError: true,
-                };
-            }
-        }
-        case "query_ui_ux_engine": {
-            const queryParam = request.params.arguments?.query;
-            const projectName = request.params.arguments?.projectName;
-            if (!queryParam) {
-                throw new Error("query is required");
-            }
-            try {
-                const args = [queryParam, '--format', 'markdown'];
-                if (projectName) {
-                    args.push('--project-name', projectName);
-                }
-                const output = await runUIDesignScript(args);
-                return {
-                    content: [{ type: "text", text: output }]
-                };
-            } catch (error) {
-                return {
-                    content: [{ type: "text", text: `Error querying UI/UX Engine: ${error.message}` }],
-                    isError: true,
-                };
-            }
-        }
-        case "run_project_audit": {
-            try {
-                const output = await runPythonScript('checklist.py');
-                return {
-                    content: [{ type: "text", text: output }]
-                };
-            } catch (error) {
-                return {
-                    content: [{ type: "text", text: `Error running project audit: ${error.message}` }],
-                    isError: true,
-                };
-            }
-        }
-        case "run_security_chaos": {
-            try {
-                const output = await runPythonScript('security_chaos_test.py');
-                return {
-                    content: [{ type: "text", text: output }]
-                };
-            } catch (error) {
-                return {
-                    content: [{ type: "text", text: `Error running security chaos: ${error.message}` }],
-                    isError: true,
-                };
-            }
-        }
-        case "sync_semantic_memory": {
-            try {
-                const output = await runPythonScript('memory_sync.py');
-                return {
-                    content: [{ type: "text", text: output }]
-                };
-            } catch (error) {
-                return {
-                    content: [{ type: "text", text: `Error syncing semantic memory: ${error.message}` }],
-                    isError: true,
-                };
-            }
-        }
-        default:
-            throw new Error(`Unknown tool: ${request.params.name}`);
+    } catch (error) {
+        return {
+            content: [{ type: "text", text: `Error in ${name}: ${error.message}` }],
+            isError: true,
+        };
     }
 });
 
-// Start the server
+// ─── Server Startup ──────────────────────────────────────────────────────────
 async function startMcpServer() {
     const transport = new StdioServerTransport();
     await server.connect(transport);
-    console.error("Agent-Kit MCP Server running on stdio");
+    console.error(`Agent-Kit MCP Server v${PKG_VERSION} running on stdio`);
 }
 
 startMcpServer().catch((error) => {

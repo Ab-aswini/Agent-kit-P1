@@ -96,7 +96,6 @@ def extract_context_files(content):
             if line.strip().startswith('#') and 'context' not in line.lower():
                 break
             if '.md' in line or '.json' in line:
-                import re
                 matches = re.findall(r'[\w\-./]+\.(?:md|json)', line)
                 context_files.extend(matches)
     return context_files
@@ -144,7 +143,6 @@ def list_agents(dept_filter=None):
             name = af.stem.replace('.agent', '')
             try:
                 content = af.read_text(encoding='utf-8')
-                import re
                 id_match = re.search(r'(?:agent\s*id|id)\s*:\s*(\S+)', content, re.IGNORECASE)
                 agent_id = id_match.group(1) if id_match else '???'
             except Exception:
