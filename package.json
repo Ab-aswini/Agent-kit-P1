@@ -1,7 +1,7 @@
 {
     "$schema": "https://json.schemastore.org/package",
     "name": "@ab_aswini/agent-kit-p1",
-    "version": "3.5.3",
+    "version": "3.5.4",
     "description": "The Ultimate Hybrid AI Arsenal for existing IDEs (Cursor, Windsurf, Copilot). Empowers developers with 54 specialized agents, Semantic AST Memory, and Model Context Protocol (MCP) native tools.",
     "main": "index.js",
     "bin": {
