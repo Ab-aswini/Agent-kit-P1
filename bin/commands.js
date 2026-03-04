@@ -46,6 +46,13 @@ const COMMAND_REGISTRY = {
         agent: 'SP-001', // Example: Strategy Planner
         systemPrompt: "You are the Lead Strategy Planner. Decompose the following user request into a granular, step-by-step implementation plan:\n\n",
         color: pc.magenta
+    },
+    seo: {
+        description: 'Trigger the SERAPH SEO+AEO agent for technical SEO, schema markup, and search optimization.',
+        type: 'agent',
+        agent: 'MKT-001', // SERAPH SEO+AEO Specialist
+        systemPrompt: "You are the SERAPH SEO & AEO Specialist. Analyze the following request and provide actionable, deploy-ready SEO and AEO recommendations:\n\n",
+        color: pc.cyan
     }
 };
 

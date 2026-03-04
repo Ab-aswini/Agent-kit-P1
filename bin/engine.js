@@ -7,36 +7,80 @@ const pc = require('picocolors');
 // Load environment variables if they exist (e.g., ANTHROPIC_API_KEY)
 require('dotenv').config();
 
+// ─── Configuration ────────────────────────────────────────────
+const PKG_VERSION = require('../package.json').version;
+const DEFAULT_MODEL = 'claude-3-5-sonnet-latest';
+const AGENT_MODEL = process.env.AGENT_KIT_MODEL || DEFAULT_MODEL;
+const SPAWN_TIMEOUT_MS = 30_000;
+
 const anthropic = new Anthropic({
     apiKey: process.env.ANTHROPIC_API_KEY || ''
 });
 
-// Generate System Prompt from our Zero-Footprint Global Store
+// ─── Action Logger ────────────────────────────────────────────
+const ACTION_LOG_PATH = path.join(__dirname, '..', '.agent-os', 'logs', 'agent-actions.json');
+
+async function logAction(agentId, toolName, input, result) {
+    try {
+        let log = { version: '1.0.0', description: 'Audit trail for all agent actions', actions: [] };
+        if (await fs.pathExists(ACTION_LOG_PATH)) {
+            log = await fs.readJson(ACTION_LOG_PATH);
+        }
+        log.actions.push({
+            timestamp: new Date().toISOString(),
+            agent: agentId,
+            tool: toolName,
+            input: typeof input === 'string' ? input.substring(0, 200) : JSON.stringify(input).substring(0, 200),
+            result: typeof result === 'string' ? result.substring(0, 200) : 'ok',
+        });
+        // Keep last 500 actions max
+        if (log.actions.length > 500) log.actions = log.actions.slice(-500);
+        await fs.writeJson(ACTION_LOG_PATH, log, { spaces: 2 });
+    } catch {
+        // Non-critical — don't crash the engine for logging failures
+    }
+}
+
+// ─── Agent Prompt Generator ───────────────────────────────────
 async function getAgentPrompt(agentId) {
     return new Promise((resolve, reject) => {
         const sourceDir = path.join(__dirname, '..');
         const scriptPath = path.join(sourceDir, 'scripts', 'spawn_agent.py');
 
-        const process = spawn('python', [scriptPath, agentId]);
+        const child = spawn('python', [scriptPath, agentId]);
 
         let stdout = '';
         let stderr = '';
+        let killed = false;
 
-        process.stdout.on('data', (data) => stdout += data.toString());
-        process.stderr.on('data', (data) => stderr += data.toString());
+        const timer = setTimeout(() => {
+            killed = true;
+            child.kill('SIGTERM');
+            reject(new Error(`Agent spawn timed out after ${SPAWN_TIMEOUT_MS / 1000}s for ${agentId}`));
+        }, SPAWN_TIMEOUT_MS);
 
-        process.on('close', (code) => {
+        child.stdout.on('data', (data) => stdout += data.toString());
+        child.stderr.on('data', (data) => stderr += data.toString());
+
+        child.on('close', (code) => {
+            clearTimeout(timer);
+            if (killed) return;
             if (code === 0) {
                 const cleanOut = stdout.replace(/\x1b\[[0-9;]*m/g, '').trim();
                 resolve(cleanOut);
             } else {
-                reject(new Error(`Agent Spawning Error: ${stderr}`));
+                reject(new Error(`Agent Spawning Error (${agentId}): ${stderr}`));
             }
+        });
+
+        child.on('error', (err) => {
+            clearTimeout(timer);
+            reject(new Error(`Failed to spawn Python for agent ${agentId}: ${err.message}`));
         });
     });
 }
 
-// Local System Tools
+// ─── Local System Tools ───────────────────────────────────────
 const TOOLS = [
     {
         name: "readFile",
@@ -98,19 +142,19 @@ const TOOLS = [
     }
 ];
 
-// Tool Execution Handlers
-async function executeTool(name, input) {
+// ─── Tool Execution Handlers ──────────────────────────────────
+async function executeTool(name, input, currentAgentId) {
     console.log(pc.gray(`\n  ⚙️  Tool Call: ${name}`));
     try {
+        let result;
         if (name === 'readFile') {
-            const content = await fs.readFile(input.path, 'utf8');
-            return content;
+            result = await fs.readFile(input.path, 'utf8');
         } else if (name === 'writeFile') {
             await fs.ensureDir(path.dirname(input.path));
             await fs.writeFile(input.path, input.content);
-            return `Successfully wrote to ${input.path}`;
+            result = `Successfully wrote to ${input.path}`;
         } else if (name === 'runCommand') {
-            return new Promise((resolve) => {
+            result = await new Promise((resolve) => {
                 const child = spawn(input.command, {
                     shell: true,
                     cwd: input.cwd || process.cwd()
@@ -122,8 +166,13 @@ async function executeTool(name, input) {
                     resolve(`Exit Code: ${code}\nOutput:\n${out.trim().substring(0, 2000)}`);
                 });
             });
+        } else {
+            result = `Unknown tool: ${name}`;
         }
-        return `Unknown tool: ${name}`;
+
+        // Log the action
+        await logAction(currentAgentId, name, input, result);
+        return result;
     } catch (e) {
         return `Tool execution failed: ${e.message}`;
     }
@@ -137,7 +186,8 @@ async function runEngine(initialTask) {
         return;
     }
 
-    console.log(pc.magenta('\n🔥 Agent-Kit Autonomous Execution Engine Activating...'));
+    console.log(pc.magenta(`\n🔥 Agent-Kit Autonomous Execution Engine v${PKG_VERSION}`));
+    console.log(pc.gray(`   Model: ${AGENT_MODEL}`));
 
     // We strictly adhere to Iron Well Protocol: We always start with the Supervisor
     let currentAgentId = 'SFS-001';
@@ -157,7 +207,7 @@ async function runEngine(initialTask) {
 
         try {
             const response = await anthropic.messages.create({
-                model: 'claude-3-5-sonnet-latest',
+                model: AGENT_MODEL,
                 max_tokens: 4096,
                 system: systemPrompt,
                 messages: messages,
@@ -176,19 +226,21 @@ async function runEngine(initialTask) {
 
                     if (toolName === 'finishTask') {
                         console.log(pc.green(`\n✅ Task Completed: ${toolInput.summary}\n`));
+                        await logAction(currentAgentId, 'finishTask', toolInput, 'completed');
                         taskFinished = true;
                         break;
                     } else if (toolName === 'handOff') {
                         console.log(pc.blue(`\n🤝 Handoff Initiated: ${currentAgentId} -> ${toolInput.agentId}`));
                         console.log(pc.blue(`   Handover Notes: ${toolInput.instructions}`));
 
+                        await logAction(currentAgentId, 'handOff', toolInput, `-> ${toolInput.agentId}`);
+
                         // Switch agent identity
                         currentAgentId = toolInput.agentId;
                         console.log(pc.cyan(`\n👤 Spawning Target Agent: ${currentAgentId}`));
                         systemPrompt = await getAgentPrompt(currentAgentId);
 
-                        // Wipe history, but inject the supervisor's instructions as the new "user" task 
-                        // so the sub-agent knows exactly what to do.
+                        // Wipe history, but inject the supervisor's instructions as the new "user" task
                         messages = [
                             {
                                 role: 'user',
@@ -196,12 +248,10 @@ async function runEngine(initialTask) {
                             }
                         ];
 
-                        // Acknowledge the tool use from the PREVIOUS agent's perspective before wiping
-                        // Note: Because we wiped the context for the new agent, the previous agent's loop technically ends here for now
                         break; // Break the content block loop, the while loop will repeat with the new agent
                     } else {
                         // Execute standard local tool
-                        const result = await executeTool(toolName, toolInput);
+                        const result = await executeTool(toolName, toolInput, currentAgentId);
 
                         // Push tool result back to the model
                         messages.push({
@@ -219,6 +269,7 @@ async function runEngine(initialTask) {
             }
         } catch (error) {
             console.error(pc.red(`\n💥 Fatal Engine Error: ${error.message}`));
+            await logAction(currentAgentId, 'FATAL_ERROR', { message: error.message }, 'crashed');
             break;
         }
     }

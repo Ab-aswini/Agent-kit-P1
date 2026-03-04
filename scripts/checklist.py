@@ -87,7 +87,7 @@ def verify_core_components(store_path):
     components = {
         'manifest.json': 'Fleet Manifest',
         os.path.join('.agent-os', 'rules', 'protocol-socratic-gate.md'): 'Socratic Gate Protocol',
-        os.path.join('.agent-os', 'configs', 'base-config.json'): 'Agent Base Config',
+        os.path.join('.agent-os', 'config', 'base-config.json'): 'Agent Base Config',
         os.path.join('.agent-os', 'skills', 'democracy-protocol.skill.md'): 'Democracy Protocol',
         os.path.join('.agent-os', 'skills', 'memory-compression.skill.md'): 'Memory Compression Skill',
         os.path.join('scripts', 'security_chaos_test.py'): 'Security Chaos Test',

@@ -1,3 +1,0 @@
-/help
-/fix something broke
-exit
