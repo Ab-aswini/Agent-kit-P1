@@ -12,8 +12,9 @@ When analyzing a codebase, you must pull your context directly from the V3 AST-a
 ## 1. Context Acquisition Targets
 
 Before planning any architectural or coding task, check these ground-truth files:
+
 1. `architecture.md`: Contains the physical directory layout, framework detection results, and language-specific Lines of Code (LOC) counts.
-2. `api-contracts.md`: Contains exactly which routes (Express, Next.js, FastAPI, etc.) are physically registered in the AST. 
+2. `api-contracts.md`: Contains exactly which routes (Express, Next.js, FastAPI, etc.) are physically registered in the AST.
 3. `dependencies.md`: Contains the exhaustive list of production packages and their exact verified versions from `package.json`, `requirements.txt`, or `Cargo.toml`.
 
 ## 2. Hallucination Prevention
@@ -25,6 +26,7 @@ Before planning any architectural or coding task, check these ground-truth files
 ## 3. Integration with the Antigravity Baseline
 
 Combine this memory assimilation with the `@Antigravity-Directive.md`:
+
 1. **Read** AST memory.
-2. **Formulate** a Tree-of-Thought plan based *only* on the registered facts.
+2. **Formulate** a Tree-of-Thought plan based _only_ on the registered facts.
 3. **Yield** execution back to the IDE AI (Cursor/Copilot) via MCP.

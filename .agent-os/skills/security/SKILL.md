@@ -16,6 +16,7 @@
 10. **Insufficient Logging** - Security events logged (without sensitive data), alerting
 
 ## Security Headers
+
 ```
 Content-Security-Policy: default-src 'self'
 X-Content-Type-Options: nosniff
@@ -26,6 +27,7 @@ Referrer-Policy: strict-origin-when-cross-origin
 ```
 
 ## Absolute Rules
+
 - NEVER hardcode secrets, API keys, or passwords
 - NEVER trust client-side validation alone
 - NEVER log sensitive data (passwords, tokens, PII)

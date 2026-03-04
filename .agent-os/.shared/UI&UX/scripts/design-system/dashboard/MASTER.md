@@ -8,24 +8,27 @@
 ## Brand Foundation
 
 ### Colors
-**Mood:** 
 
-| Role | Hex | Preview |
-|------|-----|---------|
-| Primary | `primary_hex` | 🟦 |
-| Secondary | `secondary_hex` | 🟪 |
-| CTA / Accent | `cta_hex` | 🟧 |
-| Background | `background_hex` | ⬜ |
-| Text | `text_hex` | ⬛ |
-| Border | `` | 🔲 |
+**Mood:**
+
+| Role         | Hex              | Preview |
+| ------------ | ---------------- | ------- |
+| Primary      | `primary_hex`    | 🟦      |
+| Secondary    | `secondary_hex`  | 🟪      |
+| CTA / Accent | `cta_hex`        | 🟧      |
+| Background   | `background_hex` | ⬜      |
+| Text         | `text_hex`       | ⬛      |
+| Border       | ``               | 🔲      |
 
 ### Typography
+
 **Mood:** mood_style_keywords
 
 - **Heading Font:** `heading_font`
 - **Body Font:** `body_font`
 
 **Google Fonts Import:**
+
 ```css
 css_import
 ```
@@ -35,6 +38,7 @@ css_import
 ## Component Specs
 
 ### Buttons
+
 ```css
 /* Primary Button */
 .btn-primary {
@@ -66,6 +70,7 @@ css_import
 ```
 
 ### Cards
+
 ```css
 .card {
   background: background_hex;
@@ -83,10 +88,11 @@ css_import
 ```
 
 ### Inputs
+
 ```css
 .input {
   padding: 12px 16px;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
   font-size: 16px;
   transition: border-color 200ms ease;
@@ -109,8 +115,10 @@ css_import
 **Key Effects:** Minimal glow (text-shadow: 0 0 10px), dark-to-light transitions, high readability, visible focus states
 
 ### Page Pattern
+
 **Pattern Name:** Data-Dense Dashboard
-- **Conversion Strategy:** 
+
+- **Conversion Strategy:**
 - **CTA Placement:** Above fold
 - **Section Order:** Hero > Features > CTA
 
@@ -122,6 +130,7 @@ css_import
 - ❌ Slow rendering
 
 ### Additional Forbidden Patterns
+
 - ❌ **Emojis as icons** — Use SVG icons (Heroicons, Lucide, Simple Icons)
 - ❌ **Missing cursor:pointer** — All clickable elements must have cursor:pointer
 - ❌ **Layout-shifting hovers** — Avoid scale transforms that shift layout
@@ -133,12 +142,12 @@ css_import
 
 ## 2026 Capabilities
 
-| Dimension | Value |
-|-----------|-------|
-| Dark Mode Strategy | OLED-dark-default |
-| AI Integration | anomaly-detect+forecast-ai |
-| Privacy Tier | PCI-DSS+SOC2+GDPR |
-| Agent Readiness | 5/5 financial AI |
+| Dimension          | Value                        |
+| ------------------ | ---------------------------- |
+| Dark Mode Strategy | OLED-dark-default            |
+| AI Integration     | anomaly-detect+forecast-ai   |
+| Privacy Tier       | PCI-DSS+SOC2+GDPR            |
+| Agent Readiness    | 5/5 financial AI             |
 | Performance Budget | LCP<1.5s; CLS<0.05; INP<50ms |
 
 ---
@@ -146,6 +155,7 @@ css_import
 ## Pre-Delivery Checklist
 
 Before delivering any UI code, verify:
+
 - [ ] No emojis used as icons (use SVG instead)
 - [ ] All icons from consistent icon set (Heroicons/Lucide)
 - [ ] `cursor-pointer` on all clickable elements

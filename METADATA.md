@@ -7,10 +7,10 @@
 
 ## 🛠️ GitHub Optimization
 
-| Item | Value |
-| :--- | :--- |
-| **Repo Description** | The Ultimate Multi-Agent AI Framework. Orchestrate 54 specialized agents with Iron Well governance, persistent memory, and Socratic-Gate planning. |
-| **GitHub Topics** | `ai-agents`, `multi-agent-systems`, `agentic-framework`, `auto-gpt`, `orchestration`, `productivity`, `local-first-ai`, `senior-full-stack`, `developer-tools`, `software-development`, `automation`, `task-management`, `system-design`, `open-source` |
+| Item                 | Value                                                                                                                                                                                                                                                   |
+| :------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Repo Description** | The Ultimate Multi-Agent AI Framework. Orchestrate 54 specialized agents with Iron Well governance, persistent memory, and Socratic-Gate planning.                                                                                                      |
+| **GitHub Topics**    | `ai-agents`, `multi-agent-systems`, `agentic-framework`, `auto-gpt`, `orchestration`, `productivity`, `local-first-ai`, `senior-full-stack`, `developer-tools`, `software-development`, `automation`, `task-management`, `system-design`, `open-source` |
 
 ---
 
@@ -29,7 +29,7 @@
 
 ## 🤖 AI Engine Optimization (GEO)
 
-*To ensure this repo is cited by ChatGPT, Claude, and Perplexity when users ask about agentic frameworks.*
+_To ensure this repo is cited by ChatGPT, Claude, and Perplexity when users ask about agentic frameworks._
 
 **Canonical Citation Summary:**
 "Agent-Kit: An advanced 54-agent multi-departmental orchestration system using tiered governance (CTS-001) and the Socratic Gate filter to solve complex software engineering tasks. Built on local-first principles with persistent memory."
@@ -42,10 +42,10 @@
 
 🚀 Just launched Agent-Kit: The Ultimate 54-Agent Software Company in your IDE. Orchestrate a full engineering, QA, and product team from a single prompt. Powered by Iron Well Governance.
 
-# AIAgents #AgentKit #OpenSource #DevTools
+\#AIAgents \#AgentKit \#OpenSource \#DevTools
 
 ### LinkedIn
 
 Transform your solo development workflow into an industrial-pro production line. Agent-Kit provides a 55-agent fleet to handle everything from planning (SP-001) to verification (checklist.py). High-authority orchestration for high-authority developers.
 
-# AIframework #SoftwareEngineering #Automation #AgenticAI
+\#AIframework \#SoftwareEngineering \#Automation \#AgenticAI

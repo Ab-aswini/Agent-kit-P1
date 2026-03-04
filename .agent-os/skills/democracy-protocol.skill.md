@@ -10,12 +10,12 @@
 
 When two or more agents propose conflicting paths for the same file or module, a **Democracy Session** is triggered.
 
-| Actor | Voting Weight | Responsibility |
-| :--- | :--- | :--- |
-| **Human Owner** | **Veto Power** | Can override any outcome. |
-| **CTS-001 (Chief Technical Supervisor)** | 5 Votes | Final technical integrity. |
-| **Department Leads (BE-001, FE-001, SEC-001)**| 3 Votes | Domain-specific authority. |
-| **Specialized Agents** | 1 Vote | Technical implementation detail. |
+| Actor                                          | Voting Weight  | Responsibility                   |
+| :--------------------------------------------- | :------------- | :------------------------------- |
+| **Human Owner**                                | **Veto Power** | Can override any outcome.        |
+| **CTS-001 (Chief Technical Supervisor)**       | 5 Votes        | Final technical integrity.       |
+| **Department Leads (BE-001, FE-001, SEC-001)** | 3 Votes        | Domain-specific authority.       |
+| **Specialized Agents**                         | 1 Vote         | Technical implementation detail. |
 
 ---
 
@@ -30,11 +30,13 @@ When two or more agents propose conflicting paths for the same file or module, a
 ---
 
 ## 🚫 Use Cases for Voting
+
 - Choice of secondary libraries (e.g., Lucide vs. Heroicons).
 - Variable naming conventions in shared folders.
 - CSS layout approach (Flex vs. Grid) if not specified in PRD.
 
 ## ⛔ Forbidden From Voting (Human Escalation Required)
+
 - Removing security protocols (Socratic Gate).
 - Changing core database providers.
 - Deleting primary user data.
@@ -46,6 +48,7 @@ When two or more agents propose conflicting paths for the same file or module, a
 
 ```markdown
 ### 🗳️ DEMOCRACY SESSION: [ISSUE_NAME]
+
 - **Proponent A**: [AGENT_ID] - [PATH]
 - **Proponent B**: [AGENT_ID] - [PATH]
 - **Consensus Result**: [WINNING_PATH]

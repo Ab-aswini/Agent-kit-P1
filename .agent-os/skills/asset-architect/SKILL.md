@@ -71,29 +71,30 @@ SHOT TYPE: [Extreme Close-up / Close-up / Medium / Wide / Establishing]
 Camera Position: [X meters distance, Y meters height, Z° angle]
 
 Composition Breakdown:
+
 - FOREGROUND (X% of frame):
   - Primary elements: [Specific objects, their appearance]
   - Colors: [Element]: #HEXCODE
   - Textures: [Describe materials, surfaces]
   - Focus state: [Sharp / Soft / Out of focus]
-  
 - MIDGROUND (Y% of frame):
   - Secondary elements: [Specific objects]
   - Focus state: [Sharp / Soft bokeh / Blurred]
   - Color palette: [Element]: #HEXCODE
-  
 - BACKGROUND (Z% of frame):
   - Context elements: [Environment, sky, walls]
   - Focus state: [Usually soft / out of focus]
   - Colors: [Element]: #HEXCODE
 
 Technical Camera Settings:
+
 - Focal Length: [Xmm equivalent]
 - Aperture: f/X.X
 - Focus Point: [Specific element at X distance]
 - Depth of Field: [Xm before to Ym after]
 
 Lighting Specification:
+
 - Time of Day: [Morning / Midday / Golden Hour / Evening]
 - Primary Light Source: [Sun / Window / Artificial]
 - Light Direction: [Front-lit / Side-lit / Back-lit / Top-down]
@@ -112,18 +113,21 @@ Color Verification:
 ### MOTION DESCRIPTION (Frames 001-XXX)
 
 Camera Movement Type:
+
 - Primary: [Crane up/down, Dolly forward/back, Truck left/right, Orbit]
 - Movement Quality: [Smooth linear / Ease-in / Ease-out / Ease-in-out]
 
 Frame-by-Frame Transformation Logic:
 
 **Frames 001-030 (0-1 second):**
+
 - [Primary element] occupies [X%] of frame
 - Camera at [position description]
 - Focus on [element at distance X]
 - [What's changing this second]
 
 **Frames 031-060 (1-2 seconds):**
+
 - [Continuation from previous]
 - New elements entering: [description]
 - Elements exiting: [description]
@@ -157,21 +161,21 @@ Color Consistency: [List hex codes present in both frames]
 
 ## PHASE 2: COLOR CONSISTENCY MATRIX
 
-| Element | Hex Code | RGB | Where Used | Consistency Rule | Variation Allowed |
-|---------|----------|-----|------------|------------------|--------------------|
-| Brand Primary | #XXXXXX | R,G,B | [Locations] | Exact match required | Brightness ±5% max |
-| Brand Accent | #XXXXXX | R,G,B | [Locations] | Exact match required | None |
-| Background | #XXXXXX | R,G,B | [Locations] | Hue consistent | Brightness ±15% |
-| Text/Dark | #XXXXXX | R,G,B | [Locations] | High contrast (4.5:1 min) | None |
+| Element       | Hex Code | RGB   | Where Used  | Consistency Rule          | Variation Allowed  |
+| ------------- | -------- | ----- | ----------- | ------------------------- | ------------------ |
+| Brand Primary | #XXXXXX  | R,G,B | [Locations] | Exact match required      | Brightness ±5% max |
+| Brand Accent  | #XXXXXX  | R,G,B | [Locations] | Exact match required      | None               |
+| Background    | #XXXXXX  | R,G,B | [Locations] | Hue consistent            | Brightness ±15%    |
+| Text/Dark     | #XXXXXX  | R,G,B | [Locations] | High contrast (4.5:1 min) | None               |
 
 **Lighting Temperature Map:**
 
-| Space Type | Color Temperature | Kelvin | Hex Approximation |
-|------------|-------------------|--------|--------------------|
-| Exterior Daylight | Neutral/Cool | 5500K | #FFFFFA |
-| Interior Warm | Warm White | 3000-4000K | #FFF4E6 |
-| Interior Neutral | Neutral White | 4000-5000K | #FFFEF0 |
-| Golden Hour | Warm Golden | 3000-3500K | #FFE4B5 |
+| Space Type        | Color Temperature | Kelvin     | Hex Approximation |
+| ----------------- | ----------------- | ---------- | ----------------- |
+| Exterior Daylight | Neutral/Cool      | 5500K      | #FFFFFA           |
+| Interior Warm     | Warm White        | 3000-4000K | #FFF4E6           |
+| Interior Neutral  | Neutral White     | 4000-5000K | #FFFEF0           |
+| Golden Hour       | Warm Golden       | 3000-3500K | #FFE4B5           |
 
 ---
 
@@ -179,12 +183,12 @@ Color Consistency: [List hex codes present in both frames]
 
 ### Tool Selection Matrix
 
-| Tool | Best For | Max Duration | Motion Control | Cost |
-|------|----------|-------------|----------------|------|
-| Runway Gen-3 Alpha | Photorealistic, precise camera | 10s | Excellent | High ($12+/s) |
-| Pika Labs | Fast turnaround, decent quality | 4s | Good | Medium ($1/s) |
-| Stable Video Diffusion | Open source, batch processing | Flexible | Moderate | Free (compute) |
-| Leonardo Motion | Illustrated/stylized | 4s | Low | Low ($0.30/frame) |
+| Tool                   | Best For                        | Max Duration | Motion Control | Cost              |
+| ---------------------- | ------------------------------- | ------------ | -------------- | ----------------- |
+| Runway Gen-3 Alpha     | Photorealistic, precise camera  | 10s          | Excellent      | High ($12+/s)     |
+| Pika Labs              | Fast turnaround, decent quality | 4s           | Good           | Medium ($1/s)     |
+| Stable Video Diffusion | Open source, batch processing   | Flexible     | Moderate       | Free (compute)    |
+| Leonardo Motion        | Illustrated/stylized            | 4s           | Low            | Low ($0.30/frame) |
 
 ### Runway Gen-3 Prompt Format
 

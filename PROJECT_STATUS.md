@@ -41,34 +41,34 @@ The Agent-Kit has successfully transitioned from a standard agent hub to a high-
 
 ## 📈 Current Metrics
 
-| Metric | Value |
-|:-------|:------|
-| Total Agents | 54 |
-| Departments | 9 (13 sub-divisions) |
-| Skills | 44+ |
-| Workflows | 19 |
-| Search Domains | 18 |
-| Framework Stacks | 16 |
-| Company Archetypes | 12 |
-| Automation Scripts | 5 |
-| Memory Hubs | 4 (global, backend, frontend, product) |
-| Rules | 3 (GEMINI.md, universal-rules, socratic-gate) |
-| Templates | 4 project starters |
-| NPM Package | @ab_aswini/agent-kit-p1 v3.3.0 |
+| Metric             | Value                                         |
+| :----------------- | :-------------------------------------------- |
+| Total Agents       | 54                                            |
+| Departments        | 9 (13 sub-divisions)                          |
+| Skills             | 44+                                           |
+| Workflows          | 19                                            |
+| Search Domains     | 18                                            |
+| Framework Stacks   | 16                                            |
+| Company Archetypes | 12                                            |
+| Automation Scripts | 5                                             |
+| Memory Hubs        | 4 (global, backend, frontend, product)        |
+| Rules              | 3 (GEMINI.md, universal-rules, socratic-gate) |
+| Templates          | 4 project starters                            |
+| NPM Package        | @ab_aswini/agent-kit-p1 v3.3.0                |
 
 ---
 
 ## 🔮 Next Planned Initiatives
 
-| Initiative | Status | Priority |
-|:-----------|:------:|:--------:|
-| Agent Marketplace | 🔜 Planned | High |
-| Multi-LLM Router | 🔜 Planned | High |
-| Live Dashboard | 🔜 Planned | Medium |
-| MCP Server Integration | ✅ Done | High |
-| Voice-First Agents | 🧪 Research | Low |
-| Agent-to-Agent Protocol | 🧪 Research | Low |
+| Initiative              |   Status    | Priority |
+| :---------------------- | :---------: | :------: |
+| Agent Marketplace       | 🔜 Planned  |   High   |
+| Multi-LLM Router        | 🔜 Planned  |   High   |
+| Live Dashboard          | 🔜 Planned  |  Medium  |
+| MCP Server Integration  |   ✅ Done   |   High   |
+| Voice-First Agents      | 🧪 Research |   Low    |
+| Agent-to-Agent Protocol | 🧪 Research |   Low    |
 
 ---
 
-*Last updated: March 2026 · v3.3.0*
+_Last updated: March 2026 · v3.3.0_

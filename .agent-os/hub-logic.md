@@ -4,6 +4,7 @@
 > **Identity**: The Ultimate IDE Augmentation Arsenal (via MCP)
 
 ## 🛡️ Core Directives
+
 1. **The Antigravity Baseline**: All agents run on the cognitive baseline defined in `@Antigravity-Directive.md`.
 2. **Hybrid Arsenal (MCP)**: The Hub does not execute code autonomously. It exposes its intelligence, personas, and validation tools via the Model Context Protocol to existing IDE AIs (Cursor, Copilot).
 3. **Zero-Footprint**: Agent infrastructure NEVER lives inside the user's project. Only a `.agentkit` pointer file is placed in the project root.
@@ -23,12 +24,12 @@ All infrastructure resides at `~/.agent-os/projects/<project-hash>/`:
 > ⚠️ **None of these directories exist in the user's project.** They are accessed via the `.agentkit` pointer.
 
 ## 🔄 Operations
+
 - **Initialization**: `npx @ab_aswini/agent-kit-p1 init` — sets up global store, writes `.agentkit` pointer.
 - **Health Check**: `npx @ab_aswini/agent-kit-p1 doctor` — validates store via pointer.
 - **Cleanup**: `npx @ab_aswini/agent-kit-p1 clean` — removes legacy footprint from project root.
 - **Task Orchestration**: Senior Full Stack (SFS-001) manages department agents based on this hub.
 - **Verification**: Continuous audit via `checklist.py` (resolved from `paths.scripts`).
-
 
 ---
 
@@ -43,6 +44,7 @@ All infrastructure resides at `~/.agent-os/projects/<project-hash>/`:
 ## 🎨 Unified UX/UI Protocol (PRO-MAX)
 
 All frontend/design agents MUST utilize the data in `.agent-os/.shared/UI&UX/data/` (resolved via `paths.shared`) for:
+
 - **Animations**: Natural spring physics and distinctive reveal patterns.
 - **Colors**: Strict adherence to the Purple Ban and emotion-match palettes.
 - **Topological Betrayal**: Avoiding "Safe Harbor" layouts (Standard Hero Split).
@@ -55,4 +57,5 @@ All frontend/design agents MUST utilize the data in `.agent-os/.shared/UI&UX/dat
 4. **Verification**: `test-engineer` validates against the "Maestro Auditor" standards.
 
 ---
-*Built for solo developers who think like companies.*
+
+_Built for solo developers who think like companies._

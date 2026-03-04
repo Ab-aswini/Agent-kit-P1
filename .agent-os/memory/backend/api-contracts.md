@@ -3,14 +3,17 @@
 > Defines the contract between frontend and backend.
 
 ## Base URL
+
 `[To be defined]`
 
 ## Authentication
+
 [Auth header format]
 
 ## Endpoints
 
 ### Template
+
 ```
 METHOD /api/v1/resource
 Auth: Required | Optional | None

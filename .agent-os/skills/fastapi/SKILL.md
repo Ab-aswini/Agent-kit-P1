@@ -3,6 +3,7 @@
 > Loaded by: Backend Division agents | Version: 1.0
 
 ## Project Structure
+
 ```
 src/
   api/v1/routes/, schemas/, dependencies/
@@ -15,6 +16,7 @@ src/
 ## Best Practices
 
 ### Routes
+
 ```python
 from fastapi import APIRouter, Depends, HTTPException, status
 
@@ -26,6 +28,7 @@ async def create_user(user: UserCreate, db: Session = Depends(get_db)):
 ```
 
 ### Error Handling
+
 ```python
 raise HTTPException(
     status_code=status.HTTP_404_NOT_FOUND,
@@ -34,11 +37,13 @@ raise HTTPException(
 ```
 
 ### Validation
+
 - Pydantic models for all request/response schemas
 - Validate at schema level, not in routes
 - Custom validators for business rules
 
 ## Anti-Patterns
+
 - Do NOT put business logic in routes
 - Do NOT use raw SQL without parameterization
 - Do NOT return database models directly (use schemas)
@@ -46,6 +51,7 @@ raise HTTPException(
 - Do NOT hardcode configuration values
 
 ## Checklist
+
 - [ ] Routes use proper HTTP methods and status codes
 - [ ] Request/response schemas defined
 - [ ] Error responses are structured

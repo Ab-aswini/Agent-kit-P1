@@ -5,6 +5,7 @@
 ## Tables
 
 ### Template
+
 ```
 Table: table_name
 Columns:

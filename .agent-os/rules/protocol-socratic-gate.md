@@ -10,12 +10,12 @@
 
 BEFORE an agent can perform any destructive action, write core logic, or propose a major change, they MUST answer the following three questions in their internal thinking or output:
 
-1.  **What is the "Goal Drift"?** 
-    *   *Are we solving the original user problem, or have we drifted into over-engineering?*
+1.  **What is the "Goal Drift"?**
+    - _Are we solving the original user problem, or have we drifted into over-engineering?_
 2.  **What is the simplest "Cheap" alternative?**
-    *   *Can this be done in 10 lines of code instead of 100? Can we use an existing skill?*
+    - _Can this be done in 10 lines of code instead of 100? Can we use an existing skill?_
 3.  **What is the "Worst-Case Break"?**
-    *   *If this change fails or loops, what is the impact on target state and cost?*
+    - _If this change fails or loops, what is the impact on target state and cost?_
 
 ---
 

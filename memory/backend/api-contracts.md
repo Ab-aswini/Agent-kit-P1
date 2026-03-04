@@ -3,6 +3,7 @@
 ## Endpoints
 
 ### 1. Register User
+
 - **URL**: `/auth/register`
 - **Method**: `POST`
 - **Auth Required**: No
@@ -18,6 +19,7 @@
   - **Body**: `{ "id": 1, "email": "user@example.com" }`
 
 ### 2. Login
+
 - **URL**: `/auth/login`
 - **Method**: `POST`
 - **Auth Required**: No
@@ -33,6 +35,7 @@
   - **Body**: `{ "access_token": "...", "token_type": "bearer" }`
 
 ### 3. Protected Resource
+
 - **URL**: `/auth/protected`
 - **Method**: `GET`
 - **Auth Required**: Yes (JWT)
@@ -41,7 +44,9 @@
   - **Body**: `{ "message": "Success", "user": "user@example.com" }`
 
 ## Error Format
+
 All errors return a consistent JSON body:
+
 ```json
 {
   "error": "Error code string",

@@ -11,7 +11,12 @@ Validate at: <https://search.google.com/test/rich-results>
   "@type": "Organization",
   "name": "[Business Name]",
   "url": "https://DOMAIN",
-  "logo": { "@type": "ImageObject", "url": "https://DOMAIN/logo.png", "width": 300, "height": 100 },
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://DOMAIN/logo.png",
+    "width": 300,
+    "height": 100
+  },
   "description": "[One sentence with primary keyword]",
   "foundingDate": "YYYY",
   "founder": { "@type": "Person", "name": "[Founder Name]" },
@@ -23,8 +28,16 @@ Validate at: <https://search.google.com/test/rich-results>
     "postalCode": "[PIN]",
     "addressCountry": "IN"
   },
-  "contactPoint": { "@type": "ContactPoint", "telephone": "+91-XXXXXXXXXX", "contactType": "customer service" },
-  "sameAs": ["https://linkedin.com/company/X", "https://twitter.com/X", "https://facebook.com/X"]
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-XXXXXXXXXX",
+    "contactType": "customer service"
+  },
+  "sameAs": [
+    "https://linkedin.com/company/X",
+    "https://twitter.com/X",
+    "https://facebook.com/X"
+  ]
 }
 ```
 
@@ -38,7 +51,10 @@ Validate at: <https://search.google.com/test/rich-results>
   "url": "https://DOMAIN",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": { "@type": "EntryPoint", "urlTemplate": "https://DOMAIN/search?q={search_term_string}" },
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://DOMAIN/search?q={search_term_string}"
+    },
     "query-input": "required name=search_term_string"
   }
 }
@@ -53,8 +69,16 @@ Validate at: <https://search.google.com/test/rich-results>
   "headline": "[Exact H1]",
   "description": "[Meta description]",
   "image": ["https://DOMAIN/image.jpg"],
-  "author": { "@type": "Person", "name": "[Author]", "url": "https://DOMAIN/author/slug" },
-  "publisher": { "@type": "Organization", "name": "[Brand]", "logo": { "@type": "ImageObject", "url": "https://DOMAIN/logo.png" } },
+  "author": {
+    "@type": "Person",
+    "name": "[Author]",
+    "url": "https://DOMAIN/author/slug"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "[Brand]",
+    "logo": { "@type": "ImageObject", "url": "https://DOMAIN/logo.png" }
+  },
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
   "mainEntityOfPage": { "@type": "WebPage", "@id": "https://DOMAIN/POST-SLUG/" }
@@ -73,7 +97,10 @@ Validate at: <https://search.google.com/test/rich-results>
     {
       "@type": "Question",
       "name": "[Exact question users type into Google/ChatGPT]",
-      "acceptedAnswer": { "@type": "Answer", "text": "[Direct answer. First sentence answers completely. Under 300 words.]" }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "[Direct answer. First sentence answers completely. Under 300 words.]"
+      }
     },
     {
       "@type": "Question",
@@ -104,9 +131,18 @@ Validate at: <https://search.google.com/test/rich-results>
     "postalCode": "[PIN]",
     "addressCountry": "IN"
   },
-  "geo": { "@type": "GeoCoordinates", "latitude": "[ACTUAL_LAT]", "longitude": "[ACTUAL_LNG]" },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "[ACTUAL_LAT]",
+    "longitude": "[ACTUAL_LNG]"
+  },
   "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" }
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
   ]
 }
 ```
@@ -121,9 +157,24 @@ Validate at: <https://search.google.com/test/rich-results>
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://DOMAIN" },
-    { "@type": "ListItem", "position": 2, "name": "[Category]", "item": "https://DOMAIN/category/" },
-    { "@type": "ListItem", "position": 3, "name": "[Page]", "item": "https://DOMAIN/category/page/" }
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://DOMAIN"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "[Category]",
+      "item": "https://DOMAIN/category/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "[Page]",
+      "item": "https://DOMAIN/category/page/"
+    }
   ]
 }
 ```
@@ -161,13 +212,20 @@ Validate at: <https://search.google.com/test/rich-results>
   "@type": "Service",
   "name": "[Service Name]",
   "description": "[Description with keyword]",
-  "provider": { "@type": "Organization", "name": "[Brand]", "url": "https://DOMAIN" },
+  "provider": {
+    "@type": "Organization",
+    "name": "[Brand]",
+    "url": "https://DOMAIN"
+  },
   "areaServed": { "@type": "Place", "name": "[City/Region]" },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "[Service Category]",
     "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "[Sub-service]" } }
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "[Sub-service]" }
+      }
     ]
   }
 }
@@ -183,8 +241,18 @@ Validate at: <https://search.google.com/test/rich-results>
   "description": "[What this guide covers]",
   "totalTime": "PT10M",
   "step": [
-    { "@type": "HowToStep", "name": "[Step 1 Title]", "text": "[Step 1 instructions]", "position": 1 },
-    { "@type": "HowToStep", "name": "[Step 2 Title]", "text": "[Step 2 instructions]", "position": 2 }
+    {
+      "@type": "HowToStep",
+      "name": "[Step 1 Title]",
+      "text": "[Step 1 instructions]",
+      "position": 1
+    },
+    {
+      "@type": "HowToStep",
+      "name": "[Step 2 Title]",
+      "text": "[Step 2 instructions]",
+      "position": 2
+    }
   ]
 }
 ```

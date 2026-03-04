@@ -24,12 +24,12 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 
 **Read REQUIRED files always, OPTIONAL only when needed:**
 
-| File | Status | When to Read |
-|------|--------|--------------|
-| [aeo-strategies.md](references/aeo-strategies.md) | 🔴 **REQUIRED** | Always read first! |
-| [technical-seo.md](references/technical-seo.md) | ⚪ Optional | robots.txt, sitemaps, meta, IndexNow |
-| [schema-library.md](references/schema-library.md) | ⚪ Optional | Any JSON-LD schema needed |
-| [submission-checklist.md](references/submission-checklist.md) | ⚪ Optional | GSC, Bing, GBP submissions |
+| File                                                          | Status          | When to Read                         |
+| ------------------------------------------------------------- | --------------- | ------------------------------------ |
+| [aeo-strategies.md](references/aeo-strategies.md)             | 🔴 **REQUIRED** | Always read first!                   |
+| [technical-seo.md](references/technical-seo.md)               | ⚪ Optional     | robots.txt, sitemaps, meta, IndexNow |
+| [schema-library.md](references/schema-library.md)             | ⚪ Optional     | Any JSON-LD schema needed            |
+| [submission-checklist.md](references/submission-checklist.md) | ⚪ Optional     | GSC, Bing, GBP submissions           |
 
 > 🔴 **aeo-strategies.md = ALWAYS READ. Others = only if relevant to the task.**
 
@@ -148,13 +148,13 @@ Always structure output as:
 
 ## Reference Files
 
-| File | Use When |
-|------|----------|
-| `references/technical-seo.md` | Generating robots.txt, sitemaps, meta tags, head blocks |
-| `references/schema-library.md` | Any JSON-LD schema markup needed |
-| `references/aeo-strategies.md` | Optimizing content for AI engine citation |
-| `references/submission-checklist.md` | GSC, Bing, GBP, IndexNow setup steps |
-| `memory/project-memory.template.json` | Creating new project memory files |
+| File                                  | Use When                                                |
+| ------------------------------------- | ------------------------------------------------------- |
+| `references/technical-seo.md`         | Generating robots.txt, sitemaps, meta tags, head blocks |
+| `references/schema-library.md`        | Any JSON-LD schema markup needed                        |
+| `references/aeo-strategies.md`        | Optimizing content for AI engine citation               |
+| `references/submission-checklist.md`  | GSC, Bing, GBP, IndexNow setup steps                    |
+| `memory/project-memory.template.json` | Creating new project memory files                       |
 
 ---
 
@@ -182,10 +182,10 @@ SERAPH AUDIT — [URL or file path]
 
 ## Related Skills
 
-| Skill | When to Use |
-|-------|-------------|
-| **seo-aeo** (this) | SEO strategy, schema, AEO content, submissions |
-| **[frontend-design](../frontend-design/SKILL.md)** | Visual design decisions before coding |
+| Skill                                                          | When to Use                                      |
+| -------------------------------------------------------------- | ------------------------------------------------ |
+| **seo-aeo** (this)                                             | SEO strategy, schema, AEO content, submissions   |
+| **[frontend-design](../frontend-design/SKILL.md)**             | Visual design decisions before coding            |
 | **[web-design-guidelines](../web-design-guidelines/SKILL.md)** | Accessibility, performance, best practices audit |
 
 ---

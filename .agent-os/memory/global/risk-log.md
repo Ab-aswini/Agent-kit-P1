@@ -7,15 +7,16 @@
 
 ## Active Risks
 
-| ID | Severity | Category | Description | Status | Mitigation |
-|----|----------|----------|-------------|--------|------------|
-| | | | | | |
+| ID  | Severity | Category | Description | Status | Mitigation |
+| --- | -------- | -------- | ----------- | ------ | ---------- |
+|     |          |          |             |        |            |
 
 ---
 
 ## Template
 
 ### RISK-[NUMBER]: [Title]
+
 - **Date Identified:** [DATE]
 - **Identified By:** [AGENT_ID]
 - **Severity:** Critical | High | Medium | Low

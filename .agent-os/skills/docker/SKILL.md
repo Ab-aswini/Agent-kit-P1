@@ -3,6 +3,7 @@
 > Loaded by: DevOps Division agents | Version: 1.0
 
 ## Dockerfile Pattern
+
 ```dockerfile
 # Multi-stage build
 FROM node:20-alpine AS builder
@@ -24,6 +25,7 @@ CMD ["node", "dist/server.js"]
 ```
 
 ## Anti-Patterns
+
 - Do NOT run containers as root
 - Do NOT include dev dependencies in production images
 - Do NOT hardcode secrets (use env vars or secrets management)
@@ -31,6 +33,7 @@ CMD ["node", "dist/server.js"]
 - Do NOT skip health checks
 
 ## Checklist
+
 - [ ] Multi-stage build used
 - [ ] Non-root user configured
 - [ ] Health check defined

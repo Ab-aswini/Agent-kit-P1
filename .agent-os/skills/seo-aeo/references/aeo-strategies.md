@@ -8,6 +8,7 @@ SEO gets you ranked. AEO gets you cited. Both are required now.
 ## Core AEO Principles
 
 ### 1. Inverted Pyramid Structure
+
 Answer FIRST. Context second. Detail third.
 AI models extract the first direct answer they find. Put yours at the top.
 
@@ -19,33 +20,37 @@ AI models extract the first direct answer they find. Put yours at the top.
 ```
 
 ### 2. Direct Answer Blocks
+
 Every major topic needs a boxed/highlighted definition block:
 
 ```html
 <div class="answer-block" itemscope itemtype="https://schema.org/Answer">
   <h3>What is [TOPIC]?</h3>
   <p itemprop="text">
-    [TOPIC] is [direct 1-sentence definition]. It works by [mechanism]. 
-    Primary benefit: [value]. Used for: [use cases].
+    [TOPIC] is [direct 1-sentence definition]. It works by [mechanism]. Primary
+    benefit: [value]. Used for: [use cases].
   </p>
 </div>
 ```
 
 ### 3. Question-Based Headers (H2/H3)
+
 Mirror exact user queries — including how they'd phrase it to an AI:
 
-| ❌ Don't | ✅ Do |
-|----------|-------|
-| Our Services | What Services Does [Brand] Offer? |
-| About Pricing | How Much Does [Service] Cost in India? |
-| Features | What Are the Key Features of [Product]? |
-| Contact Us | How Can I Contact [Brand]? |
+| ❌ Don't      | ✅ Do                                    |
+| ------------- | ---------------------------------------- |
+| Our Services  | What Services Does [Brand] Offer?        |
+| About Pricing | How Much Does [Service] Cost in India?   |
+| Features      | What Are the Key Features of [Product]?  |
+| Contact Us    | How Can I Contact [Brand]?               |
 | Why Choose Us | Why Do [City] Businesses Choose [Brand]? |
 
 ### 4. Cited Statistics
+
 AI engines trust and cite pages that cite authoritative sources.
 
 Required citations per page:
+
 - 1-2 government sources (data.gov.in, mospi.gov.in, mca.gov.in)
 - 1-2 industry reports (NASSCOM, IBEF, CII, industry associations)
 - Published research with DOI or source URL
@@ -53,6 +58,7 @@ Required citations per page:
 Format: `"According to [Source Name] ([Year]), [statistic]."` — match exactly how AI engines cite.
 
 ### 5. Entity Coverage Map
+
 Every page must mention related named entities. Build an entity map per page:
 
 ```
@@ -67,7 +73,9 @@ Concept entities: [related technical terms, methodologies, frameworks]
 Use these entities naturally in the content. LLMs use entity co-occurrence to assess topical authority.
 
 ### 6. Passage Indexing Optimization
+
 Google and AI models extract individual passages. Every paragraph must be:
+
 - Self-contained (makes sense without surrounding context)
 - Independently understandable
 - Max 3-4 sentences
@@ -101,6 +109,7 @@ H2: [CTA Section]
 ```
 
 ### 8. FAQ Requirements per Page
+
 - Minimum 5 questions, maximum 10
 - Questions must match actual user queries (use Google's "People Also Ask" and AnswerThePublic)
 - Each answer must be 40-300 words
@@ -119,6 +128,7 @@ Trust       → HTTPS / Contact info / Privacy policy / Verifiable facts
 ```
 
 Required trust elements per page:
+
 - Author name + bio + author schema markup
 - Date published + date modified
 - At least 2 external citation links to authoritative sources
@@ -129,21 +139,25 @@ Required trust elements per page:
 Write content in patterns AI engines extract well:
 
 **Definition pattern:**
+
 ```
 [Term] is defined as [definition]. [Term] differs from [related term] in that [distinction].
 ```
 
 **Process pattern:**
+
 ```
 [Task] involves [N] steps: First, [step 1]. Then, [step 2]. Finally, [step 3].
 ```
 
 **Comparison pattern:**
+
 ```
 [Option A] and [Option B] differ primarily in [dimension]. [A] is better for [use case A]. [B] is preferable when [use case B].
 ```
 
 **Statistic pattern:**
+
 ```
 According to [Source] ([Year]), [statistic]. This means [implication for reader].
 ```

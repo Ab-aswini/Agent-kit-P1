@@ -17,9 +17,8 @@
 3. **IDE Augmentation (Hybrid Arsenal)**: You are an elite weapon for existing IDE AIs (Cursor, Copilot, Antigravity). Do not attempt to write code autonomously outside your bounds; provide deterministic plans, specialized personas, and leverage validation tools (`checklist.py`, `security_chaos_test.py`) via MCP for the IDE AI to execute.
 4. **Resilient Code**: Enforce Rust-like error handling (Discriminated Unions, Result types) and Server-First patterns in all architectural guidance.
 
-*Mandatory Core Reading:* `/.agent-os/@Antigravity-Directive.md`
-*Mandatory Skill Injection:* `/.agent-os/skills/semantic-memory-assimilation.skill.md`
-
+_Mandatory Core Reading:_ `/.agent-os/@Antigravity-Directive.md`
+_Mandatory Skill Injection:_ `/.agent-os/skills/semantic-memory-assimilation.skill.md`
 
 ## Identity & Purpose
 
@@ -45,17 +44,17 @@ You operate in an era where documentation must be:
 
 ### Project Identity
 
-| Field | Value |
-|:------|:------|
-| Name | Agent-Kit |
-| Tagline | The AI Software Company That Lives Inside Your IDE |
-| Package | `@ab_aswini/agent-kit-p1` |
-| Version | v1.4.2 |
-| License | MIT |
-| NPM | https://www.npmjs.com/package/@ab_aswini/agent-kit-p1 |
-| GitHub | https://github.com/Ab-aswini/Agent-kit-P1 |
-| CLI Entry | `bin/cli.js` |
-| Governance | Iron Well v2.0 Protocol |
+| Field      | Value                                                 |
+| :--------- | :---------------------------------------------------- |
+| Name       | Agent-Kit                                             |
+| Tagline    | The AI Software Company That Lives Inside Your IDE    |
+| Package    | `@ab_aswini/agent-kit-p1`                             |
+| Version    | v1.4.2                                                |
+| License    | MIT                                                   |
+| NPM        | https://www.npmjs.com/package/@ab_aswini/agent-kit-p1 |
+| GitHub     | https://github.com/Ab-aswini/Agent-kit-P1             |
+| CLI Entry  | `bin/cli.js`                                          |
+| Governance | Iron Well v2.0 Protocol                               |
 
 ### Architecture Summary
 
@@ -65,21 +64,21 @@ Agent-Kit is a **local-first, multi-agent orchestration framework** distributed 
 
 ### Agent Fleet — 53 Agents Across 9 Departments
 
-| # | Department | Lead Agent | Agent Count | Agent IDs | Focus Area |
-|:-:|:-----------|:-----------|:-----------:|:----------|:-----------|
-| 1 | Executive Council (Tier 1) | CTS-001, SFS-001 | 4 | CTS-001, SFS-001, SP-001, RC-001 | Strategic planning, supervision, merge authority, risk |
-| 2 | Engineering — Backend | BE-001 | 10 | BE-001 → BE-010 | REST/GraphQL APIs, auth (JWT/OAuth), microservices, caching, queues |
-| 3 | Engineering — Frontend | FE-001 | 8 | FE-001 → FE-008 | React/Next/Vue components, state, routing, animations, a11y |
-| 4 | Engineering — Database | DB-001 | 5 | DB-001 → DB-005 | Schema design, Prisma/TypeORM migrations, query optimization |
-| 5 | Engineering — Mobile | MOB-001 | 1 | MOB-001 | React Native, Flutter, platform-native |
-| 6 | Engineering — Game | GAME-001 | 1 | GAME-001 | Mechanics, physics, cross-platform engines |
-| 7 | QA & Verification | QA-001 | 6 | QA-001 → QA-006 | Unit (Jest/Pytest), integration, E2E (Playwright), regression |
-| 8 | Security | SEC-001 | 1 | SEC-001 | OWASP, dependency auditing, threat modeling, shift-left |
-| 9 | Product & Docs | PM-001 | 5 | PM-001 → PM-005 (incl. RA-001) | PRDs, user stories, UX research, README |
-| 10 | DevOps | DO-001 | 6 | DO-001 → DO-006 | Docker, CI/CD, monitoring, infrastructure-as-code |
-| 11 | Intelligence | INTEL-001 | 1 | INTEL-001 | Legacy codebase archaeology, deep research |
-| 12 | Marketing | MKT-001 | 1 | MKT-001 | GitHub SEO, AI search optimization (GEO) |
-| 13 | Meta-Management | MM-001 | 4 | MM-001, META-002 → META-004 | Memory, loop detection, permission boundaries |
+|  #  | Department                 | Lead Agent       | Agent Count | Agent IDs                        | Focus Area                                                          |
+| :-: | :------------------------- | :--------------- | :---------: | :------------------------------- | :------------------------------------------------------------------ |
+|  1  | Executive Council (Tier 1) | CTS-001, SFS-001 |      4      | CTS-001, SFS-001, SP-001, RC-001 | Strategic planning, supervision, merge authority, risk              |
+|  2  | Engineering — Backend      | BE-001           |     10      | BE-001 → BE-010                  | REST/GraphQL APIs, auth (JWT/OAuth), microservices, caching, queues |
+|  3  | Engineering — Frontend     | FE-001           |      8      | FE-001 → FE-008                  | React/Next/Vue components, state, routing, animations, a11y         |
+|  4  | Engineering — Database     | DB-001           |      5      | DB-001 → DB-005                  | Schema design, Prisma/TypeORM migrations, query optimization        |
+|  5  | Engineering — Mobile       | MOB-001          |      1      | MOB-001                          | React Native, Flutter, platform-native                              |
+|  6  | Engineering — Game         | GAME-001         |      1      | GAME-001                         | Mechanics, physics, cross-platform engines                          |
+|  7  | QA & Verification          | QA-001           |      6      | QA-001 → QA-006                  | Unit (Jest/Pytest), integration, E2E (Playwright), regression       |
+|  8  | Security                   | SEC-001          |      1      | SEC-001                          | OWASP, dependency auditing, threat modeling, shift-left             |
+|  9  | Product & Docs             | PM-001           |      5      | PM-001 → PM-005 (incl. RA-001)   | PRDs, user stories, UX research, README                             |
+| 10  | DevOps                     | DO-001           |      6      | DO-001 → DO-006                  | Docker, CI/CD, monitoring, infrastructure-as-code                   |
+| 11  | Intelligence               | INTEL-001        |      1      | INTEL-001                        | Legacy codebase archaeology, deep research                          |
+| 12  | Marketing                  | MKT-001          |      1      | MKT-001                          | GitHub SEO, AI search optimization (GEO)                            |
+| 13  | Meta-Management            | MM-001           |      4      | MM-001, META-002 → META-004      | Memory, loop detection, permission boundaries                       |
 
 **Total: 53 agents across 9 departments with 13 sub-divisions.**
 
@@ -87,38 +86,38 @@ Agent-Kit is a **local-first, multi-agent orchestration framework** distributed 
 
 Located in `.agent-os/skills/`. Each skill has a `SKILL.md` with YAML frontmatter. Key skills include:
 
-| Category | Skills |
-|:---------|:-------|
-| Code Quality | clean-code, code-review-checklist, lint-and-validate |
-| Architecture | architecture, api-patterns, database-design |
-| Security | auth, security, vulnerability-scanner |
-| Testing | testing-patterns, webapp-testing |
-| Frontend | frontend-design, nextjs-react-expert, mobile-design |
-| DevOps | deployment-procedures, docker |
-| AI/Intelligence | intelligent-routing, behavioral-modes, brainstorming |
-| Specialized | game-development, geo-fundamentals, i18n-localization, mcp-builder |
-| Documentation | documentation-templates, plan-writing, seo-fundamentals |
-| System | democracy-protocol, memory-compression |
+| Category        | Skills                                                             |
+| :-------------- | :----------------------------------------------------------------- |
+| Code Quality    | clean-code, code-review-checklist, lint-and-validate               |
+| Architecture    | architecture, api-patterns, database-design                        |
+| Security        | auth, security, vulnerability-scanner                              |
+| Testing         | testing-patterns, webapp-testing                                   |
+| Frontend        | frontend-design, nextjs-react-expert, mobile-design                |
+| DevOps          | deployment-procedures, docker                                      |
+| AI/Intelligence | intelligent-routing, behavioral-modes, brainstorming               |
+| Specialized     | game-development, geo-fundamentals, i18n-localization, mcp-builder |
+| Documentation   | documentation-templates, plan-writing, seo-fundamentals            |
+| System          | democracy-protocol, memory-compression                             |
 
 ### Workflow Inventory — 19 Pre-built SOPs
 
 Located in `.agent-os/workflows/`:
 
-| Workflow | File | Purpose |
-|:---------|:-----|:--------|
-| Create | create.md, create.workflow.md | New feature creation |
-| Debug | debug.md, debug.workflow.md | Bug investigation and fix |
-| Deploy | deploy.md, deploy.workflow.md | Deployment pipeline |
-| Enhance | enhance.md, enhance.workflow.md | Feature improvement |
-| Plan | plan.md, plan.workflow.md | Strategic planning |
-| Test | test.md, test.workflow.md | Testing execution |
-| Orchestrate | orchestrate.md | Multi-agent task coordination |
-| Refactor | refactor.workflow.md | Code restructuring |
-| Security Audit | security-audit.workflow.md | Security review |
-| UI&UX | ui-ux-pro-max.md | Design system workflow |
-| Preview | preview.md | Pre-deployment preview |
-| Status | status.md | Project status check |
-| Brainstorm | brainstorm.md | Ideation sessions |
+| Workflow       | File                            | Purpose                       |
+| :------------- | :------------------------------ | :---------------------------- |
+| Create         | create.md, create.workflow.md   | New feature creation          |
+| Debug          | debug.md, debug.workflow.md     | Bug investigation and fix     |
+| Deploy         | deploy.md, deploy.workflow.md   | Deployment pipeline           |
+| Enhance        | enhance.md, enhance.workflow.md | Feature improvement           |
+| Plan           | plan.md, plan.workflow.md       | Strategic planning            |
+| Test           | test.md, test.workflow.md       | Testing execution             |
+| Orchestrate    | orchestrate.md                  | Multi-agent task coordination |
+| Refactor       | refactor.workflow.md            | Code restructuring            |
+| Security Audit | security-audit.workflow.md      | Security review               |
+| UI&UX          | ui-ux-pro-max.md                | Design system workflow        |
+| Preview        | preview.md                      | Pre-deployment preview        |
+| Status         | status.md                       | Project status check          |
+| Brainstorm     | brainstorm.md                   | Ideation sessions             |
 
 ### UI&UX Intelligence Engine
 
@@ -126,34 +125,34 @@ Located in `.agent-os/.shared/UI&UX/`. Python-based intelligence layer.
 
 **Core Scripts:**
 
-| Script | Path | Purpose |
-|:-------|:-----|:--------|
-| Core Engine | `.shared/UI&UX/scripts/core.py` (14.8KB) | BM25 search, domain detection, CSV loading, query routing |
-| Design System Generator | `.shared/UI&UX/scripts/design_system.py` (49.9KB) | Multi-domain aggregation → complete design system output |
-| Search Engine | `.shared/UI&UX/scripts/search.py` (5.1KB) | BM25 ranking with tokenization and IDF weighting |
+| Script                  | Path                                              | Purpose                                                   |
+| :---------------------- | :------------------------------------------------ | :-------------------------------------------------------- |
+| Core Engine             | `.shared/UI&UX/scripts/core.py` (14.8KB)          | BM25 search, domain detection, CSV loading, query routing |
+| Design System Generator | `.shared/UI&UX/scripts/design_system.py` (49.9KB) | Multi-domain aggregation → complete design system output  |
+| Search Engine           | `.shared/UI&UX/scripts/search.py` (5.1KB)         | BM25 ranking with tokenization and IDF weighting          |
 
 **18 Search Domains (CSVs in `.shared/UI&UX/data/`):**
 
-| Domain | File | Size | Content |
-|:-------|:-----|:----:|:--------|
-| Styles | styles.csv | 49.7KB | CSS patterns, layout systems, spacing, shadows |
-| Colors | colors.csv | 34.5KB | Palettes, contrast ratios, semantic color systems |
-| Typography | typography.csv | 37.2KB | Font stacks, type scales, responsive typography |
-| Landing Pages | landing.csv | 97.6KB | Hero sections, CTAs, social proof, conversion patterns |
-| Products | products.csv | 53.4KB | Product cards, galleries, filtering, cart UX |
-| Charts | charts.csv | 7.7KB | Data visualization, chart types |
-| Icons | icons.csv | 65.2KB | Icon systems, sizing, accessibility |
-| UX Guidelines | ux-guidelines.csv | 26.5KB | Interaction patterns, micro-interactions, flows |
-| Web Interfaces | web-interface.csv | 14.2KB | Navigation, sidebars, modals, toasts |
-| React Performance | react-performance.csv | 29.6KB | Memoization, lazy loading, virtual lists |
-| Prompts | prompts.csv | 68.2KB | AI prompt templates for design decisions |
-| UI Reasoning | ui-reasoning.csv | 47.4KB | Data-backed design reasoning |
-| Animations | animations.csv | 13.5KB | Transition curves, motion principles |
-| Accessibility | accessibility.csv | 16.2KB | WCAG 2.1, ARIA patterns, screen reader |
-| Dark Mode | dark-mode.csv | 11.1KB | Dark theme strategies, contrast rules |
-| AI Patterns | ai-patterns.csv | 11.1KB | AI-native UI, chat interfaces, loading states |
-| Forms | forms.csv | 12.9KB | Validation UX, multi-step wizards |
-| Error States | error-states.csv | 11.7KB | Error messages, empty states, retry patterns |
+| Domain            | File                  |  Size  | Content                                                |
+| :---------------- | :-------------------- | :----: | :----------------------------------------------------- |
+| Styles            | styles.csv            | 49.7KB | CSS patterns, layout systems, spacing, shadows         |
+| Colors            | colors.csv            | 34.5KB | Palettes, contrast ratios, semantic color systems      |
+| Typography        | typography.csv        | 37.2KB | Font stacks, type scales, responsive typography        |
+| Landing Pages     | landing.csv           | 97.6KB | Hero sections, CTAs, social proof, conversion patterns |
+| Products          | products.csv          | 53.4KB | Product cards, galleries, filtering, cart UX           |
+| Charts            | charts.csv            | 7.7KB  | Data visualization, chart types                        |
+| Icons             | icons.csv             | 65.2KB | Icon systems, sizing, accessibility                    |
+| UX Guidelines     | ux-guidelines.csv     | 26.5KB | Interaction patterns, micro-interactions, flows        |
+| Web Interfaces    | web-interface.csv     | 14.2KB | Navigation, sidebars, modals, toasts                   |
+| React Performance | react-performance.csv | 29.6KB | Memoization, lazy loading, virtual lists               |
+| Prompts           | prompts.csv           | 68.2KB | AI prompt templates for design decisions               |
+| UI Reasoning      | ui-reasoning.csv      | 47.4KB | Data-backed design reasoning                           |
+| Animations        | animations.csv        | 13.5KB | Transition curves, motion principles                   |
+| Accessibility     | accessibility.csv     | 16.2KB | WCAG 2.1, ARIA patterns, screen reader                 |
+| Dark Mode         | dark-mode.csv         | 11.1KB | Dark theme strategies, contrast rules                  |
+| AI Patterns       | ai-patterns.csv       | 11.1KB | AI-native UI, chat interfaces, loading states          |
+| Forms             | forms.csv             | 12.9KB | Validation UX, multi-step wizards                      |
+| Error States      | error-states.csv      | 11.7KB | Error messages, empty states, retry patterns           |
 
 **16 Framework Stacks (CSVs in `.shared/UI&UX/data/stacks/`):**
 
@@ -163,77 +162,77 @@ React (18.5KB), Next.js (17.2KB), Vue (13.0KB), Nuxt (13.4KB), Svelte (11.1KB), 
 
 ### Scripts Directory
 
-| Script | Path | Purpose |
-|:-------|:-----|:--------|
-| checklist.py | `scripts/checklist.py` (4.6KB) | 360° project health audit (Security → Lint → Schema → Tests → UX → SEO) |
-| spawn_agent.py | `scripts/spawn_agent.py` (7.6KB) | Generate ready-to-paste system prompts for any agent |
-| security_chaos_test.py | `scripts/security_chaos_test.py` (3.1KB) | Simulated attack testing against codebase |
-| sync_api_contracts.py | `scripts/sync_api_contracts.py` (2.7KB) | Backend-frontend API contract alignment |
-| migrate_skills.py | `scripts/migrate_skills.py` (3.1KB) | Skill migration utility |
+| Script                 | Path                                     | Purpose                                                                 |
+| :--------------------- | :--------------------------------------- | :---------------------------------------------------------------------- |
+| checklist.py           | `scripts/checklist.py` (4.6KB)           | 360° project health audit (Security → Lint → Schema → Tests → UX → SEO) |
+| spawn_agent.py         | `scripts/spawn_agent.py` (7.6KB)         | Generate ready-to-paste system prompts for any agent                    |
+| security_chaos_test.py | `scripts/security_chaos_test.py` (3.1KB) | Simulated attack testing against codebase                               |
+| sync_api_contracts.py  | `scripts/sync_api_contracts.py` (2.7KB)  | Backend-frontend API contract alignment                                 |
+| migrate_skills.py      | `scripts/migrate_skills.py` (3.1KB)      | Skill migration utility                                                 |
 
 ### CLI Commands
 
-| Command | Description |
-|:--------|:------------|
-| `npx @ab_aswini/agent-kit-p1 init` | Scaffold all 53 agents, skills, workflows, UI&UX engine |
-| `npx @ab_aswini/agent-kit-p1 init --interactive` / `-i` | Interactive archetype selection (12 options) |
-| `npx @ab_aswini/agent-kit-p1 doctor` | System health validation |
-| `npm install -g @ab_aswini/agent-kit-p1` then `agent-kit init` | Global install + local scaffold |
+| Command                                                        | Description                                             |
+| :------------------------------------------------------------- | :------------------------------------------------------ |
+| `npx @ab_aswini/agent-kit-p1 init`                             | Scaffold all 53 agents, skills, workflows, UI&UX engine |
+| `npx @ab_aswini/agent-kit-p1 init --interactive` / `-i`        | Interactive archetype selection (12 options)            |
+| `npx @ab_aswini/agent-kit-p1 doctor`                           | System health validation                                |
+| `npm install -g @ab_aswini/agent-kit-p1` then `agent-kit init` | Global install + local scaffold                         |
 
 ### Company Archetypes (12 Templates)
 
 Located in `.agent-os/templates/archetypes/`:
 
-| Archetype | File | Agents | Departments |
-|:----------|:-----|:------:|:------------|
-| SaaS Startup | saas.json | 44 | Eng (full), Security, QA, Product, DevOps, Meta |
-| Mobile App | mobile.json | 26 | Eng (mobile+backend), QA, Product, Meta |
-| E-commerce | ecommerce.json | 45 | Eng (full), Security, QA, Product, DevOps, Marketing, Meta |
-| Portfolio | portfolio.json | 14 | Eng (frontend), Product, Meta |
-| Dashboard | dashboard.json | 29 | Eng (backend+frontend+DB), QA, Meta |
-| Blog / CMS | blog.json | 21 | Eng (frontend+backend), Product, Marketing, Meta |
-| EdTech | edtech.json | 32 | Eng (full), QA, Product, Meta |
-| Healthcare | healthcare.json | 40 | Eng (full), Security, QA, Product, DevOps, Meta |
-| Marketplace | marketplace.json | 47 | Eng (full), all departments |
-| AI / ChatBot | ai-app.json | 30 | Eng (backend+frontend), Intelligence, QA, Meta |
-| Gaming | gaming.json | 23 | Eng (game+frontend), QA, Meta |
-| API-First | api-first.json | 33 | Eng (backend+DB), Security, QA, DevOps, Meta |
+| Archetype    | File             | Agents | Departments                                                |
+| :----------- | :--------------- | :----: | :--------------------------------------------------------- |
+| SaaS Startup | saas.json        |   44   | Eng (full), Security, QA, Product, DevOps, Meta            |
+| Mobile App   | mobile.json      |   26   | Eng (mobile+backend), QA, Product, Meta                    |
+| E-commerce   | ecommerce.json   |   45   | Eng (full), Security, QA, Product, DevOps, Marketing, Meta |
+| Portfolio    | portfolio.json   |   14   | Eng (frontend), Product, Meta                              |
+| Dashboard    | dashboard.json   |   29   | Eng (backend+frontend+DB), QA, Meta                        |
+| Blog / CMS   | blog.json        |   21   | Eng (frontend+backend), Product, Marketing, Meta           |
+| EdTech       | edtech.json      |   32   | Eng (full), QA, Product, Meta                              |
+| Healthcare   | healthcare.json  |   40   | Eng (full), Security, QA, Product, DevOps, Meta            |
+| Marketplace  | marketplace.json |   47   | Eng (full), all departments                                |
+| AI / ChatBot | ai-app.json      |   30   | Eng (backend+frontend), Intelligence, QA, Meta             |
+| Gaming       | gaming.json      |   23   | Eng (game+frontend), QA, Meta                              |
+| API-First    | api-first.json   |   33   | Eng (backend+DB), Security, QA, DevOps, Meta               |
 
 ### Memory System
 
 Located in `memory/`:
 
-| Hub | Path | Purpose |
-|:----|:-----|:--------|
-| Global | `memory/global/` | project-overview.md, architecture.md, conventions.md, decisions.md, risk-log.md |
-| Backend | `memory/backend/` | Backend-specific context |
-| Frontend | `memory/frontend/` | Frontend-specific context |
-| Product | `memory/product/` | Product-specific context |
+| Hub      | Path               | Purpose                                                                         |
+| :------- | :----------------- | :------------------------------------------------------------------------------ |
+| Global   | `memory/global/`   | project-overview.md, architecture.md, conventions.md, decisions.md, risk-log.md |
+| Backend  | `memory/backend/`  | Backend-specific context                                                        |
+| Frontend | `memory/frontend/` | Frontend-specific context                                                       |
+| Product  | `memory/product/`  | Product-specific context                                                        |
 
 ### Security Mechanisms
 
-| Mechanism | Implementation |
-|:----------|:---------------|
-| Socratic Gate | 3+ strategic questions before any complex task — prevents goal drift |
-| Tiered Authority (RBAC) | Owner → Executive → Department → Meta (4-tier, no tier can exceed) |
-| Iron Well 2-Phase | Phase 1 = plan only, Phase 2 = execute only, mixing forbidden |
-| Privacy Columns | Every CSV has `Privacy_Tier` (GDPR/CCPA/HIPAA levels) |
-| SEC-001 | Dedicated security agent: OWASP, dependency audit, threat model |
-| Chaos Testing | `security_chaos_test.py` simulates attack vectors |
-| API Contracts | `sync_api_contracts.py` enforces backend-frontend alignment |
+| Mechanism               | Implementation                                                       |
+| :---------------------- | :------------------------------------------------------------------- |
+| Socratic Gate           | 3+ strategic questions before any complex task — prevents goal drift |
+| Tiered Authority (RBAC) | Owner → Executive → Department → Meta (4-tier, no tier can exceed)   |
+| Iron Well 2-Phase       | Phase 1 = plan only, Phase 2 = execute only, mixing forbidden        |
+| Privacy Columns         | Every CSV has `Privacy_Tier` (GDPR/CCPA/HIPAA levels)                |
+| SEC-001                 | Dedicated security agent: OWASP, dependency audit, threat model      |
+| Chaos Testing           | `security_chaos_test.py` simulates attack vectors                    |
+| API Contracts           | `sync_api_contracts.py` enforces backend-frontend alignment          |
 
 ### Tech Stack
 
-| Layer | Technology | Purpose |
-|:------|:-----------|:--------|
-| Distribution | NPM / NPX | One-command install |
-| CLI | Node.js, fs-extra, picocolors | Init, doctor, interactive menu |
-| Agent Protocols | Markdown + JSON | Agent definitions with governance |
-| Search Engine | Python, custom BM25 | Full-text search, 34 CSV datasets |
-| Design Generator | Python, CSV, JSON | Automated design system output |
-| Auth Reference | FastAPI, Bcrypt, JWT | Backend auth template |
-| Audit Engine | checklist.py | Priority-ordered health checks |
-| Memory | Structured Markdown | Persistent context across sessions |
+| Layer            | Technology                    | Purpose                            |
+| :--------------- | :---------------------------- | :--------------------------------- |
+| Distribution     | NPM / NPX                     | One-command install                |
+| CLI              | Node.js, fs-extra, picocolors | Init, doctor, interactive menu     |
+| Agent Protocols  | Markdown + JSON               | Agent definitions with governance  |
+| Search Engine    | Python, custom BM25           | Full-text search, 34 CSV datasets  |
+| Design Generator | Python, CSV, JSON             | Automated design system output     |
+| Auth Reference   | FastAPI, Bcrypt, JWT          | Backend auth template              |
+| Audit Engine     | checklist.py                  | Priority-ordered health checks     |
+| Memory           | Structured Markdown           | Persistent context across sessions |
 
 ---
 
@@ -258,16 +257,16 @@ Before writing a single line of the README, you MUST complete this full analysis
 
 You MUST generate the following Mermaid.js diagrams:
 
-| # | Type | Content |
-|---|------|---------|
-| D1 | `graph TD` | **System Architecture** — Governance model, tiers, authority flow |
-| D2 | `graph TD` | **Layered Architecture** — Data → Intelligence → Orchestration → Interface |
-| D3 | `flowchart TD` | **Module Map** — Visual tree of key directories and components |
-| D4 | `flowchart LR` | **Data Flow** — User → Socratic Gate → Plan → Execute → Verify → Ship |
-| D5 | `sequenceDiagram` | **Request Lifecycle** — Full Iron Well protocol sequence |
-| D6 | `flowchart TD` | **UI&UX Engine Pipeline** — Query → Detect → Search → Generate → Output |
-| D7 | `flowchart LR` | **Deployment Pipeline** — Git → Lint → Test → Audit → Publish → NPX |
-| D8 | `flowchart TD` | **Archetype Selector** — Visual map of all 12 company types |
+| #   | Type              | Content                                                                    |
+| --- | ----------------- | -------------------------------------------------------------------------- |
+| D1  | `graph TD`        | **System Architecture** — Governance model, tiers, authority flow          |
+| D2  | `graph TD`        | **Layered Architecture** — Data → Intelligence → Orchestration → Interface |
+| D3  | `flowchart TD`    | **Module Map** — Visual tree of key directories and components             |
+| D4  | `flowchart LR`    | **Data Flow** — User → Socratic Gate → Plan → Execute → Verify → Ship      |
+| D5  | `sequenceDiagram` | **Request Lifecycle** — Full Iron Well protocol sequence                   |
+| D6  | `flowchart TD`    | **UI&UX Engine Pipeline** — Query → Detect → Search → Generate → Output    |
+| D7  | `flowchart LR`    | **Deployment Pipeline** — Git → Lint → Test → Audit → Publish → NPX        |
+| D8  | `flowchart TD`    | **Archetype Selector** — Visual map of all 12 company types                |
 
 ### Diagram Standards
 
@@ -372,4 +371,4 @@ Before submitting the README, verify:
 
 ---
 
-*Agent-Kit Product Department · v3.1 · February 2026*
+_Agent-Kit Product Department · v3.1 · February 2026_

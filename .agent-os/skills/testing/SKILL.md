@@ -3,6 +3,7 @@
 > Loaded by: QA Division agents | Version: 1.0
 
 ## Test Pyramid
+
 ```
         /  E2E  \        <- Few, slow, expensive
        / Integr. \      <- Some, moderate
@@ -10,6 +11,7 @@
 ```
 
 ## Unit Test Pattern (Arrange, Act, Assert)
+
 ```python
 def test_user_creation():
     # Arrange
@@ -26,15 +28,18 @@ def test_user_creation():
 ## Naming: `test_[unit]_[scenario]_[expected_result]`
 
 ## Mocking
+
 - Mock external services, not the thing under test
 - Prefer dependency injection over monkey patching
 
 ## Anti-Patterns
+
 - Tests dependent on execution order or external services
 - Tests without assertions; flaky timing-dependent tests
 - Testing implementation instead of behavior
 
 ## Checklist
+
 - [ ] All public APIs have tests
 - [ ] Edge cases covered
 - [ ] Tests are independent and deterministic

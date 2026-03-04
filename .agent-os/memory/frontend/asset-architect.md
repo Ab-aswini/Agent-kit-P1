@@ -44,11 +44,11 @@ Every sequence specifies:
 
 ## AI Video Tool Decision Matrix
 
-| Tool | Use When | Max Duration | Camera Control |
-|------|----------|-------------|----------------|
-| Runway Gen-3 Alpha | High-end luxury, precise control | 10s | Excellent |
-| Pika Labs | Multiple sequences, cost control | 4s | Good |
-| Stable Video Diffusion | Budget constraints, batch processing | Flexible | Moderate |
+| Tool                   | Use When                             | Max Duration | Camera Control |
+| :--------------------- | :----------------------------------- | :----------- | :------------- |
+| Runway Gen-3 Alpha     | High-end luxury, precise control     | 10s          | Excellent      |
+| Pika Labs              | Multiple sequences, cost control     | 4s           | Good           |
+| Stable Video Diffusion | Budget constraints, batch processing | Flexible     | Moderate       |
 
 ## Vertical-Specific Knowledge
 
@@ -74,13 +74,13 @@ Every sequence specifies:
 
 ## Common Pitfalls & Solutions
 
-| Pitfall | Solution |
-|---------|----------|
-| Disconnected sequences | Enforce END[N] = START[N+1] with explicit verification |
-| Color drift across frames | Create color matrix, sample with eyedropper tool |
-| Impossible camera moves | Map logical physical path, check for teleportation |
-| Vague motion descriptions | Frame-by-frame breakdown with specific % values |
-| Lighting jumps | Plan gradual transitions, specify Kelvin at boundaries |
+| Pitfall                   | Solution                                               |
+| :------------------------ | :----------------------------------------------------- |
+| Disconnected sequences    | Enforce END[N] = START[N+1] with explicit verification |
+| Color drift across frames | Create color matrix, sample with eyedropper tool       |
+| Impossible camera moves   | Map logical physical path, check for teleportation     |
+| Vague motion descriptions | Frame-by-frame breakdown with specific % values        |
+| Lighting jumps            | Plan gradual transitions, specify Kelvin at boundaries |
 
 ## Performance Optimization Notes
 

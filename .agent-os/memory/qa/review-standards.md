@@ -1,6 +1,7 @@
 # Code Review Standards
 
 ## Must Check
+
 1. Correctness - Does the code do what it should?
 2. Security - Any vulnerabilities introduced?
 3. Performance - Any obvious bottlenecks?
@@ -11,6 +12,7 @@
 8. Edge Cases - Are boundary conditions covered?
 
 ## Review Output Format
+
 ```json
 {
   "status": "approve | request_changes | reject",

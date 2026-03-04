@@ -176,6 +176,7 @@ Body: { host, key, keyLocation, urlList: [newlyPublishedUrls] }
 ## Directory Submission (India-Specific)
 
 For Indian businesses, also submit to:
+
 ```
 □ JustDial: justdial.com/business
 □ IndiaMart: seller.indiamart.com

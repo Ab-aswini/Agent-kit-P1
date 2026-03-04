@@ -1,29 +1,13 @@
-<div align="center">
-
-<!-- SEO METADATA FOR GITHUB ARCHITECTURE SEARCH -->
-<!-- keywords: google antigravity, model context protocol, mcp server, cursor agent, claude desktop, windsurf, copilot, autonomous agents, multi-agent framework, semantic memory, tree-of-thought, ai ide augmentation, developer tools, local-first ai -->
-
-<br/>
-
 # 🏭 Agent-Kit (V3.5) — The Hybrid AI Arsenal
 
-<br/>
+> <!-- SEO METADATA FOR GITHUB ARCHITECTURE SEARCH -->
+> <!-- keywords: google antigravity, model context protocol, mcp server, cursor agent, claude desktop, windsurf, copilot, autonomous agents, multi-agent framework, semantic memory, tree-of-thought, ai ide augmentation, developer tools, local-first ai -->
 
-### The Ultimate MCP Server that supercharges Google Antigravity, Cursor, Claude Desktop, and Windsurf
+## The Ultimate MCP Server that supercharges Google Antigravity, Cursor, Claude Desktop, and Windsurf
 
-<br/>
+> _You are a CTO with 54 autonomous AI employees acting as a native extension to your IDE._
 
-> *You are a CTO with 54 autonomous AI employees acting as a native extension to your IDE.*
-
-<br/>
-
-[![Version](https://img.shields.io/badge/v3.5-stable-7C3AED?style=for-the-badge&logo=semver&logoColor=white)](https://www.npmjs.com/package/@ab_aswini/agent-kit-p1)
-[![Agents](https://img.shields.io/badge/54_Agents-9_Departments-06B6D4?style=for-the-badge&logo=dependabot&logoColor=white)](https://github.com/Ab-aswini/Agent-kit-P1)
-[![NPM](https://img.shields.io/badge/NPM-Install-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/@ab_aswini/agent-kit-p1)
-[![License](https://img.shields.io/badge/MIT-License-10B981?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/Ab-aswini/Agent-kit-P1?style=for-the-badge&color=F59E0B&logo=github)](https://github.com/Ab-aswini/Agent-kit-P1)
-
-<br/>
+[![Version](https://img.shields.io/badge/v3.5-stable-7C3AED?style=for-the-badge&logo=semver&logoColor=white)](https://www.npmjs.com/package/@ab_aswini/agent-kit-p1) [![Agents](https://img.shields.io/badge/54_Agents-9_Departments-06B6D4?style=for-the-badge&logo=dependabot&logoColor=white)](https://github.com/Ab-aswini/Agent-kit-P1) [![NPM](https://img.shields.io/badge/NPM-Install-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/@ab_aswini/agent-kit-p1) [![License](https://img.shields.io/badge/MIT-License-10B981?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE) [![Stars](https://img.shields.io/github/stars/Ab-aswini/Agent-kit-P1?style=for-the-badge&color=F59E0B&logo=github)](https://github.com/Ab-aswini/Agent-kit-P1)
 
 ```text
 ┌─────────────────────────────────────────────────────────────┐
@@ -35,38 +19,26 @@
 └─────────────────────────────────────────────────────────────┘
 ```
 
-<br/>
-
-</div>
-
----
-
-<br/>
-
 ## 📋 Table of Contents
 
-| # | Section | What You'll Learn |
-|:-:|:--------|:------------------|
-| 1 | [🧩 What Is Agent-Kit?](#-what-is-agent-kit) | The big picture — why this exists |
-| 2 | [💡 The Problem We Solve](#-the-problem-we-solve) | The pain point and how we fix it |
-| 3 | [🏗️ How It Works — Architecture](#️-how-it-works--architecture) | The governance model, layers, and control flow |
-| 4 | [👥 Meet Your Team — 54 Agents](#-meet-your-team--54-agents) | Every department, every agent, every role |
-| 5 | [🎨 UI&UX Intelligence Engine](#-uiux-intelligence-engine) | The built-in design brain with 18 domains & 16 stacks |
-| 6 | [🚦 The Iron Well Protocol](#-the-iron-well-protocol) | How governance actually works step-by-step |
-| 7 | [⚡ Install & Setup](#-install--setup) | Every way to install + first steps |
-| 8 | [🎯 Company Archetypes](#-company-archetypes) | Choose your team size from 14 to 54 agents |
-| 9 | [⚙️ Tech Stack](#️-tech-stack) | What's under the hood |
-| 10 | [🛡️ Security & Privacy](#️-security--privacy) | How safety is enforced at every layer |
-| 11 | [🚢 Deployment Pipeline](#-deployment-pipeline) | From your IDE to NPM to the end user |
-| 12 | [🗺️ Roadmap](#️-roadmap) | What's coming next |
-| 13 | [🤝 Contributing](#-contributing) | How to add agents, skills, or datasets |
-| 14 | [📄 License](#-license) | MIT — fully open |
-
-<br/>
+|  #  | Section                                                        | What You'll Learn                                     |
+| :-: | :------------------------------------------------------------- | :---------------------------------------------------- |
+|  1  | [🧩 What Is Agent-Kit?](#-what-is-agent-kit)                   | The big picture — why this exists                     |
+|  2  | [💡 The Problem We Solve](#-the-problem-we-solve)              | The pain point and how we fix it                      |
+|  3  | [🏗️ How It Works — Architecture](#️-how-it-works--architecture) | The governance model, layers, and control flow        |
+|  4  | [👥 Meet Your Team — 54 Agents](#-meet-your-team--54-agents)   | Every department, every agent, every role             |
+|  5  | [🎨 UI&UX Intelligence Engine](#-uiux-intelligence-engine)     | The built-in design brain with 18 domains & 16 stacks |
+|  6  | [🚦 The Iron Well Protocol](#-the-iron-well-protocol)          | How governance actually works step-by-step            |
+|  7  | [⚡ Install & Setup](#-install--setup)                         | Every way to install + first steps                    |
+|  8  | [🎯 Company Archetypes](#-company-archetypes)                  | Choose your team size from 14 to 54 agents            |
+|  9  | [⚙️ Tech Stack](#️-tech-stack)                                  | What's under the hood                                 |
+| 10  | [🛡️ Security & Privacy](#️-security--privacy)                   | How safety is enforced at every layer                 |
+| 11  | [🚢 Deployment Pipeline](#-deployment-pipeline)                | From your IDE to NPM to the end user                  |
+| 12  | [🗺️ Roadmap](#️-roadmap)                                        | What's coming next                                    |
+| 13  | [🤝 Contributing](#-contributing)                              | How to add agents, skills, or datasets                |
+| 14  | [📄 License](#-license)                                        | MIT — fully open                                      |
 
 ---
-
-<br/>
 
 ## 🧩 What Is Agent-Kit?
 
@@ -74,7 +46,7 @@
 
 When you run `npx @ab_aswini/agent-kit-p1 init`, it creates a **zero-footprint** global store and drops a single `.agentkit` pointer file in your project. The global store contains:
 
-```
+```text
 your-project/
 ├── .agent-os/                    ← The AI Operating System
 │   ├── agents/                   ← 54 AI agent definitions (.md files)
@@ -132,11 +104,7 @@ Agent-Kit now runs natively as a **Model Context Protocol (MCP)** server with **
 > [!IMPORTANT]
 > Agent-Kit does **not** run its own AI models. It is an **IDE Augmentation Framework** that supercharges your existing AI IDE by giving it structured roles, governance protocols, and domain-specific intelligence. Think of it as the operating system, and your AI (Google Gemini, Claude 3.5 Sonnet, GPT-4) as the hardware engine.
 
-<br/>
-
 ---
-
-<br/>
 
 ## 💡 The Problem We Solve
 
@@ -189,30 +157,26 @@ flowchart LR
 
 **Agent-Kit gives you a full company:**
 
-| Role | Agent | What It Actually Does |
-|:-----|:------|:----------------------|
-| CTO | CTS-001 | Reviews every decision, enforces architecture, has merge authority |
-| Lead Developer | SFS-001 | Orchestrates multi-file tasks, routes work to specialists |
-| Strategist | SP-001 | Creates milestone plans before any code is written |
-| Risk Officer | RC-001 | Flags compliance issues, evaluates trade-offs |
-| 10 Backend Devs | BE-001→010 | API design, auth, microservices, caching, queues |
-| 9 Frontend Devs | FE-001→009 | Components, state management, animations, a11y, asset architecture |
-| 5 DB Engineers | DB-001→005 | Schema design, migrations, query optimization |
-| 6 QA Engineers | QA-001→006 | Unit tests, integration, E2E, regression |
-| Security Specialist | SEC-001 | OWASP compliance, vulnerability scanning |
-| 6 DevOps Engineers | DO-001→006 | Docker, CI/CD, monitoring, deployment |
-| Product Manager | PM-001 | PRDs, user stories, acceptance criteria |
-| UX Researcher | PM-002 | Usability analysis, design patterns |
-| README Architect | RA-001 | Documentation generation (that's me!) |
-| SEO+AEO Specialist | MKT-001 | SERAPH: Technical SEO, schema markup, AEO, search submission |
-| Intel Agent | INTEL-001 | Legacy code analysis, deep research |
-| 4 Meta Agents | MM-001→004 | Memory management, loop detection, permissions |
-
-<br/>
+| Role                | Agent      | What It Actually Does                                              |
+| :------------------ | :--------- | :----------------------------------------------------------------- |
+| CTO                 | CTS-001    | Reviews every decision, enforces architecture, has merge authority |
+| Lead Developer      | SFS-001    | Orchestrates multi-file tasks, routes work to specialists          |
+| Strategist          | SP-001     | Creates milestone plans before any code is written                 |
+| Risk Officer        | RC-001     | Flags compliance issues, evaluates trade-offs                      |
+| 10 Backend Devs     | BE-001→010 | API design, auth, microservices, caching, queues                   |
+| 9 Frontend Devs     | FE-001→009 | Components, state management, animations, a11y, asset architecture |
+| 5 DB Engineers      | DB-001→005 | Schema design, migrations, query optimization                      |
+| 6 QA Engineers      | QA-001→006 | Unit tests, integration, E2E, regression                           |
+| Security Specialist | SEC-001    | OWASP compliance, vulnerability scanning                           |
+| 6 DevOps Engineers  | DO-001→006 | Docker, CI/CD, monitoring, deployment                              |
+| Product Manager     | PM-001     | PRDs, user stories, acceptance criteria                            |
+| UX Researcher       | PM-002     | Usability analysis, design patterns                                |
+| README Architect    | RA-001     | Documentation generation (that's me!)                              |
+| SEO+AEO Specialist  | MKT-001    | SERAPH: Technical SEO, schema markup, AEO, search submission       |
+| Intel Agent         | INTEL-001  | Legacy code analysis, deep research                                |
+| 4 Meta Agents       | MM-001→004 | Memory management, loop detection, permissions                     |
 
 ---
-
-<br/>
 
 ## 🏗️ How It Works — Architecture
 
@@ -225,33 +189,33 @@ Agent-Kit uses a **military-style chain of command** called the **Iron Well Prot
 
 graph TD
   subgraph HUMAN["🧑‍💻 YOU — THE OWNER"]
-    H(("👤 Developer<br/>(Final Authority)"))
+    H(("👤 Developer"))
   end
 
   subgraph EXECUTIVE["🏛️ TIER 1 — EXECUTIVE COUNCIL"]
-    SFS["🎯 SFS-001<br/>Senior Full Stack<br/>━━━━━━━━━━━━━<br/>Orchestrates all work"]
-    CTS["👑 CTS-001<br/>Chief Supervisor<br/>━━━━━━━━━━━━━<br/>Merge authority"]
-    SP["📋 SP-001<br/>Strategy Planner<br/>━━━━━━━━━━━━━<br/>Milestone planning"]
-    RC["⚖️ RC-001<br/>Risk & Compliance<br/>━━━━━━━━━━━━━<br/>Risk assessment"]
+    SFS["🎯 SFS-001 (Orchestrator)"]
+    CTS["👑 CTS-001 (Supervisor)"]
+    SP["📋 SP-001 (Planner)"]
+    RC["⚖️ RC-001 (Risk & Compliance)"]
   end
 
   subgraph DEPARTMENTS["⚡ TIER 2 — 9 SPECIALIZED DEPARTMENTS"]
     direction LR
-    ENG["🔧 Engineering<br/>26 agents"]
-    QA["🧪 QA<br/>6 agents"]
-    SEC["🛡️ Security<br/>1 agent"]
-    PROD["📦 Product<br/>5 agents"]
-    DX["🚀 DevOps<br/>6 agents"]
-    INTEL["🔍 Intel<br/>1 agent"]
-    MKT["📢 Marketing<br/>1 agent"]
+    ENG["🔧 Engineering (26)"]
+    QA["🧪 QA (6)"]
+    SEC["🛡️ Security (1)"]
+    PROD["📦 Product (5)"]
+    DX["🚀 DevOps (6)"]
+    INTEL["🔍 Intel (1)"]
+    MKT["📢 Marketing (1)"]
   end
 
   subgraph META["🧠 TIER 3 — META-MANAGEMENT"]
-    MM["🧠 Memory + Loops + Permissions<br/>4 agents that keep the system sane"]
+    MM["🧠 Memory + Loops + Permissions"]
   end
 
   subgraph INTELLIGENCE["🎨 SHARED INTELLIGENCE LAYER"]
-    UX["🎨 UI&UX Engine<br/>18 domains · 16 stacks<br/>BM25 search · Design generator"]
+    UX["🎨 UI&UX Engine"]
   end
 
   H -->|"📝 You give a task"| SFS
@@ -292,30 +256,30 @@ Every component in Agent-Kit lives in one of four layers:
 
 graph TD
   subgraph L4["🖥️ LAYER 4 — INTERFACE  (How You Interact)"]
-    CLI["⌨️ CLI Commands<br/>init · doctor · interactive"]
-    IDE["💻 AI IDE<br/>Google Antigravity · Cursor · Windsurf"]
-    NPX["📦 NPX/NPM<br/>One-command install"]
+    CLI["⌨️ CLI Commands"]
+    IDE["💻 AI IDE (Cursor / Windsurf)"]
+    NPX["📦 NPX/NPM"]
   end
 
   subgraph L3["🎛️ LAYER 3 — ORCHESTRATION  (How Agents Coordinate)"]
-    GATE["🚦 Socratic Gate<br/>Must answer 3 questions<br/>before any complex task"]
-    PHASE["⚡ 2-Phase Engine<br/>Phase 1: Plan only<br/>Phase 2: Execute only"]
-    GOV["👑 Tiered Authority<br/>Owner → Exec → Dept → Meta<br/>No tier can exceed its level"]
-    WF["📋 19 Workflows<br/>create · debug · deploy<br/>test · plan · enhance · more"]
+    GATE["🚦 Socratic Gate"]
+    PHASE["⚡ 2-Phase Engine"]
+    GOV["👑 Tiered Authority"]
+    WF["📋 19 Workflows"]
   end
 
   subgraph L2["🧠 LAYER 2 — INTELLIGENCE  (How Agents Think)"]
-    BM25["🔍 BM25 Search<br/>Full-text search over<br/>34 CSV knowledge bases"]
-    DSG["🎨 Design System Gen<br/>Auto-generates colors,<br/>typography, patterns"]
-    REASON["💡 Reasoning Engine<br/>47K+ data points for<br/>UI/UX decision-making"]
-    SPAWN["🤖 Agent Spawner<br/>Generate system prompts<br/>for any of 54 agents"]
+    BM25["🔍 BM25 Search Engine"]
+    DSG["🎨 Design System Generator"]
+    REASON["💡 Reasoning Engine"]
+    SPAWN["🤖 Agent Spawner"]
   end
 
   subgraph L1["💾 LAYER 1 — DATA  (What Agents Know)"]
-    AGENTS["📄 54 Agent Protocols<br/>Identity, rules, boundaries,<br/>skills, anti-patterns"]
-    SKILLS["🧩 42+ Skill Modules<br/>Reusable expertise:<br/>clean-code, auth, TDD, etc."]
-    CSV["📊 34 CSV Datasets<br/>Design knowledge:<br/>18 domains + 16 frameworks"]
-    MEM["🧠 Memory Hubs<br/>Persistent context:<br/>architecture, decisions, risks"]
+    AGENTS["📄 54 Agent Protocols"]
+    SKILLS["🧩 42+ Skill Modules"]
+    CSV["📊 34 CSV Datasets"]
+    MEM["🧠 Memory Hubs"]
   end
 
   L4 --> L3
@@ -339,11 +303,7 @@ graph TD
   style MEM fill:#2DD4BF,stroke:#14B8A6,stroke-width:2px,color:#000
 ```
 
-<br/>
-
 ---
-
-<br/>
 
 ## 👥 Meet Your Team — 54 Agents
 
@@ -351,40 +311,36 @@ graph TD
 
 These four agents govern everything. They are loaded first, always active, and have the highest authority.
 
-| Agent | ID | Authority | Core Responsibility |
-|:------|:---|:----------|:--------------------|
-| 👑 **Chief Technical Supervisor** | CTS-001 | Highest | Architecture authority, merge control, final approval on all deployments and DB changes |
-| 🎯 **Senior Full Stack Developer** | SFS-001 | High | Primary orchestrator — routes all tasks, activates the Socratic Gate, delegates to departments |
-| 📋 **Strategy Planner** | SP-001 | High | Creates milestone plans, defines task breakdowns, manages the 4-phase planning methodology |
-| ⚖️ **Risk & Compliance** | RC-001 | High | Evaluates risks, flags compliance issues, assesses cost/benefit trade-offs |
+| Agent                              | ID      | Authority | Core Responsibility                                                                            |
+| :--------------------------------- | :------ | :-------- | :--------------------------------------------------------------------------------------------- |
+| 👑 **Chief Technical Supervisor**  | CTS-001 | Highest   | Architecture authority, merge control, final approval on all deployments and DB changes        |
+| 🎯 **Senior Full Stack Developer** | SFS-001 | High      | Primary orchestrator — routes all tasks, activates the Socratic Gate, delegates to departments |
+| 📋 **Strategy Planner**            | SP-001  | High      | Creates milestone plans, defines task breakdowns, manages the 4-phase planning methodology     |
+| ⚖️ **Risk & Compliance**           | RC-001  | High      | Evaluates risks, flags compliance issues, assesses cost/benefit trade-offs                     |
 
 ### Engineering Department (26 Agents)
 
-| Sub-Division | Agents | ID Range | What They Build |
-|:-------------|:------:|:---------|:----------------|
-| 🔧 **Backend** | 10 | BE-001→010 | REST/GraphQL APIs, authentication (JWT, OAuth), microservices, caching, message queues, middleware |
-| 🎨 **Frontend** | 9 | FE-001→009 | React/Next.js/Vue components, state management, routing, responsive design, animations, accessibility, asset architecture |
-| 🗄️ **Database** | 5 | DB-001→005 | Schema design, Prisma/TypeORM migrations, query optimization, indexing, data modeling |
-| 📱 **Mobile** | 1 | MOB-001 | React Native, Flutter, platform-native iOS/Android |
-| 🎮 **Game** | 1 | GAME-001 | Game mechanics, physics engines, cross-platform game development |
+| Sub-Division    | Agents | ID Range   | What They Build                                                                                                           |
+| :-------------- | :----: | :--------- | :------------------------------------------------------------------------------------------------------------------------ |
+| 🔧 **Backend**  |   10   | BE-001→010 | REST/GraphQL APIs, authentication (JWT, OAuth), microservices, caching, message queues, middleware                        |
+| 🎨 **Frontend** |   9    | FE-001→009 | React/Next.js/Vue components, state management, routing, responsive design, animations, accessibility, asset architecture |
+| 🗄️ **Database** |   5    | DB-001→005 | Schema design, Prisma/TypeORM migrations, query optimization, indexing, data modeling                                     |
+| 📱 **Mobile**   |   1    | MOB-001    | React Native, Flutter, platform-native iOS/Android                                                                        |
+| 🎮 **Game**     |   1    | GAME-001   | Game mechanics, physics engines, cross-platform game development                                                          |
 
 ### Support Departments
 
-| Department | Lead | Agents | Focus |
-|:-----------|:-----|:------:|:------|
-| 🧪 **QA & Verification** | QA-001 | 6 | Unit tests (Jest, Pytest), integration tests, E2E (Playwright), regression, code coverage audits |
-| 🛡️ **Security** | SEC-001 | 1 | OWASP Top 10 scanning, dependency auditing, threat modeling, shift-left security practices |
-| 📦 **Product & Docs** | PM-001 | 5 | PRDs, user stories, acceptance criteria, UX research, README generation |
-| 🚀 **DevOps** | DO-001 | 6 | Docker containerization, CI/CD pipelines, cloud deployment, monitoring, infrastructure-as-code |
-| 🔍 **Intelligence** | INTEL-001 | 1 | Legacy codebase archaeology, deep technical research, knowledge extraction |
-| 📢 **Marketing** | MKT-001 | 1 | SERAPH: Technical SEO, schema markup, AEO, search engine submission |
-| 🧠 **Meta-Management** | MM-001 | 4 | Memory file management, infinite loop detection, permission boundary enforcement |
-
-<br/>
+| Department               | Lead      | Agents | Focus                                                                                            |
+| :----------------------- | :-------- | :----: | :----------------------------------------------------------------------------------------------- |
+| 🧪 **QA & Verification** | QA-001    |   6    | Unit tests (Jest, Pytest), integration tests, E2E (Playwright), regression, code coverage audits |
+| 🛡️ **Security**          | SEC-001   |   1    | OWASP Top 10 scanning, dependency auditing, threat modeling, shift-left security practices       |
+| 📦 **Product & Docs**    | PM-001    |   5    | PRDs, user stories, acceptance criteria, UX research, README generation                          |
+| 🚀 **DevOps**            | DO-001    |   6    | Docker containerization, CI/CD pipelines, cloud deployment, monitoring, infrastructure-as-code   |
+| 🔍 **Intelligence**      | INTEL-001 |   1    | Legacy codebase archaeology, deep technical research, knowledge extraction                       |
+| 📢 **Marketing**         | MKT-001   |   1    | SERAPH: Technical SEO, schema markup, AEO, search engine submission                              |
+| 🧠 **Meta-Management**   | MM-001    |   4    | Memory file management, infinite loop detection, permission boundary enforcement                 |
 
 ---
-
-<br/>
 
 ## 🎨 UI&UX Intelligence Engine
 
@@ -398,17 +354,13 @@ When any agent needs design guidance (colors, typography, layout, component patt
 %%{init: {'theme': 'default'}}%%
 
 flowchart TD
-  Q["🔍 Agent asks:<br/>SaaS dashboard with dark mode<br/>for a React + Tailwind project"] --> DD["🧭 Domain Detector<br/>━━━━━━━━━━━━━<br/>Scans query keywords<br/>Maps to best domain(s)"]
-
-  DD --> BM["⚡ BM25 Search Engine<br/>━━━━━━━━━━━━━<br/>Tokenize → IDF weight →<br/>Rank by relevance"]
-
-  BM --> D1["📚 18 Domain CSVs<br/>━━━━━━━━━━━━━<br/>General design knowledge"]
-  BM --> D2["📦 16 Stack CSVs<br/>━━━━━━━━━━━━━<br/>Framework-specific guidance"]
-
-  D1 --> DSG["🎨 Design System Generator<br/>━━━━━━━━━━━━━<br/>Aggregates multi-domain results<br/>Applies reasoning rules"]
+  Q["🔍 Agent asks: SaaS dashboard..."] --> DD["🧭 Domain Detector"]
+  DD --> BM["⚡ BM25 Search Engine"]
+  BM --> D1["📚 18 Domain CSVs"]
+  BM --> D2["📦 16 Stack CSVs"]
+  D1 --> DSG["🎨 Design System Generator"]
   D2 --> DSG
-
-  DSG --> OUT["✅ Complete Design System Output<br/>━━━━━━━━━━━━━<br/>• Color palette with dark mode variants<br/>• Typography scale and font pairings<br/>• Component patterns for React+Tailwind<br/>• Accessibility scores and WCAG guidance<br/>• Performance budgets per component<br/>• Privacy tier recommendations"]
+  DSG --> OUT["✅ Complete Design System Output"]
 
   style Q fill:#7C3AED,stroke:#5B21B6,stroke-width:2px,color:#fff
   style DD fill:#2563EB,stroke:#1D4ED8,stroke-width:2px,color:#fff
@@ -423,51 +375,37 @@ flowchart TD
 
 Every design question maps to one or more of these knowledge bases:
 
-<details>
-<summary><b>Click to expand: The 18 Search Domains</b></summary>
-
-<br/>
-
-| # | Domain | Rows | What It Contains |
-|:-:|:-------|:----:|:-----------------|
-| 1 | 🎭 **Styles** | 1,000+ | CSS patterns, layout systems, spacing scales, shadows, borders |
-| 2 | 🎨 **Colors** | 1,200+ | Color palettes, contrast ratios, semantic color systems, brand guidelines |
-| 3 | 🔤 **Typography** | 800+ | Font stacks, type scales, line heights, responsive typography |
-| 4 | 🏠 **Landing Pages** | 2,400+ | Hero sections, CTAs, social proof patterns, conversion layouts |
-| 5 | 🛍️ **Products** | 1,500+ | Product cards, galleries, filtering patterns, cart UX |
-| 6 | 📊 **Charts** | 400+ | Data visualization, chart types, color coding for data |
-| 7 | ✨ **Icons** | 2,000+ | Icon systems, sizing conventions, accessibility for icons |
-| 8 | 🧩 **UX Guidelines** | 700+ | Interaction patterns, micro-interactions, user flow best practices |
-| 9 | 🌐 **Web Interfaces** | 500+ | Navigation, sidebars, modals, toast notifications |
-| 10 | ⚛️ **React Performance** | 800+ | Memoization, lazy loading, virtual lists, bundle optimization |
-| 11 | 💬 **Prompts** | 1,800+ | AI prompt templates for design decisions |
-| 12 | 💡 **UI Reasoning** | 1,200+ | Why certain designs work — backed by data |
-| 13 | 🎬 **Animations** | 500+ | Transition curves, duration guidelines, motion principles |
-| 14 | ♿ **Accessibility** | 600+ | WCAG 2.1, ARIA patterns, screen reader support |
-| 15 | 🌙 **Dark Mode** | 400+ | Dark theme strategies, color inversion rules, contrast in dark |
-| 16 | 🤖 **AI Patterns** | 400+ | AI-native UI components, chat interfaces, loading states |
-| 17 | 📝 **Forms** | 500+ | Form validation UX, multi-step wizards, input patterns |
-| 18 | ⚠️ **Error States** | 400+ | Error messages, empty states, fallback UI, retry patterns |
-
-</details>
-
-<br/>
+> ### 18 Search Domains
+>
+> 1. 🎭 **Styles** (1,000+) - CSS patterns, layout systems, spacing scales, shadows, borders
+> 2. 🎨 **Colors** (1,200+) - Color palettes, contrast ratios, semantic color systems, brand guidelines
+> 3. 🔤 **Typography** (800+) - Font stacks, type scales, line heights, responsive typography
+> 4. 🏠 **Landing Pages** (2,400+) - Hero sections, CTAs, social proof patterns, conversion layouts
+> 5. 🛍️ **Products** (1,500+) - Product cards, galleries, filtering patterns, cart UX
+> 6. 📊 **Charts** (400+) - Data visualization, chart types, color coding for data
+> 7. ✨ **Icons** (2,000+) - Icon systems, sizing conventions, accessibility for icons
+> 8. 🧩 **UX Guidelines** (700+) - Interaction patterns, micro-interactions, user flow best practices
+> 9. 🌐 **Web Interfaces** (500+) - Navigation, sidebars, modals, toast notifications
+> 10. ⚛️ **React Performance** (800+) - Memoization, lazy loading, virtual lists, bundle optimization
+> 11. 💬 **Prompts** (1,800+) - AI prompt templates for design decisions
+> 12. 💡 **UI Reasoning** (1,200+) - Why certain designs work — backed by data
+> 13. 🎬 **Animations** (500+) - Transition curves, duration guidelines, motion principles
+> 14. ♿ **Accessibility** (600+) - WCAG 2.1, ARIA patterns, screen reader support
+> 15. 🌙 **Dark Mode** (400+) - Dark theme strategies, color inversion rules, contrast in dark
+> 16. 🤖 **AI Patterns** (400+) - AI-native UI components, chat interfaces, loading states
+> 17. 📝 **Forms** (500+) - Form validation UX, multi-step wizards, input patterns
+> 18. ⚠️ **Error States** (400+) - Error messages, empty states, fallback UI, retry patterns
 
 ### The 16 Framework Stacks
 
 Framework-specific guidance with 15-column schema including **2026-ready columns:**
 
-<details>
-<summary><b>Click to expand: Framework Stacks & Data Schema</b></summary>
-
-<br/>
-
-| Stack | Columns Include |
-|:------|:----------------|
-| ⚛️ React, ▲ Next.js, 💚 Vue, 💚 Nuxt, 🔥 Svelte, 🅰️ Angular, 🚀 Astro, 💿 Remix, 🦀 Tauri, 💙 Flutter, 🍎 SwiftUI, 📱 React Native, 🤖 Jetpack Compose, 🧩 shadcn, 🌊 Tailwind, 💚 Nuxt UI | `Component_Name`, `Category`, `Use_Case`, `Code_Example`, `Accessibility_Score`, `Dark_Mode_Strategy`, `AI_Integration_Level`, `Privacy_Tier`, `Agent_Readiness`, `Performance_Budget` |
-
-</details>
-
+> ### 16 Framework Stacks & Data Schema
+>
+> **Stack Includes:** ⚛️ React, ▲ Next.js, 💚 Vue, 💚 Nuxt, 🔥 Svelte, 🅰️ Angular, 🚀 Astro, 💿 Remix, 🦀 Tauri, 💙 Flutter, 🍎 SwiftUI, 📱 React Native, 🤖 Jetpack Compose, 🧩 shadcn, 🌊 Tailwind, 💚 Nuxt UI
+>
+> **Columns Include:** `Component_Name`, `Category`, `Use_Case`, `Code_Example`, `Accessibility_Score`, `Dark_Mode_Strategy`, `AI_Integration_Level`, `Privacy_Tier`, `Agent_Readiness`, `Performance_Budget`
+>
 > [!NOTE]
 > **2026 Columns Explained:**
 >
@@ -477,11 +415,7 @@ Framework-specific guidance with 15-column schema including **2026-ready columns
 > - `Agent_Readiness` — Whether the component works with AI agent workflows
 > - `Performance_Budget` — Max acceptable load time / bundle size
 
-<br/>
-
 ---
-
-<br/>
 
 ## 🚦 The Iron Well Protocol
 
@@ -536,22 +470,18 @@ sequenceDiagram
 
 The Socratic Gate is **not optional**. For any complex request (build, create, implement, refactor), the AI must ask **at least 3 strategic questions** before writing a single line of code.
 
-| Question Type | Purpose | Example |
-|:--------------|:--------|:--------|
-| **Scope** | Prevent scope creep | "Should this dashboard also handle reporting export?" |
-| **Users** | Clarify audience | "Is this for technical admins or business stakeholders?" |
-| **Constraints** | Surface hidden requirements | "Any regulatory compliance? GDPR? SOC 2?" |
-| **Trade-offs** | Explore alternatives | "Real-time via WebSockets or polling every 30s?" |
-| **Edge Cases** | Prevent bugs before they exist | "What happens when the data source is temporarily unavailable?" |
+| Question Type   | Purpose                        | Example                                                         |
+| :-------------- | :----------------------------- | :-------------------------------------------------------------- |
+| **Scope**       | Prevent scope creep            | "Should this dashboard also handle reporting export?"           |
+| **Users**       | Clarify audience               | "Is this for technical admins or business stakeholders?"        |
+| **Constraints** | Surface hidden requirements    | "Any regulatory compliance? GDPR? SOC 2?"                       |
+| **Trade-offs**  | Explore alternatives           | "Real-time via WebSockets or polling every 30s?"                |
+| **Edge Cases**  | Prevent bugs before they exist | "What happens when the data source is temporarily unavailable?" |
 
 > [!TIP]
 > **Why this matters:** Most AI coding tools just start building. Agent-Kit forces clarity first. The result: fewer rewrites, no misunderstandings, and production-quality output from the start.
 
-<br/>
-
 ---
-
-<br/>
 
 ## ⚡ Install & Setup
 
@@ -565,7 +495,7 @@ npx @ab_aswini/agent-kit-p1 init
 
 This scaffolds the complete agent system into a **zero-footprint global store** — only a `.agentkit` pointer file touches your project. All 54 agents, 42+ skills, 19 workflows, and the UI&UX engine are deployed.
 
-This is the core of the V3.5 **Hybrid Arsenal** philosophy. Agent-Kit does not try to be an LLM IDE; instead, it is the ultimate super-weapon *for* your IDE.
+This is the core of the V3.5 **Hybrid Arsenal** philosophy. Agent-Kit does not try to be an LLM IDE; instead, it is the ultimate super-weapon _for_ your IDE.
 
 By running the MCP server, you give Cursor/Claude access to Agent-Kit's powerful internal Python tools:
 
@@ -576,7 +506,7 @@ By running the MCP server, you give Cursor/Claude access to Agent-Kit's powerful
 - `run_memory_sync` — Auto-generate `architecture.md`, `api-contracts.md`, `dependencies.md`
 
 **The Workflow:**
-You tell Cursor: *"Audit my project using Agent-Kit."*
+You tell Cursor: _"Audit my project using Agent-Kit."_
 Cursor hits our MCP server → Agent-Kit runs the Python audit on your local files → Cursor reads the output and fixes the code for you.
 
 ### Method 2: Dev Dependency
@@ -647,7 +577,7 @@ Agent-Kit can run as a **Model Context Protocol (MCP)** server, securely attachi
 }
 ```
 
-*Tools exposed natively to your AI:* `list_agents`, `get_agent_prompt`, `query_ui_ux_engine`, `run_memory_sync`, `run_checklist`, `run_security_chaos`.
+_Tools exposed natively to your AI:_ `list_agents`, `get_agent_prompt`, `query_ui_ux_engine`, `run_memory_sync`, `run_checklist`, `run_security_chaos`.
 
 ### 🩺 Health Check
 
@@ -661,51 +591,47 @@ This validates: agent files exist, directory structure is correct, manifest is c
 
 ### 🎬 First Steps After Install
 
-| Step | Command / Action | What Happens |
-|:----:|:-----------------|:-------------|
-| 1 | Open project in **Google Antigravity / Cursor / Windsurf** | Your AI IDE is ready |
-| 2 | Tell your AI: *"Read `.agent-os/agents/tier-1/chief-technical-supervisor.agent.md`"* | CTS-001 activates as your technical authority |
-| 3 | Run `python scripts/checklist.py` | Validates full project health |
-| 4 | Run `python scripts/spawn_agent.py BE-001` | Generates a ready-to-paste system prompt for Backend Agent 001 |
-| 5 | Start building | Tell your AI what to build — the Socratic Gate activates automatically |
+| Step | Command / Action                                                                     | What Happens                                                           |
+| :--: | :----------------------------------------------------------------------------------- | :--------------------------------------------------------------------- |
+|  1   | Open project in **Google Antigravity / Cursor / Windsurf**                           | Your AI IDE is ready                                                   |
+|  2   | Tell your AI: _"Read `.agent-os/agents/tier-1/chief-technical-supervisor.agent.md`"_ | CTS-001 activates as your technical authority                          |
+|  3   | Run `python scripts/checklist.py`                                                    | Validates full project health                                          |
+|  4   | Run `python scripts/spawn_agent.py BE-001`                                           | Generates a ready-to-paste system prompt for Backend Agent 001         |
+|  5   | Start building                                                                       | Tell your AI what to build — the Socratic Gate activates automatically |
 
 ### 📖 Full CLI Reference
 
-| Command | Description |
-|:--------|:------------|
-| `agent-kit init` | Deploy all 54 agents, skills, workflows, and UI&UX engine |
-| `agent-kit init -i` / `agent-kit init --interactive` | Interactive archetype selection (choose your team size) |
-| `agent-kit doctor` | Validate system health and flag missing components |
-| `agent-kit clean` | Remove legacy zero-footprint migration artifacts |
-| `agent-kit chat` | Launch the interactive Command-Trigger REPL |
-| `agent-kit run "prompt"` | **[V3.5]** Execute a task via the orchestration engine with action logging |
-| `agent-kit sync` | **[V3]** Run a one-shot Semantic Memory Sync — updates `architecture.md`, `api-contracts.md`, `dependencies.md` |
-| `agent-kit sync --watch` | **[V3]** Watch mode — auto-re-syncs agent memory every 5s when project files change |
-| `agent-kit self-test` | **[V3.5]** Run all 3 diagnostics (memory sync + security chaos + health check) with unified report |
-| `agent-kit mcp` | **[V3]** Start the Model Context Protocol (MCP) server for native Cursor / Claude Desktop integration |
+| Command                                              | Description                                                                                                     |
+| :--------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------- |
+| `agent-kit init`                                     | Deploy all 54 agents, skills, workflows, and UI&UX engine                                                       |
+| `agent-kit init -i` / `agent-kit init --interactive` | Interactive archetype selection (choose your team size)                                                         |
+| `agent-kit doctor`                                   | Validate system health and flag missing components                                                              |
+| `agent-kit clean`                                    | Remove legacy zero-footprint migration artifacts                                                                |
+| `agent-kit chat`                                     | Launch the interactive Command-Trigger REPL                                                                     |
+| `agent-kit run "prompt"`                             | **[V3.5]** Execute a task via the orchestration engine with action logging                                      |
+| `agent-kit sync`                                     | **[V3]** Run a one-shot Semantic Memory Sync — updates `architecture.md`, `api-contracts.md`, `dependencies.md` |
+| `agent-kit sync --watch`                             | **[V3]** Watch mode — auto-re-syncs agent memory every 5s when project files change                             |
+| `agent-kit self-test`                                | **[V3.5]** Run all 3 diagnostics (memory sync + security chaos + health check) with unified report              |
+| `agent-kit mcp`                                      | **[V3]** Start the Model Context Protocol (MCP) server for native Cursor / Claude Desktop integration           |
 
 ### 💬 Command-Trigger REPL (Slash Commands)
 
 Run `npx @ab_aswini/agent-kit-p1 chat` to open an interactive session. You can type natural language or use slash commands to instantly route context to specialized agents:
 
-| Command | Agent Triggered | Core Responsibility |
-|:--------|:----------------|:--------------------|
-| `/help` | *System* | List available commands |
-| `/fix`  | QA-001 | Analyzes errors/code for logical flaws and proposes precise fixes |
-| `/test` | QA-001 | Writes comprehensive, edge-case resilient unit/integration tests |
-| `/refactor`| BE-001 | Optimizes code for efficiency, readability, and SOLID principles |
-| `/plan` | SP-001 | Decomposes a request into a granular, step-by-step milestone plan |
-| `/seo`  | MKT-001 | **[V3.5]** Triggers SERAPH SEO+AEO agent for technical SEO, schema markup, and search optimization |
-| *(default)*| SFS-001 | Standard orchestrator routing for general inquiries |
+| Command     | Agent Triggered | Core Responsibility                                                                                |
+| :---------- | :-------------- | :------------------------------------------------------------------------------------------------- |
+| `/help`     | _System_        | List available commands                                                                            |
+| `/fix`      | QA-001          | Analyzes errors/code for logical flaws and proposes precise fixes                                  |
+| `/test`     | QA-001          | Writes comprehensive, edge-case resilient unit/integration tests                                   |
+| `/refactor` | BE-001          | Optimizes code for efficiency, readability, and SOLID principles                                   |
+| `/plan`     | SP-001          | Decomposes a request into a granular, step-by-step milestone plan                                  |
+| `/seo`      | MKT-001         | **[V3.5]** Triggers SERAPH SEO+AEO agent for technical SEO, schema markup, and search optimization |
+| _(default)_ | SFS-001         | Standard orchestrator routing for general inquiries                                                |
 
 > [!IMPORTANT]
 > **Requirements:** Node.js 16+ and npm 7+. Python 3.8+ is needed for the UI&UX engine and audit scripts.
 
-<br/>
-
 ---
-
-<br/>
 
 ## 🎯 Company Archetypes
 
@@ -715,18 +641,18 @@ When you run `agent-kit init --interactive`, you choose from **12 pre-configured
 %%{init: {'theme': 'default'}}%%
 
 flowchart TD
-  START(("🏗️ Choose Your<br/>Company Type")) --> S["🚀 SaaS Startup<br/>44 agents"]
-  START --> M["📱 Mobile App<br/>26 agents"]
-  START --> EC["🛒 E-commerce<br/>45 agents"]
-  START --> P["🖼️ Portfolio<br/>14 agents"]
-  START --> D["📊 Dashboard<br/>29 agents"]
-  START --> B["📝 Blog / CMS<br/>21 agents"]
-  START --> ED["🎓 EdTech<br/>32 agents"]
-  START --> HC["🏥 Healthcare<br/>40 agents"]
-  START --> MP["🏪 Marketplace<br/>47 agents"]
-  START --> AI["🤖 AI / ChatBot<br/>30 agents"]
-  START --> G["🎮 Gaming<br/>23 agents"]
-  START --> API["⚙️ API-First<br/>33 agents"]
+  START(("🏗️ Choose Your Company")) --> S["🚀 SaaS Startup (44)"]
+  START --> M["📱 Mobile App (26)"]
+  START --> EC["🛒 E-commerce (45)"]
+  START --> P["🖼️ Portfolio (14)"]
+  START --> D["📊 Dashboard (29)"]
+  START --> B["📝 Blog / CMS (21)"]
+  START --> ED["🎓 EdTech (32)"]
+  START --> HC["🏥 Healthcare (40)"]
+  START --> MP["🏪 Marketplace (47)"]
+  START --> AI["🤖 AI / ChatBot (30)"]
+  START --> G["🎮 Gaming (23)"]
+  START --> API["⚙️ API-First (33)"]
 
   style START fill:#7C3AED,stroke:#5B21B6,stroke-width:3px,color:#fff
   style S fill:#2563EB,stroke:#1D4ED8,stroke-width:2px,color:#fff
@@ -745,76 +671,59 @@ flowchart TD
 
 ### What Each Archetype Includes
 
-<details>
-<summary><b>Click to expand: The 12 Pre-Configured Archetypes</b></summary>
-
-<br/>
-
-| Archetype | Agents | Departments Included | Required Skills |
-|:----------|:------:|:---------------------|:----------------|
-| 🚀 **SaaS Startup** | 44 | Engineering (full), Security, QA, Product, DevOps, Meta | api-patterns, auth, database-design, clean-code, testing, deployment, frontend, nextjs-react, security |
-| 📱 **Mobile App** | 26 | Engineering (mobile + backend), QA, Product, Meta | mobile-design, api-patterns, auth, testing |
-| 🛒 **E-commerce** | 45 | Engineering (full), Security, QA, Product, DevOps, Marketing, Meta | Same as SaaS + seo-fundamentals |
-| 🖼️ **Portfolio** | 14 | Engineering (frontend), Product, Meta | frontend-design, clean-code |
-| 📊 **Dashboard** | 29 | Engineering (backend + frontend + DB), QA, Meta | api-patterns, database-design, frontend-design |
-| 📝 **Blog / CMS** | 21 | Engineering (frontend + backend), Product, Marketing, Meta | frontend-design, seo-fundamentals |
-| 🎓 **EdTech** | 32 | Engineering (full), QA, Product, Meta | auth, database-design, frontend-design |
-| 🏥 **Healthcare** | 40 | Engineering (full), Security, QA, Product, DevOps, Meta | security, auth, database-design (HIPAA focus) |
-| 🏪 **Marketplace** | 47 | Engineering (full), Security, QA, Product, DevOps, Marketing, Meta | Full skill suite |
-| 🤖 **AI / ChatBot** | 30 | Engineering (backend + frontend), Intelligence, QA, Meta | api-patterns, frontend-design |
-| 🎮 **Gaming** | 23 | Engineering (game + frontend), QA, Meta | game-development, frontend-design |
-| ⚙️ **API-First** | 33 | Engineering (backend + DB), Security, QA, DevOps, Meta | api-patterns, database-design, security, deployment |
-
-</details>
-
-> [!TIP]
-> **Start small, scale up.** You can always run `agent-kit init` later to upgrade to the full 54-agent fleet. The CLI is additive — it won't overwrite existing agents.
-
-<br/>
+> ### The 12 Pre-Configured Archetypes
+>
+> - 🚀 **SaaS Startup** (44 Agents) — Engineering (full), Security, QA, Product, DevOps, Meta
+> - 📱 **Mobile App** (26 Agents) — Engineering (mobile + backend), QA, Product, Meta
+> - 🛒 **E-commerce** (45 Agents) — Engineering (full), Security, QA, Product, DevOps, Marketing, Meta
+> - 🖼️ **Portfolio** (14 Agents) — Engineering (frontend), Product, Meta
+> - 📊 **Dashboard** (29 Agents) — Engineering (backend + frontend + DB), QA, Meta
+> - 📝 **Blog / CMS** (21 Agents) — Engineering (frontend + backend), Product, Marketing, Meta
+> - 🎓 **EdTech** (32 Agents) — Engineering (full), QA, Product, Meta
+> - 🏥 **Healthcare** (40 Agents) — Engineering (full), Security, QA, Product, DevOps, Meta
+> - 🏪 **Marketplace** (47 Agents) — Engineering (full), Security, QA, Product, DevOps, Marketing, Meta
+> - 🤖 **AI / ChatBot** (30 Agents) — Engineering (backend + frontend), Intelligence, QA, Meta
+> - 🎮 **Gaming** (23 Agents) — Engineering (game + frontend), QA, Meta
+> - ⚙️ **API-First** (33 Agents) — Engineering (backend + DB), Security, QA, DevOps, Meta [!TIP]
+>   **Start small, scale up.** You can always run `agent-kit init` later to upgrade to the full 54-agent fleet. The CLI is additive — it won't overwrite existing agents.
 
 ---
-
-<br/>
 
 ## ⚙️ Tech Stack
 
-| Layer | Technology | Purpose |
-|:-----:|:-----------|:--------|
-| 📦 **Distribution** | NPM / NPX | One-command installation, versioning, global installs |
-| ⌨️ **CLI** | Node.js + fs-extra + picocolors | Init scaffolding, doctor validation, interactive archetype menu |
-| 🏗️ **Agent Protocols** | Markdown (.md) + JSON manifests | Agent definitions with identity, rules, boundaries, anti-patterns |
-| 🔍 **Search Engine** | Python + custom BM25 | Full-text search over 34 CSV datasets with tokenization and IDF weighting |
-| 🎨 **Design Generator** | Python + CSV + JSON | Multi-domain aggregation → automated design system output |
-| 🔐 **Auth Reference** | FastAPI + Bcrypt + JWT | Production-ready authentication template for backend agents |
-| ✔️ **Audit Engine** | `checklist.py` (Python) | Priority-ordered health validation: Security → Lint → Schema → Tests → UX → SEO |
-| 🧠 **Memory System** | Structured Markdown | Persistent project context: architecture.md, decisions.md, conventions.md, risk-log.md |
-| 📋 **Workflows** | Markdown SOPs | 19 pre-built standard operating procedures with step-by-step execution |
-
-<br/>
+|          Layer          | Technology                      | Purpose                                                                                |
+| :---------------------: | :------------------------------ | :------------------------------------------------------------------------------------- |
+|   📦 **Distribution**   | NPM / NPX                       | One-command installation, versioning, global installs                                  |
+|       ⌨️ **CLI**        | Node.js + fs-extra + picocolors | Init scaffolding, doctor validation, interactive archetype menu                        |
+| 🏗️ **Agent Protocols**  | Markdown (.md) + JSON manifests | Agent definitions with identity, rules, boundaries, anti-patterns                      |
+|  🔍 **Search Engine**   | Python + custom BM25            | Full-text search over 34 CSV datasets with tokenization and IDF weighting              |
+| 🎨 **Design Generator** | Python + CSV + JSON             | Multi-domain aggregation → automated design system output                              |
+|  🔐 **Auth Reference**  | FastAPI + Bcrypt + JWT          | Production-ready authentication template for backend agents                            |
+|   ✔️ **Audit Engine**   | `checklist.py` (Python)         | Priority-ordered health validation: Security → Lint → Schema → Tests → UX → SEO        |
+|  🧠 **Memory System**   | Structured Markdown             | Persistent project context: architecture.md, decisions.md, conventions.md, risk-log.md |
+|    📋 **Workflows**     | Markdown SOPs                   | 19 pre-built standard operating procedures with step-by-step execution                 |
 
 ---
-
-<br/>
 
 ## 🛡️ Security & Privacy
 
 Agent-Kit enforces security through **seven distinct mechanisms**:
 
-| # | Mechanism | How It Works |
-|:-:|:----------|:-------------|
-| 1 | 🚦 **Socratic Gate** | Forces 3+ strategic questions before any complex task — prevents the AI from acting on misunderstood requirements |
-| 2 | 👑 **Tiered Authority (RBAC)** | 4-tier access control: Owner → Executive → Department → Meta. No agent can exceed its tier permissions |
-| 3 | 🛡️ **Iron Well 2-Phase** | Phase 1 = planning only (no code). Phase 2 = execution only (plan must be approved first). No mixing. |
-| 4 | 🔒 **Privacy Columns** | Every CSV dataset includes `Privacy_Tier` (GDPR, CCPA, HIPAA levels), consent-before-track patterns, and data minimization guidelines |
-| 5 | 🔍 **SEC-001 Agent** | Dedicated security specialist that performs threat modeling, dependency auditing, and OWASP Top 10 scanning |
-| 6 | 🐒 **Chaos Testing** | `security_chaos_test.py` simulates real-world attack vectors against your codebase to find vulnerabilities proactively |
-| 7 | 📡 **API Contract Sync** | `sync_api_contracts.py` ensures backend API responses match what the frontend expects — preventing integration bugs at deploy time |
+|  #  | Mechanism                      | How It Works                                                                                                                          |
+| :-: | :----------------------------- | :------------------------------------------------------------------------------------------------------------------------------------ |
+|  1  | 🚦 **Socratic Gate**           | Forces 3+ strategic questions before any complex task — prevents the AI from acting on misunderstood requirements                     |
+|  2  | 👑 **Tiered Authority (RBAC)** | 4-tier access control: Owner → Executive → Department → Meta. No agent can exceed its tier permissions                                |
+|  3  | 🛡️ **Iron Well 2-Phase**       | Phase 1 = planning only (no code). Phase 2 = execution only (plan must be approved first). No mixing.                                 |
+|  4  | 🔒 **Privacy Columns**         | Every CSV dataset includes `Privacy_Tier` (GDPR, CCPA, HIPAA levels), consent-before-track patterns, and data minimization guidelines |
+|  5  | 🔍 **SEC-001 Agent**           | Dedicated security specialist that performs threat modeling, dependency auditing, and OWASP Top 10 scanning                           |
+|  6  | 🐒 **Chaos Testing**           | `security_chaos_test.py` simulates real-world attack vectors against your codebase to find vulnerabilities proactively                |
+|  7  | 📡 **API Contract Sync**       | `sync_api_contracts.py` ensures backend API responses match what the frontend expects — preventing integration bugs at deploy time    |
 
 ### CTS-001 Approval Checklist
 
 Before any code reaches production, CTS-001 verifies:
 
-```
+```text
 ✅ Code follows project conventions
 ✅ No security vulnerabilities introduced
 ✅ Performance impact is acceptable
@@ -824,11 +733,7 @@ Before any code reaches production, CTS-001 verifies:
 ✅ No permission boundaries violated
 ```
 
-<br/>
-
 ---
-
-<br/>
 
 ## 🚢 Deployment Pipeline
 
@@ -838,13 +743,13 @@ From your IDE to your end user's project:
 %%{init: {'theme': 'default'}}%%
 
 flowchart LR
-  DEV["🧑‍💻 Developer<br/>writes or modifies<br/>agents / skills / data"] -->|"git push"| GH["🐙 GitHub<br/>Repository"]
-  GH -->|"CI triggers"| LINT["🔍 Lint &<br/>Type Check"]
-  LINT -->|"pass"| TEST["🧪 Tests<br/>Unit + Integration"]
-  TEST -->|"pass"| AUDIT["✔️ checklist.py<br/>360° Health Audit"]
-  AUDIT -->|"✅ all pass"| VSN["📋 Version Bump<br/>npm version patch"]
-  VSN --> PUB["📦 npm publish<br/>@ab_aswini/agent-kit-p1"]
-  PUB --> USER["🚀 End User<br/>npx init → .agent-os deployed"]
+  DEV["🧑‍💻 Developer"] -->|"git push"| GH["🐙 GitHub Repo"]
+  GH -->|"CI triggers"| LINT["🔍 Lint & Type Check"]
+  LINT -->|"pass"| TEST["🧪 Component Tests"]
+  TEST -->|"pass"| AUDIT["✔️ checklist.py Audit"]
+  AUDIT -->|"✅ all pass"| VSN["📋 Version Bump"]
+  VSN --> PUB["📦 npm publish"]
+  PUB --> USER["🚀 End User (npx init)"]
 
   AUDIT -->|"❌ fail"| DEV
 
@@ -858,25 +763,17 @@ flowchart LR
   style USER fill:#7C3AED,color:#fff,stroke:#5B21B6,stroke-width:3px
 ```
 
-<br/>
-
 ---
-
-<br/>
 
 ## 🗺️ Roadmap
 
-| Initiative | Status | Description |
-|:-----------|:------:|:------------|
-| 🏪 **Agent Marketplace** | 🔜 Planned | Community-contributed agent templates, skills, and CSV datasets |
-| 🔀 **Multi-LLM Router** | 🔜 Planned | Assign different AI models to different agents (GPT for planning, Claude for code, Gemini for design) |
-| 📊 **Live Dashboard** | 🔜 Planned | Web-based fleet monitoring through the orchestrator |
-
-<br/>
+| Initiative               |   Status   | Description                                                                                           |
+| :----------------------- | :--------: | :---------------------------------------------------------------------------------------------------- |
+| 🏪 **Agent Marketplace** | 🔜 Planned | Community-contributed agent templates, skills, and CSV datasets                                       |
+| 🔀 **Multi-LLM Router**  | 🔜 Planned | Assign different AI models to different agents (GPT for planning, Claude for code, Gemini for design) |
+| 📊 **Live Dashboard**    | 🔜 Planned | Web-based fleet monitoring through the orchestrator                                                   |
 
 ---
-
-<br/>
 
 ## 🧠 The Agent-Kit Architecture (V3.5+)
 
@@ -889,11 +786,7 @@ flowchart LR
 3. **Pillar 3: Semantic Project Memory** — Live AST-aware codebase scanning that updates agent ground-truth over time (`architecture.md`, `api-contracts.md`, etc.).
 4. **Pillar 4: Self-Test Loop** — `self-test` command runs all 3 diagnostics and produces a unified health report, enabling the system to audit itself.
 
-<br/>
-
 ---
-
-<br/>
 
 ## 🤝 Contributing
 
@@ -926,48 +819,24 @@ Agent-Kit is fully modular — every agent, skill, and dataset is an independent
 
 ### Workflow
 
-```
+```text
 Fork → Branch → Implement → Test → PR → Review → Merge
 ```
 
-<br/>
-
 ---
-
-<br/>
 
 ## 📄 License
 
 This project is licensed under the **MIT License** — see [LICENSE](LICENSE) for details.
 
-<br/>
-
 ---
 
-<br/>
-
-<div align="center">
-
-<br/>
-
-### 🏭 Built for solo developers who think like companies
-
-<br/>
-
-**54 agents · 42+ skills · 19 workflows · 18 design domains · 16 framework stacks**
-
-**Iron Well v2.0 governance · BM25 search · Socratic Gate · 12 company archetypes**
-
-<br/>
-
-[![Install via NPM](https://img.shields.io/badge/📦_Install_via_NPM-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/@ab_aswini/agent-kit-p1)
-[![View on GitHub](https://img.shields.io/badge/🐙_View_on_GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ab-aswini/Agent-kit-P1)
-[![Report Issue](https://img.shields.io/badge/🐛_Report_Issue-EF4444?style=for-the-badge)](https://github.com/Ab-aswini/Agent-kit-P1/issues)
-
-<br/>
-
-**⭐ If Agent-Kit helps your workflow, star this repo — it helps others find it.**
-
-<br/>
-
-</div>
+> ### 🏭 Built for solo developers who think like companies
+>
+> **54 agents · 42+ skills · 19 workflows · 18 design domains · 16 framework stacks**
+>
+> **Iron Well v2.0 governance · BM25 search · Socratic Gate · 12 company archetypes**
+>
+> [![Install via NPM](https://img.shields.io/badge/📦_Install_via_NPM-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/@ab_aswini/agent-kit-p1) [![View on GitHub](https://img.shields.io/badge/🐙_View_on_GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ab-aswini/Agent-kit-P1) [![Report Issue](https://img.shields.io/badge/🐛_Report_Issue-EF4444?style=for-the-badge)](https://github.com/Ab-aswini/Agent-kit-P1/issues)
+>
+> ⭐ **If Agent-Kit helps your workflow, star this repo — it helps others find it.**

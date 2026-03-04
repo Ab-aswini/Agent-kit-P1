@@ -22,7 +22,7 @@ Agent activated → Check frontmatter "skills:" → Read SKILL.md (INDEX) → Re
 ### 2. Enforcement Protocol
 
 1. **When agent is activated:**
-    - ✅ Activate: Read Rules → Check Frontmatter → Load SKILL.md → Apply All.
+   - ✅ Activate: Read Rules → Check Frontmatter → Load SKILL.md → Apply All.
 2. **Forbidden:** Never skip reading agent rules or skill instructions. "Read → Understand → Apply" is mandatory.
 
 ---
@@ -75,12 +75,12 @@ When auto-applying an agent, inform the user:
 
 **Before ANY code or design work, you MUST complete this mental checklist:**
 
-| Step | Check | If Unchecked |
-|------|-------|--------------|
-| 1 | Did I identify the correct agent for this domain? | → STOP. Analyze request domain first. |
-| 2 | Did I READ the agent's `.md` file (or recall its rules)? | → STOP. Open `.agent-os/agents/{agent}.md` |
-| 3 | Did I announce `🤖 Applying knowledge of @[agent]...`? | → STOP. Add announcement before response. |
-| 4 | Did I load required skills from agent's frontmatter? | → STOP. Check `skills:` field and read them. |
+| Step | Check                                                    | If Unchecked                                 |
+| ---- | -------------------------------------------------------- | -------------------------------------------- |
+| 1    | Did I identify the correct agent for this domain?        | → STOP. Analyze request domain first.        |
+| 2    | Did I READ the agent's `.md` file (or recall its rules)? | → STOP. Open `.agent-os/agents/{agent}.md`   |
+| 3    | Did I announce `🤖 Applying knowledge of @[agent]...`?   | → STOP. Add announcement before response.    |
+| 4    | Did I load required skills from agent's frontmatter?     | → STOP. Check `skills:` field and read them. |
 
 **Failure Conditions:**
 
@@ -184,8 +184,8 @@ When user's prompt is NOT in English:
 
 **Trigger:** When the user says "son kontrolleri yap", "final checks", "çalıştır tüm testleri", or similar phrases.
 
-| Task Stage       | Command                                            | Purpose                        |
-| ---------------- | -------------------------------------------------- | ------------------------------ |
+| Task Stage       | Command                                               | Purpose                        |
+| ---------------- | ----------------------------------------------------- | ------------------------------ |
 | **Manual Audit** | `python .agent-os/scripts/checklist.py .`             | Priority-based project audit   |
 | **Pre-Deploy**   | `python .agent-os/scripts/checklist.py . --url <URL>` | Full Suite + Performance + E2E |
 
@@ -240,8 +240,8 @@ When user's prompt is NOT in English:
 
 > **Design rules are in the specialist agents, NOT here.**
 
-| Task         | Read                            |
-| ------------ | ------------------------------- |
+| Task         | Read                               |
+| ------------ | ---------------------------------- |
 | Web UI/UX    | `.agent-os/frontend-specialist.md` |
 | Mobile UI/UX | `.agent-os/mobile-developer.md`    |
 
@@ -268,19 +268,23 @@ When user's prompt is NOT in English:
 - **Verify**: `.agent-os/scripts/verify_all.py`, `.agent-os/scripts/checklist.py`
 - **Scanners**: `security_scan.py`, `dependency_analyzer.py`
 - **Audits**: `ux_audit.py`, `mobile_audit.py`, `lighthouse_audit.py`, `seo_checker.py`
+
 ---
 
 ## 🎨 PROJECT IDENTITY: IRON WELL PRO
 
 ### The "Industrial-Pro" Aesthetic
-This project follows a specialized high-performance design system. 
+
+This project follows a specialized high-performance design system.
 
 **Core Principles:**
+
 1. **Aggressive Typographic Hierarchy:** Heavy use of bold, uppercase, and italicized display fonts.
 2. **Technological Depth:** Layered borders, high-contrast black/white/accent palettes, and "System-Ready" status indicators.
 3. **Hardened Functionalism:** Raw borders (1px solid), intense focus on efficiency over "softness."
 
 **Accepted UX Audit Waivers:**
+
 - **Small Targets:** Navigation and specialized utility links may use small (~10px) tracking-heavy text for density.
 - **Visual Noise:** Multiple borders and status indicators are intentional to evoke a "Mission Control" or "Pro Operating System" feel.
 - **Heading Hierarchy:** Intentionally staggered levels may be used for layout tension.

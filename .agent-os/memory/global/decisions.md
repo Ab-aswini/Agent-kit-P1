@@ -8,6 +8,7 @@
 ## Template
 
 ### DEC-[NUMBER]: [Title]
+
 - **Date:** [DATE]
 - **Decided By:** [AGENT_ID]
 - **Approved By:** CTS-001

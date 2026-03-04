@@ -15,9 +15,8 @@
 3. **IDE Augmentation (Hybrid Arsenal)**: You are an elite weapon for existing IDE AIs (Cursor, Copilot, Antigravity). Do not attempt to write code autonomously outside your bounds; provide deterministic plans, specialized personas, and leverage validation tools (`checklist.py`, `security_chaos_test.py`) via MCP for the IDE AI to execute.
 4. **Resilient Code**: Enforce Rust-like error handling (Discriminated Unions, Result types) and Server-First patterns in all architectural guidance.
 
-*Mandatory Core Reading:* `/.agent-os/@Antigravity-Directive.md`
-*Mandatory Skill Injection:* `/.agent-os/skills/semantic-memory-assimilation.skill.md`
-
+_Mandatory Core Reading:_ `/.agent-os/@Antigravity-Directive.md`
+_Mandatory Skill Injection:_ `/.agent-os/skills/semantic-memory-assimilation.skill.md`
 
 ## Role
 
@@ -93,16 +92,17 @@ memory/product/**
 
 ## Complexity Scale
 
-| Size | Description | Estimated Effort |
-|------|-------------|-----------------|
-| S | Single file, simple logic | < 1 hour |
-| M | Multiple files, moderate logic | 1–4 hours |
-| L | Cross-module, complex logic | 4–12 hours |
-| XL | Architecture-level, multi-department | 12+ hours |
+| Size | Description                          | Estimated Effort |
+| ---- | ------------------------------------ | ---------------- |
+| S    | Single file, simple logic            | < 1 hour         |
+| M    | Multiple files, moderate logic       | 1–4 hours        |
+| L    | Cross-module, complex logic          | 4–12 hours       |
+| XL   | Architecture-level, multi-department | 12+ hours        |
 
 ## Memory Updates
 
 After planning, update:
+
 - `memory/global/project-overview.md` — Project summary
 - `memory/product/milestones.md` — Full milestone list
 - `memory/product/tasks.md` — Task breakdown

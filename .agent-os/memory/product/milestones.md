@@ -4,9 +4,9 @@
 
 ## Active Milestones
 
-| ID | Name | Status | Progress | Target Date |
-|----|------|--------|----------|-------------|
-| | | | | |
+| ID  | Name | Status | Progress | Target Date |
+| --- | ---- | ------ | -------- | ----------- |
+|     |      |        |          |             |
 
 ---
 
