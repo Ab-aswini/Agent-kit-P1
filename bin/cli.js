@@ -43,7 +43,6 @@ function buildPointerConfig(projectPath, storePath) {
             agents: normalize(path.join(storePath, '.agent-os', 'agents')),
             rules: normalize(path.join(storePath, '.agent-os', 'rules')),
             skills: normalize(path.join(storePath, '.agent-os', 'skills')),
-            configs: normalize(path.join(storePath, '.agent-os', 'configs')),
             config: normalize(path.join(storePath, '.agent-os', 'config')),
             templates: normalize(path.join(storePath, '.agent-os', 'templates')),
             workflows: normalize(path.join(storePath, '.agent-os', 'workflows')),
@@ -202,7 +201,7 @@ async function doctor() {
         return;
     }
 
-    pointer = await readPointer(targetDir); // Read pointer after checking existence
+    pointer = pointer || await readPointer(targetDir); // Fallback re-read after checking existence
 
     console.log(pc.green(`  ✅ Pointer: .agentkit (v${pointer.version})`));
     console.log(pc.gray(`     Store: ${pointer.store}`));

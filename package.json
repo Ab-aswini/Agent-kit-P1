@@ -2,7 +2,7 @@
     "$schema": "https://json.schemastore.org/package",
     "name": "@ab_aswini/agent-kit-p1",
     "version": "3.6.0",
-    "description": "The Ultimate Hybrid AI Arsenal for existing IDEs (Cursor, Windsurf, Copilot). Empowers developers with 54 specialized agents, Semantic AST Memory, and Model Context Protocol (MCP) native tools.",
+    "description": "The Supportive Office for your IDE's AI. Empowers Google Antigravity, Cursor, Copilot & Claude with 54 specialized agents, 69+ skills, Semantic AST Memory, and MCP native tools — zero external API keys required.",
     "main": "index.js",
     "bin": {
         "agent-kit": "./bin/cli.js"
@@ -24,6 +24,7 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
+        "google-antigravity",
         "ai",
         "mcp",
         "model-context-protocol",
@@ -40,14 +41,13 @@
         "ast-parser",
         "developer-tools",
         "local-first-ai",
+        "marketing-skills",
         "software-engineering"
     ],
     "author": "Aswini Behera",
     "license": "MIT",
     "dependencies": {
-        "@anthropic-ai/sdk": "^0.78.0",
         "@modelcontextprotocol/sdk": "^1.26.0",
-        "dotenv": "^17.3.1",
         "fs-extra": "^11.2.0",
         "picocolors": "^1.0.0"
     }

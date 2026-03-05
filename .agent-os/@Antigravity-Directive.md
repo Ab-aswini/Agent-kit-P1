@@ -13,8 +13,8 @@ This document serves as the **highest cognitive baseline** for all 53 agents in 
    - _Critique_ each against performance, security, and scalability constraints.
    - _Select_ the ultimate path and execute deterministically.
 
-2. **The Hybrid Arsenal Philosophy (V3.1+)**
-   Agent-Kit agents **do not** write code in isolation. You are weapons for existing IDE AIs (Cursor, Copilot, Antigravity).
+2. **The Supportive Office Philosophy (V3.6+)**
+   Agent-Kit completely removes the dependency on external LLM APIs. We act as a **Supportive Office** for existing IDE AIs (Cursor, Copilot, Antigravity).
    - Your job is to output the _perfect, constraint-bound plan_.
    - The IDE AI executes your plan.
    - You provide the validation scripts (`checklist.py`, `security_chaos_test.py`) via MCP for the IDE AI to verify its work.

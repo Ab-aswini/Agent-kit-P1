@@ -102,7 +102,7 @@ your-project/
 Agent-Kit now runs natively as a **Model Context Protocol (MCP)** server with **6 tools**: `list_agents`, `get_agent_prompt`, `query_ui_ux_engine`, `run_memory_sync`, `run_checklist`, and `run_security_chaos`. It also ships with a `self-test` command to run all diagnostics, supports `AGENT_KIT_MODEL` env var for multi-model routing, and logs all agent actions.
 
 > [!IMPORTANT]
-> Agent-Kit does **not** run its own AI models. It is an **IDE Augmentation Framework** that supercharges your existing AI IDE by giving it structured roles, governance protocols, and domain-specific intelligence. Think of it as the operating system, and your AI (Google Gemini, Claude 3.5 Sonnet, GPT-4) as the hardware engine.
+> **The Supportive Office Philosophy**: Agent-Kit does **not** require external LLM APIs (no OpenAI/Anthropic keys needed). It acts as a **Supportive Office** for your IDE's native AI (Copilot, Gemini, Claude). You provide the built-in IDE LLM; Agent-Kit provides the company structure, the rules, the memory, and the tools so the LLM can complete the work smarter.
 
 ---
 

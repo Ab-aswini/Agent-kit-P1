@@ -63,7 +63,7 @@ $ARGUMENTS
 
 ### ⏸️ CHECKPOINT: User Approval
 
-```
+```text
 After PLAN.md is complete, ASK:
 
 "✅ Plan oluşturuldu: docs/PLAN.md
@@ -114,7 +114,7 @@ Onaylıyor musunuz? (Y/N)
 
 Identify ALL domains this task touches:
 
-```
+```text
 □ Security     → security-auditor, penetration-tester
 □ Backend/API  → backend-specialist
 □ Frontend/UI  → frontend-specialist
@@ -139,7 +139,7 @@ Identify ALL domains this task touches:
 
 **PHASE 1 (Planning):**
 
-```
+```text
 Use the project-planner agent to create PLAN.md
 → STOP after plan is created
 → ASK user for approval
@@ -147,14 +147,14 @@ Use the project-planner agent to create PLAN.md
 
 **PHASE 2 (Implementation - after approval):**
 
-```
+```text
 Invoke agents in PARALLEL:
 Use the frontend-specialist agent to [task]
 Use the backend-specialist agent to [task]
 Use the test-engineer agent to [task]
 ```
 
-**🔴 CRITICAL: Context Passing (MANDATORY)**
+### 🔴 CRITICAL: Context Passing (MANDATORY)
 
 When invoking ANY subagent, you MUST include:
 
@@ -165,7 +165,7 @@ When invoking ANY subagent, you MUST include:
 
 **Example with FULL context:**
 
-```
+```text
 Use the project-planner agent to create PLAN.md:
 
 **CONTEXT:**
