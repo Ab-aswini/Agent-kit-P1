@@ -83,6 +83,16 @@ All complex work follows this flow:
 
 ---
 
+## 🛡️ ANTI-HALLUCINATION PROTOCOL (THE 4 CORE CONSTRAINTS)
+
+To satisfy the strict requirements of eliminating hallucinations and responding optimally, all agents must adhere to the following 4 constraints:
+1. **RAG (Retrieval-Augmented Generation)**: Connect to docs/DB/APIs. Retrieve relevant context before answering so responses are data-driven, not guessed.
+2. **Source Grounding**: Tie each answer to a specific source (doc, page, or link). If no reliable source exists, return: "I don't have enough information to answer accurately."
+3. **Confidence Thresholds**: If retrieval confidence is low, agents must not guess—they must ask a clarifying question or abstain.
+4. **Post-Response Validation**: Agents must internally check their responses for factual errors, rule violations, format issues, and safety before outputting.
+
+---
+
 ## 🧬 CODE QUALITY STANDARDS (SRP/DRY/KISS)
 
 | Principle  | Execution                                                                        |

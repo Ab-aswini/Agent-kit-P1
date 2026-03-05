@@ -35,6 +35,7 @@ $ARGUMENTS
 | **Full Stack** | project-planner, frontend-specialist, backend-specialist, devops-engineer |
 | **Debug**      | debugger, explorer-agent, test-engineer                                   |
 | **Security**   | security-auditor, penetration-tester, devops-engineer                     |
+| **Marketing**  | seo-specialist, project-planner, performance-optimizer                    |
 
 ---
 
@@ -123,6 +124,7 @@ Identify ALL domains this task touches:
 □ Mobile       → mobile-developer
 □ Performance  → performance-optimizer
 □ SEO          → seo-specialist
+□ Marketing    → seo-specialist, project-planner
 □ Planning     → project-planner
 ```
 

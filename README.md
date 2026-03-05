@@ -60,14 +60,14 @@ your-project/
 │   │   ├── marketing-growth/     ← SEO/GEO, brand authority
 │   │   └── meta/                 ← Memory, loops, permissions
 │   │
-│   ├── skills/                   ← 42+ reusable skill modules
+│   ├── skills/                   ← 69+ reusable skill modules
 │   │   ├── clean-code/           ← Code quality standards
 │   │   ├── api-patterns/         ← REST/GraphQL conventions
 │   │   ├── database-design/      ← Schema, migration patterns
-│   │   ├── security/             ← OWASP, shift-left practices
-│   │   ├── frontend-design/      ← Component architecture
+│   │   ├── page-cro/             ← Conversion Rate Optimization
+│   │   ├── schema-markup/        ← SEO JSON-LD implementation
 │   │   ├── testing-patterns/     ← TDD, pyramid, coverage
-│   │   └── ... 36 more
+│   │   └── ... 63 more (Including 25 Advanced Marketing Skills)
 │   │
 │   ├── .shared/
 │   │   └── UI&UX/                ← Design intelligence engine
@@ -247,6 +247,15 @@ graph TD
   style UX fill:#F59E0B,stroke:#D97706,stroke-width:3px,color:#000
 ```
 
+### The Anti-Hallucination Protocol (The 4 Core Constraints)
+
+To ensure Agent-Kit operates with zero hallucinations and grounded intelligence, all 54 agents rigidly adhere to the **4 Core Constraints** (enforced globally in `universal-rules.agent.md`):
+
+1. **RAG (Retrieval-Augmented Generation)**: Dynamic connection to project docs, databases, and APIs.
+2. **Source Grounding**: Every answer must be tied to a documented source. Absolute rule: "If no reliable source exists, I don't have enough information to answer."
+3. **Confidence Thresholds**: If confidence is low, agents abstain and ask clarifying questions instead of guessing.
+4. **Post-Response Validation**: Self-correction checks for factual errors, rule violations, format issues, and safety before returning the final plan or code.
+
 ### The Four Layers
 
 Every component in Agent-Kit lives in one of four layers:
@@ -277,7 +286,7 @@ graph TD
 
   subgraph L1["💾 LAYER 1 — DATA  (What Agents Know)"]
     AGENTS["📄 54 Agent Protocols"]
-    SKILLS["🧩 42+ Skill Modules"]
+    SKILLS["🧩 69+ Skill Modules"]
     CSV["📊 34 CSV Datasets"]
     MEM["🧠 Memory Hubs"]
   end
