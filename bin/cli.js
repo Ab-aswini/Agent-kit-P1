@@ -9,6 +9,33 @@ const readline = require('readline');
 const { spawn } = require('child_process');
 const { SlashDispatcher } = require('./commands');
 
+const pkgVersion = require('../package.json').version;
+
+// ─── Branding Banner ─────────────────────────────────────────
+function printBanner() {
+    const line = pc.dim('━'.repeat(54));
+    console.log('');
+    console.log(line);
+    console.log(
+        pc.bold(pc.magenta('  ███ ')) +
+        pc.bold(pc.cyan('Agent-Kit')) +
+        pc.dim(' · ') +
+        pc.bold(pc.white(`v${pkgVersion}`))
+    );
+    console.log(
+        pc.magenta('  ◈  ') +
+        pc.white('The ') +
+        pc.bold(pc.cyan('Supportive Office')) +
+        pc.white(' for your IDE\'s AI')
+    );
+    console.log(
+        pc.magenta('  ◈  ') +
+        pc.dim('54 Agents · 69+ Skills · MCP Native · Zero API Keys')
+    );
+    console.log(line);
+    console.log('');
+}
+
 const args = process.argv.slice(2);
 const command = args[0];
 const isInteractive = args.includes('--interactive') || args.includes('-i');
@@ -37,7 +64,7 @@ function getPointerFilePath(projectPath) {
 function buildPointerConfig(projectPath, storePath) {
     const normalize = (p) => p.replace(/\\/g, '/');
     return {
-        version: '2.0.0',
+        version: pkgVersion,
         store: normalize(storePath),
         paths: {
             agents: normalize(path.join(storePath, '.agent-os', 'agents')),
@@ -190,7 +217,8 @@ async function copySelectedSkills(archetype, storePath) {
 
 // ─── Doctor Command ──────────────────────────────────────────
 async function doctor() {
-    console.log(pc.cyan('\n🩺 Running Agent-Kit Health Check (v2.0)...\n'));
+    printBanner();
+    console.log(pc.cyan(`🩺 Running Agent-Kit Health Check (v${pkgVersion})...\n`));
 
     // Step 1: Check for .agentkit pointer
     let pointer = await readPointer(targetDir);
@@ -310,7 +338,8 @@ async function init() {
         }
     }
 
-    console.log(pc.cyan('🚀 Initializing Agent-Kit v2.0 (Isolated Mode)...\n'));
+    printBanner();
+    console.log(pc.cyan(`🚀 Initializing Agent-Kit v${pkgVersion} (Isolated Mode)...\n`));
 
     try {
         // 1. Compute global store path
@@ -380,7 +409,7 @@ async function init() {
 
         const mfData = await fs.readJson(path.join(sourceDir, 'manifest.json')).catch(() => ({ total_agents: 54 }));
         const agentCount = archetype ? archetype.agents.length : mfData.total_agents;
-        console.log(pc.green(`\n✅ Agent-Kit v2.0 initialized! (${agentCount} agents deployed)`));
+        console.log(pc.green(`\n✅ Agent-Kit v${pkgVersion} initialized! (${agentCount} agents deployed)`));
         console.log(pc.white('\n🛡️  Zero-Footprint Mode Active'));
         console.log(pc.gray('  Your project stays clean — all agent infrastructure'));
         console.log(pc.gray(`  lives in: ${storePath}\n`));
