@@ -1,10 +1,17 @@
+"""
+Reference Auth Routes for Agent-Kit users.
+This is a starter template — NOT part of Agent-Kit's core runtime.
+Replace the in-memory users_db with a real database for production use.
+"""
+
+import uuid
 from fastapi import APIRouter, HTTPException, Depends, status
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, field_validator
 from . import services
 
 router = APIRouter()
 
-# Mock Database
+# In-memory store (reference only — replace with persistent DB for production)
 users_db = {}
 
 class UserBase(BaseModel):
@@ -13,8 +20,19 @@ class UserBase(BaseModel):
 class UserCreate(UserBase):
     password: str
 
+    @field_validator("password")
+    @classmethod
+    def validate_password(cls, v: str) -> str:
+        if len(v) < 8:
+            raise ValueError("Password must be at least 8 characters")
+        if not any(c.isupper() for c in v):
+            raise ValueError("Password must contain at least one uppercase letter")
+        if not any(c.isdigit() for c in v):
+            raise ValueError("Password must contain at least one digit")
+        return v
+
 class UserResponse(UserBase):
-    id: int
+    id: str
 
 class Token(BaseModel):
     access_token: str
@@ -26,9 +44,9 @@ async def register(user: UserCreate):
         raise HTTPException(status_code=400, detail="Email already registered")
     
     hashed_password = services.get_password_hash(user.password)
-    user_id = len(users_db) + 1
+    user_id = str(uuid.uuid4())
     users_db[user.email] = {"id": user_id, "email": user.email, "hashed_password": hashed_password}
-    
+
     return {"id": user_id, "email": user.email}
 
 @router.post("/login", response_model=Token)

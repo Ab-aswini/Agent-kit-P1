@@ -1,0 +1,13 @@
+# Agent-Kit P1 Python Dependencies
+# Backend auth reference implementation
+fastapi>=0.100.0
+uvicorn>=0.23.0
+python-jose[cryptography]>=3.3.0
+passlib[argon2]>=1.7.4
+pydantic[email]>=2.0.0
+
+# UI&UX Engine (BM25 search)
+# No external deps — uses built-in Python modules
+
+# Audit & validation scripts
+# No external deps — uses built-in Python modules

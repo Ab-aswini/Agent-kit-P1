@@ -1,12 +1,12 @@
 {
   "version": "1.0.0",
-  "project_name": "",
-  "project_type": "",
+  "project_name": "agent-kit-p1",
+  "project_type": "multi-agent-framework",
   "tech_stack": {
-    "frontend": "",
-    "backend": "",
-    "database": "",
-    "deployment": ""
+    "frontend": "N/A (NPM package)",
+    "backend": "FastAPI (reference), Node.js (CLI)",
+    "database": "N/A (in-memory reference)",
+    "deployment": "NPM registry"
   },
   "activation_phase": 1,
   "phase_1_agents": [

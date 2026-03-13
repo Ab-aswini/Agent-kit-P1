@@ -41,8 +41,11 @@
           "**/*"
         ],
         "write": [
+          "src/**",
           "memory/global/**",
           "memory/product/**",
+          "memory/frontend/**",
+          "memory/backend/**",
           "docs/prd/**",
           "logs/**"
         ]

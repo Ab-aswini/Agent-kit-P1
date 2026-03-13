@@ -123,9 +123,9 @@
             "path": ".agent-os/agents/meta",
             "agents": [
                 "MM-001",
-                "META-002",
-                "META-003",
-                "META-004"
+                "MM-002",
+                "MM-003",
+                "MM-004"
             ]
         },
         "intelligence": {

@@ -35,9 +35,15 @@ def main():
                     content = f.read()
                 
                 if "Antigravity Cognitive Baseline" not in content:
-                    parts = content.split("---", 1)
-                    if len(parts) == 2:
-                        new_content = parts[0] + "---" + content_to_inject + parts[1]
+                    # Properly handle YAML frontmatter (--- ... ---)
+                    if content.startswith("---"):
+                        # Find the closing --- of frontmatter
+                        closing_idx = content.find("---", 3)
+                        if closing_idx != -1:
+                            closing_end = closing_idx + 3
+                            new_content = content[:closing_end] + content_to_inject + content[closing_end:]
+                        else:
+                            new_content = content + "\n" + content_to_inject
                     else:
                         new_content = content + "\n---\n" + content_to_inject
                     

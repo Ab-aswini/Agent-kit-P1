@@ -36,7 +36,8 @@ def check_exposed_secrets(search_dir):
                 for pattern in patterns:
                     if re.search(pattern, content):
                         findings.append(f"Exposed Secret in {path}")
-            except: pass
+            except (UnicodeDecodeError, PermissionError, OSError):
+                pass
     return findings
 
 def check_logic_flaws(search_dir):

@@ -43,7 +43,8 @@ def migrate_skills():
                         new_content = new_content.replace(old_ref, new_ref)
                         
                         # Also handle short refs if any (e.g. auth.skill.md)
-                        new_content = new_content.replace(old_file, f"{skill_name}/SKILL.md") # Note: skill_name logic here needs to be careful
+                        short_skill_name = old_file.replace('.skill.md', '')
+                        new_content = new_content.replace(old_file, f"{short_skill_name}/SKILL.md")
                     
                     # Refined replacement for skill names
                     for old_file, new_suffix in migrated_skills.items():

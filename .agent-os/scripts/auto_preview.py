@@ -19,7 +19,7 @@ import argparse
 import subprocess
 from pathlib import Path
 
-AGENT_DIR = Path(".agent")
+AGENT_DIR = Path(".agent-os")
 PID_FILE = AGENT_DIR / "preview.pid"
 LOG_FILE = AGENT_DIR / "preview.log"
 
@@ -55,8 +55,8 @@ def start_server(port=3000):
             if is_running(pid):
                 print(f"⚠️  Preview already running (PID: {pid})")
                 return
-        except:
-            pass # Invalid PID file
+        except (ValueError, OSError):
+            PID_FILE.unlink(missing_ok=True)
 
     root = get_project_root()
     cmd = get_start_command(root)
@@ -114,10 +114,9 @@ def status_server():
             pid = int(PID_FILE.read_text().strip())
             if is_running(pid):
                 running = True
-                # Heuristic for URL, strictly we should save it
-                url = "http://localhost:3000" 
-        except:
-            pass
+                url = "http://localhost:3000"
+        except (ValueError, OSError):
+            PID_FILE.unlink(missing_ok=True)
             
     print("\n=== Preview Status ===")
     if running:

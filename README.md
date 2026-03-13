@@ -1,4 +1,4 @@
-# 🏭 Agent-Kit (V3.5) — The Hybrid AI Arsenal
+# 🏭 Agent-Kit (V3.6) — The Hybrid AI Arsenal
 
 > <!-- SEO METADATA FOR GITHUB ARCHITECTURE SEARCH -->
 > <!-- keywords: google antigravity, model context protocol, mcp server, cursor agent, claude desktop, windsurf, copilot, autonomous agents, multi-agent framework, semantic memory, tree-of-thought, ai ide augmentation, developer tools, local-first ai -->
@@ -98,7 +98,7 @@ your-project/
 
 **Every `.md` file is an agent definition** — a detailed protocol document that tells your AI IDE (whether you use **Google Antigravity**, **Cursor**, **VS Code + GitHub Copilot**, **Windsurf**, or **Claude Desktop**) exactly how to behave for a specific role. When you tell your AI assistant to "read the backend specialist agent", it loads that agent's rules, boundaries, skills, and decision frameworks.
 
-**🚀 V3.5 Features: Native MCP Server + Self-Test + Multi-Model**
+**🚀 V3.6 Features: Native MCP Server + Self-Test + Multi-Model**
 Agent-Kit now runs natively as a **Model Context Protocol (MCP)** server with **6 tools**: `list_agents`, `get_agent_prompt`, `query_ui_ux_engine`, `run_memory_sync`, `run_checklist`, and `run_security_chaos`. It also ships with a `self-test` command to run all diagnostics, supports `AGENT_KIT_MODEL` env var for multi-model routing, and logs all agent actions.
 
 > [!IMPORTANT]
@@ -504,7 +504,7 @@ npx @ab_aswini/agent-kit-p1 init
 
 This scaffolds the complete agent system into a **zero-footprint global store** — only a `.agentkit` pointer file touches your project. All 54 agents, 42+ skills, 19 workflows, and the UI&UX engine are deployed.
 
-This is the core of the V3.5 **Hybrid Arsenal** philosophy. Agent-Kit does not try to be an LLM IDE; instead, it is the ultimate super-weapon _for_ your IDE.
+This is the core of the V3.6 **Hybrid Arsenal** philosophy. Agent-Kit does not try to be an LLM IDE; instead, it is the ultimate super-weapon _for_ your IDE.
 
 By running the MCP server, you give Cursor/Claude access to Agent-Kit's powerful internal Python tools:
 
@@ -565,7 +565,7 @@ Then add a setup script:
 
 ### 🔌 Method 5: Native MCP Server (Google Antigravity / Cursor / Claude)
 
-Agent-Kit can run as a **Model Context Protocol (MCP)** server, securely attaching all 53 agents directly to your IDE.
+Agent-Kit can run as a **Model Context Protocol (MCP)** server, securely attaching all 54 agents directly to your IDE.
 
 **For Google Antigravity & Cursor:** Add this to your MCP Settings:
 
@@ -784,11 +784,11 @@ flowchart LR
 
 ---
 
-## 🧠 The Agent-Kit Architecture (V3.5+)
+## 🧠 The Agent-Kit Architecture (V3.6+)
 
 > [!IMPORTANT]
 > **The Hybrid Arsenal Pivot**
-> Agent-Kit V3.5 introduces four distinct intelligence pillars designed to **augment** your existing IDE AI (like **Google Antigravity**, Cursor, Copilot, or Windsurf), rather than compete with them.
+> Agent-Kit V3.6 introduces four distinct intelligence pillars designed to **augment** your existing IDE AI (like **Google Antigravity**, Cursor, Copilot, or Windsurf), rather than compete with them.
 
 1. **Pillar 1: Native MCP Server** — Agent-Kit integrates directly into your AI IDE as an active tool server with 6 tools.
 2. **Pillar 2: The Hybrid Arsenal** — Provides active validation (`checklist.py`), security chaos testing, and UI generation scripts that your IDE AI can trigger autonomously.

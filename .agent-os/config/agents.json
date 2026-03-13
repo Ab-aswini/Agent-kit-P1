@@ -1,7 +1,8 @@
 {
   "version": "1.0.0",
-  "total_agents": 43,
+  "total_agents": 54,
   "activation_phase": 1,
+  "phase_1_active": 15,
   "tiers": {
     "tier-0": {
       "name": "Human Owner",

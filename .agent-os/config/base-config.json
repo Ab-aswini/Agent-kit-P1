@@ -11,7 +11,7 @@
     "settings": {
         "temperature": 0.3,
         "top_p": 1.0,
-        "model": "gemini-1.5-pro-latest"
+        "model": "auto"
     },
     "context": {
         "mandatory_files": [
