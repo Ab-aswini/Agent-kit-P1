@@ -167,7 +167,7 @@ When user's prompt is NOT in English:
 
 | Request Type            | Strategy       | Required Action                                                   |
 | ----------------------- | -------------- | ----------------------------------------------------------------- |
-| **New Feature / Build** | Deep Discovery | ASK minimum 3 strategic questions                                 |
+| **New Feature / Build** | Deep Discovery | ASK minimum 3 strategic questions + Propose 2 Architectural Paths |
 | **Code Edit / Bug Fix** | Context Check  | Confirm understanding + ask impact questions                      |
 | **Vague / Simple**      | Clarification  | Ask Purpose, Users, and Scope                                     |
 | **Full Orchestration**  | Gatekeeper     | **STOP** subagents until user confirms plan details               |
@@ -225,12 +225,12 @@ When user's prompt is NOT in English:
 | **ask**  | -                 | Focus on understanding. Ask questions.       |
 | **edit** | `orchestrator`    | Execute. Check `{task-slug}.md` first.       |
 
-**Plan Mode (4-Phase):**
+**Plan Mode (4-Phase Gemini 3.1 Deep Reasoning):**
 
-1. ANALYSIS → Research, questions
-2. PLANNING → `{task-slug}.md`, task breakdown
-3. SOLUTIONING → Architecture, design (NO CODE!)
-4. IMPLEMENTATION → Code + tests
+1. ANALYSIS → Research, questions, and parallel context ingestion
+2. EXPLORATION → Explore multiple architectural approaches simultaneously
+3. SOLUTIONING → Critique and select ultimate design (NO CODE!)
+4. IMPLEMENTATION → Construct code + tests deterministically
 
 > 🔴 **Edit mode:** If multi-file or structural change → Offer to create `{task-slug}.md`. For single-file fixes → Proceed directly.
 

@@ -327,7 +327,7 @@ _(Add ADRs here — they will be preserved across syncs if placed below this lin
     out_path = memory_dir / 'architecture.md'
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(content, encoding='utf-8')
-    print(f"  ✅ architecture.md updated")
+    print("  ✅ architecture.md updated")
 
 
 def write_api_contracts_md(scanner: SemanticScanner, memory_dir: Path):
@@ -354,7 +354,7 @@ def write_api_contracts_md(scanner: SemanticScanner, memory_dir: Path):
     out_path = memory_dir / 'api-contracts.md'
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(content, encoding='utf-8')
-    print(f"  ✅ api-contracts.md updated")
+    print("  ✅ api-contracts.md updated")
 
 
 def write_dependencies_md(scanner: SemanticScanner, memory_dir: Path):
@@ -383,7 +383,7 @@ _(Add any known vulnerable packages, pinned versions, or audit notes here)_
     out_path = memory_dir / 'dependencies.md'
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(content, encoding='utf-8')
-    print(f"  ✅ dependencies.md updated")
+    print("  ✅ dependencies.md updated")
 
 
 # ─── Watcher Loop ─────────────────────────────────────────────────────────────
@@ -404,7 +404,7 @@ def get_snapshot(project_root: Path) -> dict:
 
 def run_sync(project_root: Path):
     """Execute a single sync pass and update all memory files."""
-    print(f"\n🧠 Agent-Kit Semantic Memory Sync")
+    print("\n🧠 Agent-Kit Semantic Memory Sync")
     print(f"   Project: {project_root}")
     print(f"   Time:    {datetime.now().strftime('%H:%M:%S')}\n")
 
@@ -417,7 +417,7 @@ def run_sync(project_root: Path):
     write_api_contracts_md(scanner, memory_dir)
     write_dependencies_md(scanner, memory_dir)
 
-    print(f"\n  ✨ Sync complete.\n")
+    print("\n  ✨ Sync complete.\n")
 
 
 def watch_loop(project_root: Path, interval: int = 5):

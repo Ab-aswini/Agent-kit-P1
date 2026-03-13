@@ -6,7 +6,6 @@ This improves querying speed, enables relational joins, and simplifies the codeb
 """
 import sqlite3
 import csv
-from pathlib import Path
 from core import CSV_CONFIG, STACK_CONFIG, DATA_DIR
 
 DB_PATH = DATA_DIR / "ui_ux_knowledge.db"

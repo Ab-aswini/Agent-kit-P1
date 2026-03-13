@@ -113,7 +113,7 @@ def main():
     else:
         if os.path.exists('.agent-os'):
             print(f"{Colors.YELLOW}[WARN]{Colors.ENDC} Legacy install (files in project root).")
-            print(f"       Run: npx @ab_aswini/agent-kit-p1 clean && npx @ab_aswini/agent-kit-p1 init")
+            print("       Run: npx @ab_aswini/agent-kit-p1 clean && npx @ab_aswini/agent-kit-p1 init")
             store_path = '.'
             paths = {
                 'agents': os.path.join('.agent-os', 'agents'),
@@ -124,7 +124,7 @@ def main():
             }
         else:
             print(f"{Colors.RED}[FAIL]{Colors.ENDC} No .agentkit pointer and no legacy install found.")
-            print(f"       Run: npx @ab_aswini/agent-kit-p1 init")
+            print("       Run: npx @ab_aswini/agent-kit-p1 init")
             sys.exit(1)
 
     agents_dir = resolve_path(paths, 'agents', os.path.join('.agent-os', 'agents'))
@@ -189,7 +189,7 @@ def main():
     print(f"[{leak_status}] Zero-Footprint (no agent files in project root)")
     if leaks_found:
         for lf in leaks_found: print(f"  - Leaked: {lf}")
-        print(f"  Run: npx @ab_aswini/agent-kit-p1 clean")
+        print("  Run: npx @ab_aswini/agent-kit-p1 clean")
 
     print(f"\n{Colors.BOLD}{Colors.GREEN}HEALTH CHECK COMPLETE{Colors.ENDC}")
 

@@ -1,7 +1,7 @@
 {
     "$schema": "https://json.schemastore.org/package",
     "name": "@ab_aswini/agent-kit-p1",
-    "version": "3.6.2",
+    "version": "3.6.3",
     "description": "The Supportive Office for your IDE's AI. Empowers Google Antigravity, Cursor, Copilot & Claude with 54 specialized agents, 69+ skills, Semantic AST Memory, and MCP native tools — zero external API keys required.",
     "main": "index.js",
     "bin": {

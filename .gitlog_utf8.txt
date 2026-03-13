@@ -1,0 +1,98 @@
+﻿commit f50a6442d8db69294694167ca135f0f4b8c62e3b
+Author: Aswini Behera <aswinibehera666@gmail.com>
+Date:   Sat Mar 14 01:15:43 2026 +0530
+
+    fix: comprehensive audit ΓÇö 20 fixes across 15 files
+    
+    Critical:
+    - services.py: env-based SECRET_KEY, timezone-aware datetime
+    - routes.py: UUID4 user IDs, password strength validation
+    - permissions.json: add src/** write access for SFS-001
+    
+    High:
+    - base-config.json: vendor-agnostic model ("auto")
+    - spawn_agent.py: add missing import re, tighten regex
+    - migrate_skills.py: fix variable scoping bug
+    - inject_antigravity.py: fix frontmatter corruption
+    - auto_preview.py: fix .agent ΓåÆ .agent-os path, bare excepts
+    - security_chaos_test.py: specific exception handling
+    
+    Medium:
+    - manifest.json: META-002/003/004 ΓåÆ MM-002/003/004
+    - agents.json: total_agents 43 ΓåÆ 54, add phase_1_active
+    - settings.json: fill empty project metadata
+    - README.md: V3.5 ΓåÆ V3.6, agent count 53 ΓåÆ 54
+    - Auth docstrings clarifying reference template status
+    - New: requirements.txt, .env.example, __init__.py files
+    
+    Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+
+ .agent-os/config/agents.json      |  3 ++-
+ .agent-os/config/base-config.json |  2 +-
+ .agent-os/config/permissions.json |  3 +++
+ .agent-os/config/settings.json    | 12 ++++++------
+ .agent-os/scripts/auto_preview.py | 13 ++++++-------
+ README.md                         | 12 ++++++------
+ manifest.json                     |  6 +++---
+ requirements.txt                  | 13 +++++++++++++
+ scripts/inject_antigravity.py     | 12 +++++++++---
+ scripts/migrate_skills.py         |  3 ++-
+ scripts/security_chaos_test.py    |  3 ++-
+ scripts/spawn_agent.py            |  3 ++-
+ src/backend/__init__.py           |  0
+ src/backend/auth/__init__.py      |  0
+ src/backend/auth/routes.py        | 28 +++++++++++++++++++++++-----
+ src/backend/auth/services.py      | 19 ++++++++++++++-----
+ 16 files changed, 92 insertions(+), 40 deletions(-)
+
+commit ec41c831b81b695217a2f1f76b135cc60122bf94
+Author: Aswini Behera <aswinibehera666@gmail.com>
+Date:   Sat Mar 14 00:23:08 2026 +0530
+
+    3.6.2 ΓÇö dynamic branding banner and version references in CLI
+    
+    Replace hardcoded v2.0 strings with dynamic pkgVersion from package.json.
+    Add printBanner() with styled branding output for init and doctor commands.
+    
+    Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+
+ bin/cli.js   | 37 +++++++++++++++++++++++++++++++++----
+ package.json |  4 ++--
+ 2 files changed, 35 insertions(+), 6 deletions(-)
+
+commit f5be766d29d875a1c9f60f9c77cdb70449c93400
+Author: Aswini Behera <aswinibehera666@gmail.com>
+Date:   Thu Mar 5 14:51:21 2026 +0530
+
+    3.6.1
+
+ package-lock.json | 4 ++--
+ package.json      | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+commit c3dbe4dc56cfc622f03fa31a934e95fff2e0cd04
+Author: Aswini Behera <aswinibehera666@gmail.com>
+Date:   Thu Mar 5 14:51:05 2026 +0530
+
+    feat(engine): Remove Anthropic SDK, implement zero-API Supportive Office engine; fix cli.js code quality issues; resolve npm vulnerabilities
+
+ .agent-os/@Antigravity-Directive.md      |   4 +-
+ .agent-os/logs/agent-actions.json        |  12 +-
+ .agent-os/memory/global/api-contracts.md |   5 +-
+ .agent-os/workflows/orchestrate.md       |  12 +-
+ README.md                                |   2 +-
+ bin/cli.js                               |   3 +-
+ bin/engine.js                            | 236 +++++--------------------------
+ package-lock.json                        |  12 +-
+ package.json                             |   8 +-
+ 9 files changed, 72 insertions(+), 222 deletions(-)
+
+commit fa56dff722eb0725f04433b753065f0b30b0dac6
+Author: Aswini Behera <aswinibehera666@gmail.com>
+Date:   Thu Mar 5 13:35:49 2026 +0530
+
+    3.6.0
+
+ package-lock.json | 4 ++--
+ package.json      | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)

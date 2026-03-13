@@ -3,11 +3,12 @@ name: Semantic Memory Assimilation
 description: Teaches the agent how to natively ingest and trust the V3 auto-synced memory files instead of hallucinating project state.
 ---
 
-# 🧠 Semantic Memory Assimilation (V3.1 Skill)
+# 🧠 Semantic Memory Assimilation (Gemini 3.1 Cognitive Upgrade)
 
 > **Directive**: Do not guess the structure of the user's project. Do not assume file locations. Read the dynamically generated memory.
 
 When analyzing a codebase, you must pull your context directly from the V3 AST-aware sync outputs located in `paths.memory` (`memory/global/`).
+**Since you possess a 2M+ token limit**, favor reading the *entirety* of these documents in one go to form a complete mental model of the system's architecture, skipping piecemeal queries.
 
 ## 1. Context Acquisition Targets
 
@@ -27,6 +28,6 @@ Before planning any architectural or coding task, check these ground-truth files
 
 Combine this memory assimilation with the `@Antigravity-Directive.md`:
 
-1. **Read** AST memory.
+1. **Read** complete AST memory context massively into your token window.
 2. **Formulate** a Tree-of-Thought plan based _only_ on the registered facts.
-3. **Yield** execution back to the IDE AI (Cursor/Copilot) via MCP.
+3. **Yield** execution back to the IDE AI (Cursor/Copilot/Gemini) via MCP.

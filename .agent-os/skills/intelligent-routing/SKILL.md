@@ -143,7 +143,7 @@ Example: "Create a secure login system with dark mode UI"
 - 2 domains max
 - Example: "Add API endpoint for user profile"
 
-**Action**: Auto-invoke relevant agents sequentially
+**Action**: Auto-invoke relevant agents **in parallel** (Load all required context simultaneously utilizing the large token window)
 
 ### COMPLEX (Orchestrator required)
 

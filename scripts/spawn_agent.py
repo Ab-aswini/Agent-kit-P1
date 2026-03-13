@@ -201,9 +201,9 @@ def main():
     args = sys.argv[1:]
     if not args:
         print(f"{Colors.YELLOW}Usage:{Colors.ENDC}")
-        print(f"  python scripts/spawn_agent.py BE-001        # Spawn agent")
-        print(f"  python scripts/spawn_agent.py --list         # List all agents")
-        print(f"  python scripts/spawn_agent.py --list --dept backend  # Filter")
+        print("  python scripts/spawn_agent.py BE-001        # Spawn agent")
+        print("  python scripts/spawn_agent.py --list         # List all agents")
+        print("  python scripts/spawn_agent.py --list --dept backend  # Filter")
         sys.exit(0)
     if '--list' in args:
         dept = None

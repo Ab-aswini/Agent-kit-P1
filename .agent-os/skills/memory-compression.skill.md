@@ -6,9 +6,9 @@
 
 ---
 
-## 📐 The "800-Line Rule"
+## 📐 The "4000-Line Rule"
 
-If any file within `memory/**` exceeds 800 lines of markdown:
+If any file within `memory/**` exceeds 4000 lines of markdown:
 
 1. **Fact Extraction**: Scan the file for critical `[DECISION]` or `[CONVENTION]` tags.
 2. **Tabular Summary**: Create a "Fact-Tensor" (Markdown Table) at the top of the file.

@@ -12,7 +12,6 @@ Usage:
 
 import os
 import sys
-import time
 import json
 import signal
 import argparse
@@ -61,7 +60,7 @@ def start_server(port=3000):
     root = get_project_root()
     cmd = get_start_command(root)
     
-    if not cmd:
+    if cmd is None or not cmd:
         print("❌ No 'dev' or 'start' script found in package.json")
         sys.exit(1)
     
@@ -120,7 +119,7 @@ def status_server():
             
     print("\n=== Preview Status ===")
     if running:
-        print(f"✅ Status: Running")
+        print("✅ Status: Running")
         print(f"🔢 PID: {pid}")
         print(f"🌐 URL: {url} (Likely)")
         print(f"📝 Logs: {LOG_FILE}")

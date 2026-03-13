@@ -1,4 +1,4 @@
-# Global Conventions (Antigravity Baseline)
+# Global Conventions (Gemini 3.1 Baseline)
 
 ## Development Workflow
 

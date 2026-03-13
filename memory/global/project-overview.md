@@ -8,7 +8,7 @@ To provide an elite IDE Augmentation Arsenal (via MCP) that injects multi-agent 
 
 - **Phase**: V3.1 Hybrid Arsenal Pivot Complete.
 - **Hub Version**: 3.1.0
-- **Primary Logic**: The Antigravity Cognitive Baseline (Tree-of-Thought, AST Validation).
+- **Primary Logic**: The Gemini 3.1 Cognitive Baseline (2M Ultra Context, ToT Architecture).
 
 ## Strategic Objectives
 

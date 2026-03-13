@@ -15,7 +15,6 @@ Usage:
 
 import csv
 import json
-import os
 from datetime import datetime
 from pathlib import Path
 from core import search, DATA_DIR
@@ -408,7 +407,6 @@ def format_ascii_box(design_system: dict) -> str:
 
 
 from string import Template
-from pathlib import Path # Added for Path object
 
 # Assuming DATA_DIR is defined elsewhere, e.g., in core.py or config.py
 # For this snippet, we'll define a placeholder if it's not globally available
