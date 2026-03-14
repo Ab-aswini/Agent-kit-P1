@@ -140,7 +140,7 @@ Located in `.agent-os/.shared/UI&UX/`. Python-based intelligence layer.
 | Design System Generator | `.shared/UI&UX/scripts/design_system.py` (49.9KB) | Multi-domain aggregation → complete design system output  |
 | Search Engine           | `.shared/UI&UX/scripts/search.py` (5.1KB)         | BM25 ranking with tokenization and IDF weighting          |
 
-**18 Search Domains (CSVs in `.shared/UI&UX/data/`):**
+**23 Search Domains (CSVs in `.shared/UI&UX/data/`):**
 
 | Domain            | File                  |  Size  | Content                                                |
 | :---------------- | :-------------------- | :----: | :----------------------------------------------------- |
@@ -162,6 +162,11 @@ Located in `.agent-os/.shared/UI&UX/`. Python-based intelligence layer.
 | AI Patterns       | ai-patterns.csv       | 11.1KB | AI-native UI, chat interfaces, loading states          |
 | Forms             | forms.csv             | 12.9KB | Validation UX, multi-step wizards                      |
 | Error States      | error-states.csv      | 11.7KB | Error messages, empty states, retry patterns           |
+| Navigation        | navigation.csv        | 12.4KB | Sidebars, tabs, pagination, breadcrumbs, search, drawers |
+| Data Tables       | data-tables.csv       | 14.1KB | Sorting, filtering, virtual scroll, inline edit, export  |
+| Auth UI           | auth-ui.csv           | 11.8KB | Login, signup, MFA/TOTP, OAuth, magic link, sessions     |
+| Checkout/Payment  | checkout-payment.csv  | 10.5KB | Cart, payment forms, shipping, trust signals, guest flow |
+| Mobile Patterns   | mobile-patterns.csv   | 11.9KB | Touch targets, gestures, safe areas, haptics, offline    |
 
 **16 Framework Stacks (CSVs in `.shared/UI&UX/data/stacks/`):**
 
@@ -328,7 +333,7 @@ You MUST generate the following Mermaid.js diagrams:
 When documenting the UI&UX Engine, you MUST include:
 
 1. **Engine Architecture** — How queries flow: domain detection → BM25 search → aggregation → output
-2. **Domain Inventory** — All 18 domains with file sizes and content descriptions
+2. **Domain Inventory** — All 23 domains with file sizes and content descriptions
 3. **Stack Coverage** — All 16 framework CSVs with 2026 column schema
 4. **2026 Columns** — Explicitly document: `Dark_Mode_Strategy`, `AI_Integration_Level`, `Privacy_Tier`, `Agent_Readiness`, `Performance_Budget`
 5. **Output Formats** — ASCII box (CLI), Markdown, persistent MASTER.md + page overrides
@@ -367,7 +372,7 @@ Before submitting the README, verify:
 
 - [ ] All Mermaid diagrams render without errors
 - [ ] Agent count matches `manifest.json` (`total_agents` = 53)
-- [ ] Domain count matches `CSV_CONFIG` keys in `core.py` (18 domains)
+- [ ] Domain count matches `CSV_CONFIG` keys in `core.py` (23 domains)
 - [ ] Stack count matches `STACK_CONFIG` keys in `core.py` (16 stacks)
 - [ ] All file paths referenced in the README exist in the project
 - [ ] CLI commands are accurate and tested

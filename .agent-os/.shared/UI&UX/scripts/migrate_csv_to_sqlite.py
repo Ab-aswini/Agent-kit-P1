@@ -70,7 +70,7 @@ def migrate_data(conn):
             continue
             
         with open(csv_file, 'r', encoding='utf-8') as f:
-            reader = csv.DictReader(f, delimiter='\t')
+            reader = csv.DictReader(f, delimiter=',')
             table_name = f"domain_{domain.replace('-', '_')}"
             
             for row in reader:
@@ -104,7 +104,7 @@ def migrate_data(conn):
             continue
             
         with open(csv_file, 'r', encoding='utf-8') as f:
-            reader = csv.DictReader(f, delimiter='\t')
+            reader = csv.DictReader(f, delimiter=',')
             table_name = f"stack_{stack.replace('-', '_')}"
             cols_sanitized = [f'"{sanitize_col_name(c)}"' for c in stack_cols]
             

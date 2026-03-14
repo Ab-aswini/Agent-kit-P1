@@ -30,7 +30,12 @@ SEARCH_CONFIG = {
     "landing": {"max_results": 2},
     "typography": {"max_results": 2},
     "accessibility": {"max_results": 2},
-    "animations": {"max_results": 2}
+    "animations": {"max_results": 2},
+    "navigation": {"max_results": 2},
+    "data-tables": {"max_results": 2},
+    "auth-ui": {"max_results": 2},
+    "checkout": {"max_results": 2},
+    "mobile": {"max_results": 2}
 }
 
 

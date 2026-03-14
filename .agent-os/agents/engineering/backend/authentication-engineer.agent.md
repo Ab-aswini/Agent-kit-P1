@@ -44,6 +44,7 @@ You are the Authentication Engineer. Implement user authentication system. Handl
 memory/backend/auth-architecture.md
 .agent-os/skills/auth/SKILL.md
 .agent-os/skills/security/SKILL.md
+.agent-os/.shared/UI&UX/data/auth-ui.csv (Authentication UI Patterns — 25 rows)
 ```
 
 ## Responsibilities
