@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <linearGradient id="ownerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="execGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="deptGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#2563EB"/>
+    </linearGradient>
+    <linearGradient id="metaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1"/>
+      <stop offset="100%" style="stop-color:#4F46E5"/>
+    </linearGradient>
+    <linearGradient id="uxGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#D97706"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="620" rx="16" fill="url(#bgGrad)"/>
+  <rect width="900" height="620" rx="16" fill="none" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="450" y="38" text-anchor="middle" fill="#f0f6fc" font-size="18" font-weight="700" letter-spacing="1">AGENT-KIT GOVERNANCE MODEL</text>
+  <line x1="300" y1="48" x2="600" y2="48" stroke="#30363d" stroke-width="1"/>
+
+  <!-- YOU (Owner) -->
+  <rect x="365" y="62" width="170" height="52" rx="26" fill="url(#ownerGrad)" filter="url(#shadow)"/>
+  <text x="450" y="94" text-anchor="middle" fill="#fff" font-size="15" font-weight="600">&#x1F464; YOU (Owner)</text>
+
+  <!-- Arrow down from Owner -->
+  <line x1="450" y1="114" x2="450" y2="142" stroke="#10B981" stroke-width="2" opacity="0.7"/>
+  <polygon points="444,138 450,148 456,138" fill="#10B981" opacity="0.7"/>
+  <text x="520" y="134" fill="#8b949e" font-size="10" font-style="italic">give a task</text>
+
+  <!-- Executive Council Box -->
+  <rect x="80" y="150" width="740" height="80" rx="12" fill="#1c1f26" stroke="#8B5CF6" stroke-width="1.5" opacity="0.9"/>
+  <text x="120" y="170" fill="#8b949e" font-size="10" font-weight="600" letter-spacing="2">TIER 1 &#x2014; EXECUTIVE COUNCIL</text>
+
+  <rect x="100" y="182" width="150" height="38" rx="8" fill="url(#execGrad)" filter="url(#shadow)"/>
+  <text x="175" y="206" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">&#x1F3AF; SFS-001</text>
+  <text x="175" y="192" text-anchor="middle" fill="#e2e8f0" font-size="9">Orchestrator</text>
+
+  <rect x="270" y="182" width="150" height="38" rx="8" fill="url(#execGrad)" filter="url(#shadow)"/>
+  <text x="345" y="206" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">&#x1F451; CTS-001</text>
+  <text x="345" y="192" text-anchor="middle" fill="#e2e8f0" font-size="9">Supervisor</text>
+
+  <rect x="440" y="182" width="150" height="38" rx="8" fill="url(#execGrad)" filter="url(#shadow)"/>
+  <text x="515" y="206" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">&#x1F4CB; SP-001</text>
+  <text x="515" y="192" text-anchor="middle" fill="#e2e8f0" font-size="9">Planner</text>
+
+  <rect x="610" y="182" width="150" height="38" rx="8" fill="url(#execGrad)" filter="url(#shadow)"/>
+  <text x="685" y="206" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">&#x2696;&#xFE0F; RC-001</text>
+  <text x="685" y="192" text-anchor="middle" fill="#e2e8f0" font-size="9">Risk &amp; Compliance</text>
+
+  <!-- Arrow down from Executive -->
+  <line x1="450" y1="230" x2="450" y2="258" stroke="#8B5CF6" stroke-width="2" opacity="0.7"/>
+  <polygon points="444,254 450,264 456,254" fill="#8B5CF6" opacity="0.7"/>
+  <text x="520" y="250" fill="#8b949e" font-size="10" font-style="italic">delegates work</text>
+
+  <!-- Departments Box -->
+  <rect x="30" y="266" width="840" height="135" rx="12" fill="#1c1f26" stroke="#3B82F6" stroke-width="1.5" opacity="0.9"/>
+  <text x="70" y="286" fill="#8b949e" font-size="10" font-weight="600" letter-spacing="2">TIER 2 &#x2014; 9 SPECIALIZED DEPARTMENTS</text>
+
+  <!-- Department pills row 1 -->
+  <rect x="50" y="298" width="110" height="40" rx="8" fill="url(#deptGrad)" filter="url(#shadow)"/>
+  <text x="105" y="314" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">&#x1F527; Engineering</text>
+  <text x="105" y="328" text-anchor="middle" fill="#bfdbfe" font-size="11" font-weight="700">26 agents</text>
+
+  <rect x="170" y="298" width="95" height="40" rx="8" fill="#0891B2" filter="url(#shadow)"/>
+  <text x="217" y="314" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">&#x1F9EA; QA</text>
+  <text x="217" y="328" text-anchor="middle" fill="#cffafe" font-size="11" font-weight="700">6 agents</text>
+
+  <rect x="275" y="298" width="95" height="40" rx="8" fill="#DC2626" filter="url(#shadow)"/>
+  <text x="322" y="314" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">&#x1F6E1;&#xFE0F; Security</text>
+  <text x="322" y="328" text-anchor="middle" fill="#fecaca" font-size="11" font-weight="700">1 agent</text>
+
+  <rect x="380" y="298" width="95" height="40" rx="8" fill="#D97706" filter="url(#shadow)"/>
+  <text x="427" y="314" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">&#x1F4E6; Product</text>
+  <text x="427" y="328" text-anchor="middle" fill="#fef3c7" font-size="11" font-weight="700">5 agents</text>
+
+  <rect x="485" y="298" width="95" height="40" rx="8" fill="#DB2777" filter="url(#shadow)"/>
+  <text x="532" y="314" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">&#x1F680; DevOps</text>
+  <text x="532" y="328" text-anchor="middle" fill="#fbcfe8" font-size="11" font-weight="700">6 agents</text>
+
+  <rect x="590" y="298" width="85" height="40" rx="8" fill="#0D9488" filter="url(#shadow)"/>
+  <text x="632" y="314" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">&#x1F50D; Intel</text>
+  <text x="632" y="328" text-anchor="middle" fill="#ccfbf1" font-size="11" font-weight="700">1 agent</text>
+
+  <rect x="685" y="298" width="100" height="40" rx="8" fill="#EA580C" filter="url(#shadow)"/>
+  <text x="735" y="314" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">&#x1F4E2; Marketing</text>
+  <text x="735" y="328" text-anchor="middle" fill="#ffedd5" font-size="11" font-weight="700">1 agent</text>
+
+  <!-- Flow labels inside departments -->
+  <text x="450" y="368" text-anchor="middle" fill="#58a6ff" font-size="11">&#x1F9EA; Submit for review &#x2192; &#x2714;&#xFE0F; QA Approval &#x2192; &#x1F451; CTS Final Delivery &#x2192; &#x1F680; You</text>
+  <line x1="100" y1="375" x2="800" y2="375" stroke="#30363d" stroke-width="0.5"/>
+  <text x="450" y="392" text-anchor="middle" fill="#8b949e" font-size="10" font-style="italic">Every task flows: You &#x2192; Socratic Gate &#x2192; Plan &#x2192; Execute &#x2192; Review &#x2192; Approve &#x2192; Deliver</text>
+
+  <!-- Arrow down to Meta -->
+  <line x1="250" y1="401" x2="250" y2="425" stroke="#6366F1" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.6"/>
+  <line x1="650" y1="401" x2="650" y2="425" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.6"/>
+
+  <!-- Meta Management -->
+  <rect x="80" y="430" width="320" height="55" rx="12" fill="#1c1f26" stroke="#6366F1" stroke-width="1.5" opacity="0.9"/>
+  <text x="100" y="448" fill="#8b949e" font-size="9" font-weight="600" letter-spacing="2">TIER 3 &#x2014; META</text>
+  <rect x="100" y="456" width="280" height="22" rx="6" fill="url(#metaGrad)"/>
+  <text x="240" y="472" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">&#x1F9E0; Memory + Loop Detection + Permissions</text>
+
+  <!-- UI/UX Engine -->
+  <rect x="500" y="430" width="320" height="55" rx="12" fill="#1c1f26" stroke="#F59E0B" stroke-width="1.5" opacity="0.9"/>
+  <text x="520" y="448" fill="#8b949e" font-size="9" font-weight="600" letter-spacing="2">SHARED INTELLIGENCE</text>
+  <rect x="520" y="456" width="280" height="22" rx="6" fill="url(#uxGrad)"/>
+  <text x="660" y="472" text-anchor="middle" fill="#000" font-size="11" font-weight="600">&#x1F3A8; UI&amp;UX Engine (600K+ data points)</text>
+
+  <!-- Dotted lines from meta/ux to departments -->
+  <text x="240" y="420" text-anchor="middle" fill="#6366F1" font-size="9" opacity="0.8">context sync &#x2191;</text>
+  <text x="660" y="420" text-anchor="middle" fill="#F59E0B" font-size="9" opacity="0.8">design data &#x2191;</text>
+
+  <!-- Bottom stats bar -->
+  <rect x="30" y="510" width="840" height="90" rx="12" fill="#1c1f26" stroke="#30363d" stroke-width="1"/>
+  <text x="450" y="535" text-anchor="middle" fill="#f0f6fc" font-size="13" font-weight="700">54 Agents &#x00B7; 9 Departments &#x00B7; 3 Tiers &#x00B7; 4 Anti-Hallucination Constraints</text>
+
+  <rect x="120" y="548" width="140" height="24" rx="12" fill="#10B981" opacity="0.15"/>
+  <text x="190" y="565" text-anchor="middle" fill="#10B981" font-size="11" font-weight="600">Zero API Keys</text>
+
+  <rect x="290" y="548" width="140" height="24" rx="12" fill="#8B5CF6" opacity="0.15"/>
+  <text x="360" y="565" text-anchor="middle" fill="#8B5CF6" font-size="11" font-weight="600">Iron Well v2.0</text>
+
+  <rect x="460" y="548" width="140" height="24" rx="12" fill="#3B82F6" opacity="0.15"/>
+  <text x="530" y="565" text-anchor="middle" fill="#3B82F6" font-size="11" font-weight="600">MCP Native</text>
+
+  <rect x="630" y="548" width="160" height="24" rx="12" fill="#F59E0B" opacity="0.15"/>
+  <text x="710" y="565" text-anchor="middle" fill="#F59E0B" font-size="11" font-weight="600">Vendor Agnostic</text>
+</svg>

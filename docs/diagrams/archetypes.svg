@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <filter id="sh6">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="380" rx="16" fill="url(#bg6)"/>
+  <rect width="900" height="380" rx="16" fill="none" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#f0f6fc" font-size="18" font-weight="700" letter-spacing="1">12 COMPANY ARCHETYPES</text>
+  <text x="450" y="55" text-anchor="middle" fill="#8b949e" font-size="12">Run <tspan fill="#C4B5FD" font-weight="600">agent-kit init --interactive</tspan> to choose your team</text>
+
+  <!-- Row 1 -->
+  <rect x="30" y="75" width="200" height="60" rx="12" fill="#1c1f26" stroke="#2563EB" stroke-width="1.5" filter="url(#sh6)"/>
+  <text x="55" y="103" fill="#fff" font-size="15">&#x1F680;</text>
+  <text x="75" y="103" fill="#93C5FD" font-size="13" font-weight="600">SaaS Startup</text>
+  <text x="200" y="103" text-anchor="end" fill="#3B82F6" font-size="15" font-weight="800">44</text>
+  <text x="213" y="103" fill="#8b949e" font-size="10">agents</text>
+
+  <rect x="245" y="75" width="200" height="60" rx="12" fill="#1c1f26" stroke="#EC4899" stroke-width="1.5" filter="url(#sh6)"/>
+  <text x="270" y="103" fill="#fff" font-size="15">&#x1F4F1;</text>
+  <text x="290" y="103" fill="#F9A8D4" font-size="13" font-weight="600">Mobile App</text>
+  <text x="415" y="103" text-anchor="end" fill="#EC4899" font-size="15" font-weight="800">26</text>
+  <text x="428" y="103" fill="#8b949e" font-size="10">agents</text>
+
+  <rect x="460" y="75" width="200" height="60" rx="12" fill="#1c1f26" stroke="#F97316" stroke-width="1.5" filter="url(#sh6)"/>
+  <text x="485" y="103" fill="#fff" font-size="15">&#x1F6D2;</text>
+  <text x="505" y="103" fill="#FDBA74" font-size="13" font-weight="600">E-commerce</text>
+  <text x="630" y="103" text-anchor="end" fill="#F97316" font-size="15" font-weight="800">45</text>
+  <text x="643" y="103" fill="#8b949e" font-size="10">agents</text>
+
+  <rect x="675" y="75" width="200" height="60" rx="12" fill="#1c1f26" stroke="#10B981" stroke-width="1.5" filter="url(#sh6)"/>
+  <text x="700" y="103" fill="#fff" font-size="15">&#x1F5BC;&#xFE0F;</text>
+  <text x="720" y="103" fill="#6EE7B7" font-size="13" font-weight="600">Portfolio</text>
+  <text x="845" y="103" text-anchor="end" fill="#10B981" font-size="15" font-weight="800">14</text>
+  <text x="858" y="103" fill="#8b949e" font-size="10">agents</text>
+
+  <!-- Row 2 -->
+  <rect x="30" y="150" width="200" height="60" rx="12" fill="#1c1f26" stroke="#06B6D4" stroke-width="1.5" filter="url(#sh6)"/>
+  <text x="55" y="178" fill="#fff" font-size="15">&#x1F4CA;</text>
+  <text x="75" y="178" fill="#67E8F9" font-size="13" font-weight="600">Dashboard</text>
+  <text x="200" y="178" text-anchor="end" fill="#06B6D4" font-size="15" font-weight="800">29</text>
+  <text x="213" y="178" fill="#8b949e" font-size="10">agents</text>
+
+  <rect x="245" y="150" width="200" height="60" rx="12" fill="#1c1f26" stroke="#14B8A6" stroke-width="1.5" filter="url(#sh6)"/>
+  <text x="270" y="178" fill="#fff" font-size="15">&#x1F4DD;</text>
+  <text x="290" y="178" fill="#5EEAD4" font-size="13" font-weight="600">Blog / CMS</text>
+  <text x="415" y="178" text-anchor="end" fill="#14B8A6" font-size="15" font-weight="800">21</text>
+  <text x="428" y="178" fill="#8b949e" font-size="10">agents</text>
+
+  <rect x="460" y="150" width="200" height="60" rx="12" fill="#1c1f26" stroke="#8B5CF6" stroke-width="1.5" filter="url(#sh6)"/>
+  <text x="485" y="178" fill="#fff" font-size="15">&#x1F393;</text>
+  <text x="505" y="178" fill="#C4B5FD" font-size="13" font-weight="600">EdTech</text>
+  <text x="630" y="178" text-anchor="end" fill="#8B5CF6" font-size="15" font-weight="800">32</text>
+  <text x="643" y="178" fill="#8b949e" font-size="10">agents</text>
+
+  <rect x="675" y="150" width="200" height="60" rx="12" fill="#1c1f26" stroke="#EF4444" stroke-width="1.5" filter="url(#sh6)"/>
+  <text x="700" y="178" fill="#fff" font-size="15">&#x1F3E5;</text>
+  <text x="720" y="178" fill="#FCA5A5" font-size="13" font-weight="600">Healthcare</text>
+  <text x="845" y="178" text-anchor="end" fill="#EF4444" font-size="15" font-weight="800">40</text>
+  <text x="858" y="178" fill="#8b949e" font-size="10">agents</text>
+
+  <!-- Row 3 -->
+  <rect x="30" y="225" width="200" height="60" rx="12" fill="#1c1f26" stroke="#F59E0B" stroke-width="1.5" filter="url(#sh6)"/>
+  <text x="55" y="253" fill="#fff" font-size="15">&#x1F3EA;</text>
+  <text x="75" y="253" fill="#FDE68A" font-size="13" font-weight="600">Marketplace</text>
+  <text x="200" y="253" text-anchor="end" fill="#F59E0B" font-size="15" font-weight="800">47</text>
+  <text x="213" y="253" fill="#8b949e" font-size="10">agents</text>
+
+  <rect x="245" y="225" width="200" height="60" rx="12" fill="#1c1f26" stroke="#6366F1" stroke-width="1.5" filter="url(#sh6)"/>
+  <text x="270" y="253" fill="#fff" font-size="15">&#x1F916;</text>
+  <text x="290" y="253" fill="#A5B4FC" font-size="13" font-weight="600">AI / ChatBot</text>
+  <text x="415" y="253" text-anchor="end" fill="#6366F1" font-size="15" font-weight="800">30</text>
+  <text x="428" y="253" fill="#8b949e" font-size="10">agents</text>
+
+  <rect x="460" y="225" width="200" height="60" rx="12" fill="#1c1f26" stroke="#84CC16" stroke-width="1.5" filter="url(#sh6)"/>
+  <text x="485" y="253" fill="#fff" font-size="15">&#x1F3AE;</text>
+  <text x="505" y="253" fill="#BEF264" font-size="13" font-weight="600">Gaming</text>
+  <text x="630" y="253" text-anchor="end" fill="#84CC16" font-size="15" font-weight="800">23</text>
+  <text x="643" y="253" fill="#8b949e" font-size="10">agents</text>
+
+  <rect x="675" y="225" width="200" height="60" rx="12" fill="#1c1f26" stroke="#FBBF24" stroke-width="1.5" filter="url(#sh6)"/>
+  <text x="700" y="253" fill="#fff" font-size="15">&#x2699;&#xFE0F;</text>
+  <text x="720" y="253" fill="#FEF08A" font-size="13" font-weight="600">API-First</text>
+  <text x="845" y="253" text-anchor="end" fill="#FBBF24" font-size="15" font-weight="800">33</text>
+  <text x="858" y="253" fill="#8b949e" font-size="10">agents</text>
+
+  <!-- Bottom tip -->
+  <rect x="170" y="310" width="560" height="50" rx="12" fill="#1c1f26" stroke="#7C3AED" stroke-width="1"/>
+  <text x="450" y="332" text-anchor="middle" fill="#f0f6fc" font-size="12" font-weight="600">&#x1F4A1; Start small, scale up. Run <tspan fill="#C4B5FD">agent-kit init</tspan> later to upgrade to the full 54-agent fleet.</text>
+  <text x="450" y="350" text-anchor="middle" fill="#8b949e" font-size="11">The CLI is additive &#x2014; it won't overwrite existing agents.</text>
+</svg>

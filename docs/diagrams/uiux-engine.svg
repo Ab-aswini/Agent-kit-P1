@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <filter id="sh3">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <linearGradient id="queryG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#7C3AED"/>
+      <stop offset="100%" style="stop-color:#6D28D9"/>
+    </linearGradient>
+    <linearGradient id="detectG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563EB"/>
+      <stop offset="100%" style="stop-color:#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="searchG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#06B6D4"/>
+      <stop offset="100%" style="stop-color:#0891B2"/>
+    </linearGradient>
+    <linearGradient id="domainG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#EC4899"/>
+      <stop offset="100%" style="stop-color:#DB2777"/>
+    </linearGradient>
+    <linearGradient id="stackG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F97316"/>
+      <stop offset="100%" style="stop-color:#EA580C"/>
+    </linearGradient>
+    <linearGradient id="genG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#D97706"/>
+    </linearGradient>
+    <linearGradient id="outG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="340" rx="16" fill="url(#bg3)"/>
+  <rect width="900" height="340" rx="16" fill="none" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#f0f6fc" font-size="18" font-weight="700" letter-spacing="1">UI&amp;UX INTELLIGENCE ENGINE</text>
+  <text x="450" y="55" text-anchor="middle" fill="#8b949e" font-size="12">Python BM25 Search &#x00B7; 600,000+ Data Points &#x00B7; 18 Domains &#x00B7; 16 Frameworks</text>
+
+  <!-- Flow: Query → Detect → Search → (Domains + Stacks) → Generator → Output -->
+
+  <!-- Step 1: Query -->
+  <rect x="25" y="85" width="110" height="75" rx="12" fill="url(#queryG)" filter="url(#sh3)"/>
+  <text x="80" y="113" text-anchor="middle" fill="#fff" font-size="22">&#x1F50D;</text>
+  <text x="80" y="133" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Agent Query</text>
+  <text x="80" y="148" text-anchor="middle" fill="#E9D5FF" font-size="9">"SaaS dashboard"</text>
+
+  <!-- Arrow 1 -->
+  <line x1="140" y1="122" x2="165" y2="122" stroke="#7C3AED" stroke-width="2.5"/>
+  <polygon points="162,117 172,122 162,127" fill="#7C3AED"/>
+
+  <!-- Step 2: Detect -->
+  <rect x="175" y="85" width="110" height="75" rx="12" fill="url(#detectG)" filter="url(#sh3)"/>
+  <text x="230" y="113" text-anchor="middle" fill="#fff" font-size="22">&#x1F9ED;</text>
+  <text x="230" y="133" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Domain Detect</text>
+  <text x="230" y="148" text-anchor="middle" fill="#BFDBFE" font-size="9">Auto-classify</text>
+
+  <!-- Arrow 2 -->
+  <line x1="290" y1="122" x2="315" y2="122" stroke="#2563EB" stroke-width="2.5"/>
+  <polygon points="312,117 322,122 312,127" fill="#2563EB"/>
+
+  <!-- Step 3: BM25 Search -->
+  <rect x="325" y="75" width="120" height="95" rx="12" fill="url(#searchG)" filter="url(#sh3)"/>
+  <text x="385" y="105" text-anchor="middle" fill="#fff" font-size="26">&#x26A1;</text>
+  <text x="385" y="128" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">BM25 Search</text>
+  <text x="385" y="143" text-anchor="middle" fill="#CFFAFE" font-size="9">Tokenize + IDF</text>
+  <text x="385" y="157" text-anchor="middle" fill="#CFFAFE" font-size="9">Rank + Score</text>
+
+  <!-- Arrow 3a (to domains) -->
+  <line x1="450" y1="105" x2="490" y2="95" stroke="#06B6D4" stroke-width="2"/>
+  <polygon points="487,89 497,93 489,100" fill="#06B6D4"/>
+
+  <!-- Arrow 3b (to stacks) -->
+  <line x1="450" y1="140" x2="490" y2="150" stroke="#06B6D4" stroke-width="2"/>
+  <polygon points="487,145 497,150 489,156" fill="#06B6D4"/>
+
+  <!-- Step 4a: Domain CSVs -->
+  <rect x="498" y="68" width="120" height="55" rx="10" fill="url(#domainG)" filter="url(#sh3)"/>
+  <text x="558" y="91" text-anchor="middle" fill="#fff" font-size="16">&#x1F4DA;</text>
+  <text x="558" y="107" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">18 Domain CSVs</text>
+  <text x="558" y="119" text-anchor="middle" fill="#FBCFE8" font-size="8">colors, typography, a11y...</text>
+
+  <!-- Step 4b: Stack CSVs -->
+  <rect x="498" y="133" width="120" height="55" rx="10" fill="url(#stackG)" filter="url(#sh3)"/>
+  <text x="558" y="156" text-anchor="middle" fill="#fff" font-size="16">&#x1F4E6;</text>
+  <text x="558" y="172" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">16 Stack CSVs</text>
+  <text x="558" y="184" text-anchor="middle" fill="#FFEDD5" font-size="8">React, Next.js, Vue...</text>
+
+  <!-- Arrow 4a -->
+  <line x1="623" y1="95" x2="660" y2="110" stroke="#EC4899" stroke-width="2"/>
+  <polygon points="656,104 666,110 658,116" fill="#EC4899"/>
+
+  <!-- Arrow 4b -->
+  <line x1="623" y1="160" x2="660" y2="145" stroke="#F97316" stroke-width="2"/>
+  <polygon points="656,139 666,145 658,151" fill="#F97316"/>
+
+  <!-- Step 5: Design Generator -->
+  <rect x="668" y="85" width="100" height="85" rx="12" fill="url(#genG)" filter="url(#sh3)"/>
+  <text x="718" y="115" text-anchor="middle" fill="#000" font-size="26">&#x1F3A8;</text>
+  <text x="718" y="138" text-anchor="middle" fill="#000" font-size="11" font-weight="700">Design System</text>
+  <text x="718" y="152" text-anchor="middle" fill="#451A03" font-size="10" font-weight="600">Generator</text>
+
+  <!-- Arrow 5 -->
+  <line x1="773" y1="127" x2="798" y2="127" stroke="#F59E0B" stroke-width="2.5"/>
+  <polygon points="795,122 805,127 795,132" fill="#F59E0B"/>
+
+  <!-- Step 6: Output -->
+  <rect x="808" y="90" width="75" height="75" rx="12" fill="url(#outG)" filter="url(#sh3)"/>
+  <text x="845" y="120" text-anchor="middle" fill="#fff" font-size="26">&#x2705;</text>
+  <text x="845" y="140" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">Complete</text>
+  <text x="845" y="152" text-anchor="middle" fill="#D1FAE5" font-size="10" font-weight="600">Output</text>
+
+  <!-- Bottom: What the output includes -->
+  <rect x="50" y="200" width="800" height="120" rx="12" fill="#1c1f26" stroke="#30363d" stroke-width="1"/>
+  <text x="450" y="222" text-anchor="middle" fill="#f0f6fc" font-size="13" font-weight="700">&#x2705; Output: Enterprise-Grade Design System</text>
+
+  <!-- Output items in a row -->
+  <rect x="70" y="238" width="130" height="30" rx="8" fill="#7C3AED" opacity="0.15"/>
+  <text x="135" y="258" text-anchor="middle" fill="#C4B5FD" font-size="11" font-weight="600">&#x1F3A8; Color Palette</text>
+
+  <rect x="215" y="238" width="115" height="30" rx="8" fill="#2563EB" opacity="0.15"/>
+  <text x="272" y="258" text-anchor="middle" fill="#93C5FD" font-size="11" font-weight="600">&#x1F524; Typography</text>
+
+  <rect x="345" y="238" width="130" height="30" rx="8" fill="#06B6D4" opacity="0.15"/>
+  <text x="410" y="258" text-anchor="middle" fill="#67E8F9" font-size="11" font-weight="600">&#x1F9E9; Components</text>
+
+  <rect x="490" y="238" width="120" height="30" rx="8" fill="#10B981" opacity="0.15"/>
+  <text x="550" y="258" text-anchor="middle" fill="#6EE7B7" font-size="11" font-weight="600">&#x267F; Accessibility</text>
+
+  <rect x="625" y="238" width="110" height="30" rx="8" fill="#F59E0B" opacity="0.15"/>
+  <text x="680" y="258" text-anchor="middle" fill="#FDE68A" font-size="11" font-weight="600">&#x1F319; Dark Mode</text>
+
+  <rect x="750" y="238" width="85" height="30" rx="8" fill="#EC4899" opacity="0.15"/>
+  <text x="792" y="258" text-anchor="middle" fill="#F9A8D4" font-size="11" font-weight="600">&#x1F4F1; Layout</text>
+
+  <text x="450" y="295" text-anchor="middle" fill="#8b949e" font-size="11">+ spacing scales &#x00B7; shadows &#x00B7; border radii &#x00B7; motion curves &#x00B7; responsive breakpoints &#x00B7; AI integration level &#x00B7; privacy tier</text>
+</svg>

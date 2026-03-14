@@ -197,68 +197,9 @@ Load the agent definitions from `.agent-os/agents/` into your workspace context.
 
 ### The Company Org Chart
 
-```mermaid
-%%{init: {'theme': 'default'}}%%
-
-graph TD
-  subgraph HUMAN["🧑‍💻 YOU — THE OWNER"]
-    H(("👤 Developer"))
-  end
-
-  subgraph EXECUTIVE["🏛️ TIER 1 — EXECUTIVE COUNCIL"]
-    SFS["🎯 SFS-001 (Orchestrator)"]
-    CTS["👑 CTS-001 (Supervisor)"]
-    SP["📋 SP-001 (Planner)"]
-    RC["⚖️ RC-001 (Risk & Compliance)"]
-  end
-
-  subgraph DEPARTMENTS["⚡ TIER 2 — 9 SPECIALIZED DEPARTMENTS"]
-    direction LR
-    ENG["🔧 Engineering (26)"]
-    QA["🧪 QA (6)"]
-    SEC["🛡️ Security (1)"]
-    PROD["📦 Product (5)"]
-    DX["🚀 DevOps (6)"]
-    INTEL["🔍 Intel (1)"]
-    MKT["📢 Marketing (1)"]
-  end
-
-  subgraph META["🧠 TIER 3 — META-MANAGEMENT"]
-    MM["🧠 Memory + Loops + Permissions"]
-  end
-
-  subgraph INTELLIGENCE["🎨 SHARED INTELLIGENCE LAYER"]
-    UX["🎨 UI&UX Engine"]
-  end
-
-  H -->|"📝 You give a task"| SFS
-  SFS -->|"🚦 Socratic Gate:<br/>3 strategic questions"| H
-  H -->|"✅ You answer"| SFS
-  SFS -->|"📋 Creates plan"| SP
-  SP -->|"📄 milestones.md"| SFS
-  SFS -->|"📤 Delegates to specialists"| DEPARTMENTS
-  DEPARTMENTS -->|"🧪 Submit for review"| QA
-  QA -->|"✔️ Approval"| CTS
-  CTS -->|"🚀 Final delivery"| H
-
-  META -.->|"🔗 Context sync"| DEPARTMENTS
-  INTELLIGENCE -.->|"🎨 Design data"| DEPARTMENTS
-
-  style H fill:#10B981,stroke:#047857,stroke-width:3px,color:#fff
-  style SFS fill:#7C3AED,stroke:#5B21B6,stroke-width:2px,color:#fff
-  style CTS fill:#7C3AED,stroke:#5B21B6,stroke-width:2px,color:#fff
-  style SP fill:#8B5CF6,stroke:#6D28D9,stroke-width:2px,color:#fff
-  style RC fill:#8B5CF6,stroke:#6D28D9,stroke-width:2px,color:#fff
-  style ENG fill:#2563EB,stroke:#1D4ED8,stroke-width:2px,color:#fff
-  style QA fill:#06B6D4,stroke:#0891B2,stroke-width:2px,color:#fff
-  style SEC fill:#EF4444,stroke:#DC2626,stroke-width:2px,color:#fff
-  style PROD fill:#F59E0B,stroke:#D97706,stroke-width:2px,color:#000
-  style DX fill:#EC4899,stroke:#DB2777,stroke-width:2px,color:#fff
-  style INTEL fill:#14B8A6,stroke:#0D9488,stroke-width:2px,color:#fff
-  style MKT fill:#F97316,stroke:#EA580C,stroke-width:2px,color:#fff
-  style MM fill:#6366F1,stroke:#4F46E5,stroke-width:2px,color:#fff
-  style UX fill:#F59E0B,stroke:#D97706,stroke-width:3px,color:#000
-```
+<p align="center">
+  <img src="docs/diagrams/governance-model.svg" alt="Agent-Kit Governance Model" width="100%" />
+</p>
 
 ### The 4 Anti-Hallucination Constraints
 
@@ -273,57 +214,9 @@ Every agent operates under these **iron rules** (enforced in `universal-rules.ag
 
 ### The Four Layers
 
-```mermaid
-%%{init: {'theme': 'default'}}%%
-
-graph TD
-  subgraph L4["🖥️ LAYER 4 — INTERFACE  (How You Interact)"]
-    CLI["⌨️ CLI Commands"]
-    IDE["💻 AI IDE (Cursor / Windsurf)"]
-    NPX["📦 NPX/NPM"]
-  end
-
-  subgraph L3["🎛️ LAYER 3 — ORCHESTRATION  (How Agents Coordinate)"]
-    GATE["🚦 Socratic Gate"]
-    PHASE["⚡ 2-Phase Engine"]
-    GOV["👑 Tiered Authority"]
-    WF["📋 19 Workflows"]
-  end
-
-  subgraph L2["🧠 LAYER 2 — INTELLIGENCE  (How Agents Think)"]
-    BM25["🔍 BM25 Search Engine"]
-    DSG["🎨 Design System Generator"]
-    REASON["💡 Reasoning Engine"]
-    SPAWN["🤖 Agent Spawner"]
-  end
-
-  subgraph L1["💾 LAYER 1 — DATA  (What Agents Know)"]
-    AGENTS["📄 54 Agent Protocols"]
-    SKILLS["🧩 69+ Skill Modules"]
-    CSV["📊 34 CSV Datasets"]
-    MEM["🧠 Memory Hubs"]
-  end
-
-  L4 --> L3
-  L3 --> L2
-  L2 --> L1
-
-  style CLI fill:#7C3AED,stroke:#5B21B6,stroke-width:2px,color:#fff
-  style IDE fill:#8B5CF6,stroke:#6D28D9,stroke-width:2px,color:#fff
-  style NPX fill:#A78BFA,stroke:#7C3AED,stroke-width:2px,color:#fff
-  style GATE fill:#EF4444,stroke:#DC2626,stroke-width:2px,color:#fff
-  style PHASE fill:#EC4899,stroke:#DB2777,stroke-width:2px,color:#fff
-  style GOV fill:#F43F5E,stroke:#E11D48,stroke-width:2px,color:#fff
-  style WF fill:#FB7185,stroke:#F43F5E,stroke-width:2px,color:#fff
-  style BM25 fill:#F59E0B,stroke:#D97706,stroke-width:2px,color:#000
-  style DSG fill:#F97316,stroke:#EA580C,stroke-width:2px,color:#fff
-  style REASON fill:#FBBF24,stroke:#F59E0B,stroke-width:2px,color:#000
-  style SPAWN fill:#FCD34D,stroke:#FBBF24,stroke-width:2px,color:#000
-  style AGENTS fill:#10B981,stroke:#047857,stroke-width:2px,color:#fff
-  style SKILLS fill:#06B6D4,stroke:#0891B2,stroke-width:2px,color:#fff
-  style CSV fill:#14B8A6,stroke:#0D9488,stroke-width:2px,color:#fff
-  style MEM fill:#2DD4BF,stroke:#14B8A6,stroke-width:2px,color:#000
-```
+<p align="center">
+  <img src="docs/diagrams/four-layers.svg" alt="Agent-Kit Four Layers Architecture" width="100%" />
+</p>
 
 ---
 
@@ -372,26 +265,9 @@ graph TD
 
 The **design brain** of Agent-Kit — a Python BM25 search engine over **600,000+ structured data points**.
 
-```mermaid
-%%{init: {'theme': 'default'}}%%
-
-flowchart TD
-  Q["🔍 Agent asks: SaaS dashboard..."] --> DD["🧭 Domain Detector"]
-  DD --> BM["⚡ BM25 Search Engine"]
-  BM --> D1["📚 18 Domain CSVs"]
-  BM --> D2["📦 16 Stack CSVs"]
-  D1 --> DSG["🎨 Design System Generator"]
-  D2 --> DSG
-  DSG --> OUT["✅ Complete Design System Output"]
-
-  style Q fill:#7C3AED,stroke:#5B21B6,stroke-width:2px,color:#fff
-  style DD fill:#2563EB,stroke:#1D4ED8,stroke-width:2px,color:#fff
-  style BM fill:#06B6D4,stroke:#0891B2,stroke-width:2px,color:#fff
-  style D1 fill:#EC4899,stroke:#DB2777,stroke-width:2px,color:#fff
-  style D2 fill:#F97316,stroke:#EA580C,stroke-width:2px,color:#fff
-  style DSG fill:#F59E0B,stroke:#D97706,stroke-width:3px,color:#000
-  style OUT fill:#10B981,stroke:#047857,stroke-width:3px,color:#fff
-```
+<p align="center">
+  <img src="docs/diagrams/uiux-engine.svg" alt="UI&UX Intelligence Engine" width="100%" />
+</p>
 
 <details>
 <summary><b>📚 18 Search Domains</b> (click to expand)</summary>
@@ -435,50 +311,9 @@ Each stack CSV includes **15 columns** with 2026-ready fields:
 
 The governance system that prevents AI chaos. Every complex task follows this exact flow:
 
-```mermaid
-%%{init: {'theme': 'default'}}%%
-
-sequenceDiagram
-  autonumber
-  actor Dev as 🧑‍💻 You (Developer)
-  participant SFS as 🎯 SFS-001<br/>Orchestrator
-  participant GATE as 🚦 Socratic Gate
-  participant SP as 📋 SP-001<br/>Planner
-  participant ENG as 🔧 Engineering<br/>Agent(s)
-  participant UX as 🎨 UI&UX Engine
-  participant QA as 🧪 QA Agent(s)
-  participant CTS as 👑 CTS-001<br/>Supervisor
-
-  Dev->>SFS: "Build a user dashboard with real-time analytics"
-
-  Note over SFS,GATE: PHASE 0 — SOCRATIC GATE (Mandatory)
-  SFS->>Dev: Question 1: What data sources feed the dashboard?
-  Dev->>SFS: PostgreSQL + WebSocket events
-  SFS->>Dev: Question 2: Who are the users — admins or end users?
-  Dev->>SFS: Admin users only, internal tool
-  SFS->>Dev: Question 3: Any compliance constraints?
-  Dev->>SFS: SOC 2 — no PII displayed
-
-  Note over SFS,SP: PHASE 1 — PLANNING (No Code Allowed)
-  SFS->>SP: Create milestone plan
-  SP-->>SFS: milestones.md with task breakdown
-  SFS->>Dev: Here is the plan — approve?
-  Dev->>SFS: ✅ Approved with one change
-  SFS->>SP: Update plan
-  SP-->>SFS: Updated milestones.md
-
-  Note over SFS,QA: PHASE 2 — EXECUTION (Code Allowed)
-  SFS->>ENG: Execute: Build dashboard API
-  ENG->>UX: Need design system for admin dashboard
-  UX-->>ENG: Color palette + typography + component patterns
-  ENG->>ENG: Implementing API + frontend + tests
-  ENG->>QA: Ready for review
-
-  Note over QA,CTS: VERIFICATION
-  QA->>QA: Run checklist.py audit
-  QA-->>CTS: All checks passed ✅
-  CTS->>Dev: 🚀 Dashboard delivered — ready for deployment
-```
+<p align="center">
+  <img src="docs/diagrams/iron-well-flow.svg" alt="Iron Well Protocol Flow" width="100%" />
+</p>
 
 ### What Makes the Socratic Gate Different
 
@@ -579,37 +414,9 @@ npx @ab_aswini/agent-kit-p1 init --interactive
 
 Run `agent-kit init --interactive` to choose your team:
 
-```mermaid
-%%{init: {'theme': 'default'}}%%
-
-flowchart TD
-  START(("🏗️ Choose Your Company")) --> S["🚀 SaaS Startup (44)"]
-  START --> M["📱 Mobile App (26)"]
-  START --> EC["🛒 E-commerce (45)"]
-  START --> P["🖼️ Portfolio (14)"]
-  START --> D["📊 Dashboard (29)"]
-  START --> B["📝 Blog / CMS (21)"]
-  START --> ED["🎓 EdTech (32)"]
-  START --> HC["🏥 Healthcare (40)"]
-  START --> MP["🏪 Marketplace (47)"]
-  START --> AI["🤖 AI / ChatBot (30)"]
-  START --> G["🎮 Gaming (23)"]
-  START --> API["⚙️ API-First (33)"]
-
-  style START fill:#7C3AED,stroke:#5B21B6,stroke-width:3px,color:#fff
-  style S fill:#2563EB,stroke:#1D4ED8,stroke-width:2px,color:#fff
-  style M fill:#EC4899,stroke:#DB2777,stroke-width:2px,color:#fff
-  style EC fill:#F97316,stroke:#EA580C,stroke-width:2px,color:#fff
-  style P fill:#10B981,stroke:#047857,stroke-width:2px,color:#fff
-  style D fill:#06B6D4,stroke:#0891B2,stroke-width:2px,color:#fff
-  style B fill:#14B8A6,stroke:#0D9488,stroke-width:2px,color:#fff
-  style ED fill:#8B5CF6,stroke:#7C3AED,stroke-width:2px,color:#fff
-  style HC fill:#EF4444,stroke:#DC2626,stroke-width:2px,color:#fff
-  style MP fill:#F59E0B,stroke:#D97706,stroke-width:2px,color:#000
-  style AI fill:#6366F1,stroke:#4F46E5,stroke-width:2px,color:#fff
-  style G fill:#84CC16,stroke:#65A30D,stroke-width:2px,color:#000
-  style API fill:#FBBF24,stroke:#F59E0B,stroke-width:2px,color:#000
-```
+<p align="center">
+  <img src="docs/diagrams/archetypes.svg" alt="12 Company Archetypes" width="100%" />
+</p>
 
 <details>
 <summary><b>See what each archetype includes</b></summary>
@@ -682,29 +489,9 @@ flowchart TD
 
 ## 🚢 Deployment Pipeline
 
-```mermaid
-%%{init: {'theme': 'default'}}%%
-
-flowchart LR
-  DEV["🧑‍💻 Developer"] -->|"git push"| GH["🐙 GitHub Repo"]
-  GH -->|"CI triggers"| LINT["🔍 Lint & Type Check"]
-  LINT -->|"pass"| TEST["🧪 Component Tests"]
-  TEST -->|"pass"| AUDIT["✔️ checklist.py Audit"]
-  AUDIT -->|"✅ all pass"| VSN["📋 Version Bump"]
-  VSN --> PUB["📦 npm publish"]
-  PUB --> USER["🚀 End User (npx init)"]
-
-  AUDIT -->|"❌ fail"| DEV
-
-  style DEV fill:#6366F1,color:#fff,stroke:#4F46E5,stroke-width:2px
-  style GH fill:#7C3AED,color:#fff,stroke:#5B21B6,stroke-width:2px
-  style LINT fill:#2563EB,color:#fff,stroke:#1D4ED8,stroke-width:2px
-  style TEST fill:#06B6D4,color:#fff,stroke:#0891B2,stroke-width:2px
-  style AUDIT fill:#F59E0B,color:#000,stroke:#D97706,stroke-width:2px
-  style VSN fill:#EC4899,color:#fff,stroke:#DB2777,stroke-width:2px
-  style PUB fill:#10B981,color:#fff,stroke:#047857,stroke-width:3px
-  style USER fill:#7C3AED,color:#fff,stroke:#5B21B6,stroke-width:3px
-```
+<p align="center">
+  <img src="docs/diagrams/deployment-pipeline.svg" alt="Deployment Pipeline" width="100%" />
+</p>
 
 ---
 
