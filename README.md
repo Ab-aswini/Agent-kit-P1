@@ -56,7 +56,7 @@
 | 2 | [Quick Start](#-quick-start) | From zero to 54 agents in 60 seconds |
 | 3 | [How It Works](#%EF%B8%8F-how-it-works--architecture) | The governance model, layers, and control flow |
 | 4 | [Meet Your Team](#-meet-your-team--54-agents) | Every department, every agent, every role |
-| 5 | [UI&UX Intelligence Engine](#-uiux-intelligence-engine) | The built-in design brain with 18 domains & 16 stacks |
+| 5 | [UI&UX Intelligence Engine](#-uiux-intelligence-engine) | The built-in design brain with 23 domains & 16 stacks |
 | 6 | [The Iron Well Protocol](#-the-iron-well-protocol) | How governance actually works step-by-step |
 | 7 | [Install & Setup (All Methods)](#-install--setup-all-methods) | Every way to install + MCP config |
 | 8 | [Company Archetypes](#-company-archetypes) | Choose your team size from 14 to 54 agents |
@@ -118,7 +118,7 @@ Your IDE already has a powerful AI brain (Copilot, Gemini, Claude). What it **do
 | 🧠 Memory | Persistent architecture, decisions, and conventions across sessions |
 | 👥 Specialization | 54 agents with distinct expertise, not one generalist |
 | 🚦 Quality Gates | Mandatory planning before coding, mandatory review after |
-| 🎨 Design Intelligence | 600K+ data points across 18 design domains |
+| 🎨 Design Intelligence | 600K+ data points across 23 design domains |
 | 🔐 Security | Built-in threat modeling, chaos testing, OWASP scanning |
 
 > [!IMPORTANT]
@@ -263,14 +263,14 @@ Every agent operates under these **iron rules** (enforced in `universal-rules.ag
 
 ## 🎨 UI&UX Intelligence Engine
 
-The **design brain** of Agent-Kit — a Python BM25 search engine over **600,000+ structured data points**.
+The **design brain** of Agent-Kit — a Python BM25 search engine over **600,000+ structured data points across 23 domains**.
 
 <p align="center">
   <img src="docs/diagrams/uiux-engine.svg" alt="UI&UX Intelligence Engine" width="100%" />
 </p>
 
 <details>
-<summary><b>📚 18 Search Domains</b> (click to expand)</summary>
+<summary><b>📚 23 Search Domains</b> (click to expand)</summary>
 
 | # | Domain | Data Points | What It Covers |
 |:-:|:---|:---:|:---|
@@ -292,6 +292,11 @@ The **design brain** of Agent-Kit — a Python BM25 search engine over **600,000
 | 16 | 🤖 AI Patterns | 400+ | AI-native UI, chat interfaces, loading states |
 | 17 | 📝 Forms | 500+ | Validation UX, multi-step wizards, inputs |
 | 18 | ⚠️ Error States | 400+ | Error messages, empty states, fallback UI |
+| 19 | 🗺️ Navigation | 500+ | Sidebars, breadcrumbs, tabs, pagination, search, drawers |
+| 20 | 📊 Data Tables | 600+ | Sorting, filtering, virtual scroll, inline edit, export |
+| 21 | 🔐 Auth UI | 350+ | Login, signup, MFA, OAuth, session management, recovery |
+| 22 | 🛒 Checkout & Payment | 400+ | Cart, payment forms, shipping, trust signals, recovery |
+| 23 | 📱 Mobile Patterns | 500+ | Touch targets, gestures, bottom sheets, safe areas, haptics |
 
 </details>
 
@@ -566,7 +571,7 @@ Fork → Branch → Implement → Test → PR → Review → Merge
 
 ### 🏭 Built for solo developers who think like companies.
 
-**54 agents · 69+ skills · 19 workflows · 18 design domains · 16 framework stacks**
+**54 agents · 69+ skills · 19 workflows · 23 design domains · 16 framework stacks**
 **Iron Well v2.0 governance · BM25 search · Socratic Gate · 12 archetypes**
 
 <br>

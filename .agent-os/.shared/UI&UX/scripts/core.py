@@ -101,6 +101,31 @@ CSV_CONFIG = {
         "file": "error-states.csv",
         "search_cols": ["Category", "Pattern_Name", "Description", "Error_Type", "Recovery_Action", "User_Emotion"],
         "output_cols": ["Category", "Pattern_Name", "Description", "Error_Type", "Do", "Don't", "Code_Good", "Code_Bad", "Severity", "Recovery_Action", "User_Emotion"]
+    },
+    "navigation": {
+        "file": "navigation.csv",
+        "search_cols": ["Category", "Pattern_Name", "Description", "Platform", "A11y_Note"],
+        "output_cols": ["Category", "Pattern_Name", "Description", "Platform", "Do", "Don't", "Code_Good", "Code_Bad", "Severity", "A11y_Note", "Performance_Note"]
+    },
+    "data-tables": {
+        "file": "data-tables.csv",
+        "search_cols": ["Category", "Pattern_Name", "Description", "Data_Size", "A11y_Note"],
+        "output_cols": ["Category", "Pattern_Name", "Description", "Data_Size", "Do", "Don't", "Code_Good", "Code_Bad", "Severity", "A11y_Note", "Performance_Note"]
+    },
+    "auth-ui": {
+        "file": "auth-ui.csv",
+        "search_cols": ["Category", "Pattern_Name", "Description", "Auth_Type", "Security_Note"],
+        "output_cols": ["Category", "Pattern_Name", "Description", "Auth_Type", "Do", "Don't", "Code_Good", "Code_Bad", "Severity", "A11y_Note", "Security_Note"]
+    },
+    "checkout": {
+        "file": "checkout-payment.csv",
+        "search_cols": ["Category", "Pattern_Name", "Description", "Flow_Type", "Conversion_Note"],
+        "output_cols": ["Category", "Pattern_Name", "Description", "Flow_Type", "Do", "Don't", "Code_Good", "Code_Bad", "Severity", "A11y_Note", "Conversion_Note"]
+    },
+    "mobile": {
+        "file": "mobile-patterns.csv",
+        "search_cols": ["Category", "Pattern_Name", "Description", "Platform", "A11y_Note", "Performance_Note"],
+        "output_cols": ["Category", "Pattern_Name", "Description", "Platform", "Do", "Don't", "Code_Good", "Code_Bad", "Severity", "A11y_Note", "Performance_Note"]
     }
 }
 
@@ -222,7 +247,12 @@ def detect_domain(query):
         "dark-mode": ["dark mode", "dark theme", "light mode", "theme toggle", "prefers-color-scheme", "color-scheme", "theme switch"],
         "ai-patterns": ["ai chat", "chatbot", "streaming", "llm", "prompt", "ai response", "hallucination", "confidence", "token", "human-in-loop", "ai safety"],
         "forms": ["form", "input", "validation", "text field", "select", "checkbox", "radio", "multi-step", "file upload", "autofill", "autocomplete", "submit"],
-        "error-states": ["error", "404", "500", "empty state", "offline", "loading", "skeleton", "retry", "toast", "notification", "permission", "timeout"]
+        "error-states": ["error", "404", "500", "empty state", "offline", "loading", "skeleton", "retry", "toast", "notification", "permission", "timeout"],
+        "navigation": ["nav", "navigation", "sidebar", "breadcrumb", "menu", "tab", "tabs", "pagination", "infinite scroll", "bottom bar", "hamburger", "drawer", "mega menu", "search bar", "command palette", "skip link"],
+        "data-tables": ["table", "data table", "datagrid", "sort", "filter", "column", "row", "pagination", "virtual scroll", "spreadsheet", "inline edit", "bulk action", "export csv", "sticky header"],
+        "auth-ui": ["login", "signup", "sign up", "register", "password", "forgot password", "reset password", "mfa", "2fa", "two-factor", "oauth", "social login", "magic link", "session", "authentication", "biometric"],
+        "checkout": ["checkout", "cart", "payment", "credit card", "shipping", "order", "purchase", "buy", "add to cart", "promo code", "coupon", "receipt", "confirmation", "abandon"],
+        "mobile": ["mobile", "touch", "swipe", "gesture", "haptic", "bottom sheet", "pull to refresh", "thumb zone", "safe area", "responsive", "app-like", "native app", "ios", "android", "tap target"]
     }
 
     scores = {domain: sum(1 for kw in keywords if kw in query_lower) for domain, keywords in domain_keywords.items()}
